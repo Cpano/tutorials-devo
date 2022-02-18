@@ -2,7 +2,7 @@
 
 *{
     background-color: rgb(0, 0, 0);
-    padding: 20px;
+    padding: 30px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -38,6 +38,7 @@
     color: #fff;
     text-align: left;
     vertical-align: center;
+    font-weight: 300;
 
 }
 
