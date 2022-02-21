@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cool Devo Migration</title>
-    <link rel="stylesheet" href="/public/css/TutorialsStyles.css">
+
 
 </head>
 
@@ -17,9 +17,11 @@
 
 
 
-    <!--========================================CALENDAR ICON========================================-->
+    <!--======================================== EXTERNAL STYLES & CALENDAR ICON========================================-->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
         onload="this.onload=null;this.rel='stylesheet'">
+
+    <link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
 
     <!--========================================HEADER========================================-->
     <!-- CC01v0 -->
@@ -106,8 +108,8 @@
         
         <p>If this is the first time you create a Bastion, the list will be empty and you just need to create one:</p>
         
-        <p><img src="https://cool.devo.build/tutorials/assets/create-bastion-button.png" alt="The ' Create Bastion' button if you've not created one
-                                    before" /></p>
+        <p><img src="https://cool.devo.build/tutorials/assets/create-bastion-button.png" alt="The ' Create Bastion'
+                                    button if you've not created one before" /></p>
 
                                 <p>We need to select the VCN, the subnet and a block of allow IPs. As I don’t know the
                                     IP of the Cloud Shell, I will use 0.0.0.0/0:</p>
@@ -154,7 +156,8 @@
                                 </div>
 
                                 <p>This is how it looks like and as you can see the public key we need will be stored in
-                                    <code class="language-plaintext highlighter-rouge">~/.ssh/id_rsa.pub</code>:</p>
+                                    <code class="language-plaintext highlighter-rouge">~/.ssh/id_rsa.pub</code>:
+                                </p>
 
                                 <p><img src="https://cool.devo.build/tutorials/assets/public-key-location.png"
                                         alt="The public key is stored in ~/.ssh/id_rsa.pub:" /></p>
@@ -173,12 +176,14 @@
                                 <p>After the session is created (which took me a little over two hours), you will have
                                     something like this:</p>
 
-                                <p><img src="https://cool.devo.build/tutorials/assets/dotted-menu-button.png" alt="Click the vertical, dotted item" /></p>
+                                <p><img src="https://cool.devo.build/tutorials/assets/dotted-menu-button.png"
+                                        alt="Click the vertical, dotted item" /></p>
 
                                 <p>If you click on the 3 vertical dots, you can view or copy the ssh command we need to
                                     run in Cloud Shell:</p>
 
-                                <p><img src="https://cool.devo.build/tutorials/assets/view-ssh-command.png" alt="Copy the ssh command" /></p>
+                                <p><img src="https://cool.devo.build/tutorials/assets/view-ssh-command.png"
+                                        alt="Copy the ssh command" /></p>
 
                                 <p><code class="language-plaintext highlighter-rouge">-i &lt;privateKey&gt;</code> is
                                     not really required as we only have one single key for the moment. Also, the error
