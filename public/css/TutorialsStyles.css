@@ -68,8 +68,11 @@ li::marker {
 .social-icons {
     list-style: none;
     display: flex;
-    padding-inline-start: -20px;
+    margin-left: -40px;
+    padding-left: -40px;
   }
+
+
 
 /* ================== CODES ================== */
 
