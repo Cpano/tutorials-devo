@@ -68,8 +68,7 @@ li::marker {
 .social-icons {
     list-style: none;
     display: flex;
-    margin-left: -40px;
-    padding-left: -40px;
+    transform: translateX(-40px);
   }
 
 
