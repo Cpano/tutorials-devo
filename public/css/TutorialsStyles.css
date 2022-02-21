@@ -4,11 +4,6 @@ img {
   width: 100%;
 }
 
-.social-icons {
-  list-style: none;
-  display: flex;
-}
-
 li {
   margin-right: 25px;
 }
@@ -28,7 +23,6 @@ pre {
 ul {
   display: block;
   list-style-type: disc;
-  margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
@@ -70,6 +64,12 @@ li::marker {
   margin-top: 10px;
   text-decoration: none;
 }
+
+.social-icons {
+    list-style: none;
+    display: flex;
+    padding-inline-start: -20px;
+  }
 
 /* ================== CODES ================== */
 
