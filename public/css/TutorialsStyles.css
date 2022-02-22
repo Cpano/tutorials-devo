@@ -4,14 +4,9 @@ img {
   width: 100%;
 }
 
-
-
 li {
   margin-right: 25px;
 }
-
-
-
 
 pre {
   overflow-x: auto;
@@ -71,14 +66,14 @@ li::marker {
 }
 
 .social-icons {
-    list-style: none;
-    display: flex;
-    transform: translateX(-40px);
-  }
+  list-style: none;
+  display: flex;
+  transform: translateX(-40px);
+}
 
-  .page__content h2 {
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid #f2f3f3;
+.page__content h2 {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #f2f3f3;
 }
 
 /* ================== CODES ================== */
