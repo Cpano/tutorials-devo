@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Devo Migration</title>
+</head>
+
+<body>
+    <!--==========================COPY FROM HERE==========================-->
+
+
+
+
+
+    <!--======================================== EXTERNAL STYLES & CALENDAR ICON========================================-->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+
+    <link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
+
+
+    <!--========================================HEADER========================================-->
+    <!-- CC01v0 -->
+    <section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);"
+        class="cc01 cc01v0  txtlight cpad">
+        <div class="cc01w1 cwidth">
+
+            <h2>Deploying Joomla! on OCI and MDS</h2>
+            <p>The easiest way to deploy Joomla! on Oracle Cloud Infrastructure and MySQL Database Service, is to use OCI Resource Manager’s stack.</p>
+
+            <div style="display: flex; color: white;">
+                <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
+                            aria-hidden="true"></i>
+                        Author: </strong>
+                    Frédéric Descamps
+                </p>
+
+                <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                        Updated:</strong>
+                    <time>October 28, 2021</time>
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- /CC01v0 -->
+
+    <!-- F19v0 -->
+    <section class="f19 f19v0 cpad">
+        <div class="f19w1 cwidth">
+            <div class="f19w2 f19-2col">
+                <div class="f19col f19side">
+                    <!-- S20v0 -->
+                    <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
+                        <div class="s20w1 cwidth">
+                            <div class="col-w1">
+
+                                <h3>About Frédéric Descamps</h3>
+
+                                <!--Social Icons-->
+                                <div class="author__urls-wrapper" style="margin-bottom: 15px;">
+                                    <ul class="author__urls social-icons">
+                                        <li>
+                                            <a href="https://twitter.com/lefred" itemprop="sameAs"
+                                                rel="nofollow noopener noreferrer" target="_blank">
+                                                <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span
+                                                    class="label">Twitter</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/freddescamps" itemprop="sameAs"
+                                                rel="nofollow noopener noreferrer" target="_blank">
+                                                <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span
+                                                    class="label">LinkedIn</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/lefred" itemprop="sameAs"
+                                                rel="nofollow noopener noreferrer" target="_blank">
+                                                <i class="fab fa-fw fa-github" aria-hidden="true"></i><span
+                                                    class="label">GitHub</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br><br>
+                                <!-- End Social Icons-->
+                                <p>@lefred has been consulting OpenSource and MySQL for 20+ years. After graduating in
+                                    Management Information Technology, Frédéric started his career as a developer for an
+                                    ERP under HPUX.</p>
+
+                                <p><strong>More tutorials from this author: <br> </strong>
+                                    <span class="tags">
+                                        <a class="animated-link tag2"
+                                            href="/tutorials/deploy-moodle-on-OCI-with-mds">Deploy Moodle on OCI with
+                                            MDS</a><br>
+                                        <a class="animated-link tag2" href="/tutorials/matamo-with-oci-mds">Use Matomo
+                                            Website Analytics on OCI with MDS</a><br>
+                                        <a class="animated-link tag2" href="/tutorials/microsoft-sql-to-mds">How to
+                                            import data from Microsoft SQL Server to MySQL Database Service</a><br>
+                                        <a class="animated-link tag2"
+                                            href="/tutorials/deploying-joomla-on-oci-and-mds">Deploying Joomla! on OCI
+                                            and MDS</a><br>
+                                    </span>
+                                </p>
+
+                                <!--Tags-->
+                                <h3>Tags</h3>
+                                <p> <span class=" tags">
+                                        <a class="animated-link tag" href="#">oci</a>
+                                        <a class="animated-link tag" href="#">mysql</a>
+                                    </span>
+                                </p>
+
+                                <h3></h3>
+                                <a href="https://developer.oracle.com/tutorials" '>
+                            <p class="page__date" style="margin-right: 25px;"><strong>
+                                    Back to tutorials 
+                                </strong>
+                            </p>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+            <!-- /S20v0 -->
+        </div>
+        <!-- SET UP -->
+        <main class="f19col f19main">
+            <!-- cc01v0 -->
+
+            <section class="cc01 cc01v0 cpad" id="link1">
+                <div class="cc01w1 cwidth">
+
+                    
+        <p>The easiest way to deploy <a href="https://www.joomla.org/">Joomla!</a> on Oracle Cloud Infrastructure and MySQL Database Service, is to use OCI Resource Manager’s stack.</p>
+
+        <p>Let’s see how easy it is to deploy such solution.</p>
+        
+        <p>If you don’t already have an OCI account, you can <a href="https://signup.cloud.oracle.com/?language=en&amp;sourceType=:ow:de:te::::RC_WWMK211116P00260:DotBuildGetStarted&amp;intcmp=:ow:de:te::::RC_WWMK211116P00260:DotBuildGetStarted&source=:ex:tb:::::WWMK211125P00023:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00023:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00023">get started for free</a>.</p>
+        
+        <p>The easiest way to deploy all the required resources (vcn, subnets, gateways, compute and MySQL instances, security lists, …) is to use a stack for Resource Manager. It consists in Terraform modules and information to easily deploy the architecture on OCI.</p>
+        
+        <p>To deploy Joomla! and a MDS instance, visit this GitHub repo and click on the button to deploy on OCI:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-deploy-button.png" alt="A callout highlighting the deploy button for Joola found in the OCI-Joomla repo" /></p>
+        
+        <p>The Oracle Cloud Dashboard will be open and the stack creation form will be loaded like this:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-stack-1-termsService.png" alt="OCI's Create Stack page, with a callout highlighting to the user to accept Oracle's terms of use" /></p>
+        
+        <p>As soon as we accept the Oracle Terms of Use, the form will be automatically filled with the stack’s information:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-stack-populates-next.png" alt="The form to create a stack automatically completes with information to create your stack with Joomla. A callout displays highlighting the page's Next button" /></p>
+        
+        <p>We can click on Next to reach the second form dedicated to the variables:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-form-for-variables.png" alt="A secondary form in the stack-creation process to configure the stack's variables" /></p>
+        
+        <p>As you can see some variables are already pre-filled. We need to enter some mandatory ones like the password the MDS admin password.</p>
+        
+        <p>We also have the possibility to enable HA for the MySQL Database Service instance, to have multiple webservers in case we want to have multiple Joomla! in front on the same database or multiple Joomla! with multiple dedicated databases… there are different possibilities.</p>
+        
+        <p>We also have the possibility to use existing resources in case you already created an architecture in OCI and you want to use it for Joomla! too.</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-form-existing-variables.png" alt="The form to use existing variables to use with your Joomla-equipped stack" /></p>
+        
+        <p>When we are ready, we click Next and the review summary screen appears:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-review-screen.png" alt="The review summary screen for creating the stack" /></p>
+        
+        <p>When we apply the stack, OCI will create a job to create all the resources and deploy everything that we need. This will take some minutes (+/- 10min):</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-job-details-partialLogs-banner.png" alt="Job details after creating the stack with a banner communicating the only partial logs may appear while the stack is being created" /></p>
+        
+        <p>When everything is created and deployed, the job will return a status:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-job-status-complete.png" alt="Job Information panel with complete job status message" /></p>
+        
+        <p>All the required information to finish the installation is reported in the Outputs section:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-outputs-tab.png" alt="Information to complete Joomla installation can be found in the Outputs tab" /></p>
+        
+        <p>Now we can paste the public IP (<code class="language-plaintext highlighter-rouge">joomla_public_ip</code>) in our Internet browser:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-ip-address-in-browser.png" alt="Browser with partially obscured IP address in the address bar and Joomla displaying in the main browser window" /></p>
+        
+        <p>After we enter the required information, we click Next to reach the database configuration form:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-database-configuration.png" alt="Joomla's Database Configuration window with complete forms, including database name and table prefix, and username, among other fields" /></p>
+        
+        <p>We enter all the information from the stack’s outputs section. As the database is not local to Joomla!, we also need to delete a file for security reasons.</p>
+        
+        <p>To connect to the Joomla! server, we need to use the generate ssh key (you can get it from the Outputs section) and connect to the public IP with the opc user. Then we need to remove the file generated by Joomla!’s installation wizard:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-SSH-terminal.png" alt="Terminal highlighting SSH key needed to connect with Joomla" /></p>
+        
+        <p>When this is done, we can continue with Joomla!’s installation:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-third-step-config-FTP.png" alt="Third step in Joomla configuration process, specifying FTP details" />
+        <img src="https://cool.devo.build/tutorials/assets/joomla-success-msg.png" alt="Success message in Joomla after installing it" /></p>
+        
+        <p>To finish the installation, we need to delete the installation folder:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-delete-installation-folder.png" alt="Terminal with command to delete Joomla's installation folder" /></p>
+        
+        <p>And here we go, Joomla! is installed:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-success-install-msg.png" alt="Joomla succcess message for installation" /></p>
+        
+        <p>The administration dashboard is also available on <code class="language-plaintext highlighter-rouge">/administrator/</code>:</p>
+        
+        <p><img src="https://cool.devo.build/tutorials/assets/joomla-control-panel.png" alt="Obscured IP address with /administrator/ in its path, Joola dashboard in main browser window" /></p>
+        
+        <p>As you can see, deploying Joomla! on OCI to use MySQL Database Service is very easy. The most complicate operation if to remove the files and folders during the installation.</p>
+        
+        <p>Enjoy MySQL!</p>
+
+
+                            </div>
+                    </section>
+                    <!-- /CC01v0 -->
+
+                    </main>
+                </div>
+            </div>
+    </section>
+    <!-- /F19v0 -->
+
+
+
+
+    <!--==========================STOP COPING==========================-->
+</body>
+
+</html>
