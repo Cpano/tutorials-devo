@@ -1,5 +1,11 @@
 /* ================== TAGS ================== */
 
+h2 {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #f2f3f3;
+}
+
+
 img {
   width: 100%;
 }
@@ -69,11 +75,6 @@ li::marker {
   list-style: none;
   display: flex;
   transform: translateX(-40px);
-}
-
-.page__content h2 {
-  padding-bottom: 0.5em;
-  border-bottom: 1px solid #f2f3f3;
 }
 
 /* ================== CODES ================== */
