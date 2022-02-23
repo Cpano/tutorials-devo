@@ -1,6 +1,7 @@
 <!--========================================CALENDAR ICON========================================-->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
 
 <!--========================================HEADER========================================-->
 <!-- CC01v0 -->
@@ -29,71 +30,6 @@
     </div>
 </section>
 <!-- /CC01v0 -->
-
-<style>
-    img {
-        width: 100%;
-    }
-
-    .social-icons {
-        list-style: none;
-        display: flex;
-        ;
-    }
-
-    li {
-        margin-right: 25px;
-    }
-
-    .tag {
-        background: #D4E6EC;
-        border-left: 8px solid #264759;
-        border-radius: 4px;
-        display: inline-block;
-        font-size: .8em;
-        font-weight: 600;
-        margin: 0 2px;
-        padding: 0 6px;
-        text-decoration: none;
-        text-transform: lowercase;
-    }
-
-    .tag2 {
-        display: inline-block;
-        font-size: .8em;
-        font-weight: 600;
-        margin-top: 10px;
-        text-decoration: none;
-    }
-
-    div.highlighter-rouge,
-    figure.highlight {
-        position: relative;
-        margin-bottom: 1em;
-        background: #263238;
-        color: #eeffff;
-        font-family: Monaco, Consolas, "Lucida Console", monospace;
-        font-size: 0.75em;
-        line-height: 1.8;
-        border-radius: 4px;
-    }
-
-    div.highlighter-rouge>pre,
-    div.highlighter-rouge pre.highlight,
-    figure.highlight>pre,
-    figure.highlight pre.highlight {
-        margin: 0;
-        padding: 1em;
-    }
-
-    tt,
-    code,
-    kbd,
-    samp,
-    pre {
-        font-family: Monaco, Consolas, "Lucida Console", monospace;
-    }
-</style>
 
 <!-- F19v0 -->
 <section class="f19 f19v0 cpad">
@@ -134,7 +70,8 @@
                                 Cloud Infrastructure.</p>
 
                             <p><strong>More tutorials from this author: <br> </strong> <span class="tags">
-                                    <a class="animated-link tag2" href="/tutorials/deploying-the-argo-project-on-oke">Deploying the Argo CD on
+                                    <a class="animated-link tag2"
+                                        href="/tutorials/deploying-the-argo-project-on-oke">Deploying the Argo CD on
                                         Oracle Container Engine for Kubernetes (OKE)</a>
 
                                 </span>
@@ -173,6 +110,11 @@
                     <div class="cc01w1 cwidth">
 
                         <h2>Welcome!</h2>
+
+                        <picture class="alignright">
+                            <source srcset="https://cool.devo.build/tutorials/assets/verrazzano-logo.png 1x" />
+                            <img loading="lazy" width="400" height="400" src="https://cool.devo.build/tutorials/assets/verrazzano-logo.png" data-original="https://cool.devo.build/tutorials/assets/verrazzano-logo.png" data-at2x="https://cool.devo.build/tutorials/assets/verrazzano-logo@2x.png" alt="Verrazzano Logo" title="Verrazzano Logo" />
+                        </picture>
 
                         <p>Oracle recently released <a href="https://verrazzano.io/">Verrazzano</a>, an “end-to-end container platform to deploy cloud native and traditional applications in multi-cloud and hybrid environments.” If that’s a lot to take in, it’s because Verrazzano, (v8o for short) packs a lot. In this post, we will explore deploying Verrazzano on <a href="https://docs.oracle.com/en-us/iaas/Content/ContEng/home.htm#top?source=:ex:tb:::::WWMK211117P00086:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211117P00086:WW_FY22_DevRel_DotBuild&pcode=WWMK211117P00086">OKE (Oracle Container Engine)</a>.</p>
 
@@ -419,10 +361,3 @@ pod/hello-helidon-deployment-54979d7d74-6c9nw condition met
 </div>
 </section>
 <!-- /F19v0 -->
-
-<style>
-    img {
-        width: 100%;
-        height: auto;
-    }
-</style>
