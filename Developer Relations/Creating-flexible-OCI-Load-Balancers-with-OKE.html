@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Devo Migration</title>
+</head>
+
+<body>
+    <!--==========================COPY FROM HERE==========================-->
+
+
+
+
+
+    <!--======================================== EXTERNAL STYLES & CALENDAR ICON========================================-->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+
+    <link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
+
+
+    <!--========================================HEADER========================================-->
+    <!-- CC01v0 -->
+    <section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);"
+        class="cc01 cc01v0  txtlight cpad">
+        <div class="cc01w1 cwidth">
+
+            <h2>Creating flexible OCI Load Balancers with OKE</h2>
+
+            <div style="display: flex; color: white;">
+                <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
+                            aria-hidden="true"></i>
+                        Author: </strong>
+                    Developer Relations
+                </p>
+
+                <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                        Updated:</strong>
+                    <time>November 2, 2021</time>
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- /CC01v0 -->
+
+    <!-- F19v0 -->
+    <section class="f19 f19v0 cpad">
+        <div class="f19w1 cwidth">
+            <div class="f19w2 f19-2col">
+                <div class="f19col f19side">
+                    <!-- S20v0 -->
+                    <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
+                        <div class="s20w1 cwidth">
+                            <div class="col-w1">
+
+
+
+                                <p><strong>More tutorials from this author: <br> </strong>
+                                    <span class="tags">
+
+                                        <a class="animated-link tag2"
+                                            href="/tutorials/create-modern-data-lake-oci-readme/">Deploy a modern data lake on OCI</a><br>
+
+                                    </span>
+                                </p>
+
+                                <!--Tags-->
+                                <h3>Tags</h3>
+                                <p> <span class=" tags">
+                                        <a class="animated-link tag" href="#">kubernetes</a>
+                                    </span>
+                                </p>
+
+                                <h3></h3>
+                                <a href="https://developer.oracle.com/tutorials" '>
+                            <p class="page__date" style="margin-right: 25px;"><strong>
+                                    Back to tutorials 
+                                </strong>
+                            </p>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+            <!-- /S20v0 -->
+        </div>
+        <!-- SET UP -->
+        <main class="f19col f19main">
+            <!-- cc01v0 -->
+
+            <section class="cc01 cc01v0 cpad" id="link1">
+                <div class="cc01w1 cwidth">
+
+     
+                    <p>Until recently, the OCI Load Balancer shapes were fairly restricted to a handful of options:</p>
+
+                    <ul>
+                      <li>100 Mbps</li>
+                      <li>400 Mbps</li>
+                      <li>8000 Mbps</li>
+                    </ul>
+                    
+                    <p>What’s more, if you had to change the shape, that would involve recreating the load balancer.</p>
+                    
+                    <p><strong>Not anymore.</strong></p>
+                    
+                    <p>A few more options have been created for new load balancer shapes:</p>
+                    
+                    <ul>
+                      <li>10 Mbps-Micro</li>
+                      <li>10 Mbps</li>
+                      <li><a href="https://blogs.oracle.com/cloud-infrastructure/post/announcing-oracle-cloud-infrastructure-flexible-load-balancing?source=:ex:tb:::::WWMK211125P00019:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00019:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00019">Flexible</a></li>
+                    </ul>
+                    
+                    <p>Now, <a href="https://blogs.oracle.com/cloud-infrastructure/introducing-dynamic-update-of-load-balancer-shapes?source=:ex:tb:::::WWMK211125P00019:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00019:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00019">load balancer</a> shapes are updatable without having to destroy and recreate them.</p>
+                    
+                    <p>So let’s see how we can create them with OKE.</p>
+                    
+                    <h2 id="creating-load-balancer-shapes">Creating Load Balancer Shapes</h2>
+                    <p>First, let’s see what load balancer shapes are available in our tenancy.</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>oci lb shape list <span class="nt">--compartment-id</span> ocid1.compartment.oc1..   
+                    <span class="go"> "data": [                                                                                                                                                                                   
+                        {                                                                                                                                                                                         
+                          "name": "100Mbps"                                                                                                                                                                       
+                        },                                                                                                                                                                                 
+                        {                                                                                                                                                                                         
+                          "name": "10Mbps"                                                                                                                                                                        
+                        },                                                                                                                                                                                   
+                        {                                                                                                                                                                                         
+                          "name": "10Mbps-Micro"                                                                                                                                                                  
+                        },                                                                                                                                                                                       
+                        {                                                                                                                                                                                         
+                          "name": "400Mbps"                                                                                                                                                                       
+                        },                                                                                                                                                                                        
+                        {                                                                                                                                                                                         
+                          "name": "8000Mbps"                                                                                                                                                                      
+                        } ,                                                                                                                                                                                        
+                        {                                                                                                                                                                                         
+                          "name": "flexible"                                                                                                                                                                      
+                        }                                                                                                                                                                                         
+                      ]
+                    }
+                    </span></code></pre></div></div>
+                    
+                    <p>As you can see, all the shapes are available. I could use a simple service to have the load balancer created but I want to show that these work equally well with ingress controllers, so let’s use the NGINX Ingress Controller to create one.</p>
+                    
+                    <h3 id="creating-and-updating-a-load-blanacer-with-an-ingress-controller">Creating and Updating a Load Blanacer with an Ingress Controller</h3>
+                    <p>Let’s first add an ingress controller:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+                    <span class="gp">$</span><span class="w"> </span>helm repo update
+                    <span class="gp">$</span><span class="w"> </span>helm <span class="nb">install </span>nginx ingress-nginx/ingress-nginx
+                    </code></pre></div></div>
+                    <p>By default, this will create a load balancer with a of shape 100 Mbps:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>oci lb load-balancer get <span class="nt">--load-balancer-id</span> ocid1.loadbalancer....<span class="s2">"shape-name"</span>: <span class="s2">"100Mbps"</span>,...
+                    </code></pre></div></div>
+                    
+                    <p>Let’s say we want to change the shape to 400 Mbps. We can do this with a load balancer annotation and a helm upgrade:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>helm upgrade nginx ingress-nginx/ingress-nginx <span class="se">\</span>
+                    <span class="nv">$ </span><span class="nt">--set</span> controller.service.annotations.<span class="s2">"service</span><span class="se">\.</span><span class="s2">beta</span><span class="se">\.</span><span class="s2">kubernetes</span><span class="se">\.</span><span class="s2">io/oci-load-balancer-shape"</span><span class="o">=</span><span class="s2">"400Mbps"</span>
+                    </code></pre></div></div>
+                    
+                    <p>If you want to avoid the horrible escapes and <code class="language-plaintext highlighter-rouge">\</code>, use the <code class="language-plaintext highlighter-rouge">values.yaml</code> file provided by the chart. All you would need to do is traverse to the annotations section and add the following:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>service.beta.kubernetes.io/oci-load-balancer-shape: <span class="s2">"400Mbps"</span><span class="nv">$ </span>
+                    </code></pre></div></div>
+                    
+                    <p>After the upgrade is done, we can check on the shape again as before. We can see it’s now been upgraded to 400 Mbps:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">...
+                    </span><span class="gp">$</span><span class="w"> </span><span class="s2">"shape-name"</span>: <span class="s2">"400Mbps"</span>,
+                    <span class="c">...
+                    </span></code></pre></div></div>
+                    
+                    <p>Now, let’s say we want to create one with the flexible shape and want to take the opportunity to set the bandwidth limits. We can do this passing the following annotations:</p>
+                    
+                    <p>When we check on the shape, we see the following:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>helm upgrade nginx ingress-nginx/ingress-nginx <span class="nt">--set</span> 
+                    <span class="gp">$</span><span class="w"> </span>controller.service.annotations.<span class="s2">"service</span><span class="se">\.</span><span class="s2">beta</span><span class="se">\.</span><span class="s2">kubernetes</span><span class="se">\.</span><span class="s2">io/oci-load-balancer-shape"</span><span class="o">=</span><span class="s2">"flexible"</span> <span class="nt">--set</span> 
+                    </code></pre></div></div>
+                    
+                    <p>We can also dynamically change the bandwidth:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>helm upgrade nginx ingress-nginx/ingress-nginx <span class="nt">--set</span> controller.service.annotations.<span class="s2">"service</span><span class="se">\.</span><span class="s2">beta</span><span class="se">\.</span><span class="s2">kubernetes</span><span class="se">\.</span><span class="nv">$ </span><span class="s2">io/oci-load-balancer-shape"</span><span class="o">=</span><span class="s2">"flexible"</span> <span class="nt">--set</span> controller.service.annotations.<span class="s2">"service</span><span class="se">\.</span><span class="s2">beta</span><span class="se">\.</span><span class="s2">kubernetes</span><span class="se">\.</span><span class="s2">io/ 
+                    </span><span class="gp">$</span><span class="w"> </span><span class="s2">oci-load-balancer-shape-flex-min"</span><span class="o">=</span>10 <span class="nt">--set</span> controller.service.annotations.<span class="s2">"service</span><span class="se">\.</span><span class="s2">beta</span><span class="se">\.</span><span class="s2">kubernetes</span><span class="se">\.</span><span class="s2">io/
+                    </span><span class="gp">$</span><span class="w"> </span><span class="s2">oci-load-balancer-shape-flex-max"</span><span class="o">=</span>500      
+                    <span class="gp">$</span><span class="w"> </span><span class="s2">"shape-name"</span>: <span class="s2">"flexible"</span>,
+                    </code></pre></div></div>
+                    
+                    <p>Now when we check the shape, we can see the changes reflected:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="s2">"shape-details"</span>: <span class="o">{</span>                                                                                                                                                                        
+                    <span class="go">      "maximum-bandwidth-in-mbps": 500,                                                                                                                                                       
+                          "minimum-bandwidth-in-mbps": 10                                                                                                                                                         
+                        },                                                                                                                                                                                        
+                    </span><span class="gp">$</span><span class="w"> </span><span class="s2">"shape-name"</span>: <span class="s2">"flexible"</span>,
+                    </code></pre></div></div>
+                    
+                    <p>Finally, all the OCI Load Balancer annotations can be found <a href="https://github.com/oracle/oci-cloud-controller-manager/blob/master/docs/load-balancer-annotations.md">here</a>. These annotations allow you to control the behaviour of the load balancers created by OKE.</p>
+                    
+                    
+
+             
+                </div>
+            </section>
+            <!-- /CC01v0 -->
+
+        </main>
+        </div>
+    </div>
+    </section>
+<!-- /F19v0 -->
+
+
+
+
+    <!--==========================STOP COPING==========================-->
+</body>
+
+</html>
