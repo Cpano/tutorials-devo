@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PiDay Tables</title>
+    <link rel="stylesheet" href="/Pi Day 2022/public/css/TableStyles.css">
+</head>
+
+<body>
+
+    <button title="Click to Show/Hide Content" type="button" id="tableBTN" onclick="hideElements()">Click to show/hide
+        abstract</button>
+    <style>
+        #tableBTN {
+            font-weight: bold;
+            text-transform: none;
+            fill: #000000;
+            color: #000000;
+            background-color: #FFFFFF;
+            border-radius: 5px 5px 5px 5px;
+            border: none;
+        }
+    </style>
+
+    <script>
+        function hideElements() {
+            let hideElements = document.getElementsByClassName('abstractText');
+            for (var i = 0; i < hideElements.length; i++) {
+                console.log(hideElements[i].textContent);
+
+                if (hideElements[i].style.display == 'none') {
+                    hideElements[i].style.display = ''
+                    console.log('Element ' + hideElements[i].textContent + " is now visible");
+                } else {
+                    hideElements[i].style.display = 'none'
+                    console.log('Element ' + hideElements[i].textContent + " is hidden");
+                }
+            }
+        }
+    </script>
+
+    <!--JAPAC TABLE-->
+    <div id="contTable">
+        <table class="tg" style="table-layout: fixed; width: 100%;">
+            <colgroup>
+                <col style="width: 300px">
+                <col style="width: 200px;" class="abstractText" style="display: none;">
+                <col style="width: 350px">
+                <col style="width: 150px;">
+                <col style="width: 150px;">
+                <col style="width: 150px;">
+                <col style="width: 150px;">
+                <col style="width: 150px;">
+                <col style="width: 150px;">
+
+            </colgroup>
+            <thead>
+                <tr>
+                    <th id="sizeAdjusTitle" class="tg-tizx">Session</th>
+                    <th id="sizeAdjusTitle" class="tg-tizx abstractText" style="display: none">Abstract</th>
+                    <th id="sizeAdjusTitle" class="tg-tizx">Speaker</th>
+                    <th id="sizeAdjusTitle" class="tg-tizx">Duration</th>
+                    <th id="sizeAdjusTitle" class="tg-tizx">Format</th>
+                    <th id="sizeAdjusTitle" class="tg-tizx">AEDT</th>
+                    <th id="sizeAdjusTitle" class="tg-tizx">UTC</th>
+                    <th id="sizeAdjusTitle" class="tg-tizx">IST</th>
+                    <th id="sizeAdjusTitle" class="tg-tizx">CET</th>
+                    <th id="sizeAdjusTitle" class="tg-tizx">EDT</th>
+
+         
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tg-tizx">Going beyond a Raspberry Pi – Kubernetes &amp; Arm in the cloud</td>
+                    <td class="tg-tizx abstractText" style="display: none">This workshop walks the user through creating
+                        an Arm based Kubernetes cluster, powered by the Ampere A1 compute platform in Oracle Cloud
+                        Infrastructure(OCI). You will also deploy applications on to the Kubernetes cluster. Using the
+                        methods in this workshop, you can create application deployments that are seamlessly portable
+                        between the Arm based Kubernetes clusters and x86(Intel and AMD) based clusters. </td>
+                    <td class="tg-tizx">Avi Miller</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">10AM</td>
+                    <td class="tg-tizx">11PM (03/13)</td>
+                    <td class="tg-tizx">4:30AM</td>
+                    <td class="tg-tizx">12AM</td>
+                    <td class="tg-tizx">7PM (03/13)</td>
+
+                   
+                    
+                </tr>
+                <tr>
+                    <td class="tg-tizx">From IOT To HeatWave Analytics</td>
+                    <td class="tg-tizx abstractText" style="display: none">HeatWave is a massively parallel, high
+                        performance, in-memory query accelerator for Oracle MySQL Database Service that accelerates
+                        MySQL performance by orders of magnitude for analytics and mixed workloads. But how do you
+                        collect data from an Internet of Things Environment so you can use HeatWave to process it? In
+                        one hour you will see how data collected by a Raspberry PI or other Internet of Things device
+                        can be uploaded to the MySQL Database Service and then processed by HeatWave.</td>
+                    <td class="tg-tizx">Jayaram Krishnamachar</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">11AM</td>
+                    <td class="tg-tizx">12AM</td>
+                    <td class="tg-tizx">5:30AM</td>
+                    <td class="tg-tizx">1AM</td>
+                    <td class="tg-tizx">8PM (03/13)</td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td class="tg-tizx">Interactive Gaming from GPU Containers over WebRTC</td>
+                    <td class="tg-tizx abstractText" style="display: none">Unreal Engine is one of the more popular game
+                        development engines on the market. With a module called Pixel Streaming, and recently added
+                        support for Linux containers, come see how it is possible to deploy this in standard Kubernetes
+                        systems like Oracle Container Engine for Kubernetes (OKE)!</td>
+                    <td class="tg-tizx">Stuart Coggins</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td> 
+                    <td class="tg-tizx">12PM</td>
+                    <td class="tg-tizx">1AM</td>
+                    <td class="tg-tizx">6:30AM</td>
+                    <td class="tg-tizx">2AM</td>
+                    <td class="tg-tizx">9PM (03/13)</td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td class="tg-tizx">Build A Custom Mobile Application With Geospatial Visualization</td>
+                    <td class="tg-tizx abstractText" style="display: none">Oracle Analytics is a powerful platform for
+                        data visualization, machine learning and data preparation. Taking on the role of an analytics
+                        developer for a major corporation, learn how to use Oracle Visual Builder to combine the power
+                        of analytics with geospatial visualization to build an interactive mobile application for your
+                        sales teams allowing them to find (using Pi) the closest high value opportunities wherever they
+                        are in the world. Using Visual Builder, the mobile app can be deployed as a PWA (progressive web
+                        app) on both iOS and Android.</td>
+                    <td class="tg-tizx">Aaron Zhong</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">1PM</td>
+                    <td class="tg-tizx">2AM</td>
+                    <td class="tg-tizx">7:30AM</td>
+                    <td class="tg-tizx">3AM</td>
+                    <td class="tg-tizx">10PM (03/13)</td>
+    
+                    
+                </tr>
+                <tr>
+                    <td class="tg-tizx">Be an AI Wizard: No ML magic required</td>
+                    <td class="tg-tizx abstractText" style="display: none">Learn how to take advantage of AI
+                        capabilities as a developer without needing machine learning expertise. In this lab you will
+                        learn how to use the OCI Vision service to recognize specific objects in images and use that
+                        capability in a sample application. In the lab you’ll also learn how to run object detection on
+                        sample images in the OCI Console, how to label training data, and how to retrain OCI Vision with
+                        your own labeled images.
+                        The participant will sign-up for a new OCI trial account tenancy and uses it to work with OCI
+                        Vision and complete the sample application. Participants can continue to work with their trial
+                        tenancy for up to 30 days.</td>
+                    <td class="tg-tizx">Aaron Hoile</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">2PM</td>
+                    <td class="tg-tizx">3AM</td>
+                    <td class="tg-tizx">8:30AM</td>
+                    <td class="tg-tizx">4AM</td>
+                    <td class="tg-tizx">11PM (03/13)</td> 
+                </tr>
+                <tr>
+                    <td class="tg-tizx">Monte Carlo Race strategy on  Ampere A1</td>
+                    <td class="tg-tizx abstractText" style="display: none">2021 will go down as one of the most epic F1
+                        seasons that was ever raced. It had everything you could ask for and it ended with an ending
+                        that only Hollywood could have come up with. It had speed, drama, controversy and in the end it
+                        was mostly decided by race strategy and who had the freshest tire for an incredible last lap. In
+                        this tutorial, we will simulate F1 races and use Monte Carlo simulation to decide of the optimal
+                        strategy. Like race engineers, you will use open-source cloud native technologies to simulate
+                        the race billions of times to get the best odds of winning the championship. Deploying Oracle
+                        Kubernetes Engine, it takes a few minutes for an Ampere-powered ARM cluster to start predicting
+                        when to pit to cross the line first.</td>
+                    <td class="tg-tizx">Rishi Yadav</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">3PM</td>
+                    <td class="tg-tizx">4AM</td>
+                    <td class="tg-tizx">9:30AM</td>
+                    <td class="tg-tizx">5AM</td>
+                    <td class="tg-tizx">12AM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">Open data meets science: use Oracle Open Data to share insights with
+                        researchers,
+                        developers, and educators.</td>
+                    <td class="tg-tizx abstractText" style="display: none">Tap into cleaned, curated data from NASA,
+                        NOAA, ESA and more. empower researchers, developers and educators to explore data sets by using
+                        our search feature, example code and link to curated publications. Use the Oracle Open Data
+                        platform to host and distribute your data sets across the world for Free. </td>
+                    <td class="tg-tizx">Avinash Paul</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">4PM</td>
+                    <td class="tg-tizx">5AM</td>
+                    <td class="tg-tizx">10:30AM</td>
+                    <td class="tg-tizx">6AM</td>
+                    <td class="tg-tizx">1AM</td>
+                  
+                    
+                </tr>
+                <tr>
+                    <td class="tg-tizx">Sports Analytics: Learn how to access and analyze the data for your
+                        favorite NBA
+                        team</td>
+                    <td class="tg-tizx abstractText" style="display: none">APIs are used to access data now more than
+                        ever. Whether you’re an NBA sports fanatic or not, you will deepen your developer skills to
+                        analyze and consume data. In this lab you will analyze two- and three-point shots taken and see
+                        if teams win more games using a short or long game strategy.
+
+                        Join us to learn the fundamentals of how to access a public API using Oracle Data Science (ODS),
+                        move the data to an Autonomous Database (ADB) before analyzing and visualizing it in Oracle
+                        Analytics Cloud (OAC) so you can start integrating more data into your enterprise for analysis.
+                    </td>
+                    <td class="tg-tizx">Dipesh Dutta
+                        Praseetha Krishnamurthy</td>
+                    <td class="tg-tizx">90 minutes</td>
+                    <td class="tg-tizx">HOL</td>
+                   
+                    <td class="tg-tizx">5PM</td>
+                    <td class="tg-tizx">6AM</td>
+                    <td class="tg-tizx">11:30AM</td>
+                    <td class="tg-tizx">7AM</td>
+                    <td class="tg-tizx">2AM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <!--EMEA TABLE-->
+    <div id="contTable">
+        <table class="tg" style="table-layout: fixed; width: 100%">
+            <colgroup>
+                <col style="width: 300px">
+                <col style="width: 200px;" class="abstractText" style="display: none;">
+                <col style="width: 350px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tg-tizx" id="sizeAdjusTitle">Session</th>
+                    <th id="sizeAdjusTitle" class="tg-tizx abstractText" style="display: none">Abstract</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">Speaker</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">Duration</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">Format</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">AEDT</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">UTC</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">IST</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">CET</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">EDT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tg-tizx">Monte Carlo Race strategy on  Ampere A1</td>
+                    <td class="tg-tizx abstractText" style="display: none">2021 will go down as one of the most epic F1
+                        seasons that was ever raced. It had everything you could ask for and it ended with an ending
+                        that only Hollywood could have come up with. It had speed, drama, controversy and in the end it
+                        was mostly decided by race strategy and who had the freshest tire for an incredible last lap. In
+                        this tutorial, we will simulate F1 races and use Monte Carlo simulation to decide of the optimal
+                        strategy. Like race engineers, you will use open-source cloud native technologies to simulate
+                        the race billions of times to get the best odds of winning the championship. Deploying Oracle
+                        Kubernetes Engine, it takes a few minutes for an Ampere-powered ARM cluster to start predicting
+                        when to pit to cross the line first.</td>
+                    <td class="tg-tizx">Rishi Yadav</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">3PM</td>
+                    <td class="tg-tizx">4AM</td>
+                    <td class="tg-tizx">9:30AM</td>
+                    <td class="tg-tizx">5AM</td>
+                    <td class="tg-tizx">12AM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">Open data meets science: use Oracle Open Data to share insights with
+                        researchers,
+                        developers, and educators.</td>
+                    <td class="tg-tizx abstractText" style="display: none">Tap into cleaned, curated data from NASA,
+                        NOAA, ESA and more. empower researchers, developers and educators to explore data sets by using
+                        our search feature, example code and link to curated publications. Use the Oracle Open Data
+                        platform to host and distribute your data sets across the world for Free. </td>
+                    <td class="tg-tizx">Avinash Paul</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">4PM</td>
+                    <td class="tg-tizx">5AM</td>
+                    <td class="tg-tizx">10:30AM</td>
+                    <td class="tg-tizx">6AM</td>
+                    <td class="tg-tizx">1AM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">Sports Analytics: Learn how to access and analyze the data for your favorite NBA
+                        team
+                    </td>
+                    <td class="tg-tizx abstractText" style="display: none">APIs are used to access data now more than
+                        ever. Whether you’re an NBA sports fanatic or not, you will deepen your developer skills to
+                        analyze and consume data. In this lab you will analyze two- and three-point shots taken and see
+                        if teams win more games using a short or long game strategy.
+
+                        Join us to learn the fundamentals of how to access a public API using Oracle Data Science (ODS),
+                        move the data to an Autonomous Database (ADB) before analyzing and visualizing it in Oracle
+                        Analytics Cloud (OAC) so you can start integrating more data into your enterprise for analysis.
+                    </td>
+                    <td class="tg-tizx">Dipesh Dutta <br>Praseetha Krishnamurthy</td>
+                    <td class="tg-tizx">90 minutes</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">5PM</td>
+                    <td class="tg-tizx">6AM</td>
+                    <td class="tg-tizx">11:30AM</td>
+                    <td class="tg-tizx">7AM</td>
+                    <td class="tg-tizx">2AM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">Accelerate your builds and Kubernetes deployments using OCI DevOps</td>
+                    <td class="tg-tizx abstractText" style="display: none">Thanks to cloud native we can update a
+                        service offering in a few minutes — without down time. The most successful online service
+                        providers deploy on a rapid cycle, enabling them to be agile and responsive to customer needs.
+                        Unfortunately, humans suck at repetitive tasks like building and deploying code. Thankfully,
+                        automation provides a way to easily, quickly, and repeatably perform those tasks. In this hands
+                        on lab, we'll show you how to configure and use the OCI DevOps service to automate the building
+                        and deployment of a microservice into an Oracle Kubernetes Environment in a trial account.</td>
+                    <td class="tg-tizx">Tim Graves</td>
+                    <td class="tg-tizx">2 hours</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">8PM</td>
+                    <td class="tg-tizx">9AM</td>
+                    <td class="tg-tizx">2:30PM</td>
+                    <td class="tg-tizx">10AM</td>
+                    <td class="tg-tizx">3AM</td>                  
+                </tr>
+                <tr>
+                    <td class="tg-tizx">Monte Carlo Race strategy on  Ampere A1</td>
+                    <td class="tg-tizx abstractText" style="display: none">2021 will go down as one of the most epic F1
+                        seasons that was ever raced. It had everything you could ask for and it ended with an ending
+                        that only Hollywood could have come up with. It had speed, drama, controversy and in the end it
+                        was mostly decided by race strategy and who had the freshest tire for an incredible last lap. In
+                        this tutorial, we will simulate F1 races and use Monte Carlo simulation to decide of the optimal
+                        strategy. Like race engineers, you will use open-source cloud native technologies to simulate
+                        the race billions of times to get the best odds of winning the championship. Deploying Oracle
+                        Kubernetes Engine, it takes a few minutes for an Ampere-powered ARM cluster to start predicting
+                        when to pit to cross the line first.</td>
+                    <td class="tg-tizx">Arnaud Froidmont</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">8PM</td>
+                    <td class="tg-tizx">9AM</td>
+                    <td class="tg-tizx">2:30PM</td>
+                    <td class="tg-tizx">10AM</td>
+                    <td class="tg-tizx">3AM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">Build A Custom Mobile Application With Geospatial Visualization</td>
+                    <td class="tg-tizx abstractText" style="display: none">Oracle Analytics is a powerful platform for
+                        data visualization, machine learning and data preparation. Taking on the role of an analytics
+                        developer for a major corporation, learn how to use Oracle Visual Builder to combine the power
+                        of analytics with geospatial visualization to build an interactive mobile application for your
+                        sales teams allowing them to find (using Pi) the closest high value opportunities wherever they
+                        are in the world. Using Visual Builder, the mobile app can be deployed as a PWA (progressive web
+                        app) on both iOS and Android.</td>
+                    <td class="tg-tizx">Mike Durran</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">9PM</td>
+                    <td class="tg-tizx">10AM</td>
+                    <td class="tg-tizx">3:30PM</td>
+                    <td class="tg-tizx">11AM</td>
+                    <td class="tg-tizx">6AM</td>   
+                </tr>
+                <tr>
+                    <td class="tg-tizx">Enhancing your gaming experience with a real-time dashboard</td>
+                    <td class="tg-tizx abstractText" style="display: none">Use Oracle JET to display a high volume of
+                        data in real time.
+
+                        In this session you will learn how to setup Raspberry PI to stream in-game data packets to and
+                        display them on a RaspberryPI screen to create a speedometer.
+
+                        Session will cover at the high level setting up RaspberryPI to stream data to ADB and using
+                        Oracle JET to receive and display data.</td>
+                    <td class="tg-tizx">Wojciech Pluta</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">10PM</td>
+                    <td class="tg-tizx">11AM</td>
+                    <td class="tg-tizx">4:30PM</td>
+                    <td class="tg-tizx">12PM</td>
+                    <td class="tg-tizx">7AM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">The Suitcase project - Stream and Events Analytics on-the-go</td>
+                    <td class="tg-tizx abstractText" style="display: none">The Suitcase project is made of a
+                        battery-powered suitcase using development boards based on ESP32 microcontrollers, Raspberry Pis
+                        and a 4G connection and OCI Services. The goal of this project is to enable design and rapid
+                        prototyping of stream analysis of events generated by the Suitcase. You will learn how to
+                        develop and deploy analytics pipelines that process the events coming from Suitcase and send
+                        back the results in case of anomalies and errors.</td>
+                    <td class="tg-tizx">Gabriele Provinciali</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">11PM</td>
+                    <td class="tg-tizx">12PM</td>
+                    <td class="tg-tizx">5:30PM</td>
+                    <td class="tg-tizx">1PM</td>
+                    <td class="tg-tizx">8AM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <!--LAD TABLE-->
+    <div id="contTable">
+        <table class="tg" style="table-layout: fixed; width: 100%">
+            <colgroup>
+                <col style="width: 300px">
+                <col style="width: 200px;" class="abstractText" style="display: none;">
+                <col style="width: 350px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tg-tizx" id="sizeAdjusTitle">Session</th>
+                    <th id="sizeAdjusTitle" class="tg-tizx abstractText" style="display: none">Abstract</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">Speaker</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">Duration</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">Format</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">AEDT</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">UTC</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">IST</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">CET</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">EDT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tg-tizx">(Portuguese) Accelerated full stack cloud application development — the Oracle
+                        way 
+                    </td>
+                    <td class="tg-tizx abstractText" style="display: none">Graal Cloud Native (GCN) is a full stack
+                        framework for building portable cloud-native applications using the Java ecosystem on top of
+                        managed services in the public cloud. GCN is built on top of the GraalVM native image, the
+                        Micronaut® framework, public cloud SDKs, popular drivers, and a set of open source libraries
+                        tested, certified, and supported by Oracle. Learn how to use GCN to build a React-based App to
+                        call into Oracle Database through a Micronaut-based Restful microservice.</td>
+                    <td class="tg-tizx">Cristiano Hoshikawa</td>
+                    <td class="tg-tizx">30 mins</td>
+                    <td class="tg-tizx">DEMO</td>
+
+                    <td class="tg-tizx">11PM</td>
+                    <td class="tg-tizx">12PM</td>
+                    <td class="tg-tizx">5:30PM</td>
+                    <td class="tg-tizx">1PM</td>
+                    <td class="tg-tizx">8AM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">(Portuguese) Monte Carlo Race strategy on  Ampere A1</td>
+                    <td class="tg-tizx abstractText" style="display: none">2021 will go down as one of the most epic F1
+                        seasons that was ever raced. It had everything you could ask for and it ended with an ending
+                        that only Hollywood could have come up with. It had speed, drama, controversy and in the end it
+                        was mostly decided by race strategy and who had the freshest tire for an incredible last lap. In
+                        this tutorial, we will simulate F1 races and use Monte Carlo simulation to decide of the optimal
+                        strategy. Like race engineers, you will use open-source cloud native technologies to simulate
+                        the race billions of times to get the best odds of winning the championship. Deploying Oracle
+                        Kubernetes Engine, it takes a few minutes for an Ampere-powered ARM cluster to start predicting
+                        when to pit to cross the line first.</td>
+                    <td class="tg-tizx">Paulo Alberto Simones</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">HOL</td>
+
+                    <td class="tg-tizx">12AM (03/15)</td>
+                    <td class="tg-tizx">1PM</td>
+                    <td class="tg-tizx">6:30PM</td>
+                    <td class="tg-tizx">2PM</td>
+                    <td class="tg-tizx">9AM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">(Portuguese) Be an AI Wizard: No ML magic required</td>
+                    <td class="tg-tizx abstractText" style="display: none">Learn how to take advantage of AI
+                        capabilities as a developer without needing machine learning expertise. In this lab you will
+                        learn how to use the OCI Vision service to recognize specific objects in images and use that
+                        capability in a sample application. In the lab you’ll also learn how to run object detection on
+                        sample images in the OCI Console, how to label training data, and how to retrain OCI Vision with
+                        your own labeled images.
+                        The participant will sign-up for a new OCI trial account tenancy and uses it to work with OCI
+                        Vision and complete the sample application. Participants can continue to work with their trial
+                        tenancy for up to 30 days.</td>
+                    <td class="tg-tizx">Leonardo Silva</td>
+                    <td class="tg-tizx">90 minutes</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">1AM (03/15)</td>
+                    <td class="tg-tizx">2PM</td>
+                    <td class="tg-tizx">7:30PM</td>
+                    <td class="tg-tizx">3PM</td>
+                    <td class="tg-tizx">10AM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">(Portuguese) Sports Analytics: Learn how to access and analyze the data for your
+                        favorite NBA team</td>
+                    <td class="tg-tizx abstractText" style="display: none">APIs are used to access data now more than
+                        ever. Whether you’re an NBA sports fanatic or not, you will deepen your developer skills to
+                        analyze and consume data. In this lab you will analyze two- and three-point shots taken and see
+                        if teams win more games using a short or long game strategy.
+
+                        Join us to learn the fundamentals of how to access a public API using Oracle Data Science (ODS),
+                        move the data to an Autonomous Database (ADB) before analyzing and visualizing it in Oracle
+                        Analytics Cloud (OAC) so you can start integrating more data into your enterprise for analysis.
+                    </td>
+                    <td class="tg-tizx">Douglas Silva</td>
+                    <td class="tg-tizx">90 minutes</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">2:30AM (03/15)</td>
+                    <td class="tg-tizx">3:30PM</td>
+                    <td class="tg-tizx">9PM</td>
+                    <td class="tg-tizx">4:30PM</td>
+                    <td class="tg-tizx">11:30AM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">(Spanish) Faster, easily, predictably and reliably delivering your releases,
+                        using
+                        the OCI DevOps service to deploy into Oracle Kubernetes Environment</td>
+                    <td class="tg-tizx abstractText" style="display: none">Here is the description</td>
+                    <td class="tg-tizx">Carlos Zela, Oswaldo Rojas</td>
+                    <td class="tg-tizx">2 hours</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">4AM (03/15)</td>
+                    <td class="tg-tizx">5PM</td>
+                    <td class="tg-tizx">10:30PM</td>
+                    <td class="tg-tizx">6PM</td>
+                    <td class="tg-tizx">1PM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">(Spanish) Interactive Gaming from GPU Containers over WebRTC</td>
+                    <td class="tg-tizx abstractText" style="display: none">Unreal Engine is one of the more popular game
+                        development engines on the market. With a module called Pixel Streaming, and recently added
+                        support for Linux containers, come see how it is possible to deploy this in standard Kubernetes
+                        systems like Oracle Container Engine for Kubernetes (OKE)!</td>
+                    <td class="tg-tizx">Ivan Vasquez </td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">6AM (03/15)</td>
+                    <td class="tg-tizx">7PM</td>
+                    <td class="tg-tizx">12:30AM (03/15)</td>
+                    <td class="tg-tizx">8PM</td>
+                    <td class="tg-tizx">3PM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">(Spanish) Build A Custom Mobile Application With Geospatial Visualization</td>
+                    <td class="tg-tizx abstractText" style="display: none">Oracle Analytics is a powerful platform for
+                        data visualization, machine learning and data preparation. Taking on the role of an analytics
+                        developer for a major corporation, learn how to use Oracle Visual Builder to combine the power
+                        of analytics with geospatial visualization to build an interactive mobile application for your
+                        sales teams allowing them to find (using Pi) the closest high value opportunities wherever they
+                        are in the world. Using Visual Builder, the mobile app can be deployed as a PWA (progressive web
+                        app) on both iOS and Android.</td>
+                    <td class="tg-tizx">Andres Reyes</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">6AM (03/15)</td>
+                    <td class="tg-tizx">7PM</td>
+                    <td class="tg-tizx">12:30AM (03/15)</td>
+                    <td class="tg-tizx">8PM</td>
+                    <td class="tg-tizx">3PM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">(Spanish) From Idea to Reality: Build a fully functional mobile-friendly app
+                        from
+                        scratch in under 60 minutes, using Oracle APEX</td>
+                    <td class="tg-tizx abstractText" style="display: none">In this session, you'll learn how to quickly
+                        and easily develop and deploy mobile-friendly apps using Oracle APEX, Oracle's Low Code
+                        application development platform, all running on OCI and Autonomous Database. We'll start with a
+                        spreadsheet containing SailGP race data and convert it into an app where we'll add faceted
+                        search, ad-hoc custom reporting, dashboards, and more. Then, we'll customize the UI and turn it
+                        into a Progressive Web App that can be installed and used by anyone across the globe. Join us on
+                        this low-code adventure and lets see how far the winds take us!</td>
+                    <td class="tg-tizx">Monica Godoy</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">7AM (03/15)</td>
+                    <td class="tg-tizx">8PM</td>
+                    <td class="tg-tizx">1:30AM (03/15)</td>
+                    <td class="tg-tizx">9PM</td>
+                    <td class="tg-tizx">4PM</td>
+                </tr>
+                <tr>
+                    <td class="tg-tizx">(Spanish) Deploy a Minecraft Game Server using Kubernetes and Agones</td>
+                    <td class="tg-tizx abstractText" style="display: none">Learn how to use open source project Agones
+                        to host, run, and scale your Minecraft worlds on Kubernetes.</td>
+                    <td class="tg-tizx">Hector Escalante</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">8AM (03/15)</td>
+                    <td class="tg-tizx">9PM</td>
+                    <td class="tg-tizx">2:30PM (03/15)</td>
+                    <td class="tg-tizx">10PM</td>
+                    <td class="tg-tizx">5PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <!--AMERICA TABLE-->
+    <div id="contTable">
+        <table class="tg" style="table-layout: fixed; width: 100%">
+            <colgroup>
+                <col style="width: 300px">
+                <col style="width: 200px;" class="abstractText" style="display: none;">
+                <col style="width: 350px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 150px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tg-tizx" id="sizeAdjusTitle">Session</th>
+                    <th id="sizeAdjusTitle" class="tg-tizx abstractText" style="display: none">Abstract</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">Speaker</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">Duration</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">Format</th>
+
+                    <th class="tg-tizx" id="sizeAdjusTitle">AEDT</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">UTC</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">IST</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">CET</th>
+                    <th class="tg-tizx" id="sizeAdjusTitle">EDT</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="tg-tizx">Action! Guarantee a Best Picture for your Company using Autonomous Database’s
+                        Converged Analytics</td>
+                    <td class="tg-tizx abstractText" style="display: none">We’ll use Oracle MovieStream - a fictitious
+                        online movie streaming company – to illustrate applying different types of sophisticated
+                        analytics to both structured and unstructured data on movie sales. OCI’s Autonomous Database
+                        multi-model capabilities capture tabular, spatial, graph and json data and has specialized
+                        algorithms for each of these data types. You will load and access data from big data sources,
+                        unlock and discover movie viewing insights from tabular and json data, use machine learning to
+                        predict churn, make localized offers using spatial analytics and apply graph algorithms to
+                        recommend movies based on derived communities.</td>
+                    <td class="tg-tizx">Martin Gubar</td>
+                    <td class="tg-tizx">90 mins</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">12AM (03/15)</td>
+                    <td class="tg-tizx">1PM</td>
+                    <td class="tg-tizx">6:30PM</td>
+                    <td class="tg-tizx">2PM</td>
+                    <td class="tg-tizx">9AM</td>
+
+                </tr>
+
+                <tr>
+                    <td class="tg-tizx">From Idea to Reality: Build a fully functional mobile-friendly app from scratch
+                        in
+                        under 60 minutes, using Oracle APEX</td>
+                    <td class="tg-tizx abstractText" style="display: none">In this session, you'll learn how to quickly
+                        and easily develop and deploy mobile-friendly apps using Oracle APEX, Oracle's Low Code
+                        application development platform, all running on OCI and Autonomous Database. We'll start with a
+                        spreadsheet containing SailGP race data and convert it into an app where we'll add faceted
+                        search, ad-hoc custom reporting, dashboards, and more. Then, we'll customize the UI and turn it
+                        into a Progressive Web App that can be installed and used by anyone across the globe. Join us on
+                        this low-code adventure and lets see how far the winds take us!</td>
+                    <td class="tg-tizx">Shakeeb Rahman</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">1AM (03/15)</td>
+                    <td class="tg-tizx">2PM</td>
+                    <td class="tg-tizx">7:30PM</td>
+                    <td class="tg-tizx">3PM</td>
+                    <td class="tg-tizx">10AM</td>
+
+
+                </tr>
+
+                <tr>
+                    <td class="tg-tizx">Deploy a Minecraft Game Server using Kubernetes and Agones</td>
+                    <td class="tg-tizx abstractText" style="display: none">Learn how to use open source project Agones
+                        to host, run, and scale your Minecraft worlds on Kubernetes.</td>
+                    <td class="tg-tizx">Rishi Johari/Julian Ortiz</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">2AM (03/15)</td>
+                    <td class="tg-tizx">3PM</td>
+                    <td class="tg-tizx">8:30PM</td>
+                    <td class="tg-tizx">4PM</td>
+                    <td class="tg-tizx">11AM</td>
+
+
+                </tr>
+
+                <tr>
+                    <td class="tg-tizx">Interactive Gaming from GPU Containers over WebRTC</td>
+                    <td class="tg-tizx abstractText" style="display: none">Unreal Engine is one of the more popular game
+                        development engines on the market. With a module called Pixel Streaming, and recently added
+                        support for Linux containers, come see how it is possible to deploy this in standard Kubernetes
+                        systems like Oracle Container Engine for Kubernetes (OKE)!</td>
+                    <td class="tg-tizx">Matthew Vander Vilet</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">3AM</td>
+                    <td class="tg-tizx">4PM</td>
+                    <td class="tg-tizx">9:30PM</td>
+                    <td class="tg-tizx">5PM</td>
+                    <td class="tg-tizx">12PM</td>
+
+
+                </tr>
+
+                <tr>
+                    <td class="tg-tizx">Demonstration of Efficient Computer Vision and Natural Language Processing on
+                        Ampere
+                        A1 Compute Instance </td>
+                    <td class="tg-tizx abstractText" style="display: none">In this webinar we will showcase the most
+                        effective ways to deploy Computer Vision and NLP AI models on OCI Ampere A1 Compute Instances.
+                        The DEMOnstration will include an out-of-the-box deployment of standard AI frameworks like
+                        TensorFlow and PyTorch, as well as a walk through the capabilities of AI VMs for OCI Ampere A1
+                        Shapes.
+
+                    </td>
+                    <td class="tg-tizx">Victor Jakubiuk (Ampere), Ashu Jaiswal (Oracle)</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">4AM (03/15)</td>
+                    <td class="tg-tizx">5PM</td>
+                    <td class="tg-tizx">10:30PM</td>
+                    <td class="tg-tizx">6PM</td>
+                    <td class="tg-tizx">1PM</td>
+
+
+                </tr>
+
+                <tr>
+                    <td class="tg-tizx">From IOT To HeatWave Analytics</td>
+                    <td class="tg-tizx abstractText" style="display: none">HeatWave is a massively parallel, high
+                        performance, in-memory query accelerator for Oracle MySQL Database Service that accelerates
+                        MySQL performance by orders of magnitude for analytics and mixed workloads. But how do you
+                        collect data from an Internet of Things Environment so you can use HeatWave to process it? In
+                        one hour you will see how data collected by a Raspberry PI or other Internet of Things device
+                        can be uploaded to the MySQL Database Service and then processed by HeatWave.</td>
+                    <td class="tg-tizx">David Stokes</td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">5AM (03/15)</td>
+                    <td class="tg-tizx">6PM</td>
+                    <td class="tg-tizx">11:30PM</td>
+                    <td class="tg-tizx">7PM</td>
+                    <td class="tg-tizx">2PM</td>
+
+
+                </tr>
+
+                <tr>
+                    <td class="tg-tizx">Going beyond a Raspberry Pi – Kubernetes & Arm in the cloud</td>
+                    <td class="tg-tizx abstractText" style="display: none">This workshop walks the user through creating
+                        an Arm based Kubernetes cluster, powered by the Ampere A1 compute platform in Oracle Cloud
+                        Infrastructure(OCI). You will also deploy applications on to the Kubernetes cluster. Using the
+                        methods in this workshop, you can create application deployments that are seamlessly portable
+                        between the Arm based Kubernetes clusters and x86(Intel and AMD) based clusters. </td>
+                    <td class="tg-tizx">Jeevan Joseph </td>
+                    <td class="tg-tizx">1 hour</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">5AM (03/15)</td>
+                    <td class="tg-tizx">6PM</td>
+                    <td class="tg-tizx">11:30PM</td>
+                    <td class="tg-tizx">7PM</td>
+                    <td class="tg-tizx">2PM</td>
+
+
+                </tr>
+
+                <tr>
+                    <td class="tg-tizx">Sports Analytics: Learn how to access and analyze the data for your favorite NBA
+                        team</td>
+                    <td class="tg-tizx abstractText" style="display: none">APIs are used to access data now more than
+                        ever. Whether you’re an NBA sports fanatic or not, you will deepen your developer skills to
+                        analyze and consume data. In this lab you will analyze two- and three-point shots taken and see
+                        if teams win more games using a short or long game strategy.
+
+                        Join us to learn the fundamentals of how to access a public API using Oracle Data Science (ODS),
+                        move the data to an Autonomous Database (ADB) before analyzing and visualizing it in Oracle
+                        Analytics Cloud (OAC) so you can start integrating more data into your enterprise for analysis.
+                    </td>
+                    <td class="tg-tizx">Carrie Nielsen, Brian Macdonald, Simon Weisser, Aaron Whitman</td>
+                    <td class="tg-tizx">90 minutes</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">6:30AM (03/15)</td>
+                    <td class="tg-tizx">7:30PM</td>
+                    <td class="tg-tizx">1AM (03/15)</td>
+                    <td class="tg-tizx">8:30PM</td>
+                    <td class="tg-tizx">3:30PM</td>
+
+
+                </tr>
+
+                <tr>
+                    <td class="tg-tizx">Accelerated full stack cloud application development — the Oracle way</td>
+                    <td class="tg-tizx abstractText" style="display: none">Graal Cloud Native (GCN) is a full stack
+                        framework for building portable cloud-native applications using the Java ecosystem on top of
+                        managed services in the public cloud. GCN is built on top of the GraalVM native image, the
+                        Micronaut® framework, public cloud SDKs, popular drivers, and a set of open source libraries
+                        tested, certified, and supported by Oracle. Learn how to use GCN to build a React-based App to
+                        call into Oracle Database through a Micronaut-based Restful microservice.</td>
+                    <td class="tg-tizx">Alok Sinha, Burt Beckwith</td>
+                    <td class="tg-tizx">30 minutes</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">8AM (03/15)</td>
+                    <td class="tg-tizx">9PM</td>
+                    <td class="tg-tizx">2:30AM (03/15)</td>
+                    <td class="tg-tizx">10PM</td>
+                    <td class="tg-tizx">5PM</td>
+
+
+                </tr>
+
+                <tr>
+                    <td class="tg-tizx">Cloud Developer Kit (CDK) - An Open Source Project to Enable Java to perform
+                        CRUD on
+                        Cloud Resources</td>
+                    <td class="tg-tizx abstractText" style="display: none">Cloud Developer Kit (CDK) is a preview
+                        release that empowers Java developers write Applications which can perform CRUD operations on
+                        Cloud Resources, right from their Java applications. These CRUD operations can be operated on
+                        any of the publicly available Clouds including Oracle Cloud Infrastructure. We are already able
+                        to CRUD on VM instances on OCI and AWS. Our goal for next six months is to CRUD on Database and
+                        Network (LB, VCN, Subnets, Routing Table etc.).</td>
+                    <td class="tg-tizx">Alok Sinha, Burt Beckwith</td>
+                    <td class="tg-tizx">30 minutes</td>
+                    <td class="tg-tizx">DEMO</td>
+                    <td class="tg-tizx">8:30AM (03/15)</td>
+                    <td class="tg-tizx">9:30PM</td>
+                    <td class="tg-tizx">3AM (03/15)</td>
+                    <td class="tg-tizx">10:30PM</td>
+                    <td class="tg-tizx">5:30PM</td>
+                </tr>
+
+                <tr>
+                    <td class="tg-tizx">Be an AI Wizard: No ML magic required</td>
+                    <td class="tg-tizx abstractText" style="display: none">Learn how to take advantage of AI
+                        capabilities as a developer without needing machine learning expertise. In this lab you will
+                        learn how to use the OCI Vision service to recognize specific objects in images and use that
+                        capability in a sample application. In the lab you’ll also learn how to run object detection on
+                        sample images in the OCI Console, how to label training data, and how to retrain OCI Vision with
+                        your own labeled images.
+                        The participant will sign-up for a new OCI trial account tenancy and uses it to work with OCI
+                        Vision and complete the sample application. Participants can continue to work with their trial
+                        tenancy for up to 30 days.</td>
+                    <td class="tg-tizx">Wes Prichard, Mark Heffernan</td>
+                    <td class="tg-tizx">90 minutes</td>
+                    <td class="tg-tizx">HOL</td>
+                    <td class="tg-tizx">9AM (03/15)</td>
+                    <td class="tg-tizx">10PM</td>
+                    <td class="tg-tizx">3:30AM (03/15)</td>
+                    <td class="tg-tizx">11PM</td>
+                    <td class="tg-tizx">6PM</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
