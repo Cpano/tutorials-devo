@@ -1,0 +1,239 @@
+<!--========================================CALENDAR ICON========================================-->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
+
+<!--========================================HEADER========================================-->
+<!-- CC01v0 -->
+<section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);" class="cc01 cc01v0  txtlight cpad">
+    <div class="cc01w1 cwidth">
+
+        <h2>Modernizing the Healthcare platform with a GraalVM Proof of Value</h2>
+        <p>Imagine a Fortune 5 company, empowering millions of people worldwide with the information, guidance, and
+            tools to make personal health choices, setting out to work on two parallel streams for modernizing their
+            HealthCare platform’s Cloud-Native tech stack.</p>
+
+        <div style="display: flex; color: white;">
+            <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
+                        aria-hidden="true"></i>
+                    Author: </strong>
+                Ali Mukadam
+            </p>
+
+            <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong>
+                <time>November 24, 2021</time>
+            </p>
+
+        </div>
+
+    </div>
+</section>
+<!-- /CC01v0 -->
+
+
+
+<!-- F19v0 -->
+<section class="f19 f19v0 cpad">
+    <div class="f19w1 cwidth">
+        <div class="f19w2 f19-2col">
+            <div class="f19col f19side">
+                <!-- S20v0 -->
+                <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
+                    <div class="s20w1 cwidth">
+                        <div class="col-w1">
+
+                            <h3>About Ali Mukadam</h3>
+
+                            <!--Social Icons-->
+                            <div class="author__urls-wrapper" style="margin-bottom: 15px;">
+                                <ul class="author__urls social-icons">
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/alimukadam/" itemprop="sameAs"
+                                            rel="nofollow noopener noreferrer" target="_blank">
+                                            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span
+                                                class="label">LinkedIn</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div><br><br>
+                            <!-- End Social Icons-->
+                            <p>Technical Director, Asia Pacific Center of Excellence.<br>
+
+                                For the past 16 years, Ali has held technical presales, architect and industry
+                                consulting roles in BEA Systems and Oracle across Asia Pacific, focusing on middleware
+                                and application development. Although he pretends to be Thor, his real areas of
+                                expertise are Application Development, Integration, SOA (Service Oriented Architecture)
+                                and BPM (Business Process Management). An early and worthy Docker and Kubernetes
+                                adopter, Ali also leads a few open source projects (namely terraform-oci-oke) aimed at
+                                facilitating the adoption of Kubernetes and other cloud native technologies on Oracle
+                                Cloud Infrastructure.</p>
+
+                            <p><strong>More tutorials from this author: <br> </strong> <span class="tags">
+                                    <a class="animated-link tag2"
+                                        href="/tutorials/deploying-verrazzano-on-oke">Deploying Verrazzano on Oracle
+                                        Container Engine for Kubernetes (OKE)</a><br>
+
+                                        <a class="animated-link tag2"
+                                        href="/tutorials/deploying-the-argo-project-on-oke">Deploying the Argo CD on
+                                        Oracle Container Engine for Kubernetes (OKE)</a><br>
+
+                                        <a class="animated-link tag2"
+                                        href="/tutorials/calico-with-oke">Installing and using Calico on Oracle Container Engine (OKE)</a><br>
+
+                                </span>
+                            </p>
+
+                            <!--Tags-->
+                            <h3>Tags</h3>
+                            <p> <span class="tags">
+                                    <a class="animated-link tag" href="#">graalvm</a>
+                                    <a class="animated-link tag" href="#">devops</a>
+                                </span>
+                            </p>
+
+                            <h3></h3>
+                            <a href="https://developer.oracle.com/tutorials" '>
+                                <p class="page__date" style="margin-right: 25px;"><strong>
+                                        Back to tutorials 
+                                    </strong>
+                                </p>
+                            </a>
+
+                        </div>
+                    </div>
+                </section>
+                <!-- /S20v0 -->
+            </div>
+            <!-- SET UP -->
+            <main class="f19col f19main">
+                <!-- cc01v0 -->
+
+                <section class="cc01 cc01v0 cpad" id="link1">
+                    <div class="cc01w1 cwidth">
+
+
+                        
+
+                        <picture class="alignright">
+                            <source srcset="https://cool.devo.build/tutorials/assets/modernize-healthcare-ambulance.jpeg 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/assets/modernize-healthcare-ambulance.jpeg" data-original="https://cool.devo.build/tutorials/assets/modernize-healthcare-ambulance.jpeg" data-at2x="https://cool.devo.build/tutorials/assets/modernize-healthcare-ambulance@2x.jpeg" alt="“Stock ambulance visual”" title="“Stock ambulance visual”" />
+                        </picture>
+            
+            <p>Imagine a Fortune 5 company, empowering millions of people worldwide with the information, guidance, and tools to make personal health choices, setting  out to work on two parallel streams for modernizing their HealthCare platform’s Cloud-Native tech stack.</p>
+            
+            <ul>
+              <li>
+                <p><strong>Stream 1</strong>: Existing Microservices comprise Java 8 + Spring + OpenJDK JIT as JRE, to be containerized in a Hybrid Cloud platform.</p>
+              </li>
+              <li>
+                <p><strong>Stream 2</strong>: New Microservices with Kotlin + SpringBoot + OpenJDK 11 / GraalVM JIT, to be containerized in a Public Cloud platform.</p>
+              </li>
+            </ul>
+            
+            <h2 id="tactical-solution--just-in-time-with-stream-1">Tactical Solution — just-in-time with Stream 1:</h2>
+            
+            <ul>
+              <li>Lift and Shift Stream 1 from existing Hotspot JIT to GraalVM JIT</li>
+              <li>Evaluate memory footprint, execution time improvement, and peak throughput with GraalVM</li>
+              <li>Benchmark Stream 1 with GraalVM JIT vs HotSpot JIT on performance heuristics</li>
+              <li>Endurance Testing with business-critical Healthcare API for benchmarking</li>
+            </ul>
+            
+            <h2 id="strategic-solution--ahead-of-time-with-stream-2">Strategic Solution — ahead-of-time with Stream 2:</h2>
+            
+            <ul>
+              <li>Application re-writes are planned and primarily targeted for the Public Cloud Platform</li>
+              <li>Stream 2 tech stack is being considered with GraalVM Enterprise as an option depending on the outcome of Stream 1 benchmarking results</li>
+              <li>Serverless (initial thoughts) has got some excitement for GraalVM’s Native-Image due to memory footprint and cold-startup optimization</li>
+            </ul>
+            
+            <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/assets/modernize-healthcare-api-exchange.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/assets/modernize-healthcare-api-exchange.png" data-original="https://cool.devo.build/tutorials/assets/modernize-healthcare-api-exchange.png" data-at2x="https://cool.devo.build/tutorials/assets/modernize-healthcare-api-exchange@2x.png" alt="“Brand logos for FHIR and Cloud Native Computing Foundation”" title="“Brand logos for FHIR and Cloud Native Computing Foundation”" />
+                        </picture>
+            
+            <h2 id="healthcare-context">Healthcare Context</h2>
+            
+            <p>Interoperable healthcare IT enables clinicians to improve care coordinations and ensure that the information available to view in the healthcare services is part of a practitioners’ workflow.</p>
+            
+            <p>In terms of the technology stack, here are some considerations and goals:</p>
+            
+            <ol>
+              <li>Huge employee base, hundreds of APIs, and countless integrations and external systems</li>
+              <li>Optimize healthcare technology in order to provide a scalable tech infrastructure</li>
+              <li>Eliminate Local Resource Constraints for Building Cloud-Native Applications</li>
+              <li>Implement patterns and practices defined by DevOps and Cloud Centre of Excellence</li>
+            </ol>
+            
+            <h3 id="support-for-open-healthcare-standards">Support for Open Healthcare Standards</h3>
+            
+            <p>HL7 FHIR is a standard for health care data exchange published by HL7 (HL7 and its members provide a framework for the exchange, integration, sharing, and retrieval of electronic health information).</p>
+            
+            <p>The CNCF Cloud Native Computing Foundation serves as the vendor-neutral home for many of the fastest-growing open-source projects</p>
+            
+            <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/assets/modernize-healthcare-hl7r.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/assets/modernize-healthcare-hl7r.png" data-original="https://cool.devo.build/tutorials/assets/modernize-healthcare-hl7r.png" data-at2x="https://cool.devo.build/tutorials/assets/modernize-healthcare-hl7r@2x.png" alt="“HL7 Logo”" title="“HL7 Logo”" />
+                        </picture>
+            
+            <h2 id="research-and-evaluation-proof-of-value">Research and Evaluation Proof of Value</h2>
+            
+            <p>The engineering team identified key Proof-of-Value initiatives to optimize the existing tech stack with GraalVM without code changes, iteratively running performance loads with identified heuristics, benchmark observations, and comparisons. Initial performance load on GraalVM and benchmarking it against conventional JDKs (OpenJDK) for feasibility analysis. This included two rounds for performance evaluation.</p>
+            
+            <p>As a leading healthcare company (Fortune #5), the peak season is typically at the start of the year for all health plans renewables in the US, hence the priority at that time was to support business peak load in tech frozen state for 1–2 months. This resumed towards the end of Q1 2021.</p>
+            
+            <h3 id="graalvm-ee-v21x-on-jdk8">GraalVM EE v21.x on JDK8</h3>
+            
+            <p>Actual load runs on Dev Environment Sandbox.</p>
+            
+            <p>Load Configuration Details:</p>
+            
+            <ul>
+              <li>Concurrency: 100 users</li>
+              <li>Ramp-up: 4 seconds</li>
+              <li>Duration: 4 hours, 14400 seconds</li>
+            </ul>
+            
+            <p>The Clinical API was subjected to a medium spike load as part of the warm-up phase and peak throughput phase.</p>
+            
+            <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/assets/modernize-healthcare-load-test.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/assets/modernize-healthcare-load-test.png" data-original="https://cool.devo.build/tutorials/assets/modernize-healthcare-load-test.png" data-at2x="https://cool.devo.build/tutorials/assets/modernize-healthcare-load-test@2x.png" alt="Load Test Configuration" title="Load Test Configuration" />
+                        </picture>
+            <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/assets/modernize-healthcare-responsetimegraph.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/assets/modernize-healthcare-responsetimegraph.png" data-original="https://cool.devo.build/tutorials/assets/modernize-healthcare-responsetimegraph.png" data-at2x="https://cool.devo.build/tutorials/assets/modernize-healthcare-responsetimegraph@2x.png" alt="Response Time Graph" title="Response Time Graph" />
+                        </picture>
+            <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/assets/modernize-healthcare-summary-report.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/assets/modernize-healthcare-summary-report.png" data-original="https://cool.devo.build/tutorials/assets/modernize-healthcare-summary-report.png" data-at2x="https://cool.devo.build/tutorials/assets/modernize-healthcare-summary-report@2x.png" alt="Summary report of results" title="Summary report of results" />
+                        </picture>
+            
+            <p>The evaluation results are summarized in the table below. GraalVM performed better than Open JDK8 in most of the runs and gets better for longer runs.</p>
+            
+            <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/assets/modernize-healthcare-perform-characteristics.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/assets/modernize-healthcare-perform-characteristics.png" data-original="https://cool.devo.build/tutorials/assets/modernize-healthcare-perform-characteristics.png" data-at2x="https://cool.devo.build/tutorials/assets/modernize-healthcare-perform-characteristics@2x.png" alt="“Performance characteristics of GraalVM Enterprise vs. other runtimes”" title="“Performance characteristics of GraalVM Enterprise vs. other runtimes”" />
+                        </picture>
+            
+            <h2 id="conclusion">Conclusion</h2>
+            
+            <p>This collaboration has been mutually beneficial. Specfically, from learning about the implications of GraalVM in the healthcare domain by optimizing its workflow and improving patient outcomes and experience.</p>
+            
+            <p>To learn more and get started with GraalVM, visit https://www.oracle.com/graalvm</p>
+            
+            <p>Thanks to Pratik Prakash, Senior Member of Engineering at UnitedHealth Group, and Amitpal Singh Dhillon, Regional Director for Oracle Labs in Asia-Pacific &amp; Japan, for their help in writing this blog post.</p>
+            
+            
+                 
+
+
+            </div>
+</section>
+<!-- /CC01v0 -->
+
+</main>
+</div>
+</div>
+</section>
+<!-- /F19v0 -->
