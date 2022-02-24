@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Devo Migration</title>
+</head>
+
+<body>
+    <!--==========================COPY FROM HERE==========================-->
+
+
+
+
+
+    <!--======================================== EXTERNAL STYLES & CALENDAR ICON========================================-->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+
+    <link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
+
+
+    <!--========================================HEADER========================================-->
+    <!-- CC01v0 -->
+    <section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);"
+        class="cc01 cc01v0  txtlight cpad">
+        <div class="cc01w1 cwidth">
+
+            <h2>Deploying and monitoring a Redis cluster to Oracle Container Engine (OKE)</h2>
+            <p>Redis, Prometheus, OKE, oh my!</p>
+
+            <div style="display: flex; color: white;">
+                <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
+                            aria-hidden="true"></i>
+                        Author: </strong>
+                    Ali Mukadam
+                </p>
+
+                <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                        Updated:</strong>
+                    <time>December 15, 2021</time>
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- /CC01v0 -->
+
+    <!-- F19v0 -->
+    <section class="f19 f19v0 cpad">
+        <div class="f19w1 cwidth">
+            <div class="f19w2 f19-2col">
+                <div class="f19col f19side">
+                    <!-- S20v0 -->
+                    <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
+                        <div class="s20w1 cwidth">
+                            <div class="col-w1">
+
+                                <h3>About Ali Mukadam</h3>
+
+                                <!--Social Icons-->
+                                <div class="author__urls-wrapper" style="margin-bottom: 15px;">
+                                    <ul class="author__urls social-icons">
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/alimukadam/" itemprop="sameAs"
+                                                rel="nofollow noopener noreferrer" target="_blank">
+                                                <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span
+                                                    class="label">LinkedIn</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br><br>
+                                <!-- End Social Icons-->
+                                <p>Technical Director, Asia Pacific Center of Excellence.
+
+                                    For the past 16 years, Ali has held technical presales, architect and industry
+                                    consulting roles in BEA Systems and Oracle across Asia Pacific, focusing on
+                                    middleware and application development. Although he pretends to be Thor, his real
+                                    areas of expertise are Application Development, Integration, SOA (Service Oriented
+                                    Architecture) and BPM (Business Process Management). An early and worthy Docker and
+                                    Kubernetes adopter, Ali also leads a few open source projects (namely
+                                    terraform-oci-oke) aimed at facilitating the adoption of Kubernetes and other cloud
+                                    native technologies on Oracle Cloud Infrastructure.</p>
+
+                                <p><strong>More tutorials from this author: <br> </strong>
+                                    <span class="tags">
+
+                                        <li><a class="animated-link tag2"
+                                                href="/tutorials/deploying-verrazzano-on-oke/">Deploying
+                                                Verrazzano on Oracle Container Engine for Kubernetes (OKE)</a></li>
+
+                                        <li><a class="animated-link tag2"
+                                                href="/tutorials/multi-cluster-verrazzano-oke/2-deploy-multi-cluster-verrazzano-oke">Deploying
+                                                A Multi-Cluster Verrazzano On Oracle Container Engine for Kubernetes
+                                                (OKE)
+                                                Part 1</a></li>
+
+                                        <li><a class="animated-link tag2"
+                                                href="/tutorials/multi-cluster-verrazzano-oke/3-deploy-multi-cluster-verrazzano-oke">Deploying
+                                                A Multi-Cluster Verrazzano On Oracle Container Engine for Kubernetes
+                                                (OKE)
+                                                Part 2</a></li>
+
+                                        <li><a class="animated-link tag2" href="/tutorials/calico-with-oke">Installing
+                                                and
+                                                using Calico on Oracle Container Engine (OKE)</a></li>
+
+                                    </span>
+                                </p>
+
+                                <!--Tags-->
+                                <h3>Tags</h3>
+                                <p> <span class=" tags">
+                                        <a class="animated-link tag" href="#">oci</a>
+                                        <a class="animated-link tag" href="#">back-end</a>
+                                    </span>
+                                </p>
+
+                                <h3></h3>
+                                <a href="https://developer.oracle.com/tutorials" '>
+                            <p class="page__date" style="margin-right: 25px;"><strong>
+                                    Back to tutorials 
+                                </strong>
+                            </p>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+            <!-- /S20v0 -->
+        </div>
+        <!-- SET UP -->
+        <main class="f19col f19main">
+            <!-- cc01v0 -->
+
+            <section class="cc01 cc01v0 cpad" id="link1">
+                <div class="cc01w1 cwidth">
+
+                    <p>In this post, we’ll do something more ambitious:</p>
+
+                    <ul>
+                      <li>Deploy a Redis Cluster as in the previous post</li>
+                      <li>Monitor the Redis cluster with Prometheus</li>
+                      <li>Populate the Redis cluster with existing data using Redis Mass Insertion</li>
+                      <li>Visualize the mass insertion process with Grafana</li>
+                    </ul>
+                    
+                    <p>For the sake of convenience, we’ll do a manual deployment of Prometheus and Redis. However, if you are using the terraform-oci-oke module (or any Kubernetes cluster for that matter), you can achieve the same result by using the helm provider as described in the previous post.</p>
+                    
+                    <h2 id="prerequisites">Prerequisites</h2>
+                    
+                    <p>This tutorial requires an account with Oracle Cloud Infrastructure (OCI). If you don’t yet have an OCI account, you can quickly sign up for one today by registering for an <a href="https://www.oracle.com/cloud/free/#always-free?source=:ex:tb::::::WW_FY22_DevRel_DotBuild&SC=:ex:tb::::::WW_FY22_DevRel_DotBuild&pcode=">Oracle Cloud Free Tier</a> account.</p>
+                    
+                    <p>Afterwards, check <a href="https://developer.oracle.com">developer.oracle.com</a> for more developer content.</p>
+                    
+                    <h2 id="deploy-prometheus-operator">Deploy Prometheus Operator</h2>
+                    
+                    <p>Let’s create a namespace for Prometheus:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl create namespace monitoring
+                    </span></code></pre></div></div>
+                    
+                    <p>If you are using the terraform-oci-oke module and have provisioned the bastion host, helm is already installed and pre-configured for you. Just login to the bastion and deploy the Prometheus operator:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm install --namespace monitoring \
+                    stable/prometheus-operator \
+                    --name prom-operator \
+                    --set kubeDns.enabled=true \
+                    --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues=false \
+                    --set coreDns.enabled=false \
+                    --set kubeControllerManager.enabled=false \
+                    --set kubeEtcd.enabled=false \
+                    --set kubeScheduler.enabled=false
+                    </span></code></pre></div></div>
+                    
+                    <p>Setting <code class="language-plaintext highlighter-rouge">serviceMonitorSelectorNilUsesHelmValues</code> to false ensures that all ServiceMonitors will be selected.</p>
+                    
+                    <p>Get a list of pods and identify the Prometheus pods:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl -n monitoring get pods | grep prometheus
+                    alertmanager-prom-operator-prometheus-o-alertmanager-0   2/2     
+                    Running   0          18s                                                        
+                    prom-operator-prometheus-node-exporter-9xhzr             1/1     
+                    Running   0          24s                                                        
+                    prom-operator-prometheus-node-exporter-qtbvv             1/1     
+                    Running   0          24s                                                        
+                    prom-operator-prometheus-node-exporter-wjbfp             1/1     
+                    Running   0          24s                                                        
+                    prom-operator-prometheus-o-operator-79ff98787f-4t4k7     1/1     
+                    Running   0          23s                                                        
+                    prometheus-prom-operator-prometheus-o-prometheus-0       3/3     
+                    Running   1          11s
+                    </span></code></pre></div></div>
+                    
+                    <p>On another terminal, set your local <code class="language-plaintext highlighter-rouge">KUBECONFIG</code> environment variable and run <code class="language-plaintext highlighter-rouge">kubectl port-forward </code>locally to access the Prometheus Expression Browser:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">export KUBECONFIG=generated/kubeconfig
+                    
+                    kubectl -n monitoring port-forward prometheus-prom-operator-
+                    prometheus-o-prometheus-0 9090:9090
+                    </span></code></pre></div></div>
+                    
+                    <p>Open your browser and access the Prometheus Expression Browser to verify the targets at http://localhost:9090/targets</p>
+                    
+                    <picture class="">
+                                    <source srcset="https://cool.devo.build/tutorials/assets/redis-prometheus-targets.png 1x" />
+                                    <img loading="lazy" src="https://cool.devo.build/tutorials/assets/redis-prometheus-targets.png" data-original="https://cool.devo.build/tutorials/assets/redis-prometheus-targets.png" data-at2x="https://cool.devo.build/tutorials/assets/redis-prometheus-targets@2x.png" alt="Prometheus targets" title="Prometheus targets" />
+                                </picture>
+                    
+                    <h3 id="configuring-grafana">Configuring Grafana</h3>
+                    
+                    <p>Next, we want to verify that Grafana has been configured properly and already has Prometheus as a datasource. Get a list of pods and identify the Grafana pods:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl -n monitoring get pods | grep grafanaprom-operator-grafana-77cdf86d94-m8pv5 2/2     Running   0          57s
+                    </span></code></pre></div></div>
+                    
+                    <p>Run kubectl port-forward locally to access Grafana:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl -n monitoring port-forward prom-operator-grafana-77cdf86d94-m8pv5 3000:3000
+                    </span></code></pre></div></div>
+                    
+                    <p>Access Grafana by pointing your browser to http://localhost:3000</p>
+                    
+                    <p>Login with admin/prom-operator (default username and password if you have not changed them). You should be able to see the default Kubernetes dashboards.</p>
+                    
+                    <h2 id="deploy-redis-cluster">Deploy Redis Cluster</h2>
+                    
+                    <p>Create a namespace for redis:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl create namespace redis
+                    </span></code></pre></div></div>
+                    
+                    <p>Use helm to deploy the Redis cluster:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm install --namespace redis \
+                    stable/redis \
+                    --name redis \
+                    --set cluster.enabled=true \
+                    --set cluster.slaveCount=3 \
+                    --set master.persistence.size=50Gi \
+                    --set slave.persistence.size=50Gi \
+                    --set metrics.enabled=true \
+                    --set metrics.serviceMonitor.enabled=true \
+                    --set metrics.serviceMonitor.namespace=monitoring
+                    </span></code></pre></div></div>
+                    
+                    <p>Access the Prometheus Expression Browser again and verify that Redis is now listed as one of the targets:</p>
+                    
+                    <picture class="">
+                                    <source srcset="https://cool.devo.build/tutorials/assets/redis-prometheus-targets-updated.png 1x" />
+                                    <img loading="lazy" src="https://cool.devo.build/tutorials/assets/redis-prometheus-targets-updated.png" data-original="https://cool.devo.build/tutorials/assets/redis-prometheus-targets-updated.png" data-at2x="https://cool.devo.build/tutorials/assets/redis-prometheus-targets-updated@2x.png" alt="Prometheus now with Redis target" title="Prometheus now with Redis target" />
+                                </picture>
+                    
+                    <h2 id="import-redis-dashboard-for-grafana">Import Redis Dashboard for Grafana</h2>
+                    
+                    <p>Login into Grafana again as above and click <strong>+</strong> on the left menu to import a dashboard and enter the dashboard id <code class="language-plaintext highlighter-rouge">2751</code> in the Grafana.com dashboard field:</p>
+                    
+                    <picture class="">
+                                    <source srcset="https://cool.devo.build/tutorials/assets/redis-import-grafana.png 1x" />
+                                    <img loading="lazy" src="https://cool.devo.build/tutorials/assets/redis-import-grafana.png" data-original="https://cool.devo.build/tutorials/assets/redis-import-grafana.png" data-at2x="https://cool.devo.build/tutorials/assets/redis-import-grafana@2x.png" alt="Import screen in Grafana" title="Import screen in Grafana" />
+                                </picture>
+                    
+                    <p>After the dashboard is loaded, select the Prometheus datasource:</p>
+                    
+                    <picture class="">
+                                    <source srcset="https://cool.devo.build/tutorials/assets/redis-grafana-imported.png 1x" />
+                                    <img loading="lazy" src="https://cool.devo.build/tutorials/assets/redis-grafana-imported.png" data-original="https://cool.devo.build/tutorials/assets/redis-grafana-imported.png" data-at2x="https://cool.devo.build/tutorials/assets/redis-grafana-imported@2x.png" alt="Grafana with Prometheus loaded" title="Grafana with Prometheus loaded" />
+                                </picture>
+                    
+                    <p>Click <strong>Import</strong>. You should now have a functioning Redis dashboard in Grafana.</p>
+                    
+                    <picture class="">
+                                    <source srcset="https://cool.devo.build/tutorials/assets/redis-dashboard.png 1x" />
+                                    <img loading="lazy" src="https://cool.devo.build/tutorials/assets/redis-dashboard.png" data-original="https://cool.devo.build/tutorials/assets/redis-dashboard.png" data-at2x="https://cool.devo.build/tutorials/assets/redis-dashboard@2x.png" alt="A functioning Redis dashboard in Grafana" title="A functioning Redis dashboard in Grafana" />
+                                </picture>
+                    
+                    <h3 id="mass-insert-data-into-redis">Mass Insert Data into Redis</h3>
+                    <p>Let’s now do a mass insertion of data into Redis. I found this neat gem to load a csv file into redis.</p>
+                    
+                    <p>Given a csv file of the following format:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">id, first name, age, gender, nickname, salary
+                    1, John Smith, 40, Male, John, 10000
+                    2, Marco Polo, 43, Male, Marco, 10000
+                    ….
+                    1999999, Tom Cruse, 50, Male, Tom, 10001
+                    </span></code></pre></div></div>
+                    
+                    <p>The following command can be used to import that csv file into Redis:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">awk -F, '
+                                    NR &gt;</span><span class="w"> </span>1<span class="o">{</span> print <span
+                                        class="s2">"SET"</span>, <span class="s2">"</span><span
+                                        class="se">\"</span><span class="s2">employee_"</span><span
+                                        class="nv">$1</span><span class="s2">"</span><span class="se">\"</span><span
+                                        class="s2">"</span>, <span class="s2">"</span><span class="se">\"</span><span
+                                        class="s2">"</span><span class="nv">$0</span><span class="s2">"</span><span
+                                        class="se">\"</span><span class="s2">"</span> <span class="o">}</span><span
+                                        class="s1">' file.csv | redis-cli --pipe
+                                    </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>First, we have to generate the dataset. We will be using the mimesis package:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">pip install mimesis
+                    </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>And we will adapt the schema a little bit so we can make use of whatever mimesis provides to
+                            create a csv file using Python:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">import csv
+                    
+                    from mimesis import Person
+                    
+                    from mimesis.enums import Gender
+                    
+                    en = Person('en')
+                    
+                    with open('file.csv',mode='w') as csv_file:
+                    
+                    field_names = ['id', 'full name', 'age', 'gender', 'username', 'weight']
+                    
+                    writer = csv.DictWriter(csv_file, fieldnames=field_names)
+                    
+                    writer.writeheader()
+                    
+                    for n in range(100000):
+                    
+                    writer.writerow({'id': str(n), 'first name': en.full_name(), 'age': 
+                    str(en.age()), 'gender': en.gender(), 'username':en.username(),
+                    'weight':str(en.weight())})
+                    </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Run the Python script to generate the data:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">python names.py
+                    </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>This will create a file.csv in the current directory. You can <a
+                                href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/">configure
+                                a PersistentVolume</a> to store and load the data but for the purpose of this exercise,
+                            we’ll do a quick hack by installing redis in the bastion:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">sudo yum install redis -y
+                    </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>This will allow us to use the redis-cli from the bastion where we have generated/uploaded the
+                            file.csv.</p>
+
+                        <p>On the bastion, get a list of Redis pods:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectl -n redis get pods
+                                                     NAME   READY    STATUS    RESTARTS   AGE                                                                                
+                    redis-master-0                   1/1     Running   0          156m                                                                               
+                    redis-metrics-794db76ff7-xmd2q   1/1     Running   0          156m                                                                               
+                    redis-slave-7fd8b55f7-25w8d      1/1     Running   1          156m                                                                               
+                    redis-slave-7fd8b55f7-hvhmc      1/1     Running   1          156m                                                                               
+                    redis-slave-7fd8b55f7-mjq8q      1/1     Running   1          156m
+                    </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Afterwards, use port-forward to so you can access it using the redis-cli:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">k -n redis port-forward redis-master-0 6379:6379
+                    </span><span class="gp">Forwarding from 127.0.0.1:6379 -&gt;</span><span class="w"> </span>6379
+                    </code></pre>
+                            </div>
+                        </div>
+
+                        <p>Open a new terminal, login into the bastion and obtain the Redis password:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">export REDIS_PASSWORD=$</span><span class="o">(</span>kubectl get secret <span class="nt">--namespace</span> redis redis <span class="nt">-o</span> <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">"{.data.redis-password}"</span> | <span class="nb">base64</span> <span class="nt">--decode</span><span class="o">)</span>
+                    </code></pre>
+                            </div>
+                        </div>
+
+                        <p>Do a quick test to see you can connect to Redis:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">redis-cli -a $</span>REDIS_PASSWORD127.0.0.1:6379&gt; ping                                                                                                                                                        
+                    <span class="go">PONG                                                                                                                                                                        
+                    </span><span class="gp">127.0.0.1:6379&gt;</span><span class="w">
+                    </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Before we import the csv, access Grafana (http://localhost:3000) as described above by
+                            opening a third terminal and running kubectl port-forward locally. Browse to the Redis
+                            Dashboard and set the refresh to every 5 seconds:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectl -n monitoring port-forward prom-operator-grafana-77cdf86d94-m8pv5 3000:3000
+                    </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Now import the csv file as follows:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">awk -F, 'NR &gt;</span><span class="w"> </span>1<span class="o">{</span> print <span class="s2">"SET"</span>, <span class="s2">"</span><span class="se">\"</span><span class="s2">employee_"</span><span class="nv">$1</span><span class="s2">"</span><span class="se">\"</span><span class="s2">"</span>, <span class="s2">"</span><span class="se">\"</span><span class="s2">"</span><span class="nv">$0</span><span class="s2">"</span><span class="se">\"</span><span class="s2">"</span> <span class="o">}</span><span class="s1">' file.csv | redis-cli -a $REDIS_PASSWORD --pipe
+                    </span><span class="go">
+                    All data transferred. Waiting for the last reply...                                                                                      
+                    Last reply received from server.
+                         
+                    errors: 0, replies: 1000000
+                    </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>You may want to watch the Redis dashboard in Grafana. You can see the immediate jump in
+                            Network IO, the number of items in the DB as well as the amount of memory used.</p>
+
+                        <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/assets/redis-dashboard-after-insertion.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/assets/redis-dashboard-after-insertion.png"
+                                data-original="https://cool.devo.build/tutorials/assets/redis-dashboard-after-insertion.png"
+                                data-at2x="https://cool.devo.build/tutorials/assets/redis-dashboard-after-insertion@2x.png"
+                                alt="Redis Dashboard after mass insertion"
+                                title="Redis Dashboard after mass insertion" />
+                        </picture>
+
+                        <p>While we installed the Prometheus Operator and Redis Cluster manually using the cli, you can
+                            also achieve that using the Terraform helm provider. As you are enabling monitoring on
+                            Redis, you need to ensure the relevant CRDs are created. When you are doing that manually
+                            and in the order above, this is done for you.</p>
+
+                        <p>However, when you use Terraform to do the provisioning, you will need to explicitly set the
+                            order as follows:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">resource "helm_release" "prometheus-operator" {
+                    </span><span class="c">      ...
+                          ...
+                          ...
+                    </span><span class="go">  }
+                      
+                      resource "helm_release" "redis" {  
+                    
+                        depends_on = ["helm_release.prometheus-operator"]
+                    </span><span class="c">      ...
+                          ...
+                          ...
+                    </span><span class="go">  }
+                    </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>After performing these steps, you’ll have ensured that the prometheus-operator release is
+                            created first along with the necessary CRDs that the redis release will need (like
+                            Alertmanager, Prometheus, PrometheusRule, ServiceMonitor) for Prometheus to be able to
+                            monitor the Redis cluster.</p>
+                </div>
+    </section>
+    <!-- /CC01v0 -->
+
+    </main>
+    </div>
+    </div>
+    </section>
+    <!-- /F19v0 -->
+
+
+
+
+    <!--==========================STOP COPING==========================-->
+</body>
+
+</html>
