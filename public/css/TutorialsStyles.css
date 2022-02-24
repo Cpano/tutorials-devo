@@ -205,6 +205,11 @@ figure.highlight pre.highlight {
   color: #82aaff;
 }
 
+.highlight .gp {
+  color: #b2ccd6;
+  font-weight: bold;
+}
+
 /* ================== PICTURES ================== */
 
 picture {
