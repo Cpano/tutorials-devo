@@ -245,3 +245,53 @@ img {
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
+
+
+
+/* ================== TABLES ================== */
+table {
+  display: block;
+  margin-bottom: 1em;
+  width: 100%;
+  font-family: "Oracle Sans", "Noto Sans Hebrew", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.75em;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+p, pre, blockquote, ul, ol, dl, figure, table, fieldset {
+  orphans: 3;
+  widows: 3;
+}
+
+thead {
+  background-color: #f2f3f3;
+  border-bottom: 2px solid #b6b6b6;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+tr, td, th {
+  vertical-align: middle;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+th {
+  padding: 0.5em;
+  font-weight: bold;
+  text-align: left;
+}
+
+td {
+  padding: 0.5em;
+  border-bottom: 1px solid #b6b6b6;
+}
