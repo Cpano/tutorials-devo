@@ -203,6 +203,10 @@ figure.highlight pre.highlight {
   color: #f78c6c;
 }
 
+.highlight .mf {
+  color: #f78c6c;
+}
+
 .highlight .nx {
   color: #82aaff;
 }
