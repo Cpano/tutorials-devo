@@ -314,3 +314,28 @@ td {
   padding: 0.5em;
   border-bottom: 1px solid #b6b6b6;
 }
+
+/* ================== NOTES ================== */
+blockquote.notice {
+  background: #8fe3ff;
+}
+
+.notice {
+  margin: 2em 0 !important;
+  padding: 1em;
+  color: #3d4144;
+  font-family: "Oracle Sans", "Noto Sans Hebrew", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.75em !important;
+  text-indent: initial;
+  background-color: #f2f3f3;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgb(189 193 196 / 25%);
+}
+
+.notice p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.page__content p {
+  margin: 0 0 1.3em;
+}
