@@ -101,9 +101,9 @@
                             </p>
 
                             <h3></h3>
-                            <a href="https://developer.oracle.com/tutorials" '>
+                            <a href="https://developer.oracle.com/tutorials">
                                 <p class="page__date" style="margin-right: 25px;"><strong>
-                                        Back to tutorials 
+                                        Back to tutorials
                                     </strong>
                                 </p>
                             </a>
@@ -123,30 +123,53 @@
                         <h2>Welcome!</h2>
 
                         <picture class="alignright">
-                            <source srcset="https://cool.devo.build/tutorials/assets/argo-icon-color-800.png 1x, https://cool.devo.build/tutorials/assets/argo-icon-color-800@2x.png 2x" />
-                            <img loading="lazy" width="400" height="400" src="https://cool.devo.build/tutorials/assets/argo-icon-color-800.png" data-original="https://cool.devo.build/tutorials/assets/argo-icon-color-800.png" data-at2x="https://cool.devo.build/tutorials/assets/argo-icon-color-800@2x.png" alt="ARGO Logo" title="ARGO Logo" />
+                            <source
+                                srcset="https://cool.devo.build/tutorials/assets/argo-icon-color-800.png 1x, https://cool.devo.build/tutorials/assets/argo-icon-color-800@2x.png 2x" />
+                            <img loading="lazy" width="400" height="400"
+                                src="https://cool.devo.build/tutorials/assets/argo-icon-color-800.png"
+                                data-original="https://cool.devo.build/tutorials/assets/argo-icon-color-800.png"
+                                data-at2x="https://cool.devo.build/tutorials/assets/argo-icon-color-800@2x.png"
+                                alt="ARGO Logo" title="ARGO Logo" />
                         </picture>
 
-<p>I was quite thrilled to learn that the <a href="https://argoproj.github.io/">Argo Project</a> was <a href="https://www.cncf.io/blog/2020/04/07/toc-welcomes-argo-into-the-cncf-incubator/">accepted as incubator-level</a> project in CNCF’s stack.</p>
+                        <p>I was quite thrilled to learn that the <a href="https://argoproj.github.io/">Argo Project</a>
+                            was <a
+                                href="https://www.cncf.io/blog/2020/04/07/toc-welcomes-argo-into-the-cncf-incubator/">accepted
+                                as incubator-level</a> project in CNCF’s stack.</p>
 
-<p>As a brief introduction, the Argo Project has 4 main components:</p>
+                        <p>As a brief introduction, the Argo Project has 4 main components:</p>
 
-<ul>
-  <li><a href="https://argoproj.github.io/projects/argo/">Argo Workflows</a>: a native workflow engine to orchestrate parallel jobs on Kubernetes</li>
-  <li><a href="https://argoproj.github.io/projects/argo-cd/">Argo CD</a>: a declarative, GitOps continuous delivery tool for Kubernetes</li>
-  <li><a href="https://argoproj.github.io/argo-rollouts/">Argo Rollouts</a>: provides additional deployment strategies such as Blue-Green and Canary to Kubernetes</li>
-  <li><a href="https://argoproj.github.io/projects/argo-events/">Argo Events</a>: provides an event-based dependency manager for Kubernetes</li>
-</ul>
+                        <ul>
+                            <li><a href="https://argoproj.github.io/projects/argo/">Argo Workflows</a>: a native
+                                workflow engine to orchestrate parallel jobs on Kubernetes</li>
+                            <li><a href="https://argoproj.github.io/projects/argo-cd/">Argo CD</a>: a declarative,
+                                GitOps continuous delivery tool for Kubernetes</li>
+                            <li><a href="https://argoproj.github.io/argo-rollouts/">Argo Rollouts</a>: provides
+                                additional deployment strategies such as Blue-Green and Canary to Kubernetes</li>
+                            <li><a href="https://argoproj.github.io/projects/argo-events/">Argo Events</a>: provides an
+                                event-based dependency manager for Kubernetes</li>
+                        </ul>
 
-<p>So without wasting any time, let’s take Argo CD for a spin and <a href="https://www.youtube.com/watch?v=R8OWNspU_yE">I’ll be your Huckleberry</a>.</p>
+                        <p>So without wasting any time, let’s take Argo CD for a spin and <a
+                                href="https://www.youtube.com/watch?v=R8OWNspU_yE">I’ll be your Huckleberry</a>.</p>
 
-<h2 id="creating-a-test-oke-cluster-for-argo">Creating a test OKE cluster for Argo</h2>
+                        <h2 id="creating-a-test-oke-cluster-for-argo">Creating a test OKE cluster for Argo</h2>
 
-<p>Clone the <a href="https://github.com/oracle-terraform-modules/terraform-oci-oke/blob/master/docs/quickstart.adoc#provisioning-using-this-git-repo">terraform-oci-oke repo</a> or <a href="https://github.com/oracle-terraform-modules/terraform-oci-oke/blob/master/docs/quickstart.adoc#provisioning-using-the-hashicorp-registry-module">use the published terraform OKE module </a> on the <a href="https://registry.terraform.io/modules/oracle-terraform-modules/oke/oci/latest">Terraform registry</a> to create an OKE Cluster. You can also use <a href="https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingclusterusingoke.htm#create-quick-cluster?source=:ex:tb:::::WWMK211125P00029:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00029:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00029">the Quick Create </a> feature to create your cluster if you don’t want to use terraform.</p>
+                        <p>Clone the <a
+                                href="https://github.com/oracle-terraform-modules/terraform-oci-oke/blob/master/docs/quickstart.adoc#provisioning-using-this-git-repo">terraform-oci-oke
+                                repo</a> or <a
+                                href="https://github.com/oracle-terraform-modules/terraform-oci-oke/blob/master/docs/quickstart.adoc#provisioning-using-the-hashicorp-registry-module">use
+                                the published terraform OKE module </a> on the <a
+                                href="https://registry.terraform.io/modules/oracle-terraform-modules/oke/oci/latest">Terraform
+                                registry</a> to create an OKE Cluster. You can also use <a
+                                href="https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingclusterusingoke.htm#create-quick-cluster?source=:ex:tb:::::WWMK211125P00029:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00029:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00029">the
+                                Quick Create </a> feature to create your cluster if you don’t want to use terraform.</p>
 
-<p>Ensure you use the following parameters in your terraform.tfvars:</p>
+                        <p>Ensure you use the following parameters in your terraform.tfvars:</p>
 
-<div class="language-tf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">label_prefix</span> <span class="err">=</span> <span class="s2">"argo"</span>
+                        <div class="language-tf highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="nx">label_prefix</span> <span class="err">=</span> <span class="s2">"argo"</span>
 <span class="nx">region</span> <span class="err">=</span> <span class="s2">"us-phoenix-1"</span>
 
 <span class="nx">vcn_dns_label</span> <span class="err">=</span> <span class="s2">"oke"</span>
@@ -161,177 +184,221 @@
 <span class="nx">node_pools</span> <span class="err">=</span> <span class="p">{</span>
   <span class="nx">np1</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">shape</span> <span class="p">=</span> <span class="s2">"VM.Standard.E4.Flex"</span><span class="p">,</span> <span class="nx">ocpus</span> <span class="p">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">memory</span> <span class="p">=</span> <span class="mi">16</span><span class="p">,</span> <span class="nx">node_pool_size</span> <span class="p">=</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">boot_volume_size</span> <span class="p">=</span> <span class="mi">150</span> <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                            </div>
+                        </div>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>terraform init  
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>terraform init  
 <span class="gp">$</span><span class="w"> </span>terraform apply <span class="nt">-auto-approve</span>
-</code></pre></div></div>
+</code></pre>
+                            </div>
+                        </div>
 
-<p>Once Terraform has finished, ssh to the operator by copying the ssh command from the output e.g. :</p>
+                        <p>Once Terraform has finished, ssh to the operator by copying the ssh command from the output
+                            e.g. :</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ssh <span class="nt">-i</span> ~/.ssh/id_rsa <span class="nt">-J</span> opc@XXX.XXX.XXX.XXX opc@10.0.1.10
-</code></pre></div></div>
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ssh <span class="nt">-i</span> ~/.ssh/id_rsa <span class="nt">-J</span> opc@XXX.XXX.XXX.XXX opc@10.0.1.10
+</code></pre>
+                            </div>
+                        </div>
 
-<h2 id="argo-cd">Argo CD</h2>
+                        <h2 id="argo-cd">Argo CD</h2>
 
-<p><a href="https://argoproj.github.io/projects/argo-cd/">Argo CD</a> is a declarative, GitOps continuous delivery tool for Kubernetes. This says a lot without being too wordy. When you look at the user guide and features, this brief description probably undersells Argo CD.</p>
+                        <p><a href="https://argoproj.github.io/projects/argo-cd/">Argo CD</a> is a declarative, GitOps
+                            continuous delivery tool for Kubernetes. This says a lot without being too wordy. When you
+                            look at the user guide and features, this brief description probably undersells Argo CD.</p>
 
-<p>Let’s follow Argo CD’s <a href="https://argoproj.github.io/argo-cd/getting_started/">getting started guide</a>:</p>
+                        <p>Let’s follow Argo CD’s <a href="https://argoproj.github.io/argo-cd/getting_started/">getting
+                                started guide</a>:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create namespace argocd
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-</code></pre></div></div>
+</code></pre>
+                            </div>
+                        </div>
 
-<p>Download and install the Argo CD cli:</p>
+                        <p>Download and install the Argo CD cli:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>curl <span class="nt">-sLO</span> https://github.com/argoproj/argo-cd/releases/download/v2.1.3/argocd-linux-amd64
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>curl <span class="nt">-sLO</span> https://github.com/argoproj/argo-cd/releases/download/v2.1.3/argocd-linux-amd64
 <span class="gp">$</span><span class="w"> </span><span class="nb">chmod</span> +x argocd-linux-amd64
 <span class="gp">$</span><span class="w"> </span><span class="nb">sudo mv </span>argocd-linux-amd64 /usr/local/bin/argocd
-</code></pre></div></div>
+</code></pre>
+                            </div>
+                        </div>
 
-<p>Let’s use port-forwarding to access the UI. First, we establish an SSH tunnel to operator:</p>
+                        <p>Let’s use port-forwarding to access the UI. First, we establish an SSH tunnel to operator:
+                        </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -L 8080:localhost:8080 -i ~/.ssh/id_rsa -J opc@&lt;bastion_public_ip&gt; opc@&lt;operator_private_ip&gt;
-</code></pre></div></div>
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>ssh -L 8080:localhost:8080 -i ~/.ssh/id_rsa -J opc@&lt;bastion_public_ip&gt; opc@&lt;operator_private_ip&gt;
+</code></pre>
+                            </div>
+                        </div>
 
-<p>Then we port-forward to the ArgoCD service:</p>
+                        <p>Then we port-forward to the ArgoCD service:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443
-</code></pre></div></div>
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443
+</code></pre>
+                            </div>
+                        </div>
 
-<p>We can now access the ArgoCD UI in our browser at https://localhost:8080/</p>
+                        <p>We can now access the ArgoCD UI in our browser at https://localhost:8080/</p>
 
-<p>Or we can change the service type to Load Balancer and use the IP Address of the Load Balancer to access the UI:</p>
+                        <p>Or we can change the service type to Load Balancer and use the IP Address of the Load
+                            Balancer to access the UI:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>kubectl patch svc argocd-server <span class="nt">-n</span> argocd <span class="nt">-p</span> <span class="s1">'
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>kubectl patch svc argocd-server <span class="nt">-n</span> argocd <span class="nt">-p</span> <span class="s1">'
                                 {"spec": {"type": "LoadBalancer" }}'</span>
                                 </code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>We will be warned of a potential security risk. That’s because we didn’t install certificates
-                        etc. We can do that later by using <a href="https://letsencrypt.org/">Let’s Encrypt</a> and <a
-                            href="https://cert-manager.io/">cert-manager</a> and then use this together with an <a
-                            href="https://medium.com/oracledevs/experimenting-with-ingress-controllers-on-oracle-container-engine-oke-part-1-5af51e6cdb85">Ingress
-                            Controller</a> like the <a href="https://kubernetes.github.io/ingress-nginx/">NGINX Ingress
-                            Controller</a>. Make sure you read Argo’s <a
-                            href="https://argoproj.github.io/argo-cd/operator-manual/ingress/">documentation on using
-                            Ingress</a>. But we are in a hurry, so we’ll just skip these and click ‘Advanced’ &gt;
-                        ‘Accept the Risk and Continue’.</p>
+                        <p>We will be warned of a potential security risk. That’s because we didn’t install certificates
+                            etc. We can do that later by using <a href="https://letsencrypt.org/">Let’s Encrypt</a> and
+                            <a href="https://cert-manager.io/">cert-manager</a> and then use this together with an <a
+                                href="https://medium.com/oracledevs/experimenting-with-ingress-controllers-on-oracle-container-engine-oke-part-1-5af51e6cdb85">Ingress
+                                Controller</a> like the <a href="https://kubernetes.github.io/ingress-nginx/">NGINX
+                                Ingress
+                                Controller</a>. Make sure you read Argo’s <a
+                                href="https://argoproj.github.io/argo-cd/operator-manual/ingress/">documentation on
+                                using
+                                Ingress</a>. But we are in a hurry, so we’ll just skip these and click ‘Advanced’ &gt;
+                            ‘Accept the Risk and Continue’.</p>
 
-                    <p>The ArgoCD login page will appear and we need the password:</p>
+                        <p>The ArgoCD login page will appear and we need the password:</p>
 
-                    <div class="language-plaintext highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code>kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 </code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>Login with username <code class="language-plaintext highlighter-rouge">admin</code> and the
-                        password above.</p>
+                        <p>Login with username <code class="language-plaintext highlighter-rouge">admin</code> and the
+                            password above.</p>
 
-                    <p>Since we didn’t add the certificate, we’ll be warned of potential security risks ahead. To solve
-                        this, we can add a certificate using Again, we’re in a bit of a hurry, so we’ll just skip these
-                        and click ‘Accept the Risk and Continue’.</p>
+                        <p>Since we didn’t add the certificate, we’ll be warned of potential security risks ahead. To
+                            solve
+                            this, we can add a certificate using Again, we’re in a bit of a hurry, so we’ll just skip
+                            these
+                            and click ‘Accept the Risk and Continue’.</p>
 
-                    <p>We’ll now be redirected to Argo CD login page. Let’s retrieve the generated password:</p>
+                        <p>We’ll now be redirected to Argo CD login page. Let’s retrieve the generated password:</p>
 
-                    <div class="language-console highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>kubectl get pods <span class="nt">-n</span> argocd <span class="nt">-l</span> app.kubernetes.io/name<span class="o">=</span>argocd-server <span class="nt">-o</span> name | <span class="nb">cut</span> <span class="nt">-d</span><span class="s1">'/'</span> <span class="nt">-f</span> 2
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>kubectl get pods <span class="nt">-n</span> argocd <span class="nt">-l</span> app.kubernetes.io/name<span class="o">=</span>argocd-server <span class="nt">-o</span> name | <span class="nb">cut</span> <span class="nt">-d</span><span class="s1">'/'</span> <span class="nt">-f</span> 2
 </code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>and login with username admin and the retrieved password.</p>
+                        <p>and login with username admin and the retrieved password.</p>
 
-                    <picture class="aligncenter">
-                        <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-login-1024.jpg 1x" />
-                        <img loading="lazy" width="1024" height="557"
-                            src="https://cool.devo.build/tutorials/assets/argo-oke-login-1024.jpg"
-                            data-original="https://cool.devo.build/tutorials/assets/argo-oke-login-1024.jpg"
-                            data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-login-1024@2x.jpg"
-                            alt="Argo Login Screen" title="Argo Login Screen" />
-                    </picture>
+                        <picture class="aligncenter">
+                            <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-login-1024.jpg 1x" />
+                            <img loading="lazy" width="1024" height="557"
+                                src="https://cool.devo.build/tutorials/assets/argo-oke-login-1024.jpg"
+                                data-original="https://cool.devo.build/tutorials/assets/argo-oke-login-1024.jpg"
+                                data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-login-1024@2x.jpg"
+                                alt="Argo Login Screen" title="Argo Login Screen" />
+                        </picture>
 
-                    <p>Follow the rest of the instructions in <a
-                            href="https://argoproj.github.io/argo-cd/getting_started/#creating-apps-via-ui">creating
-                            apps via UI</a>. Once the application is created, click on ‘Sync’ and watch the application
-                        being deployed as Kubernetes works its way to creating the various resources (deployment,
-                        service, ReplicaSet, pods, etc).</p>
+                        <p>Follow the rest of the instructions in <a
+                                href="https://argoproj.github.io/argo-cd/getting_started/#creating-apps-via-ui">creating
+                                apps via UI</a>. Once the application is created, click on ‘Sync’ and watch the
+                            application
+                            being deployed as Kubernetes works its way to creating the various resources (deployment,
+                            service, ReplicaSet, pods, etc).</p>
 
-                    <picture class="aligncenter">
-                        <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-ui.png 1x" />
-                        <img loading="lazy" width="1024" height="557"
-                            src="https://cool.devo.build/tutorials/assets/argo-oke-ui.png"
-                            data-original="https://cool.devo.build/tutorials/assets/argo-oke-ui.png"
-                            data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-ui@2x.png" alt="Argo CD Screen"
-                            title="Argo CD Screen" />
-                    </picture>
+                        <picture class="aligncenter">
+                            <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-ui.png 1x" />
+                            <img loading="lazy" width="1024" height="557"
+                                src="https://cool.devo.build/tutorials/assets/argo-oke-ui.png"
+                                data-original="https://cool.devo.build/tutorials/assets/argo-oke-ui.png"
+                                data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-ui@2x.png"
+                                alt="Argo CD Screen" title="Argo CD Screen" />
+                        </picture>
 
-                    <p>Once the application is deployed, take a moment to poke around the Argo UI and the Kubernetes
-                        resources. Select the guestbook-ui service and click ‘Edit’. Change the service type from
-                        ClusterIP to LoadBalancer and then save. Once the OCI Load Balancer is provisioned, its public
-                        IP address appears. Awesome stuff. I pinch myself and make a quick check on OCI Console to
-                        verify the Load Balancer IP just to ensure I’m not imagining this. Nope, I’m not.</p>
+                        <p>Once the application is deployed, take a moment to poke around the Argo UI and the Kubernetes
+                            resources. Select the guestbook-ui service and click ‘Edit’. Change the service type from
+                            ClusterIP to LoadBalancer and then save. Once the OCI Load Balancer is provisioned, its
+                            public
+                            IP address appears. Awesome stuff. I pinch myself and make a quick check on OCI Console to
+                            verify the Load Balancer IP just to ensure I’m not imagining this. Nope, I’m not.</p>
 
-                    <p>From here, you can experiment with other applications such as the sock-shop or using other tools
-                        such as <a href="https://helm.sh/">helm </a>or <a href="https://kustomize.io/">kustomize</a>.
-                        You can find more examples in this <a
-                            href="https://github.com/argoproj/argocd-example-apps">example apps repo</a>.</p>
+                        <p>From here, you can experiment with other applications such as the sock-shop or using other
+                            tools
+                            such as <a href="https://helm.sh/">helm </a>or <a
+                                href="https://kustomize.io/">kustomize</a>.
+                            You can find more examples in this <a
+                                href="https://github.com/argoproj/argocd-example-apps">example apps repo</a>.</p>
 
-                    <h2 id="argo-rollouts">Argo Rollouts</h2>
+                        <h2 id="argo-rollouts">Argo Rollouts</h2>
 
-                    <p>Argo Rollouts provides additional deployment strategies such as Blue-Green and Canary to
-                        Kubernetes. Let’s dive right into it and follow Rollouts’ <a
-                            href="https://argoproj.github.io/argo-rollouts/getting-started/">getting started guide</a>
-                        to do a blue-green deployment:</p>
+                        <p>Argo Rollouts provides additional deployment strategies such as Blue-Green and Canary to
+                            Kubernetes. Let’s dive right into it and follow Rollouts’ <a
+                                href="https://argoproj.github.io/argo-rollouts/getting-started/">getting started
+                                guide</a>
+                            to do a blue-green deployment:</p>
 
-                    <div class="language-console highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code><span class="go">kubectl create namespace argo-rollouts
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectl create namespace argo-rollouts
 kubectl apply -n argo-rollouts -f https://github.com/argoproj/argo-rollouts/releases/latest/download/install.yaml
 </span></code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>Let’s first install the Argo Rollouts kubectl plugin:</p>
+                        <p>Let’s first install the Argo Rollouts kubectl plugin:</p>
 
-                    <div class="language-plaintext highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code>curl -LO  https://github.com/argoproj/argo-rollouts/releases/download/v1.0.7/kubectl-argo-rollouts-linux-amd64
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>curl -LO  https://github.com/argoproj/argo-rollouts/releases/download/v1.0.7/kubectl-argo-rollouts-linux-amd64
 chmod +x kubectl-argo-rollouts-linux-amd64
 sudo mv kubectl-argo-rollouts-linux-amd64 /usr/local/bin/kubectl-argo-rollouts
 </code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>Let’s test the plugin:</p>
+                        <p>Let’s test the plugin:</p>
 
-                    <div class="language-plaintext highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code> kubectl argo rollouts version
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code> kubectl argo rollouts version
 </code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>Switching from the default Kubernetes <a
-                            href="https://argoproj.github.io/argo-rollouts/getting-started/#converting-deployment-to-rollout">Deployment
-                            to Rollout</a> is very easy:</p>
+                        <p>Switching from the default Kubernetes <a
+                                href="https://argoproj.github.io/argo-rollouts/getting-started/#converting-deployment-to-rollout">Deployment
+                                to Rollout</a> is very easy:</p>
 
-                    <ol>
-                        <li>Change the apiVersion from apps/v1 to argoproj.io/v1alpha1</li>
-                        <li>Change the kind from Deployment to Rollout</li>
-                        <li>Add a deployment strategy to the Rollout object</li>
-                    </ol>
+                        <ol>
+                            <li>Change the apiVersion from apps/v1 to argoproj.io/v1alpha1</li>
+                            <li>Change the kind from Deployment to Rollout</li>
+                            <li>Add a deployment strategy to the Rollout object</li>
+                        </ol>
 
-                    <p>Create a bluegreen.yaml file (copied from the Argo CD documentation and example) on the operator
-                        host:</p>
+                        <p>Create a bluegreen.yaml file (copied from the Argo CD documentation and example) on the
+                            operator
+                            host:</p>
 
-                    <div class="language-yaml highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">argoproj.io/v1alpha1</span>
+                        <div class="language-yaml highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">argoproj.io/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">Rollout</span>
 <span class="na">metadata</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s">rollout-bluegreen</span>
@@ -394,43 +461,43 @@ sudo mv kubectl-argo-rollouts-linux-amd64 /usr/local/bin/kubectl-argo-rollouts
     <span class="na">port</span><span class="pi">:</span> <span class="m">80</span>
     <span class="na">targetPort</span><span class="pi">:</span> <span class="m">8080</span>
 </code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>and let’s deploy it:</p>
+                        <p>and let’s deploy it:</p>
 
-                    <div class="language-console highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>kubectl apply <span class="nt">-f</span> bluegreen.yaml
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>kubectl apply <span class="nt">-f</span> bluegreen.yaml
 </code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>Verify that we have 2 pods created:</p>
+                        <p>Verify that we have 2 pods created:</p>
 
-                    <div class="language-console highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code><span class="go">kubectl get pods 
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectl get pods 
 </span></code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>Let’s list the ReplicaSet:</p>
+                        <p>Let’s list the ReplicaSet:</p>
 
-                    <div class="language-plaintext highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code>NAME                                  DESIRED   CURRENT   READY   AGE   CONTAINERS       IMAGES                                       SELECTOR
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>NAME                                  DESIRED   CURRENT   READY   AGE   CONTAINERS       IMAGES                                       SELECTOR
 rollout-bluegreen-6565b74f44          1         1         1       83s   rollouts-demo    argoproj/rollouts-demo:blue                  app=rollout-bluegreen,rollouts-pod-template-hash=6565b74f44
 </code></pre>
+                            </div>
                         </div>
-                    </div>
-                    <p>We can see that the image deployed is of the <code
-                            class="language-plaintext highlighter-rouge">blue</code> variety. Similarly, if get Argo
-                        Rollouts to print thing for us:</p>
+                        <p>We can see that the image deployed is of the <code
+                                class="language-plaintext highlighter-rouge">blue</code> variety. Similarly, if get Argo
+                            Rollouts to print thing for us:</p>
 
-                    <div class="language-plaintext highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code>kubectl argo rollouts get rollout rollout-bluegreen -w
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>kubectl argo rollouts get rollout rollout-bluegreen -w
 
 Name:            rollout-bluegreen
 Namespace:       default
@@ -451,137 +518,143 @@ NAME                                           KIND        STATUS     AGE    INF
       ├──□ rollout-bluegreen-6565b74f44-qps4m  Pod         ✔ Running  19m    ready:1/1
       └──□ rollout-bluegreen-6565b74f44-twx2x  Pod         ✔ Running  4m19s  ready:1/1
 </code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>We can also use the Argo Rollouts dashboard to visualize things. If you’re logged in the operator
-                        host, exit and login again:</p>
+                        <p>We can also use the Argo Rollouts dashboard to visualize things. If you’re logged in the
+                            operator
+                            host, exit and login again:</p>
 
-                    <div class="language-plaintext highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code>ssh -L 3100:localhost:3100 -i ~/.ssh/id_rsa -J opc@132.226.28.30 opc@10.0.0.14
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>ssh -L 3100:localhost:3100 -i ~/.ssh/id_rsa -J opc@132.226.28.30 opc@10.0.0.14
 </code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>Then, run the following command to access the dashboard:</p>
+                        <p>Then, run the following command to access the dashboard:</p>
 
-                    <div class="language-plaintext highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code>kubectl argo rollouts dashboard
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>kubectl argo rollouts dashboard
 </code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>And use the browser to access the Rollout dashboards:</p>
+                        <p>And use the browser to access the Rollout dashboards:</p>
 
-                    <picture class="alignright">
-                        <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-dhasboard.png 1x" />
-                        <img loading="lazy" width="400" height="400"
-                            src="https://cool.devo.build/tutorials/assets/argo-oke-dhasboard.png"
-                            data-original="https://cool.devo.build/tutorials/assets/argo-oke-dhasboard.png"
-                            data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-dhasboard@2x.png"
-                            alt="ARGO Rollout Dashboard" title="ARGO Rollout Dashboard" />
-                    </picture>
+                        <picture class="alignright">
+                            <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-dhasboard.png 1x" />
+                            <img loading="lazy" width="400" height="400"
+                                src="https://cool.devo.build/tutorials/assets/argo-oke-dhasboard.png"
+                                data-original="https://cool.devo.build/tutorials/assets/argo-oke-dhasboard.png"
+                                data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-dhasboard@2x.png"
+                                alt="ARGO Rollout Dashboard" title="ARGO Rollout Dashboard" />
+                        </picture>
 
-                    <p>Finally, since we deployed both services as <code
-                            class="language-plaintext highlighter-rouge">type=LoadBalancer</code>, we will have 2 Load
-                        Balancers. You can look up their respective public IP addresses in the OCI console or use
-                        kubectl to look them up in the EXTERNAL-IP column when you run:</p>
+                        <p>Finally, since we deployed both services as <code
+                                class="language-plaintext highlighter-rouge">type=LoadBalancer</code>, we will have 2
+                            Load
+                            Balancers. You can look up their respective public IP addresses in the OCI console or use
+                            kubectl to look them up in the EXTERNAL-IP column when you run:</p>
 
-                    <div class="language-plaintext highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code>kubectl get svc 
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>kubectl get svc 
 </code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>Use you browser to access them:</p>
+                        <p>Use you browser to access them:</p>
 
-                    <picture class="aligncenter">
-                        <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-blue.png 1x" />
-                        <img loading="lazy" width="400" height="400"
-                            src="https://cool.devo.build/tutorials/assets/argo-oke-blue.png"
-                            data-original="https://cool.devo.build/tutorials/assets/argo-oke-blue.png"
-                            data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-blue@2x.png" alt="Blue Rollout"
-                            title="Blue Rollout" />
-                    </picture>
+                        <picture class="aligncenter">
+                            <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-blue.png 1x" />
+                            <img loading="lazy" width="400" height="400"
+                                src="https://cool.devo.build/tutorials/assets/argo-oke-blue.png"
+                                data-original="https://cool.devo.build/tutorials/assets/argo-oke-blue.png"
+                                data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-blue@2x.png"
+                                alt="Blue Rollout" title="Blue Rollout" />
+                        </picture>
 
-                    <p>Both the active and preview will be blue.</p>
+                        <p>Both the active and preview will be blue.</p>
 
-                    <p>Let’s now patch to upgrade from blue to green:</p>
+                        <p>Let’s now patch to upgrade from blue to green:</p>
 
-                    <div class="language-plaintext highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code>kubectl patch rollout rollout-bluegreen --type merge -p '{"spec": {"template": { "spec": { "containers": [{"name": "rollouts-demo","image": "argoproj/rollouts-demo:green"}]}}}}'
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>kubectl patch rollout rollout-bluegreen --type merge -p '{"spec": {"template": { "spec": { "containers": [{"name": "rollouts-demo","image": "argoproj/rollouts-demo:green"}]}}}}'
 </code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <p>And we can see effect immediately:</p>
+                        <p>And we can see effect immediately:</p>
 
-                    <picture class="aligncenter">
-                        <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-rollout-patch.png 1x" />
-                        <img loading="lazy" width="600" height="400"
-                            src="https://cool.devo.build/tutorials/assets/argo-oke-rollout-patch.png"
-                            data-original="https://cool.devo.build/tutorials/assets/argo-oke-rollout-patch.png"
-                            data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-rollout-patch@2x.png"
-                            alt="Patch Rollout" title="Patch Rollout" />
-                    </picture>
+                        <picture class="aligncenter">
+                            <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-rollout-patch.png 1x" />
+                            <img loading="lazy" width="600" height="400"
+                                src="https://cool.devo.build/tutorials/assets/argo-oke-rollout-patch.png"
+                                data-original="https://cool.devo.build/tutorials/assets/argo-oke-rollout-patch.png"
+                                data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-rollout-patch@2x.png"
+                                alt="Patch Rollout" title="Patch Rollout" />
+                        </picture>
 
-                    <p>And if we access the preview and active Load Balancers, we’ll see the preview is green and active
-                        is still blue.</p>
+                        <p>And if we access the preview and active Load Balancers, we’ll see the preview is green and
+                            active
+                            is still blue.</p>
 
-                    <picture class="aligncenter">
-                        <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-green.png 1x" />
-                        <img loading="lazy" width="600" height="400"
-                            src="https://cool.devo.build/tutorials/assets/argo-oke-green.png"
-                            data-original="https://cool.devo.build/tutorials/assets/argo-oke-green.png"
-                            data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-green@2x.png"
-                            alt="Patch Rollout" title="Patch Rollout" />
-                    </picture>
+                        <picture class="aligncenter">
+                            <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-green.png 1x" />
+                            <img loading="lazy" width="600" height="400"
+                                src="https://cool.devo.build/tutorials/assets/argo-oke-green.png"
+                                data-original="https://cool.devo.build/tutorials/assets/argo-oke-green.png"
+                                data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-green@2x.png"
+                                alt="Patch Rollout" title="Patch Rollout" />
+                        </picture>
 
-                    <p>Let’s give the rollout a promotion. We can use command line as thus:</p>
+                        <p>Let’s give the rollout a promotion. We can use command line as thus:</p>
 
-                    <div class="language-console highlighter-rouge">
-                        <div class="highlight">
-                            <pre class="highlight"><code><span class="gp">  $</span><span class="w"> </span>kubectl promote rollout-bluegreen
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">  $</span><span class="w"> </span>kubectl promote rollout-bluegreen
 </code></pre>
+                            </div>
                         </div>
+
+                        <p>or if you have Argo Rollouts Dashboard still open, you can use that too.</p>
+
+                        <picture class="aligncenter">
+                            <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-promoted.png 1x" />
+                            <img loading="lazy" width="600" height="400"
+                                src="https://cool.devo.build/tutorials/assets/argo-oke-promoted.png"
+                                data-original="https://cool.devo.build/tutorials/assets/argo-oke-promoted.png"
+                                data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-promoted@2x.png"
+                                alt="Patch Rollout" title="Patch Rollout" />
+                        </picture>
+
+                        <p>If we now access both load balancers, they’ll both show up as green. You can keep switching
+                            between them to simulate upgrading to newer versions of your application.</p>
+
+                        <p>I’ll pause here and leave Argo Events for a future post. For now, I hope this shows you that
+                            if
+                            you were considering running the Argo project on your Kubernetes cluster, OKE will work
+                            quite
+                            nicely with it.</p>
+
+                        <p>N.B. This article was originally posted on
+                            https://medium.com/oracledevs/deploying-the-argo-project-on-oke-ee96cabf8910. It has been
+                            updated to focus on ArgoCD and Rollouts and also to reflect the changes in the
+                            terraform-oci-oke
+                            project.</p>
+
+
+
+
                     </div>
+                </section>
+                <!-- /CC01v0 -->
 
-                    <p>or if you have Argo Rollouts Dashboard still open, you can use that too.</p>
-
-                    <picture class="aligncenter">
-                        <source srcset="https://cool.devo.build/tutorials/assets/argo-oke-promoted.png 1x" />
-                        <img loading="lazy" width="600" height="400"
-                            src="https://cool.devo.build/tutorials/assets/argo-oke-promoted.png"
-                            data-original="https://cool.devo.build/tutorials/assets/argo-oke-promoted.png"
-                            data-at2x="https://cool.devo.build/tutorials/assets/argo-oke-promoted@2x.png"
-                            alt="Patch Rollout" title="Patch Rollout" />
-                    </picture>
-
-                    <p>If we now access both load balancers, they’ll both show up as green. You can keep switching
-                        between them to simulate upgrading to newer versions of your application.</p>
-
-                    <p>I’ll pause here and leave Argo Events for a future post. For now, I hope this shows you that if
-                        you were considering running the Argo project on your Kubernetes cluster, OKE will work quite
-                        nicely with it.</p>
-
-                    <p>N.B. This article was originally posted on
-                        https://medium.com/oracledevs/deploying-the-argo-project-on-oke-ee96cabf8910. It has been
-                        updated to focus on ArgoCD and Rollouts and also to reflect the changes in the terraform-oci-oke
-                        project.</p>
-
-
-
-
-            </div>
-</section>
-<!-- /CC01v0 -->
-
-</main>
-</div>
-</div>
+            </main>
+        </div>
+    </div>
 </section>
 <!-- /F19v0 -->

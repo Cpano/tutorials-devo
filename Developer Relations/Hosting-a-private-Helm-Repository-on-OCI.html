@@ -2,191 +2,248 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cool Devo Migration</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cool Devo Migration</title>
 </head>
 
 <body>
-    <!--==========================COPY FROM HERE==========================-->
+  <!--==========================COPY FROM HERE==========================-->
 
 
 
 
 
-    <!--======================================== EXTERNAL STYLES & CALENDAR ICON========================================-->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
+  <!--======================================== EXTERNAL STYLES & CALENDAR ICON========================================-->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
 
-    <link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
+  <link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
 
 
-    <!--========================================HEADER========================================-->
-    <!-- CC01v0 -->
-    <section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);"
-        class="cc01 cc01v0  txtlight cpad">
-        <div class="cc01w1 cwidth">
+  <!--========================================HEADER========================================-->
+  <!-- CC01v0 -->
+  <section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);"
+    class="cc01 cc01v0  txtlight cpad">
+    <div class="cc01w1 cwidth">
 
-            <h2>Hosting a private Helm Repository on OCI (Oracle Cloud Infrastructure) with ChartMuseum and OCI Object
-                Storage</h2>
-            <p>This guide walks you through how to host Helm Chart privately with ChartMuseum, an open source Helm Chart Repository server with support for various cloud storage backends, including OCI Object Storage.</p>
+      <h2>Hosting a private Helm Repository on OCI (Oracle Cloud Infrastructure) with ChartMuseum and OCI Object
+        Storage</h2>
+      <p>This guide walks you through how to host Helm Chart privately with ChartMuseum, an open source Helm Chart
+        Repository server with support for various cloud storage backends, including OCI Object Storage.</p>
 
-            <div style="display: flex; color: white;">
-                <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
-                            aria-hidden="true"></i>
-                        Author: </strong>
-                    Developer Relations
+      <div style="display: flex; color: white;">
+        <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
+              aria-hidden="true"></i>
+            Author: </strong>
+          Developer Relations
+        </p>
+
+        <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+            Updated:</strong>
+          <time>December 15, 2021</time>
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- /CC01v0 -->
+
+  <!-- F19v0 -->
+  <section class="f19 f19v0 cpad">
+    <div class="f19w1 cwidth">
+      <div class="f19w2 f19-2col">
+        <div class="f19col f19side">
+          <!-- S20v0 -->
+          <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
+            <div class="s20w1 cwidth">
+              <div class="col-w1">
+
+                <!--Tags-->
+                <h3>Tags</h3>
+                <p> <span class=" tags">
+                    <a class="animated-link tag" href="#">open-source</a>
+                    <a class="animated-link tag" href="#">terraform</a>
+                    <a class="animated-link tag" href="#">iac</a>
+                    <a class="animated-link tag" href="#">devops</a>
+                    <a class="animated-link tag" href="#">get-started</a>
+                  </span>
                 </p>
 
-                <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-                        Updated:</strong>
-                    <time>December 15, 2021</time>
-                </p>
+                <h3></h3>
+                <a href="https://developer.oracle.com/tutorials">
+                  <p class="page__date" style="margin-right: 25px;"><strong>
+                      Back to tutorials
+                    </strong>
+                  </p>
+                </a>
 
+              </div>
             </div>
-
-        </div>
-    </section>
-    <!-- /CC01v0 -->
-
-    <!-- F19v0 -->
-    <section class="f19 f19v0 cpad">
-        <div class="f19w1 cwidth">
-            <div class="f19w2 f19-2col">
-                <div class="f19col f19side">
-                    <!-- S20v0 -->
-                    <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
-                        <div class="s20w1 cwidth">
-                            <div class="col-w1">
-
-                                <!--Tags-->
-                                <h3>Tags</h3>
-                                <p> <span class=" tags">
-                                        <a class="animated-link tag" href="#">open-source</a>
-                                        <a class="animated-link tag" href="#">terraform</a>
-                                        <a class="animated-link tag" href="#">iac</a>
-                                        <a class="animated-link tag" href="#">devops</a>
-                                        <a class="animated-link tag" href="#">get-started</a>
-                                    </span>
-                                </p>
-
-                                <h3></h3>
-                                <a href="https://developer.oracle.com/tutorials" '>
-                            <p class="page__date" style="margin-right: 25px;"><strong>
-                                    Back to tutorials 
-                                </strong>
-                            </p>
-                        </a>
-
-                    </div>
-                </div>
-            </section>
-            <!-- /S20v0 -->
+          </section>
+          <!-- /S20v0 -->
         </div>
         <!-- SET UP -->
         <main class="f19col f19main">
-            <!-- cc01v0 -->
+          <!-- cc01v0 -->
 
-            <section class="cc01 cc01v0 cpad" id="link1">
-                <div class="cc01w1 cwidth">
+          <section class="cc01 cc01v0 cpad" id="link1">
+            <div class="cc01w1 cwidth">
 
-        <p>In another article, we deployed a helm chart (Redis) into Oracle Container Engine (OKE) which we pulled from the stable repository. By default, the stable repo is hosted at <a href="https://kubernetes-charts.storage.googleapis.com/">here</a>.</p>
+              <p>In another article, we deployed a helm chart (Redis) into Oracle Container Engine (OKE) which we pulled
+                from the stable repository. By default, the stable repo is hosted at <a
+                  href="https://kubernetes-charts.storage.googleapis.com/">here</a>.</p>
 
-        <p>We can also manually add the <a href="https://github.com/helm/charts/tree/master/incubator">incubator repository</a> if we want to:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
+              <p>We can also manually add the <a href="https://github.com/helm/charts/tree/master/incubator">incubator
+                  repository</a> if we want to:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
         "incubator" has been added to your repositories
-        </span></code></pre></div></div>
-        
-        <p>The container images in those repositories are also publicly available (for example, the default image for redis is bitnami/redis in bitnami’s container redis repository on Dockerhub).</p>
-        
-        <p>We have already described how to host the container images privately on Oracle Registry Service (OCIR). What if we want to do the same for our helm charts?</p>
-        
-        <p>Fortunately, there is a solution for that too.</p>
-        
-        <p>Let me introduce you to chartmuseum, an open source Helm Chart Repository server with support for various cloud storage backends, including OCI Object Storage.</p>
-        
-        <h2 id="prerequisites">Prerequisites</h2>
-        
-        <p>You’re using the <a href="https://github.com/oracle-terraform-modules/terraform-oci-oke">terraform-oci-oke</a> project to provision your OKE cluster. See <a href="https://medium.com/oracledevs/provisioning-oracle-container-engine-oke-using-terraform-41542fd15d1c?source=friends_link&amp;sk=efe4c6c36c22bc14c7e9bbff6b343ffb">this post</a> for more details. Below is an architecture of what we’ll build:</p>
-        
-        <picture class="">
-                        <source srcset="https://cool.devo.build/tutorials/assets/helm-network-diagram.png 1x" />
-                        <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-network-diagram.png" data-original="https://cool.devo.build/tutorials/assets/helm-network-diagram.png" data-at2x="https://cool.devo.build/tutorials/assets/helm-network-diagram@2x.png" alt="Deploying chartmuseum on OCI" title="Deploying chartmuseum on OCI" />
-                    </picture>
-        
-        <p>If you don’t yet have an OCI account, you can quickly sign up for one today by registering for an <a href="https://www.oracle.com/cloud/free/#always-free?source=:ex:tb::::::WW_FY22_DevRel_DotBuild&SC=:ex:tb::::::WW_FY22_DevRel_DotBuild&pcode=">Oracle Cloud Free Tier</a> account.</p>
-        
-        <p>Afterwards, check <a href="https://developer.oracle.com">developer.oracle.com</a> for more developer content.</p>
-        
-        <h2 id="install-nginx-controller">Install nginx-controller</h2>
-        
-        <p>First, follow <a href="https://medium.com/oracledevs/changing-load-balancer-shape-in-oracle-container-engine-oke-and-updating-dns-with-external-dns-7064f15cf600?source=friends_link&amp;sk=3f539e6f43c3e973492ede35877d15d8">this post</a> to install <a href="https://github.com/kubernetes-incubator/external-dns">ExternalDNS</a>.</p>
-        
-        <p>Then, let’s install <a href="https://kubernetes.github.io/ingress-nginx/">nginx-controller</a>:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm install --name nginxcontroller stable/nginx-ingress \
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>The container images in those repositories are also publicly available (for example, the default image
+                for redis is bitnami/redis in bitnami’s container redis repository on Dockerhub).</p>
+
+              <p>We have already described how to host the container images privately on Oracle Registry Service (OCIR).
+                What if we want to do the same for our helm charts?</p>
+
+              <p>Fortunately, there is a solution for that too.</p>
+
+              <p>Let me introduce you to chartmuseum, an open source Helm Chart Repository server with support for
+                various cloud storage backends, including OCI Object Storage.</p>
+
+              <h2 id="prerequisites">Prerequisites</h2>
+
+              <p>You’re using the <a
+                  href="https://github.com/oracle-terraform-modules/terraform-oci-oke">terraform-oci-oke</a> project to
+                provision your OKE cluster. See <a
+                  href="https://medium.com/oracledevs/provisioning-oracle-container-engine-oke-using-terraform-41542fd15d1c?source=friends_link&amp;sk=efe4c6c36c22bc14c7e9bbff6b343ffb">this
+                  post</a> for more details. Below is an architecture of what we’ll build:</p>
+
+              <picture class="">
+                <source srcset="https://cool.devo.build/tutorials/assets/helm-network-diagram.png 1x" />
+                <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-network-diagram.png"
+                  data-original="https://cool.devo.build/tutorials/assets/helm-network-diagram.png"
+                  data-at2x="https://cool.devo.build/tutorials/assets/helm-network-diagram@2x.png"
+                  alt="Deploying chartmuseum on OCI" title="Deploying chartmuseum on OCI" />
+              </picture>
+
+              <p>If you don’t yet have an OCI account, you can quickly sign up for one today by registering for an <a
+                  href="https://www.oracle.com/cloud/free/#always-free?source=:ex:tb::::::WW_FY22_DevRel_DotBuild&SC=:ex:tb::::::WW_FY22_DevRel_DotBuild&pcode=">Oracle
+                  Cloud Free Tier</a> account.</p>
+
+              <p>Afterwards, check <a href="https://developer.oracle.com">developer.oracle.com</a> for more developer
+                content.</p>
+
+              <h2 id="install-nginx-controller">Install nginx-controller</h2>
+
+              <p>First, follow <a
+                  href="https://medium.com/oracledevs/changing-load-balancer-shape-in-oracle-container-engine-oke-and-updating-dns-with-external-dns-7064f15cf600?source=friends_link&amp;sk=3f539e6f43c3e973492ede35877d15d8">this
+                  post</a> to install <a href="https://github.com/kubernetes-incubator/external-dns">ExternalDNS</a>.
+              </p>
+
+              <p>Then, let’s install <a href="https://kubernetes.github.io/ingress-nginx/">nginx-controller</a>:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm install --name nginxcontroller stable/nginx-ingress \
         --set controller.name=controller \
         --set defaultBackend.enabled=true \
         --set defaultBackend.name=defaultbackend \
         --set rbac.create=true \
         --set controller.service.annotations."external-dns\.alpha\.kubernetes\.io/hostname"=chartmuseum.acme.com
-        </span></code></pre></div></div>
-        
-        <p>Replace chartmuseum.acme.com by your preferred hostname. We’ll then use this to access chartmuseum later.</p>
-        
-        <p>Verify that an OCI Load Balancer has been created and a DNS “A” record has been inserted in the DNS Zone.</p>
-        
-        <h2 id="create-oci-bucket">Create OCI Bucket</h2>
-        
-        <p>In the OCI Console, navigate to Object Storage and create a bucket called ‘chartmuseum’:</p>
-        
-        <picture class="">
-                        <source srcset="https://cool.devo.build/tutorials/assets/helm-chartmuseum-bucket.png 1x" />
-                        <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-chartmuseum-bucket.png" data-original="https://cool.devo.build/tutorials/assets/helm-chartmuseum-bucket.png" data-at2x="https://cool.devo.build/tutorials/assets/helm-chartmuseum-bucket@2x.png" alt="chartmuseum bucket window" title="chartmuseum bucket window" />
-                    </picture>
-        
-        <h2 id="deploy-chartmuseum">Deploy chartmuseum</h2>
-        
-        <p>We want a similar experience to the stable or incubator repos i.e. anonymous <code class="language-plaintext highlighter-rouge">GET</code> but protected <code class="language-plaintext highlighter-rouge">POST</code> requests and we will use Basic Auth for authentication purposes.</p>
-        
-        <p>Let’s first create a secret to hold the Basic Auth username and password:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl create secret generic chartmuseum-auth --from-literal=user=curator --from-literal=pass=password
-        </span></code></pre></div></div>
-        
-        <p>You also need to create a second secret that will allow chartmuseum to communicate with the OCI APIs.</p>
-        
-        <p>Temporarily, copy your API keys to the bastion. You can also do this locally if you have <code class="language-plaintext highlighter-rouge">kubectl</code> and access to the kubeconfig locally.</p>
-        
-        <p>Create a file ‘config’:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">[DEFAULT]                                           
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Replace chartmuseum.acme.com by your preferred hostname. We’ll then use this to access chartmuseum
+                later.</p>
+
+              <p>Verify that an OCI Load Balancer has been created and a DNS “A” record has been inserted in the DNS
+                Zone.</p>
+
+              <h2 id="create-oci-bucket">Create OCI Bucket</h2>
+
+              <p>In the OCI Console, navigate to Object Storage and create a bucket called ‘chartmuseum’:</p>
+
+              <picture class="">
+                <source srcset="https://cool.devo.build/tutorials/assets/helm-chartmuseum-bucket.png 1x" />
+                <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-chartmuseum-bucket.png"
+                  data-original="https://cool.devo.build/tutorials/assets/helm-chartmuseum-bucket.png"
+                  data-at2x="https://cool.devo.build/tutorials/assets/helm-chartmuseum-bucket@2x.png"
+                  alt="chartmuseum bucket window" title="chartmuseum bucket window" />
+              </picture>
+
+              <h2 id="deploy-chartmuseum">Deploy chartmuseum</h2>
+
+              <p>We want a similar experience to the stable or incubator repos i.e. anonymous <code
+                  class="language-plaintext highlighter-rouge">GET</code> but protected <code
+                  class="language-plaintext highlighter-rouge">POST</code> requests and we will use Basic Auth for
+                authentication purposes.</p>
+
+              <p>Let’s first create a secret to hold the Basic Auth username and password:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl create secret generic chartmuseum-auth --from-literal=user=curator --from-literal=pass=password
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>You also need to create a second secret that will allow chartmuseum to communicate with the OCI APIs.
+              </p>
+
+              <p>Temporarily, copy your API keys to the bastion. You can also do this locally if you have <code
+                  class="language-plaintext highlighter-rouge">kubectl</code> and access to the kubeconfig locally.</p>
+
+              <p>Create a file ‘config’:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">[DEFAULT]                                           
         </span><span class="gp">user=&lt;USER_OCID&gt;</span><span class="w">                                                                                    
         </span><span class="gp">fingerprint=&lt;API_KEY_FINGERPRINT&gt;</span><span class="w">
         </span><span class="go">key_file=/home/chartmuseum/.oci/oci.key                         
         </span><span class="gp">tenancy=&lt;TENANCY_OCID&gt;</span><span class="w">
         </span><span class="gp">region=&lt;REGION&gt;</span><span class="w">
-        </span></code></pre></div></div>
-        
-        <p>Enter your user and tenancy OCIDs, api key fingerprint and region value. The key_file value has to be <code class="language-plaintext highlighter-rouge">/home/chartmuseum/.oci/oci.key</code>.</p>
-        
-        <p>Next, create the secret:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl create secret generic chartmuseum-secret --from-file=config="/path/to/config" --from-file=key_file="/path/to/apikey.pem"
-        </span></code></pre></div></div>
-        
-        <p>Replace with the appropriate absolute or relative path to the config file and private API key.</p>
-        
-        <p>Next, download the chartmuseum values file:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">curl -o values.yaml https://raw.githubusercontent.com/helm/charts/master/stable/chartmuseum/values.yaml
-        </span></code></pre></div></div>
-        
-        <p>Edit the values.yaml file and replace the parameters as follows:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">env:
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Enter your user and tenancy OCIDs, api key fingerprint and region value. The key_file value has to be
+                <code class="language-plaintext highlighter-rouge">/home/chartmuseum/.oci/oci.key</code>.</p>
+
+              <p>Next, create the secret:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl create secret generic chartmuseum-secret --from-file=config="/path/to/config" --from-file=key_file="/path/to/apikey.pem"
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Replace with the appropriate absolute or relative path to the config file and private API key.</p>
+
+              <p>Next, download the chartmuseum values file:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">curl -o values.yaml https://raw.githubusercontent.com/helm/charts/master/stable/chartmuseum/values.yaml
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Edit the values.yaml file and replace the parameters as follows:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">env:
           open:
             STORAGE: oracle
         </span><span class="gp">    STORAGE_ORACLE_COMPARTMENTID:&lt;COMPARTMENT_OCID&gt;</span><span class="w">
@@ -210,28 +267,44 @@
             name: chartmuseum-secret
             config: config
             key_file: key_file
-        </span></code></pre></div></div>
-        
-        <p>We can now install chartmuseum:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm install --name=chartmuseum -f values.yaml stable/chartmuseum
-        </span></code></pre></div></div>
-        
-        <p>Wait for the pod to run:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl get pods -wNAME                                                            READY   STATUS    RESTARTS   AGE                                                                      
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>We can now install chartmuseum:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm install --name=chartmuseum -f values.yaml stable/chartmuseum
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Wait for the pod to run:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl get pods -wNAME                                                            READY   STATUS    RESTARTS   AGE                                                                      
         chartmuseum-chartmuseum-748c8dbbd8-7nctc                        1/1     Running   0          5m20s
-        </span></code></pre></div></div>
-        
-        <p>Verify that the ingress has been created:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl get ingNAME                      HOSTS                       ADDRESS   PORTS   AGE                                                                                           
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Verify that the ingress has been created:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl get ingNAME                      HOSTS                       ADDRESS   PORTS   AGE                                                                                           
         chartmuseum-chartmuseum   chartmuseum.acme.com             80      7m9s
-        </span></code></pre></div></div>
-        
-        <p>And that it maps to the chartmuseum service:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">k describe ing chartmuseum-chartmuseum                                                                                                     
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>And that it maps to the chartmuseum service:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">k describe ing chartmuseum-chartmuseum                                                                                                     
         Name:             chartmuseum-chartmuseum                                                                                                                             
         Namespace:        default                                                                                                                                             
         Address:                                                                                                                                                              
@@ -248,138 +321,210 @@
           ----    ------  ----   ----                      -------                                                                                                            
           Normal  CREATE  6m20s  nginx-ingress-controller  Ingress default/chartmuseum-chartmuseum                                                                            
           Normal  UPDATE  5m31s  nginx-ingress-controller  Ingress default/chartmuseum-chartmuseum
-        </span></code></pre></div></div>
-        
-        <p>Finally, you can verify whether you can <a href="http://chartmuseum.acme.com">reach chartmuseum publicly</a> with your browser.</p>
-        
-        <picture class="">
-                        <source srcset="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome-msg.png 1x" />
-                        <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome-msg.png" data-original="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome-msg.png" data-at2x="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome-msg@2x.png" alt="Chartmuseum welcome message" title="Chartmuseum welcome message" />
-                    </picture>
-        
-        <h3 id="pushing-a-chart-to-chartmuseum">Pushing a chart to Chartmuseum</h3>
-        
-        <p>Install the helm push plugin:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm plugin install https://github.com/chartmuseum/helm-push
-        </span></code></pre></div></div>
-        
-        <p>Next, add the repo:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm repo add --username curator --password password cm http://chartmuseum.acme.com/
-        </span></code></pre></div></div>
-        
-        <p>Let’s first create a basic chart which we can use to test:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm create mycharthelm package mychart
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Finally, you can verify whether you can <a href="http://chartmuseum.acme.com">reach chartmuseum
+                  publicly</a> with your browser.</p>
+
+              <picture class="">
+                <source srcset="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome-msg.png 1x" />
+                <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome-msg.png"
+                  data-original="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome-msg.png"
+                  data-at2x="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome-msg@2x.png"
+                  alt="Chartmuseum welcome message" title="Chartmuseum welcome message" />
+              </picture>
+
+              <h3 id="pushing-a-chart-to-chartmuseum">Pushing a chart to Chartmuseum</h3>
+
+              <p>Install the helm push plugin:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm plugin install https://github.com/chartmuseum/helm-push
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Next, add the repo:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm repo add --username curator --password password cm http://chartmuseum.acme.com/
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Let’s first create a basic chart which we can use to test:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm create mycharthelm package mychart
         Successfully packaged chart and saved it to: /home/opc/chart/mychart-0.1.0.tgz
-        </span></code></pre></div></div>
-        
-        <p>Now, we can push the chart:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm push mychart cmPushing mychart-0.1.0.tgz to cm...                                                                                                                                    
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Now, we can push the chart:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm push mychart cmPushing mychart-0.1.0.tgz to cm...                                                                                                                                    
         Done.
-        </span></code></pre></div></div>
-        
-        <p>If we search for mychart, we will only find the local copy:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm search mychart                                                                                                                              
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>If we search for mychart, we will only find the local copy:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm search mychart                                                                                                                              
         NAME            CHART VERSION   APP VERSION     DESCRIPTION                                                                                                           
         local/mychart   0.1.0           1.0             A Helm chart for Kubernetes
-        </span></code></pre></div></div>
-        
-        <p>Let’s do a repo update:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm repo update cm                                                                                                                              
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Let’s do a repo update:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm repo update cm                                                                                                                              
         Hang tight while we grab the latest from your chart repositories...                                                                                                   
         ...Skip local chart repository                                                                                                                                        
         ...Successfully got an update from the "cm" chart repository                                                                                                          
         ...Successfully got an update from the "stable" chart repository                                                                                                      
         Update Complete. ⎈ Happy Helming!⎈
-        </span></code></pre></div></div>
-        
-        <p>And a new search:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm search mychart                                                                                                                              
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>And a new search:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm search mychart                                                                                                                              
         NAME            CHART VERSION   APP VERSION     DESCRIPTION                                                                                                           
         cm/mychart      0.1.0           1.0             A Helm chart for Kubernetes                                                                                           
         local/mychart   0.1.0           1.0             A Helm chart for Kubernetes
-        </span></code></pre></div></div>
-        
-        <p>The new chart appears.</p>
-        
-        <h2 id="testing-authentication">Testing authentication</h2>
-        
-        <p>We could remove the repo and add it again without the username and password to test. However, we will use Postman and chartmuseum’s APIs to test. This is the behaviour we want:</p>
-        
-        <ul>
-          <li><code class="language-plaintext highlighter-rouge">GET</code>: No Auth Required</li>
-          <li><code class="language-plaintext highlighter-rouge">POST</code>: Auth Required</li>
-          <li><code class="language-plaintext highlighter-rouge">DELETE</code>: Auth Required</li>
-        </ul>
-        
-        <picture class="">
-                        <source srcset="https://cool.devo.build/tutorials/assets/helm-get-request-w-chartmuseum.png 1x" />
-                        <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-get-request-w-chartmuseum.png" data-original="https://cool.devo.build/tutorials/assets/helm-get-request-w-chartmuseum.png" data-at2x="https://cool.devo.build/tutorials/assets/helm-get-request-w-chartmuseum@2x.png" alt="GET (without authentication)" title="GET (without authentication)" />
-                    </picture>
-        
-        <p>You can see we are able to get a list of charts using <code class="language-plaintext highlighter-rouge">GET</code> without authentication.</p>
-        
-        <p>However, a <code class="language-plaintext highlighter-rouge">DELETE</code> or <code class="language-plaintext highlighter-rouge">POST</code> without authentication fails:</p>
-        
-        <picture class="">
-                        <source srcset="https://cool.devo.build/tutorials/assets/helm-chartmuseum-unauth-request.png 1x" />
-                        <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-chartmuseum-unauth-request.png" data-original="https://cool.devo.build/tutorials/assets/helm-chartmuseum-unauth-request.png" data-at2x="https://cool.devo.build/tutorials/assets/helm-chartmuseum-unauth-request@2x.png" alt="Unauthorized chart deletion" title="Unauthorized chart deletion" />
-                    </picture>
-        
-        <p>Yet another twist: when we enter the credentials, the chart deletion succeeds:</p>
-        
-        <picture class="">
-                        <source srcset="https://cool.devo.build/tutorials/assets/helm-chartmuseum-good-request.png 1x" />
-                        <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-chartmuseum-good-request.png" data-original="https://cool.devo.build/tutorials/assets/helm-chartmuseum-good-request.png" data-at2x="https://cool.devo.build/tutorials/assets/helm-chartmuseum-good-request@2x.png" alt="Successful chart deletion" title="Successful chart deletion" />
-                    </picture>
-        
-        <p>If we now check OCI Object Storage, we can see our chart there:</p>
-        
-        <picture class="">
-                        <source srcset="https://cool.devo.build/tutorials/assets/helm-oci-dash.png 1x" />
-                        <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-oci-dash.png" data-original="https://cool.devo.build/tutorials/assets/helm-oci-dash.png" data-at2x="https://cool.devo.build/tutorials/assets/helm-oci-dash@2x.png" alt="OCI dashboard displaying Chartmuseum details" title="OCI dashboard displaying Chartmuseum details" />
-                    </picture>
-        
-        <h2 id="lets-encrypt">Let’s Encrypt</h2>
-        
-        <p>Now that our chartmuseum is up and running, we want to also secure its usage by encrypting traffic. We will use Let’s Encrypt and cert-manager, “a add-on to automate the management and issuance of TLS certificates from various issuing sources.”</p>
-        
-        <p>You can follow the guide to install cert-manager or read on.</p>
-        
-        <p>First, create the CustomResourceDefinitions, a namespace for cert-manager and disable resource validation on the namespace:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl apply -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.8/deploy/manifests/00-crds.yamlkubectl create namespace cert-managerkubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
-        </span></code></pre></div></div>
-        
-        <p>Add the Jetpack Helm repo and update:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm repo add jetstack https://charts.jetstack.io
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>The new chart appears.</p>
+
+              <h2 id="testing-authentication">Testing authentication</h2>
+
+              <p>We could remove the repo and add it again without the username and password to test. However, we will
+                use Postman and chartmuseum’s APIs to test. This is the behaviour we want:</p>
+
+              <ul>
+                <li><code class="language-plaintext highlighter-rouge">GET</code>: No Auth Required</li>
+                <li><code class="language-plaintext highlighter-rouge">POST</code>: Auth Required</li>
+                <li><code class="language-plaintext highlighter-rouge">DELETE</code>: Auth Required</li>
+              </ul>
+
+              <picture class="">
+                <source srcset="https://cool.devo.build/tutorials/assets/helm-get-request-w-chartmuseum.png 1x" />
+                <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-get-request-w-chartmuseum.png"
+                  data-original="https://cool.devo.build/tutorials/assets/helm-get-request-w-chartmuseum.png"
+                  data-at2x="https://cool.devo.build/tutorials/assets/helm-get-request-w-chartmuseum@2x.png"
+                  alt="GET (without authentication)" title="GET (without authentication)" />
+              </picture>
+
+              <p>You can see we are able to get a list of charts using <code
+                  class="language-plaintext highlighter-rouge">GET</code> without authentication.</p>
+
+              <p>However, a <code class="language-plaintext highlighter-rouge">DELETE</code> or <code
+                  class="language-plaintext highlighter-rouge">POST</code> without authentication fails:</p>
+
+              <picture class="">
+                <source srcset="https://cool.devo.build/tutorials/assets/helm-chartmuseum-unauth-request.png 1x" />
+                <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-chartmuseum-unauth-request.png"
+                  data-original="https://cool.devo.build/tutorials/assets/helm-chartmuseum-unauth-request.png"
+                  data-at2x="https://cool.devo.build/tutorials/assets/helm-chartmuseum-unauth-request@2x.png"
+                  alt="Unauthorized chart deletion" title="Unauthorized chart deletion" />
+              </picture>
+
+              <p>Yet another twist: when we enter the credentials, the chart deletion succeeds:</p>
+
+              <picture class="">
+                <source srcset="https://cool.devo.build/tutorials/assets/helm-chartmuseum-good-request.png 1x" />
+                <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-chartmuseum-good-request.png"
+                  data-original="https://cool.devo.build/tutorials/assets/helm-chartmuseum-good-request.png"
+                  data-at2x="https://cool.devo.build/tutorials/assets/helm-chartmuseum-good-request@2x.png"
+                  alt="Successful chart deletion" title="Successful chart deletion" />
+              </picture>
+
+              <p>If we now check OCI Object Storage, we can see our chart there:</p>
+
+              <picture class="">
+                <source srcset="https://cool.devo.build/tutorials/assets/helm-oci-dash.png 1x" />
+                <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-oci-dash.png"
+                  data-original="https://cool.devo.build/tutorials/assets/helm-oci-dash.png"
+                  data-at2x="https://cool.devo.build/tutorials/assets/helm-oci-dash@2x.png"
+                  alt="OCI dashboard displaying Chartmuseum details"
+                  title="OCI dashboard displaying Chartmuseum details" />
+              </picture>
+
+              <h2 id="lets-encrypt">Let’s Encrypt</h2>
+
+              <p>Now that our chartmuseum is up and running, we want to also secure its usage by encrypting traffic. We
+                will use Let’s Encrypt and cert-manager, “a add-on to automate the management and issuance of TLS
+                certificates from various issuing sources.”</p>
+
+              <p>You can follow the guide to install cert-manager or read on.</p>
+
+              <p>First, create the CustomResourceDefinitions, a namespace for cert-manager and disable resource
+                validation on the namespace:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl apply -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.8/deploy/manifests/00-crds.yamlkubectl create namespace cert-managerkubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Add the Jetpack Helm repo and update:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm repo add jetstack https://charts.jetstack.io
         helm repo update jetstack
-        </span></code></pre></div></div>
-        
-        <p>Install the cert-manager using its helm chart:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm install --name cert-manager --namespace cert-manager \
-        </span></code></pre></div></div>
-        
-        <p>Verify the installation:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl get pods --namespace cert-manager                                                                                                                                    
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Install the cert-manager using its helm chart:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm install --name cert-manager --namespace cert-manager \
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Verify the installation:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl get pods --namespace cert-manager                                                                                                                                    
         NAME                                       READY   STATUS    RESTARTS   AGE                                                                                                                   
         cert-manager-776cd4f499-98vsh              1/1     Running   0          3h14m                                                                                                                 
         cert-manager-cainjector-744b987848-pkk5s   1/1     Running   0          3h14m                                                                                                                 
         cert-manager-webhook-645c7c4f5f-4mbjd      1/1     Running   0          3h14m
-        </span></code></pre></div></div>
-        
-        <p>Test the webhook works by creating a <code class="language-plaintext highlighter-rouge">test-resources.yaml</code> file.</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">apiVersion: v1
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Test the webhook works by creating a <code
+                  class="language-plaintext highlighter-rouge">test-resources.yaml</code> file.</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">apiVersion: v1
         kind: Namespace
         metadata:
           name: cert-manager-test
@@ -402,16 +547,24 @@
           secretName: selfsigned-cert-tls
           issuerRef:
             name: test-selfsigned
-        </span></code></pre></div></div>
-        
-        <p>Let’s create the test resources:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl create -f test-resources.yaml
-        </span></code></pre></div></div>
-        
-        <p>Check the status of the newly-created certificate:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl describe certificate -n cert-manager-testName:         selfsigned-cert                                                                                                                                                                 
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Let’s create the test resources:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl create -f test-resources.yaml
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Check the status of the newly-created certificate:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl describe certificate -n cert-manager-testName:         selfsigned-cert                                                                                                                                                                 
         Namespace:    cert-manager-test                                                                                                                                                               
         Labels:                                                                                                                                                                                 
         Annotations:                                                                                                                                                                            
@@ -437,20 +590,30 @@
             Type:                  Ready                                                                                                                                                              
           Not After:               2019-09-23T00:45:26Z                                                                                                                                               
         Events:
-        </span></code></pre></div></div>
-        
-        <p>You can delete the test resources after testing:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl delete -f test-resources.yaml
-        </span></code></pre></div></div>
-        
-        <h3 id="configuring-lets-encrypt-issuers">Configuring Let’s Encrypt Issuers</h3>
-        
-        <p>For reference, you can follow <a href="https://docs.cert-manager.io/en/latest/tutorials/acme/quick-start/index.html">the quick-start guide</a> for using cert-manager with Nginx Ingress.</p>
-        
-        <p>Let’s start with creating a staging issuer by creating a staging-issuer.yaml:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">apiVersion: certmanager.k8s.io/v1alpha1                                                                                                                                                       
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>You can delete the test resources after testing:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl delete -f test-resources.yaml
+        </span></code></pre>
+                </div>
+              </div>
+
+              <h3 id="configuring-lets-encrypt-issuers">Configuring Let’s Encrypt Issuers</h3>
+
+              <p>For reference, you can follow <a
+                  href="https://docs.cert-manager.io/en/latest/tutorials/acme/quick-start/index.html">the quick-start
+                  guide</a> for using cert-manager with Nginx Ingress.</p>
+
+              <p>Let’s start with creating a staging issuer by creating a staging-issuer.yaml:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">apiVersion: certmanager.k8s.io/v1alpha1                                                                                                                                                       
         kind: Issuer                                                                                                                                                                                  
         metadata:                                                                                                                                                                                     
           name: cm-staging                                                                                                                                                                            
@@ -465,19 +628,28 @@
               name: cm-staging                                                                                                                                                                        
         </span><span class="gp">    #</span><span class="w"> </span>Enable the HTTP-01 challenge provider                                                                                                                                                   
         <span class="go">    http01: {}
-        </span></code></pre></div></div>
-        
-        <p>Replace your email address above.</p>
-        
-        <p>Create the staging issuer:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl create -f staging-issuer.yaml                                                                                                                                    
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Replace your email address above.</p>
+
+              <p>Create the staging issuer:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl create -f staging-issuer.yaml                                                                                                                                    
         issuer.certmanager.k8s.io/cm-staging created
-        </span></code></pre></div></div>
-        
-        <p>Repeat the above but for production pursposes by creating a <code class="language-plaintext highlighter-rouge">production-issuer.yaml</code>:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">apiVersion: certmanager.k8s.io/v1alpha1                                                                                                                                                       
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Repeat the above but for production pursposes by creating a <code
+                  class="language-plaintext highlighter-rouge">production-issuer.yaml</code>:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">apiVersion: certmanager.k8s.io/v1alpha1                                                                                                                                                       
         kind: Issuer                                                                                                                                                                                  
         metadata:                                                                                                                                                                                     
           name: cm-prod                                                                                                                                                                               
@@ -492,16 +664,24 @@
               name: cm-prod                                                                                                                                                                           
         </span><span class="gp">    #</span><span class="w"> </span>Enable the HTTP-01 challenge provider                                                                                                                                                   
         <span class="go">    http01: {}
-        </span></code></pre></div></div>
-        
-        <p>As above, ensure you provide your email address and create the issuer:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl create -f production-issuer.yaml
-        </span></code></pre></div></div>
-        
-        <p>Check the status of the staging issuer:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl describe issuer cm-stagingName:         cm-staging                                                                                                                                                                      
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>As above, ensure you provide your email address and create the issuer:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl create -f production-issuer.yaml
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Check the status of the staging issuer:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl describe issuer cm-stagingName:         cm-staging                                                                                                                                                                      
         Namespace:    default                                                                                                                                                                         
         Labels:                                                                                                                                                                                 
         Annotations:                                                                                                                                                                            
@@ -530,13 +710,18 @@
             Status:                True                                                                                                                                                               
             Type:                  Ready                                                                                                                                                              
         Events:
-        </span></code></pre></div></div>
-        
-        <h2 id="enable-tls-on-chartmuseum">Enable TLS on chartmuseum</h2>
-        
-        <p><strong>Edit</strong> your values.yaml file for chartmuseum and look for the Ingress section. Pay special attention to the added configuration commands.</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">annotations:                                                                                                                                                                                
+        </span></code></pre>
+                </div>
+              </div>
+
+              <h2 id="enable-tls-on-chartmuseum">Enable TLS on chartmuseum</h2>
+
+              <p><strong>Edit</strong> your values.yaml file for chartmuseum and look for the Ingress section. Pay
+                special attention to the added configuration commands.</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">annotations:                                                                                                                                                                                
             kubernetes.io/ingress.class: nginx                                                                                                                                                        
             kubernetes.io/tls-acme: "true"                                                                                                                                                            
             certmanager.k8s.io/issuer: "cm-staging"                                                                                                                                                      
@@ -550,23 +735,35 @@
               path: /                                                                                                                                                                                 
               tls: true                                                                                                                                                                               
               tlsSecret: cm-tls
-        </span></code></pre></div></div>
-        
-        <p>Upgrade your helm chart:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm upgrade chartmuseum stable/chartmuseum -f values.yamlRelease "chartmuseum" has been upgraded. Happy Helming!
-        </span></code></pre></div></div>
-        
-        <p>Cert-manager will read the annotations and create a certificate:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl get certificate                                                                                                                                            
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Upgrade your helm chart:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm upgrade chartmuseum stable/chartmuseum -f values.yamlRelease "chartmuseum" has been upgraded. Happy Helming!
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Cert-manager will read the annotations and create a certificate:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl get certificate                                                                                                                                            
         NAME        READY   SECRET      AGE                                                                                                                                                           
         cm-tls      True    cm-tls      45m
-        </span></code></pre></div></div>
-        
-        <p>Take a quick peak at the certificate:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl describe certificate cm-tlsName:         cm-tls                                                                                                                                                                                               
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Take a quick peak at the certificate:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl describe certificate cm-tlsName:         cm-tls                                                                                                                                                                                               
         Namespace:    default                                                                                                                                                                                              
         Labels:       app=chartmuseum                                                                                                                                                                                      
                       chart=chartmuseum-2.3.1                                                                                                                                                                              
@@ -622,11 +819,17 @@
           Normal  OrderCreated        2m14s (x3 over 47m)  cert-manager  Created Order resource "cm-tls-3817114402"                                                                                                        
           Normal  OrderComplete       2m13s (x2 over 47m)  cert-manager  Order "cm-tls-3817114402" completed successfully                                                                                                  
           Normal  CertIssued          2m13s (x3 over 47m)  cert-manager  Certificate issued successfully
-        </span></code></pre></div></div>
-        
-        <p>Once complete, cert-manager will have created a secret with the details of the certificate based on the secret used in the ingress resource. You can use the <code class="language-plaintext highlighter-rouge">describe</code> command as well to see some details:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl describe secret cm-tls                                                                                                                                                                
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Once complete, cert-manager will have created a secret with the details of the certificate based on the
+                secret used in the ingress resource. You can use the <code
+                  class="language-plaintext highlighter-rouge">describe</code> command as well to see some details:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl describe secret cm-tls                                                                                                                                                                
         Name:         cm-tls                                                                                                                                                                                               
         Namespace:    default                                                                                                                                                                                              
         Labels:       certmanager.k8s.io/certificate-name=cm-tls                                                                                                                                                           
@@ -643,35 +846,55 @@
         ca.crt:   0 bytes                                                                                                                                                                                                  
         tls.crt:  3578 bytes                                                                                                                                                                                               
         tls.key:  1679 bytes
-        </span></code></pre></div></div>
-        
-        <p>If you access chartmuseum now, you’ll see a warning:</p>
-        
-        <picture class="">
-                        <source srcset="https://cool.devo.build/tutorials/assets/helm-warning-msg.png 1x" />
-                        <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-warning-msg.png" data-original="https://cool.devo.build/tutorials/assets/helm-warning-msg.png" data-at2x="https://cool.devo.build/tutorials/assets/helm-warning-msg@2x.png" alt="Warning message in browser" title="Warning message in browser" />
-                    </picture>
-        
-        <p>If you ignore the warning and go ahead anyway, you will be able to access chartmuseum except that now you will be accessing it over https. Your browser will also warn you that it’s added an exception to this site.</p>
-        
-        <p>Edit the values.yaml for your chartmuseum again and this time change the issuer annotation to cm-prod:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">certmanager.k8s.io/issuer: "cm-prod"
-        </span></code></pre></div></div>
-        
-        <p>Run a helm upgrade again:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">helm upgrade chartmuseum stable/chartmuseum -f values.yamlRelease "chartmuseum" has been upgraded. Happy Helming!
-        </span></code></pre></div></div>
-        
-        <p>and delete the secret:</p>
-        
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">kubectl delete secret cm-tls
-        </span></code></pre></div></div>
-        
-        <p>This will cause cert-manager to get a new certificate. You can verify this:</p>
-        
-        <pre><code class="language-conosle">kubectl describe certificate cm-tls
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>If you access chartmuseum now, you’ll see a warning:</p>
+
+              <picture class="">
+                <source srcset="https://cool.devo.build/tutorials/assets/helm-warning-msg.png 1x" />
+                <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-warning-msg.png"
+                  data-original="https://cool.devo.build/tutorials/assets/helm-warning-msg.png"
+                  data-at2x="https://cool.devo.build/tutorials/assets/helm-warning-msg@2x.png"
+                  alt="Warning message in browser" title="Warning message in browser" />
+              </picture>
+
+              <p>If you ignore the warning and go ahead anyway, you will be able to access chartmuseum except that now
+                you will be accessing it over https. Your browser will also warn you that it’s added an exception to
+                this site.</p>
+
+              <p>Edit the values.yaml for your chartmuseum again and this time change the issuer annotation to cm-prod:
+              </p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">certmanager.k8s.io/issuer: "cm-prod"
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>Run a helm upgrade again:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">helm upgrade chartmuseum stable/chartmuseum -f values.yamlRelease "chartmuseum" has been upgraded. Happy Helming!
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>and delete the secret:</p>
+
+              <div class="language-console highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code><span class="go">kubectl delete secret cm-tls
+        </span></code></pre>
+                </div>
+              </div>
+
+              <p>This will cause cert-manager to get a new certificate. You can verify this:</p>
+
+              <pre><code class="language-conosle">kubectl describe certificate cm-tls
         .
         .
         .Normal  Generated           33s (x4 over 61m)  cert-manager  Generated new private key                                                                                                                           
@@ -680,50 +903,62 @@
           Normal  CertIssued          31s (x5 over 61m)  cert-manager  Certificate issued successfully                                                                                                                     
           Normal  OrderComplete       31s (x3 over 57m)  cert-manager  Order "cm-tls-3433596774" completed successfully
         </code></pre>
-        
-        <p>If you now access chartmuseum, you will be able to access it with https and will not be prompted with the security warning/exception.</p>
-        
-        <picture class="">
-                        <source srcset="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome.png 1x" />
-                        <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome.png" data-original="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome.png" data-at2x="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome@2x.png" alt="Chartmuseum welcome message" title="Chartmuseum welcome message" />
-                    </picture>
-        
-        <h2 id="conclusion">Conclusion</h2>
-        <p><a href="https://chartmuseum.com/">Chartmuseum</a> enhances your CI/CD capabilities in a number of ways:</p>
-        
-        <ul>
-          <li>enables you to host your helm charts privately and securely</li>
-          <li>integrates with your CI/CD deployment tool chain and pipelines</li>
-          <li>supports multiple teams and organizations with multitenant capabilities</li>
-          <li>uses a variety of storage capabilities including local file system, Oracle Object Storage, OpenStack Object storage, and others.</li>
-        </ul>
-        
-        <p>If you want to run it outside your Kubernetes cluster (like on a VM), you can follow <a href="https://medium.com/jsonlovesyaml/setup-instructions-chartmuseum-kubeapps-oracle-object-storage-with-oracle-kubernetes-engine-3306d9c005cc">this guide</a> instead.</p>
-        
-        <p>I hope you’ve found this useful!</p>
-        
-        <h3 id="references">References:</h3>
-        
-        <ul>
-          <li><a href="https://chartmuseum.com/docs/">Chartmuseum docs</a></li>
-          <li><a href="https://github.com/helm/charts/tree/master/stable/chartmuseum">Chartmuseum helm package docs</a></li>
-          <li><a href="https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html">Cert-Manager installation guide</a></li>
-          <li><a href="https://docs.cert-manager.io/en/latest/tutorials/acme/quick-start/index.html">Cert-Manager with Nginx Ingress</a></li>
-        </ul>
-                </div>
-            </section>
-            <!-- /CC01v0 -->
+
+              <p>If you now access chartmuseum, you will be able to access it with https and will not be prompted with
+                the security warning/exception.</p>
+
+              <picture class="">
+                <source srcset="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome.png 1x" />
+                <img loading="lazy" src="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome.png"
+                  data-original="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome.png"
+                  data-at2x="https://cool.devo.build/tutorials/assets/helm-chartmuseum-welcome@2x.png"
+                  alt="Chartmuseum welcome message" title="Chartmuseum welcome message" />
+              </picture>
+
+              <h2 id="conclusion">Conclusion</h2>
+              <p><a href="https://chartmuseum.com/">Chartmuseum</a> enhances your CI/CD capabilities in a number of
+                ways:</p>
+
+              <ul>
+                <li>enables you to host your helm charts privately and securely</li>
+                <li>integrates with your CI/CD deployment tool chain and pipelines</li>
+                <li>supports multiple teams and organizations with multitenant capabilities</li>
+                <li>uses a variety of storage capabilities including local file system, Oracle Object Storage, OpenStack
+                  Object storage, and others.</li>
+              </ul>
+
+              <p>If you want to run it outside your Kubernetes cluster (like on a VM), you can follow <a
+                  href="https://medium.com/jsonlovesyaml/setup-instructions-chartmuseum-kubeapps-oracle-object-storage-with-oracle-kubernetes-engine-3306d9c005cc">this
+                  guide</a> instead.</p>
+
+              <p>I hope you’ve found this useful!</p>
+
+              <h3 id="references">References:</h3>
+
+              <ul>
+                <li><a href="https://chartmuseum.com/docs/">Chartmuseum docs</a></li>
+                <li><a href="https://github.com/helm/charts/tree/master/stable/chartmuseum">Chartmuseum helm package
+                    docs</a></li>
+                <li><a
+                    href="https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html">Cert-Manager
+                    installation guide</a></li>
+                <li><a href="https://docs.cert-manager.io/en/latest/tutorials/acme/quick-start/index.html">Cert-Manager
+                    with Nginx Ingress</a></li>
+              </ul>
+            </div>
+          </section>
+          <!-- /CC01v0 -->
 
         </main>
-        </div>
+      </div>
     </div>
-    </section>
-<!-- /F19v0 -->
+  </section>
+  <!-- /F19v0 -->
 
 
 
 
-    <!--==========================STOP COPING==========================-->
+  <!--==========================STOP COPING==========================-->
 </body>
 
 </html>
