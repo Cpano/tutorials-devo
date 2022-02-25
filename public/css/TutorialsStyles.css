@@ -79,6 +79,10 @@ li::marker {
   transform: translateX(-40px);
 }
 
+.tags{
+  margin-top: 25px;
+}
+
 /* ================== CODES ================== */
 
 div.highlighter-rouge,

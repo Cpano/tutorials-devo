@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Devo Migration</title>
+</head>
+
+<body>
+    <!--==========================COPY FROM HERE==========================-->
+
+
+
+
+
+    <!--======================================== EXTERNAL STYLES & CALENDAR ICON========================================-->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+
+    <link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
+
+
+    <!--========================================HEADER========================================-->
+    <!-- CC01v0 -->
+    <section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);"
+        class="cc01 cc01v0  txtlight cpad">
+        <div class="cc01w1 cwidth">
+
+            <h2>Sending Emails from OCI with Email Delivery Service in Node.js</h2>
+            <p>Use Oracle Cloud Infrastructure to manage a high-volume email solution for sending out emails to many
+                recipients for critical communications.</p>
+
+            <div style="display: flex; color: white;">
+                <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
+                            aria-hidden="true"></i>
+                        Author: </strong>
+                    Javier Mugueta
+                </p>
+
+                <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                        Updated:</strong>
+                    <time>February 14, 2022</time>
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- /CC01v0 -->
+
+    <!-- F19v0 -->
+    <section class="f19 f19v0 cpad">
+        <div class="f19w1 cwidth">
+            <div class="f19w2 f19-2col">
+                <div class="f19col f19side">
+                    <!-- S20v0 -->
+                    <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
+                        <div class="s20w1 cwidth">
+                            <div class="col-w1">
+
+                                <h3>About Javier Mugueta</h3>
+
+                                <br><br>
+                                <!-- End Social Icons-->
+
+                                <p><strong>More tutorials from this author: <br> </strong>
+                                    <span class="tags">
+                                        <li><a class="animated-link tag2"
+                                                href="/tutorials/tracing-node-js-micro-service-oci">Tracing A Node.js
+                                                with OCI Application Performance Monitoring and Zipkin</a></li>
+                                    </span>
+                                </p>
+
+                                <!--Tags-->
+                                <h3>Tags</h3>
+                                <p> <span class=" tags">
+                                        <a class="animated-link tag" href="#">open-source</a>
+                                        <a class="animated-link tag" href="#">oci</a>
+                                        <a class="animated-link tag" href="#">always-free</a>
+                                        <a class="animated-link tag" href="#">nodejs</a>
+                                    </span>
+                                </p>
+
+                                <h3></h3>
+                                <a href="https://developer.oracle.com/tutorials" '>
+                            <p class="page__date" style="margin-right: 25px;"><strong>
+                                    Back to tutorials 
+                                </strong>
+                            </p>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+            <!-- /S20v0 -->
+        </div>
+        <!-- SET UP -->
+        <main class="f19col f19main">
+            <!-- cc01v0 -->
+
+            <section class="cc01 cc01v0 cpad" id="link1">
+                <div class="cc01w1 cwidth">
+
+
+                    <p>Oracle Cloud Infrastructure <a href="https://docs.oracle.com/en-us/iaas/Content/Email/Concepts/overview.htm?source=:ex:tb:::::WWMK220204P00005:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK220204P00005:WW_FY22_DevRel_DotBuild&pcode=WWMK220204P00005">Email Delivery</a> is an email sending service that provides a fast and reliable managed solution for sending high-volume emails that need to reach your recipients’ inbox. Email Delivery provides the tools necessary to send application-generated email for mission-critical communications such as receipts, fraud detection alerts, multi-factor identity verification, and password resets.</p>
+
+                    <p>Go to a IAM/user and click on [Generate SMTP Credentials] as shown below:</p>
+                    
+                    <picture class="">
+                                    <source srcset="https://cool.devo.build/tutorials/assets/ociemailimage-6.jpg 1x" />
+                                    <img loading="lazy" src="https://cool.devo.build/tutorials/assets/ociemailimage-6.jpg" data-original="https://cool.devo.build/tutorials/assets/ociemailimage-6.jpg" data-at2x="https://cool.devo.build/tutorials/assets/ociemailimage-6@2x.jpg" />
+                                </picture>
+                    
+                    <p>Keep the credentials created in a safe place:</p>
+                    
+                    <picture class="">
+                                    <source srcset="https://cool.devo.build/tutorials/assets/ociemailimage-7.jpg 1x" />
+                                    <img loading="lazy" src="https://cool.devo.build/tutorials/assets/ociemailimage-7.jpg" data-original="https://cool.devo.build/tutorials/assets/ociemailimage-7.jpg" data-at2x="https://cool.devo.build/tutorials/assets/ociemailimage-7@2x.jpg" />
+                                </picture>
+                    
+                    <p>Create an Approved Sender (a real existing email account to put in the from field):</p>
+                    
+                    <picture class="">
+                                    <source srcset="https://cool.devo.build/tutorials/assets/ociemailimage-8.jpg 1x" />
+                                    <img loading="lazy" src="https://cool.devo.build/tutorials/assets/ociemailimage-8.jpg" data-original="https://cool.devo.build/tutorials/assets/ociemailimage-8.jpg" data-at2x="https://cool.devo.build/tutorials/assets/ociemailimage-8@2x.jpg" />
+                                </picture>
+                    
+                    <p>Grab the connection details:</p>
+                    
+                    <picture class="">
+                                    <source srcset="https://cool.devo.build/tutorials/assets/ociemailimage-9.jpg 1x" />
+                                    <img loading="lazy" src="https://cool.devo.build/tutorials/assets/ociemailimage-9.jpg" data-original="https://cool.devo.build/tutorials/assets/ociemailimage-9.jpg" data-at2x="https://cool.devo.build/tutorials/assets/ociemailimage-9@2x.jpg" />
+                                </picture>
+                    
+                    <p>Now test the code:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">npm install [nodemailer](https://nodemailer.com/about/)
+                    </span></code></pre></div></div>
+                    
+                    <p>Create a sendmail.js file:</p>
+                    
+                    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">var nodemailer = require('
+                                    nodemailer');</span><span class="w">
+                                    </span><span class="go">async function main() {
+                                    </span><span class="gp">let testAccount = await
+                                        nodemailer.createTestAccount();</span><span class="w">
+                                    </span><span class="go">let transporter = nodemailer.createTransport({
+                                        host: "smtp.email.eu-frankfurt-1.oci.oraclecloud.com",
+                                        port: 25,
+                                        secure: false,
+                                        auth: {
+                                        user: 'ocid1.user.oc1..aaaaaa...om',
+                                        pass: 'BD..._',
+                                        },
+                                    </span><span class="gp">});</span><span class="w">
+                                    </span><span class="go">let info = await transporter.sendMail({
+                                        from: '"javier...om',
+                                        to: "javi...om",
+                                        subject: "ssh access to 10.0.2.94",
+                                    </span><span class="gp"> html: "&lt;b&gt;</span>ssh <span class="nt">-i</span>
+                                    deltakey <span class="nt">-o</span> <span class="nv">ProxyCommand</span><span
+                                        class="o">=</span><span class="se">\"</span>ssh <span class="nt">-i</span>
+                                    deltakey <span class="nt">-W</span> %h:%p <span class="nt">-p</span> 22
+                                    ocid1.bast...oud.com<span class="se">\"</span> <span class="nt">-p</span> 22
+                                    opc@10.0.2.94&lt;/b&gt;<span class="s2">",
+                                    </span><span class="gp">});</span><span class="w">
+                                    </span><span class="gp">console.log("Message sent: %s", info.messageId);</span><span
+                                        class="w">
+                                    </span><span class="gp">console.log("Preview URL: %s",
+                                        nodemailer.getTestMessageUrl(info));</span><span class="w">
+                                    </span><span class="go">}
+                                    </span><span class="gp">main().catch(console.error);</span><span class="w">
+                                    </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Test it:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">node sendmail.js
+                    </span></code></pre>
+                            </div>
+                        </div>
+
+                        <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/assets/ociemailimage-10.jpg 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/assets/ociemailimage-10.jpg"
+                                data-original="https://cool.devo.build/tutorials/assets/ociemailimage-10.jpg"
+                                data-at2x="https://cool.devo.build/tutorials/assets/ociemailimage-10@2x.jpg" />
+                        </picture>
+                        <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/assets/ociemailimage-11.jpg 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/assets/ociemailimage-11.jpg"
+                                data-original="https://cool.devo.build/tutorials/assets/ociemailimage-11.jpg"
+                                data-at2x="https://cool.devo.build/tutorials/assets/ociemailimage-11@2x.jpg" />
+                        </picture>
+
+                        <p>That’s all, hope it helps! 🙂</p>
+
+                        <p>If you’re curious about the goings-on of Oracle Developers in their natural habitat, come
+                            join us on our <a
+                                href="https://oracledevrel.slack.com/join/shared_invite/zt-uffjmwh3-ksmv2ii9YxSkc6IpbokL1g#/shared-invite/email">public
+                                Slack channel</a>!</p>
+
+                        <p>And don’t forget our <a
+                                href="https://signup.cloud.oracle.com/?language=en&source=:ex:tb:::::WWMK220204P00005:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK220204P00005:WW_FY22_DevRel_DotBuild&pcode=WWMK220204P00005">free
+                                tier</a>, where you can try out what we just discussed.</p>
+
+
+
+                </div>
+    </section>
+    <!-- /CC01v0 -->
+
+    </main>
+    </div>
+    </div>
+    </section>
+    <!-- /F19v0 -->
+
+
+
+
+    <!--==========================STOP COPING==========================-->
+</body>
+
+</html>
