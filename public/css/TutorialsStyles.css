@@ -352,7 +352,7 @@ blockquote.notice {
 }
 
 /* ================== New Titles ================== */
-.slide, .slide__title {
+.slide__title {
   background: #264759;
   border-radius: 4px;
   color: #fff;
@@ -361,7 +361,7 @@ blockquote.notice {
   position: relative;
 }
 
-.slide, .slide__num {
+.slide__num {
   background: #7a8288;
   border-radius: 4px;
   color: white;
