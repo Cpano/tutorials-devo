@@ -350,3 +350,26 @@ blockquote.notice {
 .page__content p {
   margin: 0 0 1.3em;
 }
+
+/* ================== New Titles ================== */
+.slide .slide__title {
+  background: #264759;
+  border-radius: 4px;
+  color: #fff;
+  margin-top: 0;
+  padding: 0.25em;
+  position: relative;
+}
+
+.page__content h2 {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #f2f3f3;
+}
+
+.slide .slide__num {
+  background: #7a8288;
+  border-radius: 4px;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0 0.25ch;
+}
