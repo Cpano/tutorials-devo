@@ -1,0 +1,418 @@
+<!--======================================== EXTERNAL STYLES & CALENDAR ICON========================================-->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
+
+
+<!--========================================HEADER========================================-->
+<!-- CC01v0 -->
+<section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);" class="cc01 cc01v0  txtlight cpad">
+    <div class="cc01w1 cwidth">
+
+        <h2>Extending Terraform OKE with a helm chart</h2>
+        <p>When designing the Terraform OKE provisioning scripts, one of the things we wanted to do is making it
+            reusable. </p>
+
+        <div style="display: flex; color: white;">
+
+
+            <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                    Updated:</strong>
+                <time>October 28, 2021</time>
+            </p>
+
+        </div>
+
+    </div>
+</section>
+<!-- /CC01v0 -->
+
+<!-- F19v0 -->
+<section class="f19 f19v0 cpad">
+    <div class="f19w1 cwidth">
+        <div class="f19w2 f19-2col">
+            <div class="f19col f19side">
+                <!-- S20v0 -->
+                <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
+                    <div class="s20w1 cwidth">
+                        <div class="col-w1">
+                            <h3>Steps to follow</h3>
+                            <div class="s20w2">
+                                <ul>
+
+                                    <!--<li><strong><a href="#link0">Intro</a></strong></li>-->
+                                    <li><strong><a href="#link1">1. Intro</a></strong></li>
+                                    <!--
+                                    <li style="margin-left:15px;"><a href="#link1s1">Data</a></li>
+                                    <li style="margin-left:15px;"><a href="#link1s2">Environments</a></li>
+                                    -->
+                                    <li><strong><a href="#slide-1">2. Adding the helm provider and
+                                                repository</a></strong></li>
+                                    <li><strong><a href="#slide-2">3. Adding redis with a helm release</a></strong></li>
+                                    <li><strong><a href="#slide-3">4. Interacting with the Redis cluster</a></strong>
+                                    </li>
+                                    <li><strong><a href="#slide-4">5. Inspecting your cluster</a></strong></li>
+                                    <li><strong><a href="#slide-5">6. Updating your release</a></strong></li>
+
+                                    <br />
+
+                                </ul>
+                            </div>
+
+
+
+                            <!--Tags-->
+                            <h3>Tags</h3>
+                            <p> <span class=" tags">
+                                    <a class="animated-link tag" href="#">kubernetes</a>
+                                    <a class="animated-link tag" href="#">devops</a>
+                                    <a class="animated-link tag" href="#">terraform</a>
+                                </span>
+                            </p>
+
+                            <h3></h3>
+                            <a href="https://developer.oracle.com/tutorials">
+                                <p class="page__date" style="margin-right: 25px;"><strong>
+                                        Back to tutorials
+                                    </strong>
+                                </p>
+                            </a>
+
+                        </div>
+                    </div>
+                </section> <!-- /S20v0 -->
+            </div> <!-- SET UP -->
+            <main class="f19col f19main">
+
+
+                <!-- cc01v0 -->
+                <section class="cc01 cc01v0 cpad">
+                    <div class="cc01w1 cwidth">
+
+
+                        <h2 class="slide__title"><span class="slide__num">1</span> Introduction</h2>
+
+                        <p>When designing the <a href="https://github.com/oracle/sample-oke-for-terraform">Terraform
+                                OKE</a> provisioning scripts, one of the things we wanted to do is making it reusable.
+                            That means extending the base sample repo and add in your own extensions.</p>
+
+                        <p>In this post, we will deploy a redis cluster to OKE using helm charts. Terraform has a <a
+                                href="https://www.terraform.io/docs/providers/helm/index.html">helm provider</a> so we
+                            will use that.</p>
+
+                        <p>First, clone the repo as we did before:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">git clone [https://github.com/oracle/sample-oke-for-terraform.git](https://github.com/oracle/sample-oke-for-terraform.git) tfoke  
+cd tfoke
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Follow the <a
+                                href="https://github.com/oracle/sample-oke-for-terraform/blob/master/docs/instructions.md">instructions</a>
+                            to create your Terraform variable file.</p>
+
+                    </div>
+
+                    <div class="slide" id="slide-1">
+
+                        <h2 class="slide__title"><span class="slide__num">2</span> Adding the helm provider and
+                            repository</h2>
+
+                        <p>In the oke module, create a file redis.tf. First, we need to configure the helm provider.
+                            Since we already have the kubeconfig file, we will use the File Config method. Add the
+                            following to redis.tf:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="k">provider</span> <span class="s2">"helm"</span> <span class="p">{</span>  
+    <span class="nx">kubernetes</span> <span class="p">{</span>  
+        <span class="nx">config_path</span> <span class="p">=</span> <span class="s2">"</span><span class="k">${</span><span class="nx">path</span><span class="p">.</span><span class="nx">root</span><span class="k">}</span><span class="s2">/generated/kubeconfig"</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>Next, we will add a helm repository:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="k">data</span> <span class="s2">"helm_repository"</span> <span class="s2">"stable"</span> <span class="p">{</span>  
+    <span class="nx">name</span> <span class="p">=</span> <span class="s2">"stable"</span>  
+    <span class="nx">url</span> <span class="p">=</span> <span class="s2">"https://kubernetes-charts.storage.googleapis.com"</span>  
+<span class="p">}</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                
+
+                    </div>
+
+                    <div class="slide" id="slide-2">
+
+                        <h2 class="slide__title"><span class="slide__num">3</span> Adding redis with a helm release</h2>
+
+                        <p>We will use the <a href="https://github.com/helm/charts/tree/master/stable/redis">redis helm
+                                chart</a> to create a helm release. However, we want helm to deploy only after the
+                            worker nodes become active. In the <a
+                                href="https://github.com/oracle/sample-oke-for-terraform/blob/master/modules/oke/activeworker.tf">sample
+                                repo</a>, there’s a null_resource “is_worker_active” that you can use to set an explicit
+                            dependency. Add the following to the redis.tf:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="k">resource</span> <span class="s2">"helm_release"</span> <span class="s2">"redis"</span> <span class="p">{</span> <span class="nx">depends_on</span> <span class="p">=</span> <span class="p">[</span><span class="s2">"null_resource.is_worker_active"</span><span class="p">,</span> <span class="s2">"local_file.kube_config_file"</span><span class="p">]</span> <span class="k">provider</span> <span class="p">=</span> <span class="s2">"helm"</span>  
+    <span class="nx">name</span> <span class="p">=</span> <span class="s2">"oke-redis"</span>  
+    <span class="nx">repository</span> <span class="p">=</span> <span class="s2">"</span><span class="k">${data</span><span class="p">.</span><span class="nx">helm_repository</span><span class="p">.</span><span class="nx">stable</span><span class="p">.</span><span class="nx">metadata</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="nx">name</span><span class="k">}</span><span class="s2">"</span>  
+    <span class="nx">chart</span> <span class="p">=</span> <span class="s2">"redis"</span>  
+    <span class="nx">version</span> <span class="p">=</span> <span class="s2">"6.4.5"</span>    <span class="nx">set</span> <span class="p">{</span>  
+        <span class="nx">name</span>  <span class="p">=</span> <span class="s2">"cluster.enabled"</span>  
+        <span class="nx">value</span> <span class="p">=</span> <span class="s2">"true"</span>  
+    <span class="p">}</span>    <span class="nx">set</span> <span class="p">{</span>  
+        <span class="nx">name</span> <span class="p">=</span> <span class="s2">"cluster.slaveCount"</span>  
+        <span class="nx">value</span> <span class="p">=</span> <span class="s2">"3"</span>  
+    <span class="p">}</span>  
+     
+    <span class="nx">set</span> <span class="p">{</span>  
+        <span class="nx">name</span> <span class="p">=</span> <span class="s2">"master.persistence.size"</span>  
+        <span class="nx">value</span> <span class="p">=</span> <span class="s2">"50Gi"</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>If you prefer to customize your helm release using a yaml file, create a folder called
+                            resources under the oke module and copy the file values.yaml from the redis chart repo to
+                            redis_values.yaml:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">curl -o modules/oke/resources/redis_values.yaml https://raw.githubusercontent.com/helm/charts/master/stable/redis/values.yaml
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Remove the individual settings in the redis release from the terraform code and add the
+                            following instead:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="nx">values</span> <span class="err">=</span> <span class="p">[</span>  
+   <span class="s2">"</span><span class="k">${</span><span class="nx">file</span><span class="p">(</span><span class="s2">"</span><span class="k">${</span><span class="nx">path</span><span class="p">.</span><span class="k">module}</span><span class="s2">/resources/redis_values.yaml"</span><span class="p">)</span><span class="k">}</span><span class="s2">"</span>  
+<span class="p">]</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>Your release should then look like this:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="k">resource</span> <span class="s2">"helm_release"</span> <span class="s2">"redis"</span> <span class="p">{</span>  <span class="nx">depends_on</span> <span class="p">=</span> <span class="p">[</span><span class="s2">"null_resource.is_worker_active"</span><span class="p">,</span>    <span class="s2">"local_file.kube_config_file"</span><span class="p">]</span>  <span class="k">provider</span> <span class="p">=</span> <span class="s2">"helm"</span>  
+    <span class="nx">name</span> <span class="p">=</span> <span class="s2">"my-redis-release"</span>  
+    <span class="nx">repository</span> <span class="p">=</span> <span class="s2">"</span><span class="k">${data</span><span class="p">.</span><span class="nx">helm_repository</span><span class="p">.</span><span class="nx">stable</span><span class="p">.</span><span class="nx">metadata</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="nx">name</span><span class="k">}</span><span class="s2">"</span>  
+    <span class="nx">chart</span> <span class="p">=</span> <span class="s2">"redis"</span>  
+    <span class="nx">version</span> <span class="p">=</span> <span class="s2">"6.4.5"</span>  <span class="nx">values</span> <span class="p">=</span> <span class="p">[</span>  
+    <span class="s2">"</span><span class="k">${</span><span class="nx">file</span><span class="p">(</span><span class="s2">"</span><span class="k">${</span><span class="nx">path</span><span class="p">.</span><span class="k">module}</span><span class="s2">/resources/redis_values.yaml"</span><span class="p">)</span><span class="k">}</span><span class="s2">"</span>  
+  <span class="p">]</span>  
+<span class="p">}</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>Note that you can also combine the 2 configuration approaches above but I prefer to keep mine
+                            in 1 location. You can change the values in the yaml file e.g. I changed the default
+                            cluster.slaveCount to 3 and persistence.size to 50Gi.</p>
+
+                        <p>Run terraform init to download the helm provider and then apply again:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">terraform init  
+terraform apply -auto-approve
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Login to the bastion and do a helm list:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">helm list
+NAME          REVISION    UPDATED                     STATUS        CHART         APP VERSION   NAMESPACE                          
+oke-redis     1           Wed Apr 24 12:05:40 2019    DEPLOYED      redis-6.4.5   4.0.14        default
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Next, get the notes provided by the redis chart:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">helm status
+</span></code></pre>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="slide" id="slide-3">
+
+                        <h2 class="slide__title"><span class="slide__num">4</span> Interacting with the Redis cluster
+                        </h2>
+
+                        <p>The following steps can be obtained when you run helm status.</p>
+
+                        <ol>
+                            <li>
+                                <p>Get the Redis password:</p>
+
+                                <div class="language-console highlighter-rouge">
+                                    <div class="highlight">
+                                        <pre class="highlight"><code><span class="gp"> export REDIS_PASSWORD=$</span><span class="o">(</span>kubectl get secret <span class="nt">--namespace</span> default oke-redis <span class="nt">-o</span> <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">"{.data.redis-password}"</span> | <span class="nb">base64</span> <span class="nt">--decode</span><span class="o">)</span>
+</code></pre>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Run a Redis pod:</p>
+
+                                <div class="language-console highlighter-rouge">
+                                    <div class="highlight">
+                                        <pre class="highlight"><code><span class="go"> kubectl run --namespace default oke-redis-client --rm --tty -i --restart='Never' \                                                              
+</span><span class="gp">      --env REDIS_PASSWORD=$</span>REDIS_PASSWORD <span class="se">\ </span>                                                                                                        
+<span class="go">     --image docker.io/bitnami/redis:4.0.14 -- bash
+</span></code></pre>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Connect using the Redis cli:</p>
+
+                                <div class="language-console highlighter-rouge">
+                                    <div class="highlight">
+                                        <pre class="highlight"><code><span class="gp"> redis-cli -h oke-redis-master -a $</span>REDIS_PASSWORD
+</code></pre>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Type a redis command:</p>
+
+                                <div class="language-console highlighter-rouge">
+                                    <div class="highlight">
+                                        <pre class="highlight"><code><span class="gp"> oke-redis-master:6379&gt;</span><span class="w"> </span>ping
+<span class="go"> PONG
+</span></code></pre>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+
+
+
+                    </div>
+
+                    <div class="slide" id="slide-4">
+
+                        <h2 class="slide__title"><span class="slide__num">5</span> Inspecting your cluster</h2>
+
+                        <p>Recall that in the yaml file, we set the number of redis slaves to 3. Let’s verify that:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectl get pods  
+NAME                               READY   STATUS    RESTARTS   AGE                                                                                
+oke-redis-master-0                 1/1     Running   0          42m                                                                                
+oke-redis-slave-79c45c57d8-67bxj   1/1     Running   1          42m                                                                                
+oke-redis-slave-79c45c57d8-s6znq   1/1     Running   0          42m                                                                                
+oke-redis-slave-79c45c57d8-wnfrh   1/1     Running   0          42m
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>You can see there are 3 pods running the redis slaves.</p>
+
+                    </div>
+
+                    <div class="slide" id="slide-5">
+
+                        <h2 class="slide__title"><span class="slide__num">6</span> Updating your release</h2>
+
+                        <p>Say, we now want to update the helm release to change some settings e.g. change the number of
+                            slaves from 3 to 2. We can do that manually using the helm cli:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">helm upgrade oke-redis stable/redis --set cluster.slaveCount=2
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Or, we can change it in the redis_values.yaml and run terraform apply again:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="c">..  
+..  
+..  
+</span><span class="go">module.oke.helm_release.redis: Still modifying… (ID: oke-redis, 10s elapsed)  
+module.oke.helm_release.redis: Still modifying… (ID: oke-redis, 20s elapsed)  
+module.oke.helm_release.redis: Still modifying… (ID: oke-redis, 30s elapsed)  
+module.oke.helm_release.redis: Still modifying… (ID: oke-redis, 40s elapsed)  
+module.oke.helm_release.redis: Still modifying… (ID: oke-redis, 50s elapsed)  
+module.oke.helm_release.redis: Still modifying… (ID: oke-redis, 1m1s elapsed)  
+module.oke.helm_release.redis: Modifications complete after 1m9s (ID: oke-redis)
+
+Apply complete! Resources: 1 added, 1 changed, 1 destroyed.
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>In the meantime, from another terminal, we can watch the number of pods being updated:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectl get pods -w
+
+oke-redis-master-0                 0/1     Terminating   0          61s                                                                            
+oke-redis-slave-6bd9dc8d89-jdrs2   0/1     Running       0          3s                                                                             
+oke-redis-slave-6bd9dc8d89-kvc8r   0/1     Running       0          3s                                                                             
+oke-redis-slave-6fdd8c4b56-44qpb   0/1     Terminating   0          63s
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>In future articles, we will look at other ways to extend the terraform-oci-oke module to
+                            deploy software on OKE.</p>
+
+                        <p>Check out these sites to explore more information about development with Oracle products:</p>
+
+                        <ul>
+                            <li><a
+                                    href="https://developer.oracle.com/?source=:ex:tb:::::WWMK211125P00024:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00024:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00024">Oracle
+                                    Developers Portal</a></li>
+                            <li><a
+                                    href="https://www.oracle.com/cloud/?source=:ex:tb:::::WWMK211125P00024:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00024:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00024">Oracle
+                                    Cloud Infrastructure</a></li>
+                        </ul>
+
+
+
+                    </div>
+                </section>
+                <!-- /cc01v0 -->
+
+
+            </main>
+        </div>
+    </div>
+</section> <!-- /F19v0 -->
