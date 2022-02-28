@@ -1,0 +1,717 @@
+<!--======================================== EXTERNAL STYLES & CALENDAR ICON========================================-->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
+
+
+<!--========================================HEADER========================================-->
+<!-- CC01v0 -->
+<section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);" class="cc01 cc01v0  txtlight cpad">
+    <div class="cc01w1 cwidth">
+
+        <h2>Experiencing Terraform</h2>
+        <p>This short project will let you experience the power of Terraform.</p>
+
+        <div style="display: flex; color: white;">
+            <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
+                        aria-hidden="true"></i>
+                    Author: </strong>
+                Tim Clegg
+            </p>
+
+            <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                    Updated:</strong>
+                <time>October 8, 2021</time>
+            </p>
+
+        </div>
+
+    </div>
+</section>
+<!-- /CC01v0 -->
+
+<!-- F19v0 -->
+<section class="f19 f19v0 cpad">
+    <div class="f19w1 cwidth">
+        <div class="f19w2 f19-2col">
+            <div class="f19col f19side">
+                <!-- S20v0 -->
+                <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
+                    <div class="s20w1 cwidth">
+                        <div class="col-w1">
+                            <h3>Steps to follow</h3>
+                            <div class="s20w2">
+                                <ul>
+
+                                    <!--<li><strong><a href="#link0">Intro</a></strong></li>-->
+                                    <li><strong><a href="#link1">1. Intro</a></strong></li>
+                                    <!--
+                                    <li style="margin-left:15px;"><a href="#link1s1">Data</a></li>
+                                    <li style="margin-left:15px;"><a href="#link1s2">Environments</a></li>
+                                    -->
+                                    <li><strong><a href="#slide-1">2. Prerequisites</a></strong></li>
+                                    <li><strong><a href="#slide-2">3. Setting up the project</a></strong></li>
+                                    <li><strong><a href="#slide-3">4. Setup the OCI provider</a></strong></li>
+                                    <li><strong><a href="#slide-4">5. Set up a subnet</a></strong></li>
+                                    <li><strong><a href="#slide-5">6. Set up an output</a></strong></li>
+                                    <li><strong><a href="#slide-6">7. Action!</a></strong></li>
+                                    <li><strong><a href="#slide-7">8. Cleaning Up</a></strong></li>
+                                    <li><strong><a href="#slide-8">9. Summary</a></strong></li>
+                                    <br />
+
+                                </ul>
+                            </div>
+
+                            <h3>About Tim Clegg</h3>
+
+                            <!--Social Icons-->
+                            <div class="author__urls-wrapper" style="margin-bottom: 15px;">
+                                <ul class="author__urls social-icons">
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/timothy-clegg/" itemprop="sameAs"
+                                            rel="nofollow noopener noreferrer" target="_blank">
+                                            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span
+                                                class="label">LinkedIn</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/timclegg" itemprop="sameAs"
+                                            rel="nofollow noopener noreferrer" target="_blank">
+                                            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span
+                                                class="label">GitHub</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <br><br>
+                            <!-- End Social Icons-->
+                            <p>Code. Share. Secure. Innovate. Automate. Educate.</p>
+
+                            <p><strong>More tutorials from this author: <br> </strong>
+                                <span class="tags">
+
+                                    <li><a class="animated-link tag2"
+                                            href="/tutorials/tf-101/3-understanding-terraform-basics">Understanding
+                                            The Basics Of Terraform</a></li><br>
+
+                                    <li><a class="animated-link tag2" href="/tutorials/tf-101/5-creating">Creating
+                                            Resources with Terraform</a></li><br>
+
+                                    <li><a class="animated-link tag2" href="/tutorials/tf-101/6-changing">Making
+                                            changes using Terraform</a></li><br>
+
+                                    <li><a class="animated-link tag2" href="/tutorials/tf-101/7-destroying">Destroying
+                                            resources with
+                                            Terraform</a></li><br>
+
+                                    <li><a class="animated-link tag2" href="/tutorials/steampipe/">Steampipe on
+                                            Oracle Cloud Infrastructure</a></li><br><br>
+
+                                </span>
+                            </p>
+
+                            <!--Tags-->
+                            <h3>Tags</h3>
+                            <p> <span class=" tags">
+                                    <a class="animated-link tag" href="#">open-source</a>
+                                    <a class="animated-link tag" href="#">terraform</a>
+                                    <a class="animated-link tag" href="#">iac</a>
+                                    <a class="animated-link tag" href="#">devops</a>
+                                    <a class="animated-link tag" href="#">get-started</a>
+                                </span>
+                            </p>
+
+                            <h3></h3>
+                            <a href="https://developer.oracle.com/tutorials">
+                                <p class="page__date" style="margin-right: 25px;"><strong>
+                                        Back to tutorials
+                                    </strong>
+                                </p>
+                            </a>
+
+                        </div>
+                    </div>
+                </section> <!-- /S20v0 -->
+            </div> <!-- SET UP -->
+            <main class="f19col f19main">
+
+
+                <!-- cc01v0 -->
+                <section class="cc01 cc01v0 cpad">
+                    <div class="cc01w1 cwidth">
+
+
+                        <h2 class="slide__title"><span class="slide__num">1</span> Introduction</h2>
+
+                        <figure class="aligncenter">
+                            <picture>
+                                <source srcset="https://cool.devo.build/tutorials/tf-101/assets/terraform-101.png 1x" />
+                                <img loading="lazy" width="400" height="400" src="https://cool.devo.build/tutorials/tf-101/assets/terraform-101.png"
+                                    data-original="https://cool.devo.build/tutorials/tf-101/assets/terraform-101.png" data-at2x="https://cool.devo.build/tutorials/tf-101/assets/terraform-101@2x.png"
+                                    title="Terraform 101" alt="Terraform 101 Tutorial Series" />
+                            </picture>
+                            <figcaption>Terraform 101</figcaption>
+                        </figure>
+
+                        <p>This short project will let you experience the power of Terraform.</p>
+
+                        <ul>
+                            <li>Create some Terraform code files</li>
+                            <li>Learn how to examine what Terraform proposes be done</li>
+                            <li>Let Terraform create a VCN and Subnet</li>
+                            <li>Organize your Terraform code</li>
+                            <li>Get a taste of OCI Cloud Shell</li>
+                        </ul>
+
+
+                    </div>
+
+                    <div class="slide" id="slide-1">
+
+                        <h2 class="slide__title"><span class="slide__num">2</span> Prerequisites</h2>
+
+                        <p>You should have an Oracle Cloud Infrastructure (OCI) account setup. <a
+                                href="https://signup.cloud.oracle.com/?language=en&amp;sourceType=:ow:de:te::::RC_WWMK211116P00260:DotBuildGetStarted&amp;intcmp=:ow:de:te::::RC_WWMK211116P00260:DotBuildGetStarted&source=:ex:tb:::::WWMK211117P00010:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211117P00010:WW_FY22_DevRel_DotBuild&pcode=WWMK211117P00010">Click
+                                here</a> to create a new cloud account.</p>
+
+                        <p>We’ll be using the <a
+                                href="https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm?source=:ex:tb:::::WWMK211117P00010:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211117P00010:WW_FY22_DevRel_DotBuild&pcode=WWMK211117P00010">OCI
+                                Cloud Shell</a> in this tutorial, as it provides a great platform for quickly working
+                            with Terraform (as well as many other OCI interfaces and tools), having many of these tools
+                            pre-installed and ready-to-go.</p>
+
+                        <p><a
+                                href="https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellgettingstarted.htm?source=:ex:tb:::::WWMK211117P00010:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211117P00010:WW_FY22_DevRel_DotBuild&pcode=WWMK211117P00010">Click
+                                here</a> for directions on how to open up the OCI Cloud Shell. You’ll need to have this
+                            open during this particular portion of the Terraform 101 tutorial series.</p>
+
+
+                    </div>
+
+                    <div class="slide" id="slide-2">
+
+                        <h2 class="slide__title"><span class="slide__num">3</span> Setting up the project</h2>
+
+                        <p>Terraform is incredibly easy to use. Here’s what we’re going to do in this lesson:</p>
+
+                        <ul>
+                            <li>Create a VCN</li>
+                            <li>Create a Subnet in the VCN</li>
+                        </ul>
+
+                        <p>Follow the step-by-step directions, to see how easy/fast it is, then in subsequent lessons
+                            we’ll go into greater detail around how to use Terraform.</p>
+
+                        <blockquote class="notice">
+                            <p>NOTE: All commands will be used within OCI Cloud Shell. If you haven’t opened it up yet,
+                                now’s the time to <a
+                                    href="https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellgettingstarted.htm?source=:ex:tb:::::WWMK211117P00010:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211117P00010:WW_FY22_DevRel_DotBuild&pcode=WWMK211117P00010">open
+                                    your own Cloud Shell session</a>!</p>
+                        </blockquote>
+
+
+                    </div>
+
+                    <div class="slide" id="slide-3">
+
+                        <h2 class="slide__title"><span class="slide__num">4</span> Setup the OCI provider</h2>
+
+                        <p>Create a new directory for this project:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">mkdir experiencing-tf
+cd experiencing-tf
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>The <code class="language-plaintext highlighter-rouge">experiencing-tf</code> directory will
+                            have our Terraform files, as well as our Terraform state. This will be our project
+                            directory.</p>
+
+                        <p>Using your favorite editor (<code class="language-plaintext highlighter-rouge">nano</code>,
+                            <code class="language-plaintext highlighter-rouge">vi</code>, etc.) add the following to
+                            <code class="language-plaintext highlighter-rouge">provider.tf</code> (<code
+                                class="language-plaintext highlighter-rouge">nano provider.tf</code>):</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="k">terraform</span> <span class="p">{</span>
+  <span class="nx">required_version</span> <span class="p">=</span> <span class="s2">"&gt;= 1.0.0"</span>
+<span class="p">}</span>
+
+<span class="k">provider</span> <span class="s2">"oci"</span> <span class="p">{</span>
+  <span class="nx">region</span>       <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">region</span>
+  <span class="nx">tenancy_ocid</span> <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">tenancy_ocid</span>
+<span class="p">}</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>Let’s start by creating a VCN. To do so, edit <code
+                                class="language-plaintext highlighter-rouge">vcn.tf</code> (<code
+                                class="language-plaintext highlighter-rouge">nano vcn.tf</code>, note that this file
+                            doesn’t exist yet - so it’ll be a new file according to your text editor) and place the
+                            following contents in it:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="k">resource</span> <span class="nx">oci_core_vcn</span> <span class="s2">"tf_101"</span> <span class="p">{</span>
+  <span class="nx">cidr_block</span>     <span class="p">=</span> <span class="s2">"192.168.1.0/24"</span>
+  <span class="nx">compartment_id</span> <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">tenancy_ocid</span>
+  <span class="nx">display_name</span>   <span class="p">=</span> <span class="s2">"tf-101"</span>
+  <span class="nx">dns_label</span>      <span class="p">=</span> <span class="s2">"tf101"</span>
+<span class="p">}</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>The above tells Terraform that we want a VCN with a name of <code
+                                class="language-plaintext highlighter-rouge">tf-101</code>, using a CIDR block of <code
+                                class="language-plaintext highlighter-rouge">192.168.1.0/24</code>, deployed into the
+                            root (tenancy) compartment.</p>
+
+                        <blockquote class="notice">
+                            <p>NOTE: To keep things simple, this example uses the tenancy (root) compartment, which is
+                                often times locked down in many tenancies. If you’re using a tenancy with limited
+                                permissions (one in which you cannot deploy to the root compartment), you’ll need to put
+                                in your compartment OCID in place of the <code
+                                    class="language-plaintext highlighter-rouge">var.tenancy_ocid</code> above.
+                                Something like <code
+                                    class="language-plaintext highlighter-rouge">compartment_id = "PUT_YOUR_COMPARTMENT_OCID_HERE"</code>
+                                should do the trick for now!</p>
+                        </blockquote>
+
+                    </div>
+
+                    <div class="slide" id="slide-4">
+
+                        <h2 class="slide__title"><span class="slide__num">5</span> Set up a subnet</h2>
+
+                        <p>Next we’ll create a subnet within our VCN. To do this, go ahead and add the following to a
+                            new file called <code class="language-plaintext highlighter-rouge">subnets.tf</code> (<code
+                                class="language-plaintext highlighter-rouge">nano subnets.tf</code>):</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="k">resource</span> <span class="nx">oci_core_subnet</span> <span class="s2">"vlan1"</span> <span class="p">{</span>
+  <span class="nx">cidr_block</span>      <span class="p">=</span> <span class="s2">"192.168.1.0/24"</span>
+  <span class="nx">compartment_id</span>  <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">tenancy_ocid</span>
+  <span class="nx">display_name</span>    <span class="p">=</span> <span class="s2">"vlan1"</span>
+  <span class="nx">dns_label</span>       <span class="p">=</span> <span class="s2">"vlan1"</span>
+  <span class="nx">prohibit_public_ip_on_vnic</span> <span class="p">=</span> <span class="kc">true</span>
+  <span class="nx">vcn_id</span> <span class="p">=</span> <span class="nx">oci_core_vcn</span><span class="p">.</span><span class="nx">tf_101</span><span class="p">.</span><span class="nx">id</span>
+<span class="p">}</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>This will tell Terraform to manage a Subnet that lives within the VCN we’ve previously
+                            defined, using the entire CIDR space. We’ve prohibited the use of public IPs in this Subnet
+                            and have decided to give it the amazingly original name of <code
+                                class="language-plaintext highlighter-rouge">vlan1</code>.</p>
+
+                        <p>Up to this point, we’ve referenced a couple of variables in our resource definitions above:
+                            <code class="language-plaintext highlighter-rouge">var.region</code> and <code
+                                class="language-plaintext highlighter-rouge">var.tenancy_ocid</code>. We need to go
+                            ahead and define these in Terraform code. To do so, edit <code
+                                class="language-plaintext highlighter-rouge">variables.tf</code> (<code
+                                class="language-plaintext highlighter-rouge">nano variables.tf</code>) and place the
+                            following in it:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="k">variable</span> <span class="s2">"tenancy_ocid"</span> <span class="p">{</span>
+  <span class="nx">type</span> <span class="p">=</span> <span class="nx">string</span>
+<span class="p">}</span>
+<span class="k">variable</span> <span class="s2">"region"</span> <span class="p">{</span>
+  <span class="nx">type</span> <span class="p">=</span> <span class="nx">string</span>
+<span class="p">}</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slide" id="slide-5">
+
+                        <h2 class="slide__title"><span class="slide__num">6</span> Set up an output</h2>
+
+                        <p>Now that our inputs are defined, let’s go ahead and setup an output, which will be the status
+                            of the VCN. To do this, modify <code
+                                class="language-plaintext highlighter-rouge">outputs.tf</code> (<code
+                                class="language-plaintext highlighter-rouge">nano outputs.tf</code>) and place the
+                            following in it:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="k">output</span> <span class="s2">"vcn_state"</span> <span class="p">{</span>
+  <span class="nx">description</span> <span class="p">=</span> <span class="s2">"The state of the VCN."</span>
+  <span class="nx">value</span>       <span class="p">=</span> <span class="nx">oci_core_vcn</span><span class="p">.</span><span class="nx">tf_101</span><span class="p">.</span><span class="nx">state</span>
+<span class="p">}</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>Save the file and exit your text editor.</p>
+
+                        <p>The OCI Cloud Shell session is prepopulated with lots of good values that make life super
+                            simple. We need to put this in a format that Terraform cac easily use. The following
+                            commands will setup a few environment variables that Terraform will be using:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">declare -x TF_VAR_tenancy_ocid=`echo $</span>OCI_TENANCY<span class="sb">`</span>
+<span class="gp">declare -x TF_VAR_region=`echo $</span>OCI_REGION<span class="sb">`</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slide" id="slide-6">
+
+                        <h2 class="slide__title"><span class="slide__num">7</span> Action!</h2>
+
+                        <p>Now it’s time to see this all work! Initialize Terraform by running:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">terraform init
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>It looks something like:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>terraform init
+<span class="go">
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding latest version of hashicorp/oci...
+- Installing hashicorp/oci v4.45.0...
+- Installed hashicorp/oci v4.45.0 (unauthenticated)
+
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+</span><span class="gp">$</span><span class="w"> 
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>At this point Terraform is ready for us to give it directions on what OCI resources we want
+                            it to manage. Let’s look at the plan that Terraform proposes:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>terraform plan
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>The output will be something similar to the following:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>terraform plan
+<span class="go">
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+</span><span class="gp">  #</span><span class="w"> </span>oci_core_subnet.vlan1 will be created
+<span class="go">  + resource "oci_core_subnet" "vlan1" {
+      + availability_domain        = (known after apply)
+      + cidr_block                 = "192.168.1.0/24"
+</span><span class="gp">      + compartment_id             = "ocid1.tenancy.oc1..&lt;sanitized&gt;</span><span class="s2">"
+</span><span class="go">      + defined_tags               = (known after apply)
+      + dhcp_options_id            = (known after apply)
+      + display_name               = "vlan1"
+      + dns_label                  = "vlan1"
+      + freeform_tags              = (known after apply)
+      + id                         = (known after apply)
+      + ipv6cidr_block             = (known after apply)
+      + ipv6virtual_router_ip      = (known after apply)
+      + prohibit_internet_ingress  = (known after apply)
+      + prohibit_public_ip_on_vnic = true
+      + route_table_id             = (known after apply)
+      + security_list_ids          = (known after apply)
+      + state                      = (known after apply)
+      + subnet_domain_name         = (known after apply)
+      + time_created               = (known after apply)
+      + vcn_id                     = (known after apply)
+      + virtual_router_ip          = (known after apply)
+      + virtual_router_mac         = (known after apply)
+    }
+
+</span><span class="gp">  #</span><span class="w"> </span>oci_core_vcn.tf_101 will be created
+<span class="go">  + resource "oci_core_vcn" "tf_101" {
+      + cidr_block               = "192.168.1.0/24"
+      + cidr_blocks              = (known after apply)
+</span><span class="gp">      + compartment_id           = "ocid1.tenancy.oc1..&lt;sanitized&gt;</span><span class="s2">"
+</span><span class="go">      + default_dhcp_options_id  = (known after apply)
+      + default_route_table_id   = (known after apply)
+      + default_security_list_id = (known after apply)
+      + defined_tags             = (known after apply)
+      + display_name             = "tf-101"
+      + dns_label                = "tf101"
+      + freeform_tags            = (known after apply)
+      + id                       = (known after apply)
+      + ipv6cidr_blocks          = (known after apply)
+      + is_ipv6enabled           = (known after apply)
+      + state                    = (known after apply)
+      + time_created             = (known after apply)
+      + vcn_domain_name          = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + vcn_state = (known after apply)
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply"
+now.
+</span><span class="gp">$</span><span class="w"> 
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>What we’re able to see here is that Terraform is proposing to create two new resources: a VCN
+                            and a Subnet. Both of these are expected and things appear to be in order, so we’ll go ahead
+                            and apply it (tell Terraform to make the changes), by running:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>terraform apply
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>We’ll see something like what we saw for plan, but have a prompt asking if we’d like to
+                            continue:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">&lt;snip&gt;</span><span class="w">
+</span><span class="go">Changes to Outputs:
+  + vcn_state = (known after apply)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: 
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Once we accept the proposed changes, we’ll see something like:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">&lt;snip&gt;</span><span class="w">
+</span><span class="go">Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+oci_core_vcn.tf_101: Creating...
+</span><span class="gp">oci_core_vcn.tf_101: Creation complete after 2s [id=ocid1.vcn.oc1.phx.&lt;sanitized&gt;</span><span class="o">]</span>
+<span class="go">oci_core_subnet.vlan1: Creating...
+</span><span class="gp">oci_core_subnet.vlan1: Creation complete after 2s [id=ocid1.subnet.oc1.phx.&lt;sanitized&gt;</span><span class="o">]</span>
+<span class="go">
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+vcn_state = "AVAILABLE"
+</span><span class="gp">$</span><span class="w"> 
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Wow, that was easy! One command to set up multiple resources… terrific!</p>
+
+                    </div>
+
+                    <div class="slide" id="slide-7">
+
+                        <h2 class="slide__title"><span class="slide__num">8</span> Cleaning Up</h2>
+
+                        <p>Since we’re at the end of this short session, we want to clean up after ourselves. Let’s go
+                            ahead and remove the VCN and Subnet. This could be multiple clicks on the OCI Console,
+                            however since we’re using Terraform, one command is all we need to run:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>terraform destroy
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>You’ll see something like the following:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>terraform destroy
+<span class="gp">oci_core_vcn.tf_101: Refreshing state... [id=ocid1.vcn.oc1.phx.&lt;sanitized&gt;</span><span class="o">]</span>
+<span class="gp">oci_core_subnet.vlan1: Refreshing state... [id=ocid1.subnet.oc1.phx.&lt;sanitized&gt;</span><span class="o">]</span>
+<span class="go">
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+</span><span class="gp">  #</span><span class="w"> </span>oci_core_subnet.vlan1 will be destroyed
+<span class="go">  - resource "oci_core_subnet" "vlan1" {
+</span><span class="gp">      - cidr_block                 = "192.168.1.0/24" -&gt;</span><span class="w"> </span>null
+<span class="gp">      - compartment_id             = "ocid1.compartment.oc1..&lt;sanitized&gt;</span><span class="s2">" -&gt; null
+</span><span class="go">      - defined_tags               = {
+</span><span class="gp">          - "Oracle-Tags.CreatedBy" = "&lt;sanitized&gt;</span><span class="s2">"
+</span><span class="go">          - "Oracle-Tags.CreatedOn" = "2021-09-30T19:44:47.597Z"
+</span><span class="gp">        } -&gt;</span><span class="w"> </span>null
+<span class="gp">      - dhcp_options_id            = "ocid1.dhcpoptions.oc1.phx.&lt;sanitized&gt;</span><span class="s2">" -&gt; null
+</span><span class="gp">      - display_name               = "vlan1" -&gt;</span><span class="w"> </span><span class="s2">null
+</span><span class="gp">      - dns_label                  = "vlan1" -&gt;</span><span class="w"> </span><span class="s2">null
+</span><span class="gp">      - freeform_tags              = {} -&gt;</span><span class="w"> </span><span class="s2">null
+</span><span class="gp">      - id                         = "ocid1.subnet.oc1.phx.&lt;sanitized&gt;</span><span class="s2">"</span> -&gt; null
+<span class="gp">      - prohibit_internet_ingress  = true -&gt;</span><span class="w"> </span>null
+<span class="gp">      - prohibit_public_ip_on_vnic = true -&gt;</span><span class="w"> </span>null
+<span class="gp">      - route_table_id             = "ocid1.routetable.oc1.phx.&lt;sanitized&gt;</span><span class="s2">" -&gt; null
+</span><span class="go">      - security_list_ids          = [
+</span><span class="gp">          - "ocid1.securitylist.oc1.phx.&lt;sanitized&gt;</span><span class="s2">",
+</span><span class="gp">        ] -&gt;</span><span class="w"> </span><span class="s2">null
+</span><span class="gp">      - state                      = "AVAILABLE" -&gt;</span><span class="w"> </span><span class="s2">null
+</span><span class="gp">      - subnet_domain_name         = "vlan1.tf101.oraclevcn.com" -&gt;</span><span class="w"> </span><span class="s2">null
+</span><span class="gp">      - time_created               = "2021-09-30 19:44:47.659 +0000 UTC" -&gt;</span><span class="w"> </span><span class="s2">null
+</span><span class="gp">      - vcn_id                     = "ocid1.vcn.oc1.phx.&lt;sanitized&gt;</span><span class="s2">"</span> -&gt; null
+<span class="gp">      - virtual_router_ip          = "192.168.1.1" -&gt;</span><span class="w"> </span>null
+<span class="gp">      - virtual_router_mac         = "00:00:17:28:74:9C" -&gt;</span><span class="w"> </span>null
+<span class="go">    }
+
+</span><span class="gp">  #</span><span class="w"> </span>oci_core_vcn.tf_101 will be destroyed
+<span class="go">  - resource "oci_core_vcn" "tf_101" {
+</span><span class="gp">      - cidr_block               = "192.168.1.0/24" -&gt;</span><span class="w"> </span>null
+<span class="go">      - cidr_blocks              = [
+          - "192.168.1.0/24",
+</span><span class="gp">        ] -&gt;</span><span class="w"> </span>null
+<span class="gp">      - compartment_id           = "ocid1.compartment.oc1..&lt;sanitized&gt;</span><span class="s2">" -&gt; null
+</span><span class="gp">      - default_dhcp_options_id  = "ocid1.dhcpoptions.oc1.phx.&lt;saanitized&gt;</span><span class="s2">"</span> -&gt; null
+<span class="gp">      - default_route_table_id   = "ocid1.routetable.oc1.phx.&lt;sanitized&gt;</span><span class="s2">" -&gt; null
+</span><span class="gp">      - default_security_list_id = "ocid1.securitylist.oc1.phx.&lt;sanitized&gt;</span><span class="s2">"</span> -&gt; null
+<span class="go">      - defined_tags             = {
+</span><span class="gp">          - "Oracle-Tags.CreatedBy" = "&lt;sanitized&gt;</span><span class="s2">"
+</span><span class="go">          - "Oracle-Tags.CreatedOn" = "2021-09-30T19:44:46.481Z"
+</span><span class="gp">        } -&gt;</span><span class="w"> </span>null
+<span class="gp">      - display_name             = "tf-101" -&gt;</span><span class="w"> </span>null
+<span class="gp">      - dns_label                = "tf101" -&gt;</span><span class="w"> </span>null
+<span class="gp">      - freeform_tags            = {} -&gt;</span><span class="w"> </span>null
+<span class="gp">      - id                       = "ocid1.vcn.oc1.phx.&lt;sanitized&gt;</span><span class="s2">" -&gt; null
+</span><span class="gp">      - ipv6cidr_blocks          = [] -&gt;</span><span class="w"> </span><span class="s2">null
+</span><span class="gp">      - is_ipv6enabled           = false -&gt;</span><span class="w"> </span><span class="s2">null
+</span><span class="gp">      - state                    = "AVAILABLE" -&gt;</span><span class="w"> </span><span class="s2">null
+</span><span class="gp">      - time_created             = "2021-09-30 19:44:46.736 +0000 UTC" -&gt;</span><span class="w"> </span><span class="s2">null
+</span><span class="gp">      - vcn_domain_name          = "tf101.oraclevcn.com" -&gt;</span><span class="w"> </span><span class="s2">null
+</span><span class="go">    }
+
+Plan: 0 to add, 0 to change, 2 to destroy.
+
+Changes to Outputs:
+</span><span class="gp">  - vcn_state = "AVAILABLE" -&gt;</span><span class="w"> </span>null
+<span class="go">
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: 
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>After entering <code class="language-plaintext highlighter-rouge">yes</code> in the prompt,
+                            Terraform will destroy the resources for us:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">&lt;snip&gt;</span><span class="w">
+</span><span class="go">Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+</span><span class="gp">oci_core_subnet.vlan1: Destroying... [id=ocid1.subnet.oc1.phx.&lt;sanitized&gt;</span><span class="o">]</span>
+<span class="go">oci_core_subnet.vlan1: Destruction complete after 1s
+</span><span class="gp">oci_core_vcn.tf_101: Destroying... [id=ocid1.vcn.oc1.phx.&lt;sanitized&gt;</span><span class="o">]</span>
+<span class="go">oci_core_vcn.tf_101: Destruction complete after 1s
+
+Destroy complete! Resources: 2 destroyed.
+</span><span class="gp">$</span><span class="w">
+</span></code></pre>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slide" id="slide-8">
+
+                        <h2 class="slide__title"><span class="slide__num">9</span> Summary</h2>
+
+                        <p>If this was your first time using Terraform, that was a <em>LOT</em> to take in! It was worth
+                            it, as we got a lot done:</p>
+
+                        <ul>
+                            <li>Created five (5) Terraform code files that defined our inputs, outputs and resources we
+                                want Terraform to manage</li>
+                            <li>Learned how to examine what Terraform proposes be done (<code
+                                    class="language-plaintext highlighter-rouge">terraform plan</code>)</li>
+                            <li>Let Terraform create a VCN and Subnet for us (very quickly)</li>
+                            <li>Fun facts: It took Terraform under 10 seconds to provision a VCN and Subnet (try it
+                                yourself by running <code
+                                    class="language-plaintext highlighter-rouge">time terraform apply -auto-approve</code>)
+                                and under 7 seconds to destroy (try it yourself by running <code
+                                    class="language-plaintext highlighter-rouge">time terraform destroy -auto-approve</code>)
+                                those same resources. Try to beat that doing it by hand in the OCI Console!</li>
+                            <li>Organized our Terraform code into logical files (so it’s easy to navigate the code)</li>
+                            <li>Got a taste for how handy and easy it is to use the OCI Cloud Shell</li>
+                        </ul>
+
+                        <p>Hopefully this short tutorial gave you a glimpse into the basic flow around using Terraform
+                            and how powerful it can be. This was a super simple example, but was a solid first start at
+                            using Terraform. The <a href="3-understanding-terraform-basics.md">next lesson</a> digs into
+                            some of the core concepts and components in a Terraform project.</p>
+
+
+
+
+
+                    </div>
+                </section>
+                <!-- /cc01v0 -->
+
+
+            </main>
+        </div>
+    </div>
+</section> <!-- /F19v0 -->
