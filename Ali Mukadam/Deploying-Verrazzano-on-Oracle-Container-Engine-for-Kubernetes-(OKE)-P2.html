@@ -1,0 +1,595 @@
+<!--========================================CALENDAR ICON========================================-->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
+
+<!--========================================HEADER========================================-->
+<!-- CC01v0 -->
+<section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);" class="cc01 cc01v0  txtlight cpad">
+    <div class="cc01w1 cwidth">
+
+        <h2>Deploying A Multi-Cluster Verrazzano On Oracle Container Engine for Kubernetes (OKE) Part 2</h2>
+        <p>In Part 1, we discussed setting up the network infrastructure for a multi-cluster Verrazzano deployment. Earlier</p>
+
+        <div style="display: flex; color: white;">
+            <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
+                        aria-hidden="true"></i>
+                    Author: </strong>
+                Ali Mukadam
+            </p>
+
+            <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong>
+                <time>December 3, 2021</time>
+            </p>
+
+        </div>
+
+    </div>
+</section>
+<!-- /CC01v0 -->
+
+<!-- F19v0 -->
+<section class="f19 f19v0 cpad">
+    <div class="f19w1 cwidth">
+        <div class="f19w2 f19-2col">
+            <div class="f19col f19side">
+                <!-- S20v0 -->
+                <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
+                    <div class="s20w1 cwidth">
+                        <div class="col-w1">
+
+                            <h3>About Ali Mukadam</h3>
+
+                            <!--Social Icons-->
+                            <div class="author__urls-wrapper" style="margin-bottom: 15px;">
+                                <ul class="author__urls social-icons">
+
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/alimukadam/" itemprop="sameAs"
+                                            rel="nofollow noopener noreferrer" target="_blank">
+                                            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span
+                                                class="label">LinkedIn</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div><br><br>
+                            <!-- End Social Icons-->
+                            <p>Technical Director, Asia Pacific Center of Excellence.
+
+                                For the past 16 years, Ali has held technical presales, architect and industry
+                                consulting roles in BEA Systems and Oracle across Asia Pacific, focusing on middleware
+                                and application development. Although he pretends to be Thor, his real areas of
+                                expertise are Application Development, Integration, SOA (Service Oriented Architecture)
+                                and BPM (Business Process Management). An early and worthy Docker and Kubernetes
+                                adopter, Ali also leads a few open source projects (namely terraform-oci-oke) aimed at
+                                facilitating the adoption of Kubernetes and other cloud native technologies on Oracle
+                                Cloud Infrastructure.</p>
+
+                            <p><strong>More tutorials from this author: <br> </strong> <span class="tags">
+
+                                    <li><a class="animated-link tag2"
+                                            href="/tutorials/multi-cluster-verrazzano-oke/1-deploying-verrazzano-on-oke">Deploying
+                                            Verrazzano on Oracle Container Engine for Kubernetes (OKE)</a></li>
+
+                                    <li><a class="animated-link tag2"
+                                            href="/tutorials/multi-cluster-verrazzano-oke/2-deploy-multi-cluster-verrazzano-oke">Deploying
+                                            A Multi-Cluster Verrazzano On Oracle Container Engine for Kubernetes (OKE)
+                                            Part 1</a></li>
+
+                                    <li><a class="animated-link tag2"
+                                            href="/tutorials/multi-cluster-verrazzano-oke/3-deploy-multi-cluster-verrazzano-oke">Deploying
+                                            A Multi-Cluster Verrazzano On Oracle Container Engine for Kubernetes (OKE)
+                                            Part 2</a></li>
+
+                                    <li><a class="animated-link tag2" href="/tutorials/calico-with-oke">Installing and
+                                            using Calico on Oracle Container Engine (OKE)</a></li>
+
+                                </span>
+                            </p>
+
+                            <!--Tags-->
+                            <h3>Tags</h3>
+                            <p> <span class="tags">
+
+                                    <a class="animated-link tag" href="#">open-source</a>
+                                    <a class="animated-link tag" href="#">oke</a>
+                                    <a class="animated-link tag" href="#">kubernetes</a>
+                                    <a class="animated-link tag" href="#">terraform</a>
+                                    <a class="animated-link tag" href="#">devops</a>
+                                </span>
+                            </p>
+
+                            <h3></h3>
+                            <a href="https://developer.oracle.com/tutorials">
+                                <p class="page__date" style="margin-right: 25px;"><strong>
+                                        Back to tutorials
+                                    </strong>
+                                </p>
+                            </a>
+
+                        </div>
+                    </div>
+                </section>
+                <!-- /S20v0 -->
+            </div>
+            <!-- SET UP -->
+            <main class="f19col f19main">
+                <!-- cc01v0 -->
+
+                <section class="cc01 cc01v0 cpad" id="link1">
+                    <div class="cc01w1 cwidth">
+
+                        <h2>Welcome!</h2>
+
+                        <picture class="alignright">
+                            <source
+                                srcset="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/verrazzano-logo.png 1x" />
+                            <img loading="lazy" width="400" height="400"
+                                src="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/verrazzano-logo.png"
+                                data-original="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/verrazzano-logo.png"
+                                data-at2x="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/verrazzano-logo@2x.png"
+                                alt="Verrazzano Logo" title="Verrazzano Logo" />
+                        </picture>
+
+                        <p>In <a href="2-deploy-multi-cluster-verrazzano-oke">Part 1</a>, we discussed setting up the
+                            network infrastructure for a multi-cluster <a href="https://verrazzano.io/">Verrazzano</a>
+                            deployment. Earlier, we focused on deploying Verrazzano on <a
+                                href="1-deploying-verrazzano-on-oke">Oracle Container Engine (OKE)</a>. In this article,
+                            we will configure the clusters so they behave as a kind of global cluster. Below is the
+                            multi-clustering process depicted graphically:</p>
+
+                        <figure class="aligncenter">
+                            <picture>
+                                <source
+                                    srcset="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/vNjGKLaGatczobm2O5Ycdw.png 1x" />
+                                <img loading="lazy" width="1076" height="630"
+                                    src="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/vNjGKLaGatczobm2O5Ycdw.png"
+                                    data-original="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/vNjGKLaGatczobm2O5Ycdw.png"
+                                    data-at2x="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/vNjGKLaGatczobm2O5Ycdw@2x.png"
+                                    title="Verrazzano multi-cluster deployment and registration process"
+                                    alt="Verrazzano multi-cluster deployment and registration process" />
+                            </picture>
+                            <figcaption>Verrazzano multi-cluster deployment and registration process</figcaption>
+                        </figure>
+
+                        <p>Recall that a Verrazzano multi-cluster has 1 Admin cluster and 1 or more managed clusters and
+                            that each Verrazzano cluster is a Kubernetes cluster:</p>
+
+                        <figure class="aligncenter">
+                            <picture>
+                                <source
+                                    srcset="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/5i_215fK15AiaYSz.png 1x" />
+                                <img loading="lazy" width="535" height="413"
+                                    src="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/5i_215fK15AiaYSz.png"
+                                    data-original="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/5i_215fK15AiaYSz.png"
+                                    data-at2x="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/5i_215fK15AiaYSz@2x.png"
+                                    title="Verrazzano multi-cluster architecture"
+                                    alt="Verrazzano multi-cluster architecture" />
+                            </picture>
+                            <figcaption>Verrazzano multi-cluster architecture</figcaption>
+                        </figure>
+
+                        <p>Also, remember we have the following setup:</p>
+
+                        <figure class="aligncenter">
+                            <picture>
+                                <source
+                                    srcset="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/695/bF77x66gHN42zsW_2_9Dxw.png 1x" />
+                                <img loading="lazy" width="695" height="554"
+                                    src="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/695/bF77x66gHN42zsW_2_9Dxw.png"
+                                    data-original="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/695/bF77x66gHN42zsW_2_9Dxw.png"
+                                    data-at2x="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/695/bF77x66gHN42zsW_2_9Dxw@2x.png"
+                                    title="Remote peering with different regions"
+                                    alt="Remote peering with different regions using star architecture for managed clusters" />
+                            </picture>
+                            <figcaption>Remote peering with different regions</figcaption>
+                        </figure>
+
+                        <p>Plus, we chose the Admin server to be in the Singapore OCI region.</p>
+
+                        <p>We will install Verrazzano with dev/prod profile on the Admin cluster and with
+                            managed-cluster profile on the managed clusters.</p>
+
+                        <h3 id="note-on-using-kubectx">Note on using kubectx</h3>
+
+                        <p>In the commands below, I use kubectx to set the Kubernetes context where a context is
+                            equivalent to a Kubernetes cluster. Strictly speaking that’s not true but it serves our
+                            purpose here. Since we have 1 Admin servers and 3 managed servers in 4 different regions, we
+                            have 4 different contexts:</p>
+
+                        <figure class="aligncenter">
+                            <picture>
+                                <source
+                                    srcset="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/8IaaB1P-hc9P6vjffKZaDA.png 1x" />
+                                <img loading="lazy" width="700" height="121"
+                                    src="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/8IaaB1P-hc9P6vjffKZaDA.png"
+                                    data-original="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/8IaaB1P-hc9P6vjffKZaDA.png"
+                                    data-at2x="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/8IaaB1P-hc9P6vjffKZaDA@2x.png"
+                                    title="Verifying your Kubernetes context" alt="Verifying your Kubernetes context" />
+                            </picture>
+                            <figcaption>Verifying your Kubernetes context</figcaption>
+                        </figure>
+
+                        <p>To ensure we are always using the correct context, I execute the <code
+                                class="language-plaintext highlighter-rouge">kubectx &lt;context-name&gt;</code> before
+                            every command.</p>
+
+                        <h2 id="installing-verrazzano-as-admin">Installing Verrazzano as Admin</h2>
+
+                        <p>Installing Verrazzano as the Admin cluster is straightforward. You follow the <a
+                                href="https://verrazzano.io/docs/quickstart/">quickstart guide</a> and you can choose
+                            between the dev/prod profile. On the operator host, ensure your context is pointing to
+                            “admin”:</p>
+
+                        <figure class="aligncenter">
+                            <picture>
+                                <source
+                                    srcset="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/700/8IaaB1P-hc9P6vjffKZaDA.png 1x" />
+                                <img loading="lazy" width="700" height="121"
+                                    src="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/700/8IaaB1P-hc9P6vjffKZaDA.png"
+                                    data-original="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/700/8IaaB1P-hc9P6vjffKZaDA.png"
+                                    data-at2x="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/700/8IaaB1P-hc9P6vjffKZaDA@2x.png"
+                                    title="Verifying your Kubernetes context" alt="Verifying your Kubernetes context" />
+                            </picture>
+                            <figcaption>Verifying your Kubernetes context</figcaption>
+                        </figure>
+
+                        <p>If it’s pointing to one of the other clusters, change it as follows:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectx admin
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>We can now begin the installation:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectl apply -f https://github.com/verrazzano/verrazzano/releases/download/v1.0.3/operator.yaml
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Wait for the deployment to finish:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectl -n verrazzano-install rollout status deployment/verrazzano-platform-operator
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>And confirm the operator pods are working correctly:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectl -n verrazzano-install get pods
+NAME                                            READY   STATUS    RESTARTS   AGE
+verrazzano-platform-operator-54cf56884f-46zzk   1/1     Running   0          91s
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Next, install Verrazzano:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectl apply -f - &lt;&lt;EOF  
+apiVersion: install.verrazzano.io/v1alpha1  
+kind: Verrazzano  
+metadata:  
+    name: admin  
+spec:  
+    profile: dev  
+EOF
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Now we need to wait until the installation is complete:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectl wait \  
+    --timeout=20m \  
+    --for=condition=InstallComplete \  
+    verrazzano/admin
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>This will take a while. In the meantime, let’s install Verrazzano on the managed clusters.
+                        </p>
+
+                        <h2 id="installing-verrazzano-on-managed-clusters">Installing Verrazzano on managed clusters
+                        </h2>
+
+                        <p>Change the context to 1 of the managed clusters and install the operator again e.g.</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectx sydney kubectl apply -f https://github.com/verrazzano/verrazzano/releases/download/v1.0.3/operator.yamlkubectl -n verrazzano-install rollout status deployment/verrazzano-platform-operator
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Repeat the above for all the managed clusters. Before running in each managed cluster, ensure
+                            you have changed your context with kubectx <code
+                                class="language-plaintext highlighter-rouge">&lt;contextname&gt;</code> as above.</p>
+
+                        <p>Using the same procedure as for the Admin region, verify that the Verrazzano operator has
+                            been successfully installed.</p>
+
+                        <p>Now, install Verrazzano for each using the managed profile by changing the context and name
+                            accordingly:</p>
+
+                        <div class="language-yaml highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">install.verrazzano.io/v1alpha1</span>  
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Verrazzano</span>  
+<span class="na">metadata</span><span class="pi">:</span>  
+    <span class="na">name</span><span class="pi">:</span> <span class="s">sydney</span>  
+<span class="na">spec</span><span class="pi">:</span>  
+    <span class="na">profile</span><span class="pi">:</span> <span class="s">managed-cluster</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                        <h2 id="verifying-the-admin-cluster-and-managed-clusters">Verifying the Admin cluster and
+                            managed clusters</h2>
+
+                        <p>While the managed clusters are being installed, let’s see if we can <a
+                                href="https://verrazzano.io/docs/operations/">access the various consoles</a>. Ensure
+                            you can login into the Verrazzano and Rancher consoles.</p>
+
+                        <p>Change the context again and verify:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectx sydney kubectl wait \  
+    --timeout=20m \  
+    --for=condition=InstallComplete \  
+    verrazzano/sydney
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Repeat the verification for each managed cluster.</p>
+
+                        <h2 id="registering-the-managed-clusters">Registering the managed clusters</h2>
+
+                        <p>Verify the the CA certificate type for each managed cluster:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectx sydney kubectl -n verrazzano-system get secret system-tls -o jsonpath='{.data.ca\.crt}'
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>If this value is empty, then your managed cluster is using certificates signed by a
+                            well-known certificate authority and you can generate a secret containing the CA certificate
+                            in YAML format. If it’s not empty, then the certificate is self-signed and needs to be
+                            extracted. Refer to the workflow at the beginning of this article.</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectx sydney
+
+</span><span class="gp">CA_CERT=$</span><span class="o">(</span>kubectl <span class="se">\ </span> 
+<span class="go">    get secret system-tls \  
+    -n verrazzano-system \  
+    -o jsonpath="{.data.ca\.crt}" | base64 --decode)
+
+kubectl create secret generic "ca-secret-sydney" \  
+  -n verrazzano-mc \  
+</span><span class="gp">  --from-literal=cacrt="$</span>CA_CERT<span class="s2">" </span><span class="se">\ </span><span class="s2"> 
+</span><span class="gp">  --dry-run=client -o yaml &gt;</span><span class="w"> </span><span class="s2">managedsydney.yaml
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Repeat the above for the 2 other regions replacing the region/context and filenames
+                            accordingly.</p>
+
+                        <p>Create 3 secrets on the Admin cluster that contains the CA certificate for each managed
+                            cluster:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectx adminkubectl apply -f managedsydney.yaml  
+kubectl apply -f managedmumbai.yaml  
+kubectl apply -f managedtokyo.yaml
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Get the cluster name for the Admin Cluster:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectl config get contexts
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <figure class="aligncenter">
+                            <picture>
+                                <source
+                                    srcset="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/AHjsVsuj0gcjB0RNKCNVIQ.png 1x" />
+                                <img loading="lazy" width="700" height="132"
+                                    src="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/AHjsVsuj0gcjB0RNKCNVIQ.png"
+                                    data-original="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/AHjsVsuj0gcjB0RNKCNVIQ.png"
+                                    data-at2x="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/AHjsVsuj0gcjB0RNKCNVIQ@2x.png"
+                                    title="Cluster names" alt="Cluster names" />
+                            </picture>
+                            <figcaption>Cluster names</figcaption>
+                        </figure>
+
+                        <p>Get the API Server address for the Admin server:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">kubectx adminexport CLUSTER_NAME="cluster-cillzxw34tq"API_SERVER=$</span><span class="o">(</span>kubectl config view <span class="nt">-o</span> <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">"{.clusters[?(@.name==</span><span class="se">\"</span><span class="nv">$CLUSTER_NAME</span><span class="se">\"</span><span class="s2">)].cluster.server}"</span><span class="o">)</span>
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>Create a ConfigMap that contains the Admin cluster’s API server address:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectx adminkubectl apply -f &lt;&lt;EOF -  
+apiVersion: v1  
+kind: ConfigMap  
+metadata:  
+  name: verrazzano-admin-cluster  
+  namespace: verrazzano-mc  
+data:  
+</span><span class="gp">  server: "$</span><span class="o">{</span>API_SERVER<span class="o">}</span><span class="s2">"  
+</span><span class="go">EOF
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Create the VerrazzanoManagedCluster object for each managed cluster:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectx admin  
+kubectl apply -f &lt;&lt;EOF -  
+apiVersion: clusters.verrazzano.io/v1alpha1  
+kind: VerrazzanoManagedCluster  
+metadata:  
+  name: sydney  
+  namespace: verrazzano-mc  
+spec:  
+  description: "Sydney VerrazzanoManagedCluster object"  
+  caSecret: ca-secret-sydney  
+EOFkubectl apply -f &lt;&lt;EOF -  
+apiVersion: clusters.verrazzano.io/v1alpha1  
+kind: VerrazzanoManagedCluster  
+metadata:  
+  name: mumbai  
+  namespace: verrazzano-mc  
+spec:  
+  description: "Mumbai VerrazzanoManagedCluster object"  
+  caSecret: ca-secret-mumbai  
+EOFkubectl apply -f &lt;&lt;EOF -  
+apiVersion: clusters.verrazzano.io/v1alpha1  
+kind: VerrazzanoManagedCluster  
+metadata:  
+  name: tokyo  
+  namespace: verrazzano-mc  
+spec:  
+  description: "Tokyo VerrazzanoManagedCluster object"  
+  caSecret: ca-secret-tokyo  
+EOF
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Wait for the VerrazzanoManagedCluster resource to reach the Ready status:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectx adminkubectl wait --for=condition=Ready \  
+    vmc sydney -n verrazzano-mckubectl wait --for=condition=Ready \  
+    vmc sydney -n verrazzano-mckubectl wait --for=condition=Ready \  
+    vmc sydney -n verrazzano-mc
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Export a YAML file created to register the managed cluster:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectx adminkubectl get secret verrazzano-cluster-sydney-manifest \  
+    -n verrazzano-mc \  
+</span><span class="gp">    -o jsonpath={.data.yaml} | base64 --decode &gt;</span><span class="w"> </span>registersydney.yamlkubectl get secret verrazzano-cluster-mumbai-manifest <span class="se">\ </span> 
+<span class="go">    -n verrazzano-mc \  
+</span><span class="gp">    -o jsonpath={.data.yaml} | base64 --decode &gt;</span><span class="w"> </span>registermumbai.yamlkubectl get secret verrazzano-cluster-tokyo-manifest <span class="se">\ </span> 
+<span class="go">    -n verrazzano-mc \  
+</span><span class="gp">    -o jsonpath={.data.yaml} | base64 --decode &gt;</span><span class="w"> </span>registertokyo.yaml
+</code></pre>
+                            </div>
+                        </div>
+
+                        <p>On each managed cluster, apply the registration file:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectx sydney  
+kubectl apply -f registersydney.yamlkubectx mumbai  
+kubectl apply -f registermumbai.yamlkubectx tokyo  
+kubectl apply -f registertokyo.yaml
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>Now verify whether the registration completed successfully:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="go">kubectx admin  
+kubectl get vmc sydney -n verrazzano-mc -o yaml  
+kubectl get vmc mumbai -n verrazzano-mc -o yaml  
+kubectl get vmc tokyo -n verrazzano-mc -o yaml
+</span></code></pre>
+                            </div>
+                        </div>
+
+                        <h2 id="additional-verifications">Additional verifications</h2>
+
+                        <p>Navigate to the Verrazzano console, login and you should be able to see all 3 clusters:</p>
+
+                        <figure class="aligncenter">
+                            <picture>
+                                <source
+                                    srcset="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/oMn_S0wntkkEmuuPf-3JBw.png 1x" />
+                                <img loading="lazy" width="700" height="403"
+                                    src="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/oMn_S0wntkkEmuuPf-3JBw.png"
+                                    data-original="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/oMn_S0wntkkEmuuPf-3JBw.png"
+                                    data-at2x="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/oMn_S0wntkkEmuuPf-3JBw@2x.png"
+                                    title="Managed clusters in Verrazzano" alt="Managed clusters in Verrazzano" />
+                            </picture>
+                            <figcaption>Managed clusters in Verrazzano</figcaption>
+                        </figure>
+
+                        <p>Similarly, on the Rancher console, you should be able to see all 4 clusters:</p>
+                        <figure class="aligncenter">
+                            <picture>
+                                <source
+                                    srcset="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/v3E0CZxe1nF3Ni80qCB7tg.png 1x" />
+                                <img loading="lazy" width="700" height="173"
+                                    src="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/v3E0CZxe1nF3Ni80qCB7tg.png"
+                                    data-original="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/v3E0CZxe1nF3Ni80qCB7tg.png"
+                                    data-at2x="https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/assets/v3E0CZxe1nF3Ni80qCB7tg@2x.png"
+                                    title="Admin and managed clusters in Rancher"
+                                    alt="Admin and managed clusters in Rancher" />
+                            </picture>
+                            <figcaption>Admin and managed clusters in Rancher</figcaption>
+                        </figure>
+
+                        <p>“local” is the Admin cluster whereas the others are the managed clusters.</p>
+
+                        <h2 id="conclusion">Conclusion</h2>
+
+                        <p>This concludes the exercise of connecting the OKE clusters deployed in different regions into
+                            a multi-cluster Verrazzano deployment. Note that in this post, we did not configure things
+                            like DNS, Certificates, Ingress Controller etc. Our aim is to get the multi-cluster
+                            configuration going. In a future post, we will look at those other things as well.</p>
+
+                    </div>
+                </section>
+                <!-- /CC01v0 -->
+
+            </main>
+        </div>
+    </div>
+</section>
+<!-- /F19v0 -->
