@@ -140,13 +140,13 @@
                         <p>As a brief introduction, the Argo Project has 4 main components:</p>
 
                         <ul>
-                            <li><a href="https://argoproj.github.io/projects/argo/">Argo Workflows</a>: a native
+                            <li><a href="https://argoproj.github.io/workflows">Argo Workflows</a>: a native
                                 workflow engine to orchestrate parallel jobs on Kubernetes</li>
-                            <li><a href="https://argoproj.github.io/projects/argo-cd/">Argo CD</a>: a declarative,
+                            <li><a href="https://argoproj.github.io/cd">Argo CD</a>: a declarative,
                                 GitOps continuous delivery tool for Kubernetes</li>
-                            <li><a href="https://argoproj.github.io/argo-rollouts/">Argo Rollouts</a>: provides
+                            <li><a href="https://argoproj.github.io/rollouts">Argo Rollouts</a>: provides
                                 additional deployment strategies such as Blue-Green and Canary to Kubernetes</li>
-                            <li><a href="https://argoproj.github.io/projects/argo-events/">Argo Events</a>: provides an
+                            <li><a href="https://argoproj.github.io/events">Argo Events</a>: provides an
                                 event-based dependency manager for Kubernetes</li>
                         </ul>
 
@@ -208,7 +208,7 @@
 
                         <h2 id="argo-cd">Argo CD</h2>
 
-                        <p><a href="https://argoproj.github.io/projects/argo-cd/">Argo CD</a> is a declarative, GitOps
+                        <p><a href="https://argoproj.github.io/cd">Argo CD</a> is a declarative, GitOps
                             continuous delivery tool for Kubernetes. This says a lot without being too wordy. When you
                             look at the user guide and features, this brief description probably undersells Argo CD.</p>
 
@@ -273,7 +273,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
                                 Controller</a> like the <a href="https://kubernetes.github.io/ingress-nginx/">NGINX
                                 Ingress
                                 Controller</a>. Make sure you read Argo’s <a
-                                href="https://argoproj.github.io/argo-cd/operator-manual/ingress/">documentation on
+                                href="https://argo-cd.readthedocs.io/en/stable/operator-manual/ingress/">documentation on
                                 using
                                 Ingress</a>. But we are in a hurry, so we’ll just skip these and click ‘Advanced’ &gt;
                             ‘Accept the Risk and Continue’.</p>
@@ -317,7 +317,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
                         </picture>
 
                         <p>Follow the rest of the instructions in <a
-                                href="https://argoproj.github.io/argo-cd/getting_started/#creating-apps-via-ui">creating
+                                href="https://argo-cd.readthedocs.io/en/stable/getting_started/#creating-apps-via-ui">creating
                                 apps via UI</a>. Once the application is created, click on ‘Sync’ and watch the
                             application
                             being deployed as Kubernetes works its way to creating the various resources (deployment,
@@ -350,7 +350,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 
                         <p>Argo Rollouts provides additional deployment strategies such as Blue-Green and Canary to
                             Kubernetes. Let’s dive right into it and follow Rollouts’ <a
-                                href="https://argoproj.github.io/argo-rollouts/getting-started/">getting started
+                                href="https://argoproj.github.io/argo-workflows/quick-start/">getting started
                                 guide</a>
                             to do a blue-green deployment:</p>
 
