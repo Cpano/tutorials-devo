@@ -1,0 +1,688 @@
+<!--========================================CALENDAR ICON========================================-->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
+
+<!--========================================HEADER========================================-->
+<!-- CC01v0 -->
+<section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);" class="cc01 cc01v0  txtlight cpad">
+    <div class="cc01w1 cwidth">
+
+        <h1>Workload Deployment</h1>
+        <p>The best practice recommendation from Oracle for workloads on OCI is to use the concept of an operator host
+            to install and maintain the service application and configuration for the workload.</p>
+
+        <div style="display: flex; color: white;">
+            <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
+                        aria-hidden="true"></i>
+                    Author: </strong>
+                Malte Menkhoff
+            </p>
+
+            <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong>
+                <time>October 29, 2021</time>
+            </p>
+
+        </div>
+
+    </div>
+</section>
+<!-- /CC01v0 -->
+
+<!-- F19v0 -->
+<section class="f19 f19v0 cpad">
+    <div class="f19w1 cwidth">
+        <div class="f19w2 f19-2col">
+            <div class="f19col f19side">
+                <!-- S20v0 -->
+                <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
+                    <div class="s20w1 cwidth">
+                        <div class="col-w1">
+
+                            <h3>About Malte Menkhoff</h3>
+
+                            <!--Social Icons-->
+                            <div class="author__urls-wrapper" style="margin-bottom: 15px;">
+                                <ul class="author__urls social-icons">
+                                    <li>
+                                        <a href="https://github.com/kubemen" itemprop="sameAs"
+                                            rel="nofollow noopener noreferrer" target="_blank">
+                                            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span
+                                                class="label">GitHub</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <br><br>
+                            <!-- End Social Icons-->
+                            <p>Malte is a passioned solution architect and is supporting customers in the DACH region in
+                                migrating to OCI.</p>
+
+                            <p><strong>More tutorials from this author: <br> </strong>
+                                <span class="tags">
+
+                                    <a class="animated-link tag2"
+                                        href="/tutorials/deploy-apache-superset-with-mds-on-oci/">Deploy Apache Superset
+                                        with
+                                        MySQL Database Service on Oracle Cloud Infrastructure</a><br>
+
+                                    <a class="animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-intro/"
+                                        oci-iac-framework="" tutorials="">Getting Started with Oracle Cloud
+                                        Infrastructure (OCI)</a><br>
+
+
+                                    <a class=" animated-link tag2" href="/tutorials/oci-iac-framework/"
+                                        tutorials="">Oracle Cloud
+                                        Infrastructure IaC Framework Series</a><br>
+
+                                    <a class=" animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-step-1-provider/"
+                                        oci-iac-framework="" tutorials="">Automating OCI with Terraform</a><br>
+
+                                    <a class=" animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-step-2-base/"
+                                        oci-iac-framework="" tutorials="">Service Delivery Framework</a><br>
+
+                                    <a class=" animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-step-3-database-infrastructure/"
+                                        oci-iac-framework="" tutorials="">Database Infrastructure</a><br>
+
+                                    <a class=" animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-step-4-app-infrastructure/"
+                                        oci-iac-framework="" tutorials="">Application Infrastructure</a><br>
+
+                                    <a class=" animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-step-5-workload-deployment/"
+                                        oci-iac-framework="" tutorials="">Workload Deployment</a><br>
+
+                                    <a class=" animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-step-6-governance/"
+                                        oci-iac-framework="" tutorials="">Governance</a><br>
+
+                                </span>
+                            </p>
+
+                            <!--Tags-->
+                            <h3>Tags</h3>
+                            <p> <span class=" tags">
+                                    <a class="animated-link tag" href="#">open-source</a>
+                                    <a class="animated-link tag" href="#">terraform</a>
+                                    <a class="animated-link tag" href="#">iac</a>
+                                    <a class="animated-link tag" href="#">devops</a>
+                                    <a class="animated-link tag" href="#">get-started</a>
+                                </span>
+                            </p>
+
+                            <h3></h3>
+                            <a href="https://developer.oracle.com/tutorials">
+                                <p class="page__date" style="margin-right: 25px;"><strong>
+                                        Back to tutorials
+                                    </strong>
+                                </p>
+                            </a>
+
+                        </div>
+                    </div>
+                </section>
+                <!-- /S20v0 -->
+            </div>
+            <!-- SET UP -->
+            <main class="f19col f19main">
+                <!-- cc01v0 -->
+
+                <section class="cc01 cc01v0 cpad" id="link1">
+                    <div class="cc01w1 cwidth">
+
+
+
+                        <picture class="aligncenter">
+                            <source srcset="https://cool.devo.build/tutorials/oci-iac-framework/assets/landing-zone.png 1x" />
+                            <img loading="lazy" width="400" height="400" src="https://cool.devo.build/tutorials/oci-iac-framework/assets/landing-zone.png"
+                                data-original="https://cool.devo.build/tutorials/oci-iac-framework/assets/landing-zone.png" data-at2x="https://cool.devo.build/tutorials/oci-iac-framework/assets/landing-zone@2x.png"
+                                alt="OCLOUD landing zone" title="OCLOUD landing zone" />
+                        </picture>
+
+                        <p>The best practice recommendation from Oracle for workloads on OCI is to use the concept of an
+                            <strong>operator host</strong> to install and maintain the service application and
+                            configuration for the workload.</p>
+
+                        <p>As the number of applications and needed configurations varies, our goal in this step will be
+                            to dig deeper in the concept of the operator host, and which configurations and automation
+                            tools can be used on OCI to deploy your workload.</p>
+
+                        <h2 id="operator-host">Operator Host</h2>
+
+                        <p>The aim of the operator host is:</p>
+                        <ol>
+                            <li>Performing post-provisioning tasks with any automation tools which requires a local
+                                installation.</li>
+                            <li>Provide administrators access without the need to upload api authentication keys
+                                (instance_principal).</li>
+                        </ol>
+
+                        <h3 id="access-to-operator-host">Access to Operator Host</h3>
+
+                        <p>As described in the base section, OCI provides the ability to use a Bastion service for a
+                            controlled and secure access to resources in your tenancy.</p>
+
+                        <p>The operator host concept leverages this service, providing administrators and application
+                            hosts a quick and secure mechanism to access a system which can run scripts or any
+                            automation tool for maintaining and operating the services.</p>
+
+                        <h2 id="oci-tool-support-for-automation--configuration-management">OCI Tool Support for
+                            Automation &amp; Configuration Management</h2>
+
+                        <p>The use of Terraform is mostly in defining the infrastructure to host the applications for
+                            the service. Terraform itself is not naturally designed to do certain application
+                            installation or configuration tasks.</p>
+
+                        <p>Oracle is not recommending to use any of the described tools as the right way to go for
+                            customers or prospects, but instead Oracle is describing how to use the most common tools on
+                            the market in combination with Terraform to provide and guide customers with best practices.
+                            It is up to the customer and their requirements to define which tool combination best suits
+                            their individual workload, and which best fulfills their needs.</p>
+
+                        <p>There are a number of external tools which can be used to automate the workload deployment.
+                            Terraform is focussed on IaC and has it strength in provisioning infrastructure resources
+                            there is potentially a need to use further tools to install, configure, and manage
+                            applications on top of the infrastructure.</p>
+
+                        <p>In this session we’ll focus on how to use the most common tools like Ansible, Puppet, and
+                            Chef, and we’ll show how they can be used.</p>
+
+                        <p>The focus of this session is on cloud-native, so we’ll show you in a demo how you can
+                            leverage Helm charts to deploy workload via the Oracle Resource Manager onto an OKE cluster
+                            which has been deployed in the previous session.</p>
+
+                        <h3 id="ansible">Ansible</h3>
+
+                        <p>OCI supports the use of Ansible’s modules to automate cloud infrastructure provisioning along
+                            with configuration, orchestrating of complex operation process, and deployment and update of
+                            your software assets.</p>
+
+                        <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/oci-iac-framework/assets/ansible.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/oci-iac-framework/assets/ansible.png" data-original="https://cool.devo.build/tutorials/oci-iac-framework/assets/ansible.png"
+                                data-at2x="https://cool.devo.build/tutorials/oci-iac-framework/assets/ansible@2x.png" alt="Ansible" title="Ansible" />
+                        </picture>
+
+                        <p>The OCI Ansible collection supports Ansible Tower and AWX. For more information on how to set
+                            up the collection with Ansible Tower, refer to the <a
+                                href="https://blogs.oracle.com/cloud-infrastructure/post/using-oracle-cloud-infrastructure-with-ansible-tower-and-awx?source=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00022">Ansible
+                                blog post</a>. To install the free version of Ansible Tower (AWX) on an OCI Compute
+                            instance, you can use <a href="https://github.com/oracle-quickstart/oci-ansible-awx">ansible
+                                solution on GitHub</a> and the following <a
+                                href="https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/ansiblesamples.htm#Sample_Ansible_Playbooks?source=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00022">ansible
+                                example playbooks</a>.</p>
+
+                        <p>A complete example how you can use Ansible to deploy Kubernetes, Istio and an example service
+                            can be found <a
+                                href="https://blog.kube-mesh.io/single-click-deployment-of-oke-istio-mushop-using-ansible-from-oci-cloud-shell/">here</a>.<br />
+                            Link: <a
+                                href="https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/ansible.htm?source=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00022">ansible_collection</a>
+                        </p>
+
+                        <h3 id="puppet">Puppet</h3>
+
+                        <p>While many organizations are using Terraform to provision Oracle cloud resources, a solution
+                            for continuous integration should be considered when it comes to ongoing management of
+                            resources. That’s where Puppet can help. With Puppet you can:</p>
+
+                        <ul>
+                            <li>Integrate cloud resources into your existing infrastructure, and manage everything with
+                                one tool.</li>
+                            <li>Use existing <a
+                                    href="https://puppet.com/docs/puppet/5.5/hiera_intro.html">puppet_hiera</a> data to
+                                configure parts of your OCI infrastructure.</li>
+                            <li>Have a tighter integration between OCI configuration in general and the configuration
+                                management on your systems.</li>
+                        </ul>
+
+                        <p>The oci_config module extends the Puppet language to contain types needed to create and
+                            manage the lifecycle of objects within your Oracle Cloud Infrastructure. Although this is
+                            traditionally the domain of Terraform scripts, being able to manage these objects with
+                            Puppet has proven to be a big plus for many customers. For example:</p>
+
+                        <ul>
+                            <li>Your organization is already using Puppet and not Terraform. Introducing a new tool into
+                                your organization might be more then you want or need. In these cases, Puppet, in
+                                combination with this module, is a great help.</li>
+                            <li>You want to use existing hiera data to configure parts of your OCI infrastructure. In
+                                this case, using this module is great. It integrates with all of the existing hieradata,
+                                just like your other Puppet code.</li>
+                            <li>You need tighter integration between OCI configuration in general and the configuration
+                                management on your systems. Again, this module is for you. It is regular Puppet so you
+                                can use all of the rich Puppet features like exported resources to integrate all of your
+                                configuration settings both on the cloud level as well as on the machines.</li>
+                        </ul>
+
+                        <p><strong>Puppet example code:</strong></p>
+
+                        <p>Configuration of using a tenant:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>puppet apply /software/tenant_setup.pp
+            <span class="go">Notice: Compiled catalog for oci in environment production in 0.09 seconds
+            Notice: /Stage[main]/Main/Oci_tenant[enterprisemodules]/fingerprint: defined 'fingerprint' as 'xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx'
+            Notice: /Stage[main]/Main/Oci_tenant[enterprisemodules]/private_key: created with specified value
+            Notice: /Stage[main]/Main/Oci_tenant[enterprisemodules]/region: defined 'region' as 'eu-frankfurt-1'
+            Notice: /Stage[main]/Main/Oci_tenant[enterprisemodules]/tenancy_ocid: defined 'tenancy_ocid' as 'ocid1.tenancy.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+            Notice: /Stage[main]/Main/Oci_tenant[enterprisemodules]/user_ocid: defined 'user_ocid' as 'ocid1.user.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+            Notice: Applied catalog in 0.02 seconds
+            </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p>First inspection:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>puppet resource oci_identity_compartment
+            <span class="gp">bash-4.2#</span><span class="w"> </span>puppet resource oci_identity_compartment
+            <span class="go">*** ENTERPRISE MODULES Universal License INTERNAL USE ONLY ***
+            oci_identity_compartment { 'your_tenant (root)/ManagedCompartmentForPaaS':
+            </span><span class="gp">  ensure          =&gt;</span><span class="w"> </span><span class="s1">'present'</span>,
+            <span class="gp">  compartment     =&gt;</span><span class="w"> </span><span class="s1">'/'</span>,
+            <span class="gp">  compartment_id  =&gt;</span><span class="w"> </span><span class="s1">'ocid1.tenancy.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'</span>,
+            <span class="gp">  description     =&gt;</span><span class="w"> </span><span class="s1">'idcs-f7246e2bbacf4a11a7e231507e34fdec|22626923|user@domain.com-Enterprise Modules B.V.-838062'</span>,
+            <span class="gp">  id              =&gt;</span><span class="w"> </span><span class="s1">'ocid1.compartment.oc1..aaaaaaaai2wkrvdvyxfuekjbt3jnv7b4hrlkvwnklu6uryy2daqsq425tzaa'</span>,
+            <span class="gp">  lifecycle_state =&gt;</span><span class="w"> </span><span class="s1">'ACTIVE'</span>,
+            <span class="gp">  provider        =&gt;</span><span class="w"> </span><span class="s1">'sdk'</span>,
+            <span class="gp">  time_created    =&gt;</span><span class="w"> </span><span class="s1">'2019-10-24T08:42:26+00:00'</span>,
+            <span class="go">}
+            oci_identity_compartment { 'your_tenant (root)/test_compartment_1':
+            </span><span class="gp">  ensure          =&gt;</span><span class="w"> </span><span class="s1">'present'</span>,
+            <span class="gp">  compartment     =&gt;</span><span class="w"> </span><span class="s1">'/'</span>,
+            <span class="gp">  compartment_id  =&gt;</span><span class="w"> </span><span class="s1">'ocid1.tenancy.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'</span>,
+            <span class="gp">  description     =&gt;</span><span class="w"> </span><span class="s1">'changed'</span>,
+            <span class="gp">  id              =&gt;</span><span class="w"> </span><span class="s1">'ocid1.compartment.oc1..aaaaaaaatfskqfckrl4sucabclbsss47uyttlmwwur6lsm7crl3lrz7glfta'</span>,
+            <span class="gp">  lifecycle_state =&gt;</span><span class="w"> </span><span class="s1">'ACTIVE'</span>,
+            <span class="gp">  provider        =&gt;</span><span class="w"> </span><span class="s1">'sdk'</span>,
+            <span class="gp">  time_created    =&gt;</span><span class="w"> </span><span class="s1">'2020-01-23T15:42:35+00:00'</span>,
+            <span class="go">}
+            </span></code></pre>
+                            </div>
+                        </div>
+
+                        <p><em>(available via <a
+                                    href="https://www.enterprisemodules.com/blog/2020/02/getting-to-know-oracle-cloud-with-puppet-part-1/">this
+                                    link</a>)</em></p>
+
+                        <p><strong>Learn more</strong></p>
+
+                        <ul>
+                            <li>Download the oci_config module from <a
+                                    href="https://forge.puppet.com/enterprisemodules/oci_config?_ga=2.53914861.492612131.1628576569-1666656837.1628576569">Puppet
+                                    forge</a></li>
+                            <li>Read the <a
+                                    href="https://www.enterprisemodules.com/blog/2020/02/getting-to-know-oracle-cloud-with-puppet-part-1/">Puppet
+                                    Enterprise Guide</a> to installing the oci_config Puppet module</li>
+                            <li>Follow the guide to <a
+                                    href="https://forge.puppet.com/configuration-management/enterprisemodules/deploy-oracle-19c?_ga=2.93880664.492612131.1628576569-1666656837.1628576569">deploy
+                                    an Oracle 19 database via Puppet</a>.</li>
+                        </ul>
+
+                        <h3 id="chef">Chef</h3>
+
+                        <p>Chef is a powerful automation platform that transforms infrastructure into code. Whether
+                            you’re operating in the cloud, on-premises, or in a hybrid environment, Chef automates how
+                            infrastructure is configured, deployed, and managed across your network, no matter its size.
+                        </p>
+
+                        <p>This diagram shows how you develop, test, and deploy your Chef code</p>
+
+                        <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/oci-iac-framework/assets/chef.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/oci-iac-framework/assets/chef.png" data-original="https://cool.devo.build/tutorials/oci-iac-framework/assets/chef.png"
+                                data-at2x="https://cool.devo.build/tutorials/oci-iac-framework/assets/chef@2x.png" alt="Chef" title="Chef" />
+                        </picture>
+
+                        <p><em>Chef Plugin for OCI (<a href="https://docs.chef.io/platform_overview.html">Image
+                                    Courtesy</a>)</em></p>
+
+                        <p>The <strong>knife-oci</strong> plugin allows users to interact with Oracle Cloud
+                            Infrastructure through chef knife.</p>
+
+                        <p>The home page for the project is <a
+                                href="https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/knifeplugin.htm?source=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00022">here</a>.
+                            Plugin can be downloaded from <a
+                                href="https://github.com/oracle/knife-oci/releases">this</a> location.</p>
+
+                        <p>Following are the knife-oci plugin commands available.</p>
+                        <ul>
+                            <li>Launch an OCI instance and bootstrap it as a Chef node: <em>knife oci server create</em>
+                            </li>
+                            <li>List OCI compartments: <em>knife oci compartment list</em></li>
+                            <li>Delete an OCI instance: <em>knife oci server delete</em></li>
+                            <li>List OCI instances in a given compartment. Note: All instances in the compartment are
+                                returned, not only those that are Chef nodes: <em>knife oci server list</em></li>
+                            <li>List the images in a compartment: <em>knife oci image list</em></li>
+                            <li>List the VCNs in a compartment: <em>knife oci vcn list</em></li>
+                            <li>List the subnets in a VCN: <em>knife oci subnet list</em></li>
+                            <li>List the shapes that may be used for a particular image type: <em>knife oci shape
+                                    list</em></li>
+                            <li>List the availability domains for your tenancy: <em>knife oci ad list</em></li>
+                        </ul>
+
+                        <p>How to setup the knife-oci plugin can be found <a
+                                href="https://medium.com/oracledevs/using-oracles-chef-plugin-to-provision-resource-in-oracle-cloud-infrastructure-5891100e20ab">here</a>.
+                            See the <a
+                                href="https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/knifeplugin.htm?source=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00022">OCI
+                                documentation for chef</a>.</p>
+
+                        <h3 id="helm">Helm</h3>
+
+                        <p>Helm helps you manage Kubernetes applications: Helm Charts help you define, install, and
+                            upgrade even the most complex Kubernetes application. Charts are easy to create, version,
+                            share, and publish so you can avoid copy-and-paste.</p>
+
+                        <p>The advantages of using Helm for the deployment of applications on top of Kubernetes are:</p>
+
+                        <ul>
+                            <li>Manage Complexity</li>
+                            <li>Easy Updates</li>
+                            <li>Simple Sharing</li>
+                            <li>Rollbacks</li>
+                        </ul>
+
+                        <p>The Oracle Resource Manager (ORM) supports the Terraform provider for Helm and can be easily
+                            used in combination with the Terraform Kubernetes providers.<br />
+                            Details about Third-party Provider Versions for ORM can be found <a
+                                href="https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/providers.htm?source=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00022">here</a>.
+                        </p>
+
+                        <p>In order to get the needed information about the Kubernetes cluster we’ll need to get the
+                            content of the Kubernetes cluster which has been deployed.
+                            This can be achieved for the Kubernetes and Helm provider this way:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="c1"># Gets kubeconfig</span>
+            <span class="k">data</span> <span class="s2">"oci_containerengine_cluster_kube_config"</span> <span class="s2">"oke_cluster_kube_config"</span> <span class="p">{</span>
+              <span class="nx">cluster_id</span> <span class="p">=</span> <span class="nx">oci_containerengine_cluster</span><span class="p">.</span><span class="nx">oke_cluster</span><span class="p">.</span><span class="nx">id</span>
+            <span class="p">}</span>
+            
+            <span class="c1"># https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengdownloadkubeconfigfile.htm#notes</span>
+            <span class="k">provider</span> <span class="s2">"kubernetes"</span> <span class="p">{</span>
+              <span class="nx">load_config_file</span>       <span class="p">=</span> <span class="s2">"false"</span> <span class="c1"># Workaround for tf k8s provider &lt; 1.11.1 to work with ORM</span>
+              <span class="nx">cluster_ca_certificate</span> <span class="p">=</span> <span class="nx">base64decode</span><span class="p">(</span><span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"clusters"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"cluster"</span><span class="p">][</span><span class="s2">"certificate-authority-data"</span><span class="p">])</span>
+              <span class="nx">host</span>                   <span class="p">=</span> <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"clusters"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"cluster"</span><span class="p">][</span><span class="s2">"server"</span><span class="p">]</span>
+              <span class="nx">exec</span> <span class="p">{</span>
+                <span class="nx">api_version</span> <span class="p">=</span> <span class="s2">"client.authentication.k8s.io/v1beta1"</span> <span class="c1"># Workaround for tf k8s provider &lt; 1.11.1 to work with orm - yamldecode(data.oci_containerengine_cluster_kube_config.oke_cluster_kube_config.content)["users"][0]["user"]["exec"]["apiVersion"]</span>
+                <span class="nx">args</span> <span class="p">=</span> <span class="p">[</span><span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                  <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                  <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span>
+                  <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span>
+                  <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">4</span><span class="p">],</span>
+                  <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">5</span><span class="p">],</span>
+                  <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">6</span><span class="p">]]</span>
+                  <span class="nx">command</span> <span class="p">=</span> <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"command"</span><span class="p">]</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+            
+            <span class="c1"># https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengdownloadkubeconfigfile.htm#notes</span>
+            <span class="k">provider</span> <span class="s2">"helm"</span> <span class="p">{</span>
+              <span class="nx">kubernetes</span> <span class="p">{</span>
+                <span class="nx">load_config_file</span>       <span class="p">=</span> <span class="s2">"false"</span> <span class="c1"># Workaround for tf helm provider &lt; 1.1.1 to work with ORM</span>
+                <span class="nx">cluster_ca_certificate</span> <span class="p">=</span> <span class="nx">base64decode</span><span class="p">(</span><span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"clusters"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"cluster"</span><span class="p">][</span><span class="s2">"certificate-authority-data"</span><span class="p">])</span>
+                <span class="nx">host</span>                   <span class="p">=</span> <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"clusters"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"cluster"</span><span class="p">][</span><span class="s2">"server"</span><span class="p">]</span>
+                <span class="nx">exec</span> <span class="p">{</span>
+                  <span class="nx">api_version</span> <span class="p">=</span> <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"apiVersion"</span><span class="p">]</span>
+                  <span class="nx">args</span> <span class="p">=</span> <span class="p">[</span><span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span>
+                    <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">4</span><span class="p">],</span>
+                    <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">5</span><span class="p">],</span>
+                    <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">6</span><span class="p">]]</span>
+                    <span class="nx">command</span> <span class="p">=</span> <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"command"</span><span class="p">]</span>
+                <span class="p">}</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+            
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>It’s recommended as best practice to separate Kubernetes by service into logical entities
+                            called <em>namespaces</em>.</p>
+
+                        <p>Information about namespaces can be found <a
+                                href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">here</a>.
+                        </p>
+
+                        <p>The following code snippet in terraform creates a namespace:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="k">resource</span> <span class="s2">"kubernetes_namespace"</span> <span class="s2">"&lt;service&gt;_namespace"</span> <span class="p">{</span>
+              <span class="nx">metadata</span> <span class="p">{</span>
+                <span class="nx">name</span> <span class="p">=</span> <span class="s2">"&lt;service&gt;"</span>
+              <span class="p">}</span>
+              <span class="nx">depends_on</span> <span class="p">=</span> <span class="p">[</span><span class="nx">oci_containerengine_node_pool</span><span class="p">.</span><span class="nx">oke_node_pool</span><span class="p">]</span>
+            <span class="p">}</span>
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>As we need to have a working Kubernetes up and ready with available worker nodes, we
+                            recommend to check and wait until the worker nodes have been deployed in a previous step of
+                            Terraform.</p>
+
+                        <p>The next step would be to deploy your Kubernetes application with a Helm release in the
+                            previously created namespace.</p>
+
+                        <p>This can be achieved in storing your Helm files in a sub-directory of your Terraform
+                            environment, e.g. <em>helm_charts</em> and reference to your charts in your Terraform code
+                            as follows:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="k">resource</span> <span class="s2">"helm_release"</span> <span class="s2">"&lt;application_1&gt;"</span> <span class="p">{</span>
+              <span class="nx">depends_on</span> <span class="p">=</span> <span class="p">[</span><span class="nx">oci_containerengine_node_pool</span><span class="p">.</span><span class="nx">oke_node_pool</span><span class="p">]</span>
+              <span class="nx">name</span>       <span class="p">=</span> <span class="s2">"&lt;application_1&gt;"</span>
+              <span class="nx">chart</span>      <span class="p">=</span> <span class="s2">"helm_charts/&lt;application_1&gt;"</span>
+              <span class="nx">namespace</span>  <span class="p">=</span> <span class="nx">kubernetes_namespace</span><span class="p">.</span><span class="err">&lt;</span><span class="nx">service</span><span class="err">&gt;</span><span class="nx">_namespace</span><span class="p">.</span><span class="nx">id</span>
+              <span class="nx">wait</span>       <span class="p">=</span> <span class="kc">false</span>
+              <span class="nx">timeout</span>    <span class="p">=</span> <span class="mi">300</span>
+            <span class="p">}</span>
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>It’s also possible to deploy multiple applications for your service in repeating the code
+                            fragment as follows:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="k">resource</span> <span class="s2">"helm_release"</span> <span class="s2">"&lt;application_2&gt;"</span> <span class="p">{</span>
+              <span class="nx">depends_on</span> <span class="p">=</span> <span class="p">[</span><span class="nx">oci_containerengine_node_pool</span><span class="p">.</span><span class="nx">oke_node_pool</span><span class="p">]</span>
+              <span class="nx">name</span>       <span class="p">=</span> <span class="s2">"&lt;application_2&gt;"</span>
+              <span class="nx">chart</span>      <span class="p">=</span> <span class="s2">"helm_charts/&lt;application_2&gt;"</span>
+              <span class="nx">namespace</span>  <span class="p">=</span> <span class="nx">kubernetes_namespace</span><span class="p">.</span><span class="err">&lt;</span><span class="nx">service</span><span class="err">&gt;</span><span class="nx">_namespace</span><span class="p">.</span><span class="nx">id</span>
+              <span class="nx">wait</span>       <span class="p">=</span> <span class="kc">false</span>
+              <span class="nx">timeout</span>    <span class="p">=</span> <span class="mi">300</span>
+            <span class="p">}</span>
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>Best practice is to set a timeout to give Helm a maximum time until the deployment has to be
+                            finished.</p>
+
+                        <p>As the Helm provider is not capable to identify if the Kubernetes deployment has been
+                            finished before, we add a <code
+                                class="language-plaintext highlighter-rouge">depends_on</code> section to make sure that
+                            the Kubernetes cluster is up and running before deploying.</p>
+
+                        <h2 id="demonstration-of-a-helm-deployment">Demonstration of a Helm deployment</h2>
+
+                        <p>To demonstrate how to use the ORM to deploy workload on Kubernetes cluster, we’ll show an
+                            example by deploying a Helm release of an hivemq cluster and a kafka connector in one
+                            namespace.</p>
+
+                        <p>The target setup will look as follows:</p>
+
+                        <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/oci-iac-framework/assets/demo.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/oci-iac-framework/assets/demo.png" data-original="https://cool.devo.build/tutorials/oci-iac-framework/assets/demo.png"
+                                data-at2x="https://cool.devo.build/tutorials/oci-iac-framework/assets/demo@2x.png" alt="Demo Setup" title="Demo Setup" />
+                        </picture>
+
+                        <p>We’re using the following generic code which can be used independent of the IaaS or
+                            Kubernetes stack:</p>
+
+                        <div class="language-terraform highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="c1"># Gets kubeconfig</span>
+            <span class="k">data</span> <span class="s2">"oci_containerengine_cluster_kube_config"</span> <span class="s2">"oke_cluster_kube_config"</span> <span class="p">{</span>
+              <span class="nx">cluster_id</span> <span class="p">=</span> <span class="nx">oci_containerengine_cluster</span><span class="p">.</span><span class="nx">oke_cluster</span><span class="p">.</span><span class="nx">id</span>
+            <span class="p">}</span>
+            
+            <span class="c1"># https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengdownloadkubeconfigfile.htm#notes</span>
+            <span class="k">provider</span> <span class="s2">"kubernetes"</span> <span class="p">{</span>
+              <span class="nx">load_config_file</span>       <span class="p">=</span> <span class="s2">"false"</span> <span class="c1"># Workaround for tf k8s provider &lt; 1.11.1 to work with ORM</span>
+              <span class="nx">cluster_ca_certificate</span> <span class="p">=</span> <span class="nx">base64decode</span><span class="p">(</span><span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"clusters"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"cluster"</span><span class="p">][</span><span class="s2">"certificate-authority-data"</span><span class="p">])</span>
+              <span class="nx">host</span>                   <span class="p">=</span> <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"clusters"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"cluster"</span><span class="p">][</span><span class="s2">"server"</span><span class="p">]</span>
+              <span class="nx">exec</span> <span class="p">{</span>
+                <span class="nx">api_version</span> <span class="p">=</span> <span class="s2">"client.authentication.k8s.io/v1beta1"</span> <span class="c1"># Workaround for tf k8s provider &lt; 1.11.1 to work with orm - yamldecode(data.oci_containerengine_cluster_kube_config.oke_cluster_kube_config.content)["users"][0]["user"]["exec"]["apiVersion"]</span>
+                <span class="nx">args</span> <span class="p">=</span> <span class="p">[</span><span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                  <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                  <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span>
+                  <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span>
+                  <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">4</span><span class="p">],</span>
+                  <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">5</span><span class="p">],</span>
+                <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">6</span><span class="p">]]</span>
+                <span class="nx">command</span> <span class="p">=</span> <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"command"</span><span class="p">]</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+            
+            <span class="c1"># https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengdownloadkubeconfigfile.htm#notes</span>
+            <span class="k">provider</span> <span class="s2">"helm"</span> <span class="p">{</span>
+              <span class="nx">kubernetes</span> <span class="p">{</span>
+                <span class="nx">load_config_file</span>       <span class="p">=</span> <span class="s2">"false"</span> <span class="c1"># Workaround for tf helm provider &lt; 1.1.1 to work with ORM</span>
+                <span class="nx">cluster_ca_certificate</span> <span class="p">=</span> <span class="nx">base64decode</span><span class="p">(</span><span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"clusters"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"cluster"</span><span class="p">][</span><span class="s2">"certificate-authority-data"</span><span class="p">])</span>
+                <span class="nx">host</span>                   <span class="p">=</span> <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"clusters"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"cluster"</span><span class="p">][</span><span class="s2">"server"</span><span class="p">]</span>
+                <span class="nx">exec</span> <span class="p">{</span>
+                  <span class="nx">api_version</span> <span class="p">=</span> <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"apiVersion"</span><span class="p">]</span>
+                  <span class="nx">args</span> <span class="p">=</span> <span class="p">[</span><span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span>
+                    <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">4</span><span class="p">],</span>
+                    <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">5</span><span class="p">],</span>
+                  <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"args"</span><span class="p">][</span><span class="mi">6</span><span class="p">]]</span>
+                  <span class="nx">command</span> <span class="p">=</span> <span class="nx">yamldecode</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">oci_containerengine_cluster_kube_config</span><span class="p">.</span><span class="nx">oke_cluster_kube_config</span><span class="p">.</span><span class="nx">content</span><span class="p">)[</span><span class="s2">"users"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"user"</span><span class="p">][</span><span class="s2">"exec"</span><span class="p">][</span><span class="s2">"command"</span><span class="p">]</span>
+                <span class="p">}</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+            
+            
+            <span class="k">resource</span> <span class="s2">"kubernetes_namespace"</span> <span class="s2">"hivekafka_namespace"</span> <span class="p">{</span>
+              <span class="nx">metadata</span> <span class="p">{</span>
+                <span class="nx">name</span> <span class="p">=</span> <span class="s2">"hivekafka"</span>
+              <span class="p">}</span>
+              <span class="nx">depends_on</span> <span class="p">=</span> <span class="p">[</span><span class="nx">oci_containerengine_node_pool</span><span class="p">.</span><span class="nx">oke_node_pool</span><span class="p">]</span>
+            <span class="p">}</span>
+            
+            <span class="k">resource</span> <span class="s2">"helm_release"</span> <span class="s2">"hivemq"</span> <span class="p">{</span>
+              <span class="nx">depends_on</span> <span class="p">=</span> <span class="p">[</span><span class="nx">oci_containerengine_node_pool</span><span class="p">.</span><span class="nx">oke_node_pool</span><span class="p">]</span>
+              <span class="nx">name</span>       <span class="p">=</span> <span class="s2">"hivemq"</span>
+              <span class="nx">chart</span>      <span class="p">=</span> <span class="s2">"helm_charts/hivemq"</span>
+              <span class="nx">namespace</span>  <span class="p">=</span> <span class="nx">kubernetes_namespace</span><span class="p">.</span><span class="nx">hivekafka_namespace</span><span class="p">.</span><span class="nx">id</span>
+              <span class="nx">wait</span>       <span class="p">=</span> <span class="kc">false</span>
+              <span class="nx">timeout</span>    <span class="p">=</span> <span class="mi">300</span>
+            <span class="p">}</span>
+            
+            <span class="c1"># Deploy kafka-connect chart</span>
+            <span class="k">resource</span> <span class="s2">"helm_release"</span> <span class="s2">"kafkaconnect"</span> <span class="p">{</span>
+               <span class="nx">depends_on</span> <span class="p">=</span> <span class="p">[</span><span class="nx">oci_containerengine_node_pool</span><span class="p">.</span><span class="nx">oke_node_pool</span><span class="p">]</span>
+               <span class="nx">name</span>      <span class="p">=</span> <span class="s2">"kafka-connect"</span>
+               <span class="nx">chart</span>     <span class="p">=</span> <span class="s2">"helm_charts/cp-kafka-connect"</span>
+               <span class="nx">namespace</span> <span class="p">=</span> <span class="nx">kubernetes_namespace</span><span class="p">.</span><span class="nx">hivekafka_namespace</span><span class="p">.</span><span class="nx">id</span>
+               <span class="nx">wait</span>      <span class="p">=</span> <span class="kc">false</span>
+               <span class="nx">timeout</span>   <span class="p">=</span> <span class="mi">120</span>
+            <span class="p">}</span>
+            
+            <span class="c1">#Output the public IP addresses of the helm-chart generated service load balancers</span>
+            <span class="k">resource</span> <span class="s2">"time_sleep"</span> <span class="s2">"wait_120_seconds"</span> <span class="p">{</span>
+              <span class="nx">depends_on</span> <span class="p">=</span> <span class="p">[</span><span class="nx">helm_release</span><span class="p">.</span><span class="nx">hivemq</span><span class="p">]</span> 
+              <span class="nx">create_duration</span> <span class="p">=</span> <span class="s2">"120s"</span>
+            <span class="p">}</span>
+            
+            <span class="k">data</span> <span class="s2">"kubernetes_service"</span> <span class="s2">"oss_kafka_connect"</span> <span class="p">{</span>
+              <span class="nx">depends_on</span> <span class="p">=</span> <span class="p">[</span><span class="nx">time_sleep</span><span class="p">.</span><span class="nx">wait_120_seconds</span><span class="p">]</span>
+              <span class="nx">metadata</span> <span class="p">{</span>
+                <span class="nx">name</span> <span class="p">=</span> <span class="s2">"oss-kafka-connect-service"</span>
+                <span class="nx">namespace</span> <span class="p">=</span> <span class="s2">"hivekafka"</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+            
+            <span class="k">data</span> <span class="s2">"kubernetes_service"</span> <span class="s2">"hivemq_mqtt"</span> <span class="p">{</span>
+              <span class="nx">depends_on</span> <span class="p">=</span> <span class="p">[</span><span class="nx">time_sleep</span><span class="p">.</span><span class="nx">wait_120_seconds</span><span class="p">]</span>
+              <span class="nx">metadata</span> <span class="p">{</span>
+                <span class="nx">name</span> <span class="p">=</span> <span class="s2">"hivemq-mqtt"</span>
+                <span class="nx">namespace</span> <span class="p">=</span> <span class="s2">"hivekafka"</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+            
+            <span class="k">output</span> <span class="s2">"oss_kafka_connect_load_balancer_ip_address"</span> <span class="p">{</span>
+              <span class="c1">//value = [data.kubernetes_service.oss_kafka_connect.status.0.load_balancer.0.ingress.0.ip]</span>
+              <span class="nx">value</span> <span class="p">=</span> <span class="p">[</span><span class="k">data</span><span class="p">.</span><span class="nx">kubernetes_service</span><span class="p">.</span><span class="nx">oss_kafka_connect</span><span class="p">.</span><span class="nx">load_balancer_ingress</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">ip</span><span class="p">]</span>
+            <span class="p">}</span>
+            
+            <span class="k">output</span> <span class="s2">"hivemq_mqtt_load_balancer_ip_address"</span> <span class="p">{</span>
+              <span class="c1">//value = [data.kubernetes_service.hivemq_mqtt.status.0.load_balancer.0.ingress.0.ip]</span>
+              <span class="nx">value</span> <span class="p">=</span> <span class="p">[</span><span class="k">data</span><span class="p">.</span><span class="nx">kubernetes_service</span><span class="p">.</span><span class="nx">hivemq_mqtt</span><span class="p">.</span><span class="nx">load_balancer_ingress</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">ip</span><span class="p">]</span>
+            <span class="p">}</span>
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>When you’re comparing the code with the example it’s easy to see that the content itself
+                            hasn’t really changed.</p>
+
+                        <p>We have only added some output, in this case the IP addresses of the loadbalancers, which
+                            will be automatically deployed by the Helm chart.</p>
+
+                        <p>Furthermore, we have added a 120-second timeout as the loadbalancers will be deployed
+                            Kubernetes directly which Terraform is not able to see.</p>
+
+                        <p>The overall output via kubectl looks likes follows:</p>
+
+                        <div class="language-console highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>kubectl <span class="nt">-n</span> hivekafka get deployments,pods,services
+            <span class="go">NAME                                           READY   UP-TO-DATE   AVAILABLE   AGE
+            deployment.apps/hivemq-cluster                 3/3     3            3           61m
+            deployment.apps/oss-kafka-connect-deployment   2/3     3            2           61m
+            NAME                                                READY   STATUS             RESTARTS   AGE
+            pod/hivemq-cluster-59c44cdb59-fpvb9                 1/1     Running            0          61m
+            pod/hivemq-cluster-59c44cdb59-nw6dd                 1/1     Running            0          61m
+            pod/hivemq-cluster-59c44cdb59-txrt5                 1/1     Running            0          61m
+            pod/oss-kafka-connect-deployment-5f87774458-gbr9s   0/1     CrashLoopBackOff   11         61m
+            pod/oss-kafka-connect-deployment-5f87774458-qnmgr   1/1     Running            12         61m
+            pod/oss-kafka-connect-deployment-5f87774458-zcgpt   1/1     Running            12         61m
+            pod/wallet-extractor-job-9j8xl                      0/1     Completed          0          61m
+            NAME                                TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)          AGE
+            </span><span class="gp">service/hivemq-control-center       LoadBalancer   10.96.171.15    &lt;pending&gt;</span><span class="w">        </span>8080:30666/TCP   61m
+            <span class="gp">service/hivemq-discovery            ClusterIP      None            &lt;none&gt;</span><span class="w">           </span>1883/TCP         61m
+            <span class="go">service/hivemq-mqtt                 LoadBalancer   10.96.49.214    129.159.77.93    1883:31094/TCP   61m
+            service/oss-kafka-connect-service   LoadBalancer   10.96.114.200   129.159.74.132   80:31501/TCP     61m
+            </span></code></pre>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </section>
+                <!-- /CC01v0 -->
+
+            </main>
+        </div>
+    </div>
+</section>
+<!-- /F19v0 -->

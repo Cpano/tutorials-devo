@@ -10,7 +10,7 @@
 <section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);" class="cc01 cc01v0  txtlight cpad">
     <div class="cc01w1 cwidth">
 
-        <h2>Extending Terraform OKE with a helm chart</h2>
+        <h1>Extending Terraform OKE with a helm chart</h1>
         <p>When designing the Terraform OKE provisioning scripts, one of the things we wanted to do is making it
             reusable. </p>
 
@@ -112,7 +112,7 @@ cd tfoke
                         </div>
 
                         <p>Follow the <a
-                                href="https://github.com/oracle/sample-oke-for-terraform/blob/master/docs/instructions.md">instructions</a>
+                                href="https://github.com/oracle-terraform-modules/terraform-oci-oke/tree/main/docs">instructions</a>
                             to create your Terraform variable file.</p>
 
                     </div>
@@ -160,7 +160,7 @@ cd tfoke
                         <p>We will use the <a href="https://github.com/helm/charts/tree/master/stable/redis">redis helm
                                 chart</a> to create a helm release. However, we want helm to deploy only after the
                             worker nodes become active. In the <a
-                                href="https://github.com/oracle/sample-oke-for-terraform/blob/master/modules/oke/activeworker.tf">sample
+                                href="https://github.com/oracle-terraform-modules/terraform-oci-oke/blob/main/modules/extensions/activeworker.tf">sample
                                 repo</a>, there’s a null_resource “is_worker_active” that you can use to set an explicit
                             dependency. Add the following to the redis.tf:</p>
 

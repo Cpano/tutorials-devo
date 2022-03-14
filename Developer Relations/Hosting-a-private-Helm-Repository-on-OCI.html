@@ -28,8 +28,8 @@
     class="cc01 cc01v0  txtlight cpad">
     <div class="cc01w1 cwidth">
 
-      <h2>Hosting a private Helm Repository on OCI (Oracle Cloud Infrastructure) with ChartMuseum and OCI Object
-        Storage</h2>
+      <h1>Hosting a private Helm Repository on OCI (Oracle Cloud Infrastructure) with ChartMuseum and OCI Object
+        Storage</h1>
       <p>This guide walks you through how to host Helm Chart privately with ChartMuseum, an open source Helm Chart
         Repository server with support for various cloud storage backends, including OCI Object Storage.</p>
 
@@ -93,8 +93,8 @@
             <div class="cc01w1 cwidth">
 
               <p>In another article, we deployed a helm chart (Redis) into Oracle Container Engine (OKE) which we pulled
-                from the stable repository. By default, the stable repo is hosted at <a
-                  href="https://kubernetes-charts.storage.googleapis.com/">here</a>.</p>
+                from the stable repository. The stable repo can be found here: <a
+                  href="https://charts.helm.sh/stable/">here</a>.</p>
 
               <p>We can also manually add the <a href="https://github.com/helm/charts/tree/master/incubator">incubator
                   repository</a> if we want to:</p>
@@ -325,7 +325,7 @@
                 </div>
               </div>
 
-              <p>Finally, you can verify whether you can <a href="http://chartmuseum.acme.com">reach chartmuseum
+              <p>Finally, you can verify whether you can <a href="https://chartmuseum.com/">reach chartmuseum
                   publicly</a> with your browser.</p>
 
               <picture class="">
@@ -606,7 +606,7 @@
               <h3 id="configuring-lets-encrypt-issuers">Configuring Let’s Encrypt Issuers</h3>
 
               <p>For reference, you can follow <a
-                  href="https://docs.cert-manager.io/en/latest/tutorials/acme/quick-start/index.html">the quick-start
+                  href="https://cert-manager.io/docs/tutorials/">the quick-start
                   guide</a> for using cert-manager with Nginx Ingress.</p>
 
               <p>Let’s start with creating a staging issuer by creating a staging-issuer.yaml:</p>
@@ -940,9 +940,9 @@
                 <li><a href="https://github.com/helm/charts/tree/master/stable/chartmuseum">Chartmuseum helm package
                     docs</a></li>
                 <li><a
-                    href="https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html">Cert-Manager
+                    href="https://cert-manager.io/docs/">Cert-Manager
                     installation guide</a></li>
-                <li><a href="https://docs.cert-manager.io/en/latest/tutorials/acme/quick-start/index.html">Cert-Manager
+                <li><a href="https://cert-manager.io/docs/tutorials/">Cert-Manager
                     with Nginx Ingress</a></li>
               </ul>
             </div>

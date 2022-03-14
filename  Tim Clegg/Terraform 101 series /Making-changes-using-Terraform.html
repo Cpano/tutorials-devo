@@ -10,7 +10,7 @@
 <section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);" class="cc01 cc01v0  txtlight cpad">
     <div class="cc01w1 cwidth">
 
-        <h2>Making changes using Terraform</h2>
+        <h1>Making changes using Terraform</h1>
         <p>Most environments tend to change on a regular basis. These changes can be easily managed in a reliable,
             scalable way using Terraform. </p>
 
@@ -162,7 +162,7 @@
                         <h2 class="slide__title"><span class="slide__num">2</span> Prerequisites</h2>
 
                         <p>It’s assumed that you’re building off of the environment built in the <a
-                                href="5-creating">Creating Resources with Terraform tutorial</a>.</p>
+                                href="/tutorials/tf-101/5-creating">Creating Resources with Terraform tutorial</a>.</p>
 
                     </div>
 
@@ -223,7 +223,7 @@
                         <h2 class="slide__title"><span class="slide__num">4</span> Adding a Resource</h2>
 
                         <p>To start, let’s add three new Subnets to the Virtual Cloud Network (VCN) that was created in
-                            the <a href="5-creating">previous tutorial</a>. Add the following to your <code
+                            the <a href="/tutorials/tf-101/5-creating">previous tutorial</a>. Add the following to your <code
                                 class="language-plaintext highlighter-rouge">main.tf</code> file:</p>
 
                         <div class="language-terraform highlighter-rouge">
@@ -264,7 +264,7 @@
 
                         <p>The above code adds three new subnets: one development Subnet, one testing Subnet and, one
                             staging Subnet. Each of these is placed in the compartment specified, within the VCN that
-                            was created in the <a href="5-creating">previous tutorial</a>. Each has a unique IPv4 CIDR
+                            was created in the <a href="/tutorials/tf-101/5-creating">previous tutorial</a>. Each has a unique IPv4 CIDR
                             block which falls within the broader VCN IPv4 CIDR block. None of the subnets permits public
                             IPs to be used (they’re prohibited).</p>
 
@@ -754,7 +754,7 @@
 
                         <p>We’ve had fun creating new OCI resources and then making modifications to the environment.
                             It’s now time to clean things up. We’ll explore destroying resources in the <a
-                                href="7-destroying">next lesson</a>.</p>
+                                href="/tutorials/tf-101/7-destroying">next lesson</a>.</p>
 
 
                     </div>

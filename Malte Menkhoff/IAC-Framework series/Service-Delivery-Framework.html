@@ -1,0 +1,1425 @@
+<!--========================================CALENDAR ICON========================================-->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
+
+<!--========================================HEADER========================================-->
+<!-- CC01v0 -->
+<section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);" class="cc01 cc01v0  txtlight cpad">
+    <div class="cc01w1 cwidth">
+
+        <h1>Service Delivery Framework</h1>
+        <p>Oracle Cloud Infrastructure (OCI) is a programable data center, providing dedicated infrastructure in more
+            than 30 locations world wide.</p>
+
+        <div style="display: flex; color: white;">
+            <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
+                        aria-hidden="true"></i>
+                    Author: </strong>
+                Malte Menkhoff
+            </p>
+
+            <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong>
+                <time>October 29, 2021</time>
+            </p>
+
+        </div>
+
+    </div>
+</section>
+<!-- /CC01v0 -->
+
+<!-- F19v0 -->
+<section class="f19 f19v0 cpad">
+    <div class="f19w1 cwidth">
+        <div class="f19w2 f19-2col">
+            <div class="f19col f19side">
+                <!-- S20v0 -->
+                <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
+                    <div class="s20w1 cwidth">
+                        <div class="col-w1">
+
+                            <h3>About Malte Menkhoff</h3>
+
+                            <!--Social Icons-->
+                            <div class="author__urls-wrapper" style="margin-bottom: 15px;">
+                                <ul class="author__urls social-icons">
+                                    <li>
+                                        <a href="https://github.com/kubemen" itemprop="sameAs"
+                                            rel="nofollow noopener noreferrer" target="_blank">
+                                            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span
+                                                class="label">GitHub</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <br><br>
+                            <!-- End Social Icons-->
+                            <p>Malte is a passioned solution architect and is supporting customers in the DACH region in
+                                migrating to OCI.</p>
+
+                            <p><strong>More tutorials from this author: <br> </strong>
+                                <span class="tags">
+
+                                    <a class="animated-link tag2"
+                                        href="/tutorials/deploy-apache-superset-with-mds-on-oci/">Deploy Apache Superset
+                                        with
+                                        MySQL Database Service on Oracle Cloud Infrastructure</a><br>
+
+                                    <a class="animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-intro/"
+                                        oci-iac-framework="" tutorials="">Getting Started with Oracle Cloud
+                                        Infrastructure (OCI)</a><br>
+
+
+                                    <a class=" animated-link tag2" href="/tutorials/oci-iac-framework/"
+                                        tutorials="">Oracle Cloud
+                                        Infrastructure IaC Framework Series</a><br>
+
+                                    <a class=" animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-step-1-provider/"
+                                        oci-iac-framework="" tutorials="">Automating OCI with Terraform</a><br>
+
+                                    <a class=" animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-step-2-base/"
+                                        oci-iac-framework="" tutorials="">Service Delivery Framework</a><br>
+
+                                    <a class=" animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-step-3-database-infrastructure/"
+                                        oci-iac-framework="" tutorials="">Database Infrastructure</a><br>
+
+                                    <a class=" animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-step-4-app-infrastructure/"
+                                        oci-iac-framework="" tutorials="">Application Infrastructure</a><br>
+
+                                    <a class=" animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-step-5-workload-deployment/"
+                                        oci-iac-framework="" tutorials="">Workload Deployment</a><br>
+
+                                    <a class=" animated-link tag2"
+                                        href="/tutorials/oci-iac-framework/getting-started-with-oci-step-6-governance/"
+                                        oci-iac-framework="" tutorials="">Governance</a><br>
+
+                                </span>
+                            </p>
+
+                            <!--Tags-->
+                            <h3>Tags</h3>
+                            <p> <span class=" tags">
+                                    <a class="animated-link tag" href="#">open-source</a>
+                                    <a class="animated-link tag" href="#">terraform</a>
+                                    <a class="animated-link tag" href="#">iac</a>
+                                    <a class="animated-link tag" href="#">devops</a>
+                                    <a class="animated-link tag" href="#">get-started</a>
+                                </span>
+                            </p>
+
+                            <h3></h3>
+                            <a href="https://developer.oracle.com/tutorials">
+                                <p class="page__date" style="margin-right: 25px;"><strong>
+                                        Back to tutorials
+                                    </strong>
+                                </p>
+                            </a>
+
+                        </div>
+                    </div>
+                </section>
+                <!-- /S20v0 -->
+            </div>
+            <!-- SET UP -->
+            <main class="f19col f19main">
+                <!-- cc01v0 -->
+
+                <section class="cc01 cc01v0 cpad" id="link1">
+                    <div class="cc01w1 cwidth">
+
+
+
+
+                        <picture class="alignright">
+                            <source srcset="https://cool.devo.build/tutorials/oci-iac-framework/assets/landing-zone.png 1x" />
+                            <img loading="lazy" width="400" height="400" src="https://cool.devo.build/tutorials/oci-iac-framework/assets/landing-zone.png"
+                                data-original="https://cool.devo.build/tutorials/oci-iac-framework/assets/landing-zone.png" data-at2x="https://cool.devo.build/tutorials/oci-iac-framework/assets/landing-zone@2x.png"
+                                alt="OCLOUD landing zone" title="OCLOUD landing zone" />
+                        </picture>
+
+                        <p>Oracle Cloud Infrastructure (OCI) is a programable data center, providing dedicated
+                            infrastructure in more than 30 locations world wide. The <a
+                                href="https://en.wikipedia.org/wiki/Shared-nothing_architecture">share-nothing
+                                design</a> allows IT operators to launch <a
+                                href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf">private
+                                clouds</a> on demand and enables enterprises to adopt managed services into an existing
+                            operation. This framework is inspired by the <a
+                                href="https://docs.oracle.com/en/solutions/cis-oci-benchmark/?source=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00022">CIS
+                                landing zone</a> and helps ITIL oriented organizations to build and launch private or
+                            public cloud services.</p>
+
+                        <p>Customizing the framework enables application provider to manage multi-tenant services with
+                            clients shielded on the network layer. We recommend to study the following material before
+                            approaching this tutorial: <br />
+                            Compartments, Group-, Policy- and User-Templates <a href="learn_doc_iam">Documentation</a>
+                            <a href="learn_video_iam">Video</a><br />
+                            Virtual Cloud Network <a href="learn_doc_network">Documentation</a> <a
+                                href="learn_video_network">Video</a><br />
+                            Key Vault <a href="learn_doc_vault">Documentation</a> <a href="learn_video_vault">Video</a>
+                            <br />
+                            Object Store <a href="learn_doc_storage">Documentation</a> <a
+                                href="learn_video_storage">Video</a></p>
+
+                        <h2 id="code-structure">Code Structure</h2>
+
+                        <p>We employ <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code">Infrastructure as
+                                Code</a> to combine dedicated resources with managed cloud- and orchestration services
+                            into <a href="https://pubs.opengroup.org/architecture/togaf9-doc/arch/apdxa.html">custom
+                                resources</a>. The code is separated into multipe definiton files that Terraform merges
+                            into one deployment plan at the time of execution. The following structure uses <a
+                                href="https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/settinguptenancy.htm#Understa?source=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00022">compartments</a>
+                            to reflect shared service center for independent businesses or business units that are
+                            separated on the network layer.</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center">Nr.</th>
+                                    <th style="text-align: left">Domain</th>
+                                    <th style="text-align: left">File</th>
+                                    <th style="text-align: left">Resources</th>
+                                    <th style="text-align: left"> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: center">1</td>
+                                    <td style="text-align: left">Applications</td>
+                                    <td style="text-align: left">app.tf</td>
+                                    <td style="text-align: left">Hosts (VM &amp; BM), instance groups and container
+                                        cluster</td>
+                                    <td style="text-align: left">optional</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">2</td>
+                                    <td style="text-align: left">Database Infrastructure</td>
+                                    <td style="text-align: left">db.tf</td>
+                                    <td style="text-align: left">CDB or PDB</td>
+                                    <td style="text-align: left">optional</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">3</td>
+                                    <td style="text-align: left">Network Topology</td>
+                                    <td style="text-align: left">net.tf</td>
+                                    <td style="text-align: left">Virtual Cloud Network, Layer-3 Gateways</td>
+                                    <td style="text-align: left">required</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">4</td>
+                                    <td style="text-align: left">Operations and Security</td>
+                                    <td style="text-align: left">ops.tf</td>
+                                    <td style="text-align: left">Monitoring and management</td>
+                                    <td style="text-align: left">required</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">5</td>
+                                    <td style="text-align: left">Operations and Security</td>
+                                    <td style="text-align: left">global.tf</td>
+                                    <td style="text-align: left">Global variables, datasources and naming conventions
+                                    </td>
+                                    <td style="text-align: left">required</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">6</td>
+                                    <td style="text-align: left">Operations and Security</td>
+                                    <td style="text-align: left">default.tfvars</td>
+                                    <td style="text-align: left">Default parameter for a project</td>
+                                    <td style="text-align: left">required</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>In the background we build on a modular code structure that uses terraform modules to employ
+                            OCI resources and services. Templates for a predefined network topology and isolated
+                            database infrastructure extend the application oriented DevOps processes with customized
+                            resources.</p>
+
+                        <picture class="aligncenter">
+                            <source srcset="https://cool.devo.build/tutorials/oci-iac-framework/assets/taxonomy.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/oci-iac-framework/assets/taxonomy.png" data-original="https://cool.devo.build/tutorials/oci-iac-framework/assets/taxonomy.png"
+                                data-at2x="https://cool.devo.build/tutorials/oci-iac-framework/assets/taxonomy@2x.png" alt="Base Configuration Taxonomy"
+                                title="Base Configuration Taxonomy" />
+                        </picture>
+
+                        <p>Using declarative templates, provides operators with the flexibility to adjust their service
+                            delivery platform with evolving requirements. Global input parameters help to maintain
+                            readability of the code and avoid <a
+                                href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">repeating definitions</a>.
+                            We use the <code
+                                class="language-plaintext highlighter-rouge">~/project/default.tfvars</code> file to
+                            define global input parameter for an entire project.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>variable "tenancy_ocid"     { }
+            
+            variable "organization"            { 
+              type        = string
+              description =  "provide a string that identifies the commercial owner of a service"
+              default     = "org"   # Define a name that identifies the project
+              validation {
+                    condition     = length(regexall("^[A-Za-z][A-Za-z0-9]{1,7}$", var.owner)) &gt; 0
+                    error_message = "The service_label variable is required and must contain alphanumeric characters only, start with a letter and 5 character max."
+              }
+            }
+            variable "project"            { 
+              type        = string
+              description =  "provide a string that refers to a project"
+              default     = "name"   # Define a name that identifies the project
+              validation {
+                    condition     = length(regexall("^[A-Za-z][A-Za-z0-9]{1,7}$", var.project)) &gt; 0
+                    error_message = "The service_label variable is required and must contain alphanumeric characters only, start with a letter and 8 character max."
+              }
+            }
+            variable "stage"           { 
+              type = string
+              description = "define the lifecycle status"
+              default = "dev"           # Lifecycle stage for the code base
+              validation {
+                    condition     = length(regexall("^[A-Za-z][A-Za-z0-9]{1,7}$", var.stage)) &gt; 0
+                    error_message = "The service_label variable is required and must contain alphanumeric characters only, start with a letter and 3 character max."
+              }
+            }
+            
+            variable "region" {
+              default = "us-ashburn-1"
+              validation {
+                condition     = length(trim(var.region,"")) &gt; 0
+                error_message = "The region variable is required."
+              }
+            }
+            
+            variable "owner" { 
+              type = object({
+                user_ocid                 = string
+                api_fingerprint           = string
+                api_private_key_path      = string
+                private_key_password      = string
+              })
+              description = "refers to the technical owner of the tenancy"
+              default     = {
+                "user_ocid"                   : "",
+                "api_fingerprint"           : "",
+                "api_private_key_path"      : "",
+                "private_key_password"      : ""
+              }
+            }
+            </code></pre>
+                            </div>
+                        </div>
+                        <p>The <code class="language-plaintext highlighter-rouge">~/project/global.tf</code> file
+                            contains common datasources and functions that can be utilized throughout the entire stack.
+                        </p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>provider "oci" {
+              region               = var.region
+              tenancy_ocid         = var.tenancy_ocid
+              user_ocid            = var.root.user_ocid
+              fingerprint          = var.root.fingerprint
+              private_key_path     = var.root.private_key_path
+              private_key_password = var.root.private_key_password
+            }
+            
+            provider "oci" {
+              alias                = "home"
+              region               = local.regions_map[local.home_region_key]
+              tenancy_ocid         = var.tenancy_ocid
+              user_ocid            = var.root.user_ocid
+              fingerprint          = var.root.fingerprint
+              private_key_path     = var.root.private_key_path
+              private_key_password = var.root.private_key_password
+            }
+            
+            ## --- data sources ---
+            data "oci_identity_regions"              "global"  { }                                        # Retrieve a list OCI regions
+            data "oci_identity_tenancy"              "ocloud"  { tenancy_id     = var.tenancy_ocid }      # Retrieve meta data for tenant
+            data "oci_identity_availability_domains" "ads"     { compartment_id = var.tenancy_ocid }      # Get a list of Availability Domains
+            data "oci_identity_compartments"         "root"    { compartment_id = var.tenancy_ocid }      # List root compartments
+            data "oci_objectstorage_namespace"       "ns"      { compartment_id = var.tenancy_ocid }      # Retrieve object storage namespace
+            data "oci_cloud_guard_targets"           "root"    { compartment_id = var.tenancy_ocid }
+            data "template_file" "ad_names"                    {                                          # List AD names in home region 
+              count    = length(data.oci_identity_availability_domains.ads.availability_domains)
+              template = lookup(data.oci_identity_availability_domains.ads.availability_domains[count.index], "name")
+            }
+            
+            ## --- input functions ---
+            # Define the home region identifier
+            locals {
+              # Discovering the home region name and region key.
+              regions_map         = {for rgn in data.oci_identity_regions.global.regions : rgn.key =&gt; rgn.name} # All regions indexed by region key.
+              regions_map_reverse = {for rgn in data.oci_identity_regions.global.regions : rgn.name =&gt; rgn.key} # All regions indexed by region name.
+              home_region         = data.oci_identity_tenancy.ocloud.home_region_key                            # Home region key obtained from the tenancy data source
+              region_key          = lower(local.regions_map_reverse[var.region])                                # Region key obtained from the region name
+            
+              # Setting network access parameters
+              anywhere                    = "0.0.0.0/0"
+              valid_service_gateway_cidrs = ["oci-${local.region_key}-objectstorage", "all-${local.region_key}-services-in-oracle-services-network"]
+            
+              # Service label
+              dns_label = format("%s%s%s", substr(var.owner, 0, 3), substr(var.project, 0, 5), substr(var.stage, 0, 3))
+              display_name  = upper("${var.owner}_${var.project}_${var.stage}")
+            }
+            
+            ## --- global output parameter ---
+            output "account"   { value = data.oci_identity_tenancy.ocloud }
+            output "namespace" { value = data.oci_objectstorage_namespace.ns.namespace }
+            output "ad_names"  { value = sort(data.template_file.ad_names.*.rendered) } # List of ADs in the selected region
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <h3 id="network-design">Network Design</h3>
+
+                        <p>Before provisioning any compute or storage resources we need to setup a basic network.
+                            Therefore we start with the compartment for network operation. One of the unique features of
+                            OCI is the <a
+                                href="https://blogs.oracle.com/cloud-infrastructure/first-principles-l2-network-virtualization-for-lift-and-shift?source=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&SC=:ex:tb:::::WWMK211125P00022:WW_FY22_DevRel_DotBuild&pcode=WWMK211125P00022">virtual
+                                layer 2 network</a> design. Compared to the common network overlays in public clouds,
+                            this design provides the necessary control to create isolated data center on a shared
+                            infrastructure pool. Packet encapsulation shields private traffic on a shared network
+                            backbone to the extend of defining overlapping IP ranges. This allows for a multi-tenant
+                            design on the infrastructure layer, and prevents developers and operators to rely complex
+                            procedures building and maintaining multi-tenant applications. The following diagram
+                            exemplifies the topology in a multi data centre region.</p>
+
+                        <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/oci-iac-framework/assets/topology.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/oci-iac-framework/assets/topology.png" data-original="https://cool.devo.build/tutorials/oci-iac-framework/assets/topology.png"
+                                data-at2x="https://cool.devo.build/tutorials/oci-iac-framework/assets/topology@2x.png" alt="Physical Network Topology"
+                                title="Physical Network Topology" />
+                        </picture>
+
+                        <p>A Virtual Cloud Network (VCN) contains a private <a
+                                href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">“Classless
+                                Inter-Domain Routing (CIDR)”</a> and can be extend with publically addressable IP
+                            adresses.</p>
+
+                        <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/oci-iac-framework/assets/segmentation.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/oci-iac-framework/assets/segmentation.png" data-original="https://cool.devo.build/tutorials/oci-iac-framework/assets/segmentation.png"
+                                data-at2x="https://cool.devo.build/tutorials/oci-iac-framework/assets/segmentation@2x.png" alt="Network Segmentation"
+                                title="Network Segmentation" />
+                        </picture>
+
+                        <p>Even though we need to distinguish the physical topology of single- and multi-data centre
+                            regions, the logical network layer remains the same, because the data center are connected
+                            through a close network and packet forwarding relys on <a
+                                href="https://networkencyclopedia.com/host-routing/">host routing mechanisms</a>.
+                            Regional subnets enable operators to launch multi-data center networks for both, private and
+                            public cloud services. Beside the CIDR the VCN definition contains the Dynamic Routing
+                            Gateway (DRG) as IP peer and host for network functions like Internet Connectivity, Network
+                            Address Translation (NAT) or Private-Public Service Communication.</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center">CIDR</th>
+                                    <th style="text-align: left">Subnet Mask</th>
+                                    <th style="text-align: left">Total IP</th>
+                                    <th style="text-align: left">Usable IP</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: center">/32</td>
+                                    <td style="text-align: left">255.255.255.255</td>
+                                    <td style="text-align: left">1</td>
+                                    <td style="text-align: left">1</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/31</td>
+                                    <td style="text-align: left">255.255.255.254</td>
+                                    <td style="text-align: left">2</td>
+                                    <td style="text-align: left">0</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/30</td>
+                                    <td style="text-align: left">255.255.255.252</td>
+                                    <td style="text-align: left">4</td>
+                                    <td style="text-align: left">2</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/29</td>
+                                    <td style="text-align: left">255.255.255.248</td>
+                                    <td style="text-align: left">8</td>
+                                    <td style="text-align: left">6</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/28</td>
+                                    <td style="text-align: left">255.255.255.240</td>
+                                    <td style="text-align: left">16</td>
+                                    <td style="text-align: left">14</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/27</td>
+                                    <td style="text-align: left">255.255.255.224</td>
+                                    <td style="text-align: left">32</td>
+                                    <td style="text-align: left">30</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/26</td>
+                                    <td style="text-align: left">255.255.255.192</td>
+                                    <td style="text-align: left">64</td>
+                                    <td style="text-align: left">62</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/25</td>
+                                    <td style="text-align: left">255.255.255.128</td>
+                                    <td style="text-align: left">128</td>
+                                    <td style="text-align: left">126</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/24</td>
+                                    <td style="text-align: left">255.255.255.0</td>
+                                    <td style="text-align: left">256</td>
+                                    <td style="text-align: left">254</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/23</td>
+                                    <td style="text-align: left">255.255.254.0</td>
+                                    <td style="text-align: left">512</td>
+                                    <td style="text-align: left">510</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/22</td>
+                                    <td style="text-align: left">255.255.252.0</td>
+                                    <td style="text-align: left">1024</td>
+                                    <td style="text-align: left">1022</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/21</td>
+                                    <td style="text-align: left">255.255.248.0</td>
+                                    <td style="text-align: left">2048</td>
+                                    <td style="text-align: left">2046</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/20</td>
+                                    <td style="text-align: left">255.255.240.0</td>
+                                    <td style="text-align: left">4096</td>
+                                    <td style="text-align: left">4094</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/19</td>
+                                    <td style="text-align: left">255.255.224.0</td>
+                                    <td style="text-align: left">8192</td>
+                                    <td style="text-align: left">8190</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/18</td>
+                                    <td style="text-align: left">255.255.192.0</td>
+                                    <td style="text-align: left">16,384</td>
+                                    <td style="text-align: left">16,382</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/17</td>
+                                    <td style="text-align: left">255.255.128.0</td>
+                                    <td style="text-align: left">32,768</td>
+                                    <td style="text-align: left">32,766</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/16</td>
+                                    <td style="text-align: left">255.255.0.0</td>
+                                    <td style="text-align: left">65,536</td>
+                                    <td style="text-align: left">65,534</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/15</td>
+                                    <td style="text-align: left">255.254.0.0</td>
+                                    <td style="text-align: left">131,072</td>
+                                    <td style="text-align: left">131,070</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/14</td>
+                                    <td style="text-align: left">255.252.0.0</td>
+                                    <td style="text-align: left">262,144</td>
+                                    <td style="text-align: left">262,142</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/13</td>
+                                    <td style="text-align: left">255.248.0.0</td>
+                                    <td style="text-align: left">524,288</td>
+                                    <td style="text-align: left">524,286</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/12</td>
+                                    <td style="text-align: left">255.240.0.0</td>
+                                    <td style="text-align: left">1,048,576</td>
+                                    <td style="text-align: left">1,048,574</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/11</td>
+                                    <td style="text-align: left">255.224.0.0</td>
+                                    <td style="text-align: left">2,097,152</td>
+                                    <td style="text-align: left">2,097,150</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/10</td>
+                                    <td style="text-align: left">255.192.0.0</td>
+                                    <td style="text-align: left">4,194,304</td>
+                                    <td style="text-align: left">4,194,302</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/09</td>
+                                    <td style="text-align: left">255.128.0.0</td>
+                                    <td style="text-align: left">8,388,608</td>
+                                    <td style="text-align: left">8,388,606</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/08</td>
+                                    <td style="text-align: left">255.0.0.0</td>
+                                    <td style="text-align: left">16,777,216</td>
+                                    <td style="text-align: left">16,777,214</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/07</td>
+                                    <td style="text-align: left">254.0.0.0</td>
+                                    <td style="text-align: left">33,554,432</td>
+                                    <td style="text-align: left">33,554,430</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/06</td>
+                                    <td style="text-align: left">252.0.0.0</td>
+                                    <td style="text-align: left">67,108,864</td>
+                                    <td style="text-align: left">67,108,862</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/05</td>
+                                    <td style="text-align: left">248.0.0.0</td>
+                                    <td style="text-align: left">134,217,728</td>
+                                    <td style="text-align: left">134,217,726</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/04</td>
+                                    <td style="text-align: left">240.0.0.0</td>
+                                    <td style="text-align: left">268,435,456</td>
+                                    <td style="text-align: left">268,435,454</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/03</td>
+                                    <td style="text-align: left">224.0.0.0</td>
+                                    <td style="text-align: left">536,870,912</td>
+                                    <td style="text-align: left">536,870,910</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/02</td>
+                                    <td style="text-align: left">192.0.0.0</td>
+                                    <td style="text-align: left">1,073,741,824</td>
+                                    <td style="text-align: left">1,073,741,822</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/01</td>
+                                    <td style="text-align: left">128.0.0.0</td>
+                                    <td style="text-align: left">2,147,483,648</td>
+                                    <td style="text-align: left">2,147,483,646</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">/00</td>
+                                    <td style="text-align: left">0.0.0.0</td>
+                                    <td style="text-align: left">4,294,967,296</td>
+                                    <td style="text-align: left">4,294,967,294</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>We start the VCN definition with the network parameter.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># VCN parameters
+            variable "create_net"        { default = false }
+            variable "cidr"              { default = "10.0.0.0/16" }
+            variable "enable_routing"    { default = true }
+            variable "enable_internet"   { default = false }
+            variable "enable_nat"        { default = true }
+            variable "private_service"   { default = false }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>In the sources file we define a valid hostname that refers to the owner and the lifecycle
+                            stage of an infrastructure platform.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># Create a valid hostname
+            locals {
+              hostname = "${var.project}_${var.stage}"
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>We define the following resource blocks file in the <em>network.tf</em>. First we define the
+                            network compartment. A group and policy block that allows administrators to read all the
+                            resources in the tenancy and manage all the networking resources, except security lists,
+                            internet gateways, IPSec VPN connections, and customer-premises equipment. For the vcn
+                            definition, we rely on a <a
+                                href="https://registry.terraform.io/modules/oracle-terraform-modules/vcn/oci/latest">terraform
+                                module</a> that combines the layer three gateways with the CIDR.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># Create a compartment network management
+            resource "oci_identity_compartment" "net" {
+                #Required
+                compartment_id  = var.net
+                name            = "${var.project}_network"
+                description     = "Compartment to manage network for ${var.project}"
+                
+                #Optional
+                enable_delete   = false  // true will cause this compartment to be deleted when running `terrafrom destroy`
+                # defined_tags  = {"terraformed": "yes", "budget": 0, "stage": var.stage}
+                freeform_tags   = {"source": "/code/setup", "Parent"="root"}
+            }
+            
+            # Create the network administrator role
+            resource "oci_identity_group" "netops" {
+                #Required
+                compartment_id  = var.tenancy_ocid
+                name            = "${var.project}_netops"
+                description     = "Group for the network administrator role"
+            
+                #Optional
+                # defined_tags  = {"terraformed": "yes", "budget": 0, "stage": var.stage}
+                freeform_tags   = {"source": "/code/setup", "Parent"="root"}
+            }
+            
+            # Define a the administration policies for network administrators
+            resource "oci_identity_policy" "netops" {
+                name            = "netops"
+                description     = "Policies for the network administrator role"
+                compartment_id  = var.tenancy_ocid
+            
+                statements = [
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to manage vcns IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to manage subnets IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to manage route-tables IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to manage dhcp-options IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to manage drgs IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to manage cross-connects IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to manage cross-connect-groups IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to manage virtual-circuits IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to manage vnics IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to manage vnic-attachments IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to manage load-balancers IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to use virtual-network-family IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.netops.name} to read all-resources IN TENANCY",
+                ]
+            }
+            
+            # Launch the base network
+            module "vcn" {
+              source  = "oracle-terraform-modules/vcn/oci"
+              version = "2.2.0"
+            
+              # required inputs
+              compartment_id               = oci_identity_compartment.net.id
+              drg_display_name             = "${var.project}_${var.stage}_DRG"
+              region                       = local.home_region
+              vcn_dns_project                = local.hostname
+              vcn_name                     = "${var.project}_${var.stage}_VCN"
+              #internet_gateway_route_rules = list(object({ destination = string destination_type = string network_entity_id = string description = string }))
+              #nat_gateway_route_rules      = list(object({ destination = string destination_type = string network_entity_id = string description = string }))
+            
+              # optional inputs 
+              create_drg               = var.enable_routing
+              internet_gateway_enabled = var.enable_internet
+              project_stage             = local.hostname
+              lockdown_default_seclist = true
+              nat_gateway_enabled      = var.enable_nat
+              service_gateway_enabled  = var.private_service
+              vcn_cidr                 = var.cidr
+              tags                     = { "module": "oracle-terraform-modules/vcn/oci", "terraformed": "yes", "budget": 0, "stage": var.stage }
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>In the <em>output.tf</em> file we add the reference to the module output.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># VCN parameter returns
+            output "vcn_id"         { value = module.vcn.vcn_id }
+            output "ig_route_id"    { value = module.vcn.ig_route_id }
+            output "nat_gateway_id" { value = module.vcn.nat_gateway_id }
+            output "nat_route_id"   { value = module.vcn.nat_route_id }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <h2 id="service-operation">Service Operation</h2>
+
+                        <p>Compartments denote a demarcation for administrator domains in OCI. A compartment membership
+                            determines the privilige to add, change or delete resources. For define our compartment
+                            structure with the <a href="https://www.axelos.com/best-practice-solutions/itil">ITIL</a>
+                            model in mind. The first compartment defines the working environment for <a
+                                href="https://wiki.en.it-processmaps.com/index.php/ITIL_Service_Operation">service
+                                operators</a> and enables processes like incident or problem management. While ITIL
+                            distinguishes between <a
+                                href="https://wiki.en.it-processmaps.com/index.php/ITIL_Technical_Management">technical
+                                management services</a> and <a
+                                href="https://wiki.en.it-processmaps.com/index.php/ITIL_Application_Management">application
+                                management services</a>, we rely on Infrastructure as a Servce and separate network- and
+                            database-manager in distinct compartments. On the application layer we distinguish between
+                            application management and application development. The later compromises platform services
+                            and allows to define an own code chain, meanwhile application managers receive the necessary
+                            rights to deploy and manage binaries. The definitions are captured in the <code
+                                class="language-plaintext highlighter-rouge">~/starter/operation.tf</code> template.</p>
+
+                        <picture class="">
+                            <source srcset="https://cool.devo.build/tutorials/oci-iac-framework/assets/itil_cloud.png 1x" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/oci-iac-framework/assets/itil_cloud.png" data-original="https://cool.devo.build/tutorials/oci-iac-framework/assets/itil_cloud.png"
+                                data-at2x="https://cool.devo.build/tutorials/oci-iac-framework/assets/itil_cloud@2x.png" alt="Cloud Operating Model"
+                                title="Cloud Operating Model" />
+                        </picture>
+
+                        <p>First, we create a set of roles with priviledged access to operation data and tools. Cloud
+                            operators that make sure that services are delivered effectively and efficiently. This
+                            includes fulfilling of user requests, resolving service failures, fixing problems, as well
+                            as carrying out routine operational tasks. These roles get provisiones in form of groups.
+                            Group policies allow to define the different administrator roles on a granular level.
+                            Initially we stick to four groups: a cloud account adminstrator, security manager, user
+                            manager and “readonly” e.g. for auditors. In HCL we use a <a
+                                href="https://www.terraform.io/docs/language/expressions/type-constraints.html">complex
+                                variable type</a>, a map, to describe the different roles.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># the base set of operator roles
+            variable "operator" {
+              type    = map
+              default = {
+                "cloudops"  = [
+                    "ALLOW GROUP tenant to read users IN TENANCY",
+                    "ALLOW GROUP tenant to read groups IN TENANCY",
+                    "ALLOW GROUP tenant to manage users IN TENANCY",
+                    "ALLOW GROUP tenant to manage groups IN TENANCY where target.group.name = 'Administrators'",
+                    "ALLOW GROUP tenant to manage groups IN TENANCY where target.group.name = 'secops'",
+                ]
+                "iam"   = [
+                    "ALLOW GROUP userid to read users IN TENANCY",
+                    "ALLOW GROUP userid to read groups IN TENANCY",
+                    "ALLOW GROUP userid to manage users IN TENANCY",
+                    "ALLOW GROUP userid to manage groups IN TENANCY where all {target.group.name ! = 'Administrators', target.group.name ! = 'secops'}",
+                ]
+                "secops" = [
+                    "ALLOW GROUP security to manage security-lists IN TENANCY",
+                    "ALLOW GROUP security to manage internet-gateways IN TENANCY",
+                    "ALLOW GROUP security to manage cpes IN TENANCY",
+                    "ALLOW GROUP security to manage ipsec-connections IN TENANCY",
+                    "ALLOW GROUP security to use virtual-network-family IN TENANCY",
+                    "ALLOW GROUP security to manage load-balancers IN TENANCY",
+                    "ALLOW GROUP security to read all-resources IN TENANCY",
+                ]
+                "readonly" = [
+                    "ALLOW GROUP read_only to read all-resources IN TENANCY"
+                ]
+              }
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>We modify the group resource to reflect the list of roles. In a later stage we will use an
+                            own resource to assign the user accounts to one of these roles. From a terraform perspective
+                            we introduce a loop typ. With <a
+                                href="https://www.terraform.io/docs/configuration/resources.html#count-multiple-resource-instances-by-count">count</a>
+                            we create an ordered list and we can use the index to refer to the stored value. While
+                            [each.key] loops through the user list, [0] refers to the first group.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># Create a service operation compartment
+            resource "oci_identity_compartment" "operation" {
+                provider        = oci.home
+            
+                #Required
+                compartment_id  = var.tenancy_ocid
+                name            = "${var.project}${var.stage}_ops"
+                description     = "Compartment to manage ${var.project} ${var.stage} services"
+                
+                #Optional
+                enable_delete   = false  // true will cause this compartment to be deleted when running `terrafrom destroy`
+                # defined_tags  = {"terraformed": "yes", "budget": 0, "stage": var.stage}
+                freeform_tags   = {"source": "/code/setup", "Parent"="root"}
+            }
+            
+            resource "oci_identity_group" "operators" {
+                provider       = oci.home
+                for_each       = var.operator
+            
+                #Required
+                compartment_id  = var.tenancy_ocid
+                name            = each.key
+                description     = "group for the ${each.key} role"
+            
+                #Optional
+                # defined_tags  = {"terraformed": "yes", "budget": 0, "stage": var.stage}
+                freeform_tags   = {"source": "/code/setup", "Parent"="root"}
+            }
+            
+            resource "oci_identity_policy" "operation" {
+                provider       = oci.home
+                for_each       = var.operator
+            
+                #Required
+                compartment_id = var.tenancy_ocid
+                name           = each.key
+                description    = "Policies for the ${each.key} operator"
+                statements     = each.value
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>In the output file we create a map containing the name and respective OCID for the new
+                            defined roles.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>output "operator" {
+              value = {
+                for operator in oci_identity_group.operators:
+                operator.name =&gt; operator.id
+              }
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <h4 id="key-vault">Key Vault</h4>
+                        <p>Vault is a cloud service that allows operators to manage encryption keys that protect data
+                            and secret credentials and to secure resource access. Vaults store master encryption keys
+                            and secrets that are used in configuration files and/or code. A secret is anything that
+                            requires controled access, such as API keys, passwords, certificates, or cryptographic keys.
+                        </p>
+
+                        <p>After that we create the compartments for technical- and application manager. The tree
+                            structure is created, using the compartment_id argument. While the “resource” compartments
+                            refer to the tenancy_ocid, the service compartments refer to the parent compartment ID. This
+                            enables us to use <a
+                                href="https://www.hashicorp.com/blog/hashicorp-terraform-0-12-preview-for-and-for-each/">loops</a>,
+                            counts and conditionals. Using lists helps to avoid the creation multiple blocks and allows
+                            to adjust the tree compartment structure, without rewriting the code.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>// Create a vault to store secrets
+            
+            output "key_id" {
+              value = oci_kms_key.main.id
+            }
+            
+            resource "oci_kms_vault" "ops" {
+              compartment_id = var.compartment_id
+            
+              display_name = "${var.project}ops_vault"
+              vault_type   = "DEFAULT"   # or "VIRTUAL_PRIVATE"
+            }
+            
+            
+            resource "oci_kms_key" "main" {
+              #Required
+              compartment_id      = var.compartment_id
+              display_name        = "${var.project}_${var.stage}_key"
+              management_endpoint = data.oci_kms_vault.ops.management_endpoint
+            
+              key_shape {
+                #Required
+                algorithm = "AES"
+                length    = 32
+              }
+            }
+            
+            // Gets the detail of the vault.
+            data "oci_kms_vault" "ops" {
+              #Required
+              vault_id = oci_kms_vault.ops.id
+            }
+            
+            
+            data "oci_kms_keys" "ops" {
+              #Required
+              compartment_id      = var.compartment_id
+              management_endpoint = data.oci_kms_vault.ops.management_endpoint
+            
+              filter {
+                name   = "display_name"
+                values = oci_kms_key.main.display_name
+              }
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <h4 id="management-bucket">Management Bucket</h4>
+
+                        <p>Within the ops compartment we define a storage bucket to store files that need to be
+                            accessible to all operators. Examples are log files or terraform state file. We add the
+                            following resource blocks to the <em>ops.tf</em> template.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>resource "oci_objectstorage_bucket" "ops" {
+                provider       = oci.home
+                #Required
+                compartment_id = var.tenancy_ocid
+                name           = "${var.project}_${stage}_tfstate"
+                namespace      = "${var.project}_${stage}_ops"
+            
+                #Optional
+                access_type   = var.bucket_access_type
+                # defined_tags  = {"terraformed": "yes", "budget": 0, "stage": var.stage}
+                freeform_tags   = {"source": "/code/setup", "Parent"="root"}
+                kms_key_id      = oci_objectstorage_kms_key.main.id
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>The complete [template][code_…] is stored in the code directory. In the compartment structure
+                            we break the technical management domain up into network and data management services. In
+                            addition, a tree structure for application management services enables operators to
+                            integrate multiple in- and external application owner, without giving up control over the
+                            main digital assets.</p>
+
+                        <h3 id="data-management">Data Management</h3>
+
+                        <p>Next we define the data management domain in order to maintain <a
+                                href="https://whatis.techtarget.com/definition/data-gravity">data gravity</a> accross
+                            the four infrastructure deployment models for application developer and service operator. A
+                            <a
+                                href="https://medium.com/swlh/terraform-how-to-use-conditionals-for-dynamic-resources-creation-6a191e041857">boolean
+                                variable</a> to enable or dsiable the creation of the “data” compartment.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>variable "create_data" { default = false }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>Initially, the <em>data.tf</em> contains only one resource definitions. We use the <a
+                                href="https://www.terraform.io/docs/configuration/resources.html#count-multiple-resource-instances-by-count">count
+                                method</a> to en- or disable the compartment creation.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># Create a data management compartment 
+            resource "oci_identity_compartment" "data" {
+                count           = var.create_data ? 1 : 0
+                provider        = oci.home
+            
+                #Required
+                compartment_id  = var.tenancy_ocid
+                name            = "${var.project}_data_domain"
+                description     = "Compartment to manage persistent data for ${var.project}"
+                
+                #Optional
+                enable_delete   = false  // true will cause this compartment to be deleted when running `terrafrom destroy`
+                # defined_tags  = {"terraformed": "yes", "budget": 0, "stage": var.stage}
+                freeform_tags   = {"source": "/code/setup", "Parent"="root"}
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>Admin policies define the tasks that a user can perform. We define groups for database
+                            administrators as well as file system manager and <a
+                                href="https://registry.terraform.io/providers/hashicorp/oci/latest/docs/data-sources/identity_policies">assign
+                                policies</a>. Group memberships enable domain administrators to perform the tasks
+                            associated with these <a
+                                href="https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/identity_policy">policies</a>.
+                        </p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># Create a file system administrator role 
+            resource "oci_identity_group" "fsadmin" {
+                provider        = oci.home
+            
+                #Required
+                compartment_id  = var.tenancy_ocid
+                name            = "${var.project}_${var.stage}_fs_administrator"
+                description     = "Group for manager of network attached storage"
+            
+                #Optional
+                # defined_tags  = {"terraformed": "yes", "budget": 0, "stage": var.stage}
+                freeform_tags   = {"source": "/code/setup", "Parent"="root"}
+            }
+            
+            # Define a the administration policies for storage administrators
+            resource "oci_identity_policy" "fsadmin" {
+                name            = "${var.project}_${var.stage}_fs_administrator_policy"
+                description     = "Policies for manager of network attached storage"
+                compartment_id  = var.tenancy_ocid
+            
+                statements = [
+                    "ALLOW GROUP ${oci_identity_group.fsadmin.name} to manage object-family IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.fsadmin.name} to manage volume-family IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.fsadmin.name} to read all-resources IN TENANCY",
+                ]
+            }
+            
+            # Create the database administrator role
+            resource "oci_identity_group" "dbadmin" {
+                provider        = oci.home
+            
+                #Required
+                compartment_id  = var.tenancy_ocid
+                name            = "${var.project}_${var.stage}_database_admin"
+                description     = "Group for the network administrator role"
+            
+                #Optional
+                # defined_tags  = {"terraformed": "yes", "budget": 0, "stage": var.stage}
+                freeform_tags   = {"source": "/code/setup", "Parent"="root"}
+            }
+            
+            # Define a the administration policies for database administrators
+            resource "oci_identity_policy" "database_admin" {
+                name            = "${var.project}_${var.stage}_database_admin_policy"
+                description     = "Policies for the database administrator role"
+                compartment_id  = var.tenancy_ocid
+            
+            
+                statements = [
+                    "ALLOW GROUP ${oci_identity_group.dbadmin.name} manage database-family IN TENANCY",
+                    "ALLOW GROUP ${oci_identity_group.dbadmin.name} read all-resources IN TENANCY",
+                ]
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>A data block that we call “trunk” creates a list of compartments attached to the root
+                            compartment.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># List root compartments 
+            data "oci_identity_compartments" "trunk" {
+                #Required
+                compartment_id             = var.tenancy_ocid
+            
+                #Optional
+                access_level               = "ANY"              //ANY or ACCESSIBLE
+                # applies only when you perform listCompartments on the tenancy
+                #compartment_id_in_subtree = "ANY"
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>These data blocks are referenced in <em>output.tf</em>.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># Output compartment details for resource compartments
+            output "resources" {
+                value = data.oci_identity_compartments.resources
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <h3 id="application-management">Application Management</h3>
+
+                        <p>For the application management domain we add a <a
+                                href="https://www.terraform.io/docs/language/values/variables.html#list-lt-type-gt-">variable
+                                containing list of application domains</a>.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>variable "create_app" { default = false }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>The <em>app.tf</em> it contains two resource definitions, one for the main app compartment
+                            and one for the sub-compartments. The compartment structure is reflected using a <a
+                                href="https://www.terraform.io/docs/configuration/variables.html">complex variable
+                                type</a> that enables us to create list of sub-compartments.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># Create a main compartment application management (https://wiki.en.it-processmaps.com/index.php/ITIL_Application_Management)
+            resource "oci_identity_compartment" "app" {
+                count           = var.create_app ? 1 : 0
+                provider        = oci.home
+            
+                #Required
+                compartment_id  = var.tenancy_ocid
+                name            = "${var.project}_applications"
+                description     = "Compartment to manage applications for ${var.project}"
+                
+                #Optional
+                enable_delete   = false  // true will cause this compartment to be deleted when running `terrafrom destroy`
+                # defined_tags  = {"terraformed": "yes", "budget": 0, "stage": var.stage}
+                freeform_tags   = {"source": "/code/setup", "Parent"="root"}
+            }
+            
+            # Create the system operator role
+            resource "oci_identity_group" "sysadmin" {
+                provider        = oci.home
+            
+                #Required
+                compartment_id  = var.tenancy_ocid
+                name            = "${var.project}_${var.stage}_sysadmin"
+                description     = "Group for the system operator role"
+            
+                #Optional
+                # defined_tags  = {"terraformed": "yes", "budget": 0, "stage": var.stage}
+                freeform_tags   = {"source": "/code/setup", "Parent"="root"}
+            }
+            
+            resource "oci_identity_policy" "sysadmin" {
+                name            = "${var.platform_stage}_${var.environment_stage}_system_administrator_policy"
+                description     = "Policies for the system operator role"
+                compartment_id  = var.tenancy_ocid
+            
+                statements = [
+                    "ALLOW GROUP ${oci_identity_group.sysadmin.name} to manage instance-family IN TENANCY where all {target.compartment.name=/*/, target.compartment.name!=/${var.project}_network/}",
+                    "ALLOW GROUP ${oci_identity_group.sysadmin.name} to manage object-family IN TENANCY where all {target.compartment.name=/*/, target.compartment.name!=/${var.project}_network/}",
+                    "ALLOW GROUP ${oci_identity_group.sysadmin.name} to manage volume-family IN TENANCY where all {target.compartment.name=/*/ , target.compartment.name!=/${var.project}_network/}",
+                    "ALLOW GROUP ${oci_identity_group.sysadmin.name} to use load-balancers IN TENANCY where all {target.compartment.name=/*/ , target.compartment.name!=/${var.project}_network/}",
+                    "ALLOW GROUP ${oci_identity_group.sysadmin.name} to use subnets IN TENANCY where target.compartment.name=/${var.project}_network/",
+                    "ALLOW GROUP ${oci_identity_group.sysadmin.name} to use vnics IN TENANCY where target.compartment.name=/${var.project}_network/",
+                    "ALLOW GROUP ${oci_identity_group.sysadmin.name} to use vnic-attachments IN TENANCY where target.compartment.name=/${var.project}_network/",
+                    "ALLOW GROUP ${oci_identity_group.sysadmin.name} to manage compartments in Tenancy where all {target.compartment.name=/*/ , target.compartment.name!=/${var.project}_network/, target.compartment.name!=/${var.project}_applications/}",
+                    "ALLOW GROUP ${oci_identity_group.sysadmin.name} to read all-resources IN TENANCY",
+                ]
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>We loop over our platform- and the services block, using the <a
+                                href="https://www.terraform.io/docs/configuration/resources.html#count-multiple-resource-instances-by-count">count
+                                method</a>. <em>Count</em> refers to keys using the respective index number <code
+                                class="language-plaintext highlighter-rouge">[count.index]</code>. The <code
+                                class="language-plaintext highlighter-rouge">${ }</code> construct allows to use
+                            variables inside a string. Freeform tags provide non-harmonized context information. After
+                            that we define the data blocks in the <em>sources.tf</em> to return the identifier for the
+                            compartments that are defined in the deployment plan.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># List app compartments 
+            data "oci_identity_compartments" "apps" {
+                #Required
+                compartment_id             = oci_identity_compartment.app.id
+            
+                #Optional
+                access_level               = "ANY"              //ANY or ACCESSIBLE
+                # applies only when you perform ListCompartments on the tenancy
+                #compartment_id_in_subtree = "ANY"
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>These data blocks are referenced in <em>output.tf</em>.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code># Output compartment details for app compartments
+            output "apps" {
+                value = data.oci_identity_compartments.apps
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>A complete <a href="../code/iam/compartment.tf">compartment.tf</a> examle file is stored in
+                            the code directory.</p>
+
+                        <h2 id="user-management">User Management</h2>
+
+                        <p>After defining the compartment structure we create the initial admin users, leveraging the
+                            <em>user.tf</em> template. with the basic <a
+                                href="https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/identity_user">resource
+                                block</a> amd the <a
+                                href="https://registry.terraform.io/providers/hashicorp/oci/latest/docs/data-sources/identity_users">user
+                                data block</a>. We define a variable that represents the admin profile and insert the
+                            variable at the top of our template. Information like the name, email and description is
+                            captured in a tuple, another <a
+                                href="https://www.terraform.io/docs/configuration/variables.html">complex variable
+                                type</a>. User profiles allow tenant administrators to manage user information; manage
+                            privilege, application, and service access; and grant users self-management for their own
+                            accounts and services.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>variable "user" {
+                description    = "user definition"
+                type           = tuple([string, string, string, bool])
+                default        = [ "user_name", "ocilabs@mail.com", "ITIL Administrator", true ]
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>The oci_identity_user resource block creates the admin users, the oci_identity_ui_password
+                            block the password and the oci_identity_user_capabilities_management block sets the user
+                            capabilities.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>resource "oci_identity_user" "user_name" {
+                provider       = oci.home
+            
+                #Required
+                compartment_id = var.tenancy_ocid
+                description    = var.user[2]
+                name           = var.user[0]
+            
+                #Optional
+                #defined_tags = {"Operations.CostCenter"= "42"}
+                email          = var.user[1]
+                freeform_tags  = {"Framework" = "itil"}
+            }
+            
+            resource "oci_identity_ui_password" "user_secret" {
+                provider       = oci.home
+                user_id        = oci_identity_user.user_name.id
+            }
+            
+            resource "oci_identity_user_capabilities_management" "user_name" {
+              provider                         = oci.home
+              user_id                          = oci_identity_user.user_name.id
+              can_use_api_keys                 = false
+              can_use_auth_tokens              = false
+              can_use_console_password         = var.user[3]
+              can_use_customer_secret_keys     = false
+              can_use_smtp_credentials         = false
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <h3 id="assigning-roles">Assigning Roles</h3>
+
+                        <p>We defined a number of groups to manage the roles and responsibilites. A common definition of
+                            roles and responsibilites is provided by the <a
+                                href="https://wiki.en.it-processmaps.com/index.php/ITIL_Roles">ITIL framework</a>. The
+                            complete model is pretty broad, our specific concern is service operation and initially
+                            created the following administrator roles</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="text-align: left"><strong>Group</strong></th>
+                                    <th style="text-align: left"><strong>Permissions</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: left"><em>cloud account</em></td>
+                                    <td style="text-align: left">Manage users. <br /> Manage the Administrators and
+                                        Netsecopss groups. <br /><br /> <strong>Note</strong>: Oracle creates the
+                                        Administrators group when you subscribe to Oracle Cloud. The users in this group
+                                        have full access to all the resources in the tenancy, including managing users
+                                        and groups. Limit the membership to this group.</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left"><em>security</em></td>
+                                    <td style="text-align: left">Read all the resources in the tenancy. <br /> Manage
+                                        security lists, internet gateways, customer-premises equipment, IPSec VPN
+                                        connections, and load balancers. <br /> Use all the virtual network resources.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left"><em>user</em></td>
+                                    <td style="text-align: left">Manage users. <br /> Manage all the groups except
+                                        Administrators and Netsecopss.</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left"><em>network</em></td>
+                                    <td style="text-align: left">Read all the resources in the tenancy. <br /> Manage
+                                        all the networking resources, except security lists, internet gateways, IPSec
+                                        VPN connections, and customer-premises equipment.</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left"><em>system</em></td>
+                                    <td style="text-align: left">Read all the resources in the tenancy. <br /> Manage
+                                        the compute and storage resources. <br /> Manage compartments. <br /> Use load
+                                        balancers, subnets, and VNICs.</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left"><em>storage</em></td>
+                                    <td style="text-align: left">Read all the resources in the tenancy. <br /> Manage
+                                        the object storage and block volume resources.</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left"><em>database</em></td>
+                                    <td style="text-align: left">Read all the resources in the tenancy. <br /> Manage
+                                        the database resources.</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left"><em>Auditor (ReadOnly)</em></td>
+                                    <td style="text-align: left">View and inspect the tenancy. This group is for users
+                                        who aren’t expected to create or manage any resources (for example, auditors and
+                                        trainees).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>resource "oci_identity_user_group_membership" "operator" {
+              provider       = oci.home
+              compartment_id = var.tenancy_ocid
+              for_each       = var.user_names
+              user_id        = oci_identity_user.admins[each.key].id
+              group_id       = oci_identity_group.itsm[0].id
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>With the oci_identity_ui_password data block we retrieve all information related to the
+                            password resource before we create the output block for the user details.</p>
+
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight">
+                                <pre class="highlight"><code>data "oci_identity_ui_password" "user_name" {
+                #Required
+                user_id         = oci_identity_user.user_name.id
+            }
+            
+            output "user_details" {
+                value           = oci_identity_ui_password.user_secret
+            }
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <p>The template will return the user details including the UI password. Passwords will be
+                            generated and shown at the <code
+                                class="language-plaintext highlighter-rouge">terraform apply</code> stage. When we use
+                            the <code class="language-plaintext highlighter-rouge">terraform output</code> command
+                            terraform will not return the passwords. The complete <a
+                                href="../code/iam/user.tf">template</a> is stored in the code directory.</p>
+
+
+
+
+                    </div>
+                </section>
+                <!-- /CC01v0 -->
+
+            </main>
+        </div>
+    </div>
+</section>
+<!-- /F19v0 -->
