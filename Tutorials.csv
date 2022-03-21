@@ -1,0 +1,192 @@
+Tutorial's name,Author,Cool Devo Link,Staging link,WCS link (NOT LIVE),Comments,Comments,Reviewed by:,Overall Status,Live
+Build Your Own Language Translator on Oracle Cloud,Adrian Png,https://cool.devo.build/tutorials/learning-languages-with-oracle-cloud,https://www-sites.oracle.com/developer.oracle.com/tutorials/learning-languages-with-oracle-cloud/,developer.oracle.com/tutorials/learning-languages-with-oracle-cloud/,"Update MicroPython link to https://micropython.org/(fixed)
+Deploy Apache Superset with MySQL Database Service on Oracle Cloud Infrastructure is broken currently(fixed)
+H1 changed.",Completed. Ready to review,Manish,Ready,
+Install Spring Boot on an compute instance on Oracle Cloud,,https://cool.devo.build/tutorials/install-spring-boot-on-an-oracle-instance,https://www-sites.oracle.com/developer.oracle.com/tutorials/install-spring-boot-on-an-oracle-instance/,developer.oracle.com/tutorials/install-spring-boot-on-an-oracle-instance/,,Completed. Ready to review,Manish,Ready,
+Install Node Express on an Oracle Linux Instance,,https://cool.devo.build/tutorials/get-started-with-node-express-on-oracle-cloud,https://www-sites.oracle.com/developer.oracle.com/tutorials/get-started-with-node-express-on-oracle-cloud/,developer.oracle.com/tutorials/get-started-with-node-express-on-oracle-cloud/,"Do we need ""In this tutorial, you use an Oracle Cloud Infrastructure Free Tier account to set up an Oracle Linux compute instance."" under the title of the tutorial?",Completed. Ready to review,Manish,Ready,
+,,,,,,,,,
+Deploying the Argo CD on Oracle Container Engine for Kubernetes (OKE),Ali Mukadam,https://cool.devo.build/tutorials/deploying-the-argo-project-on-oke,https://www-sites.oracle.com/developer.oracle.com/tutorials/deploying-the-argo-project-on-oke/,developer.oracle.com/tutorials/deploying-the-argo-project-on-oke/,"Update links for Argo Workflow, CD, Rollouts and Events - https://argoproj.github.io/workflows(fixed) https://argoproj.github.io/cd(fixed) https://argoproj.github.io/rollouts(fixed) https://argoproj.github.io/events(fixed)
+A second place where Argo CD link is broken needs to be updated too(fixed)",Completed. Ready to review,Manish,Ready,
+Deploying Verrazzano on Oracle Container Engine for Kubernetes (OKE),Ali Mukadam,https://cool.devo.build/tutorials/deploying-verrazzano-on-oke,"https://www-sites.oracle.com/developer.oracle.com/tutorials/deploying-verrazzano-on-oke/
+https://www-sites.oracle.com/developer.oracle.com/tutorials/multi-cluster-verrazzano-oke/1-deploying-verrazzano-on-oke/","developer.oracle.com/tutorials/deploying-verrazzano-on-oke/
+developer.oracle.com/tutorials/multi-cluster-verrazzano-oke/1-deploying-verrazzano-on-oke/","""component"" and ""Application Configuration"" links are redirects. Let's try to fix them.
+H1 changed.",Completed. Ready to review,Manish,,
+Modernizing the Healthcare platform with a GraalVM Proof of Value,Ali Mukadam,https://cool.devo.build/tutorials/modernize-healthcare-graalvm,https://www-sites.oracle.com/developer.oracle.com/tutorials/modernize-healthcare-graalvm/,developer.oracle.com/tutorials/modernize-healthcare-graalvm/,,Completed. Ready to review,Manish,Ready,
+Installing and using Calico on Oracle Container Engine (OKE),Ali Mukadam,https://cool.devo.build/tutorials/calico-with-oke,https://www-sites.oracle.com/developer.oracle.com/tutorials/calico-with-oke/,developer.oracle.com/tutorials/calico-with-oke/,,Completed. Ready to review,Manish,Ready,
+Deploying Verrazzano on Oracle Container Engine for Kubernetes Series,Ali Mukadam,https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/,https://www-sites.oracle.com/developer.oracle.com/tutorials/multi-cluster-verrazzano-oke/,developer.oracle.com/tutorials/multi-cluster-verrazzano-oke/,,Completed. Ready to review,Manish,Ready,
+Deploying A Multi-Cluster Verrazzano On Oracle Container Engine for Kubernetes (OKE) Part 1,Ali Mukadam,https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/2-deploy-multi-cluster-verrazzano-oke,https://www-sites.oracle.com/developer.oracle.com/tutorials/multi-cluster-verrazzano-oke/2-deploy-multi-cluster-verrazzano-oke/,developer.oracle.com/tutorials/multi-cluster-verrazzano-oke/2-deploy-multi-cluster-verrazzano-oke/,"Links broken -
+ previous article(fixed)
+Deploying Verrazzano on Oracle Container Engine for Kubernetes (OKE)(fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Deploying A Multi-Cluster Verrazzano On Oracle Container Engine for Kubernetes (OKE) Part 2,Ali Mukadam,https://cool.devo.build/tutorials/multi-cluster-verrazzano-oke/3-deploy-multi-cluster-verrazzano-oke,https://www-sites.oracle.com/developer.oracle.com/tutorials/multi-cluster-verrazzano-oke/3-deploy-multi-cluster-verrazzano-oke/,developer.oracle.com/tutorials/multi-cluster-verrazzano-oke/3-deploy-multi-cluster-verrazzano-oke/,"Links broken:
+Part 1 (fixed)
+Oracle Container Engine (OKE) (fixed)
+Deploying Verrazzano on Oracle Container Engine for Kubernetes (OKE)(fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Deploying and monitoring a Redis cluster to Oracle Container Engine (OKE),Ali Mukadam,https://cool.devo.build/tutorials/deploying-monitoring-redis-oke,https://www-sites.oracle.com/developer.oracle.com/tutorials/deploying-monitoring-redis-oke/,developer.oracle.com/tutorials/deploying-monitoring-redis-oke/,"Part One: We’ll create a cluster using the Terraform OKE module link is broken(fixed)
+Part Two: Next, we’ll configure the clusters so they behave as a kind of global cluster link is broken(fixed)",Completed. Ready to review,Manish,,
+,,,,,"Deploying A Multi-Cluster Verrazzano On Oracle Container Engine for Kubernetes (OKE) Part 1 is broken(fixed)
+Deploying A Multi-Cluster Verrazzano On Oracle Container Engine for Kubernetes (OKE) Part 2 is broken(fixed)",,Manish,,
+Terraform 101 Series,Tim Clegg,https://cool.devo.build/tutorials/tf-101/,https://www-sites.oracle.com/developer.oracle.com/tutorials/tf-101/,developer.oracle.com/tutorials/tf-101/,"Broken links:
+Experiencing Terraform (fixed)
+Understanding Go to linkthe basics of Terraform(fixed)
+Terraform variables(fixed)
+Creating Resources with Terraform(fixed)
+Making changes using Terraform(fixed)
+Destroying resources with Terraform(fixed)",Completed. Ready to review,Manish,,
+Why Infrastructure as Code?,Tim Clegg,https://cool.devo.build/tutorials/tf-101/1-why-iac,https://www-sites.oracle.com/developer.oracle.com/tutorials/tf-101/1-why-iac/,developer.oracle.com/tutorials/tf-101/1-why-iac/,next lesson link is broken(fixed),Completed. Ready to review,Manish,,
+Making calls to the Oracle Cloud API using Postman,Tim Clegg,https://cool.devo.build/tutorials/making-calls-to-oci-api-with-postman,https://www-sites.oracle.com/developer.oracle.com/tutorials/making-calls-to-oci-api-with-postman/,developer.oracle.com/tutorials/making-calls-to-oci-api-with-postman/,"Broken links - 
+Understanding The Basics Of Terraform(fixed)
+Creating Resources with Terraform(fixed)
+Making changes using Terraform(fixed)
+Destroying resources with Terraform(fixed)
+Steampipe on Oracle Cloud Infrastructure(fixed)
+Update OCI API docs to https://docs.oracle.com/en-us/iaas/api/ (fixed)
+ Fix URL for docs.oracle.com/en-us/iaas/api(fixed)",Completed. Ready to review,Manish,,
+Experiencing Terraform,Tim Clegg,https://cool.devo.build/tutorials/tf-101/2-experiencing-terraform,https://www-sites.oracle.com/developer.oracle.com/tutorials/tf-101/2-experiencing-terraform/,developer.oracle.com/tutorials/tf-101/2-experiencing-terraform/,"Broken link -
+ next lesson (fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Understanding the basics of Terraform,Tim Clegg,https://cool.devo.build/tutorials/tf-101/3-understanding-terraform-basics,https://www-sites.oracle.com/developer.oracle.com/tutorials/tf-101/3-understanding-terraform-basics/,developer.oracle.com/tutorials/tf-101/3-understanding-terraform-basics/,"Broken links:
+ first lesson(fixed)
+ last lesson(fixed)
+ another lesson(fixed)
+ lesson on variables (fixed)
+ Terraform variable documentation(fixed)
+variables in the next lesson.(fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Terraform variables,Tim Clegg,https://cool.devo.build/tutorials/tf-101/4-variables,https://www-sites.oracle.com/developer.oracle.com/tutorials/tf-101/4-variables/,developer.oracle.com/tutorials/tf-101/4-variables/,"Broken links:
+Experiencing Terraform(fixed)
+Understanding Terraform Concepts(fixed)
+second  Experiencing Terraform(fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Creating Resources with Terraform,Tim Clegg,https://cool.devo.build/tutorials/tf-101/5-creating,https://www-sites.oracle.com/developer.oracle.com/tutorials/tf-101/5-creating/,developer.oracle.com/tutorials/tf-101/5-creating/,"Broken links:
+Experiencing Terraform lesson (fixed)
+Experiencing Terraform tutorial (fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Making changes using Terraform,Tim Clegg,https://cool.devo.build/tutorials/tf-101/6-changing,https://www-sites.oracle.com/developer.oracle.com/tutorials/tf-101/6-changing/,developer.oracle.com/tutorials/tf-101/6-changing/,"Broken links:
+ Creating Resources with Terraform tutorial(fixed)
+previous tutorial(fixed)
+second time previous tutorial(fixed)
+ next lesson(fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Destroying resources with Terraform,Tim Clegg,https://cool.devo.build/tutorials/tf-101/7-destroying,https://www-sites.oracle.com/developer.oracle.com/tutorials/tf-101/7-destroying/,developer.oracle.com/tutorials/tf-101/7-destroying/,"Broken links:
+resources offered in the next section
+H1 changed.",Completed. Ready to review,Manish,,
+More Terraform Resources,Tim Clegg,https://cool.devo.build/tutorials/tf-101/8-resources,https://www-sites.oracle.com/developer.oracle.com/tutorials/tf-101/8-resources/,developer.oracle.com/tutorials/tf-101/8-resources/,H1 changed.,Completed. Ready to review,Manish,Ready,
+,,,,,,,,,
+How to Deploy Spark Standalone in Oracle Cloud (OCI),Olivier Francois Xavier Perard,https://cool.devo.build/tutorials/how-to-deploy-spark-oci,https://www-sites.oracle.com/developer.oracle.com/tutorials/how-to-deploy-spark-oci/,developer.oracle.com/tutorials/how-to-deploy-spark-oci/,,Completed. Ready to review,Manish,Ready,
+Deploying MongoDB in Oracle Cloud (OCI) Linux VM,Olivier Francois Xavier Perard,https://cool.devo.build/tutorials/deploy-mongodb-oci-linux-vm,https://www-sites.oracle.com/developer.oracle.com/tutorials/deploy-mongodb-oci-linux-vm/,developer.oracle.com/tutorials/deploy-mongodb-oci-linux-vm/,"Broken links:
+Getting Started with Oracle Cloud Infrastructure (OCI) (fixed)
+ 
+H1 changed.",Completed. Ready to review,Manish,,
+Get Started with the Feature Store HopsWorks (LogicalClocks) on Oracle Cloud,Olivier Francois Xavier Perard,https://cool.devo.build/tutorials/hops-works-logicalclocks,https://www-sites.oracle.com/developer.oracle.com/tutorials/hops-works-logicalclocks/,developer.oracle.com/tutorials/hops-works-logicalclocks/,,Completed. Ready to review,Manish,Ready,
+Manually configuring Data Science service on Oracle Cloud Infrastructure,Olivier Francois Xavier Perard,https://cool.devo.build/tutorials/manually-configuring-a-data-science-tenancy,https://www-sites.oracle.com/developer.oracle.com/tutorials/manually-configuring-a-data-science-tenancy/,developer.oracle.com/tutorials/manually-configuring-a-data-science-tenancy/,,Completed. Ready to review,Manish,Ready,
+Deploy Cassandra on Oracle Cloud (OCI) Linux VM,Olivier Francois Xavier Perard,https://cool.devo.build/tutorials/deploy-cassandra-on-oci,https://www-sites.oracle.com/developer.oracle.com/tutorials/deploy-cassandra-on-oci/,developer.oracle.com/tutorials/deploy-cassandra-on-oci/,,Completed. Ready to review,Manish,Ready,
+,,,,,,,,,
+Get Started with your own LAMP stack application on Oracle Cloud,lefred,https://cool.devo.build/tutorials/get-started-with-lamp-on-oci,https://www-sites.oracle.com/developer.oracle.com/tutorials/get-started-with-lamp-on-oci/,developer.oracle.com/tutorials/get-started-with-lamp-on-oci/,"Broken links:
+from GitHub (fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Deploy Apache Superset with MySQL Database Service on Oracle Cloud Infrastructure,lefred,https://cool.devo.build/tutorials/deploy-apache-superset-with-mds-on-oci,https://www-sites.oracle.com/developer.oracle.com/tutorials/deploy-apache-superset-with-mds-on-oci/,developer.oracle.com/tutorials/deploy-apache-superset-with-mds-on-oci/,"Broken link:
+ For a gallery of available charts, go here → should be https://apache-superset.readthedocs.io/en/0.28.1/gallery.html(fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Install Jupyter Lab in OCI,lefred,https://cool.devo.build/tutorials/install-jupyter-lab-on-oci,https://www-sites.oracle.com/developer.oracle.com/tutorials/install-jupyter-lab-on-oci/,developer.oracle.com/tutorials/install-jupyter-lab-on-oci/,,Completed. Ready to review,Manish,Ready,
+How to Deploy a Python Flask Application in a Kubernetes cluster,lefred,https://cool.devo.build/tutorials/deploy-flask-app-cloud-shell,https://www-sites.oracle.com/developer.oracle.com/tutorials/deploy-flask-app-cloud-shell/,developer.oracle.com/tutorials/deploy-flask-app-cloud-shell/,,Completed. Ready to review,Manish,Ready,
+Get Started with Apache and PHP on Ubuntu and OCI,lefred,https://cool.devo.build/tutorials/apache-php-ubuntu-oci-installation,https://www-sites.oracle.com/developer.oracle.com/tutorials/apache-php-ubuntu-oci-installation/,developer.oracle.com/tutorials/apache-php-ubuntu-oci-installation/,,Completed. Ready to review,Manish,Ready,
+,,,,,,,,,
+League of Legends Optimizer—Data Extraction and Processing,Ignacio Martínez,https://cool.devo.build/tutorials/lol-optimizer-using-oci-extraction-processing,https://www-sites.oracle.com/developer.oracle.com/tutorials/lol-optimizer-using-oci-extraction-processing/,developer.oracle.com/tutorials/lol-optimizer-using-oci-extraction-processing/,"Broken link:
+ LICENSE (fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Using Oracle's Machine Translation Services for NLP Analysis,Ignacio Martínez,https://cool.devo.build/tutorials/oracle-translation-nlp-analysis,https://www-sites.oracle.com/developer.oracle.com/tutorials/oracle-translation-nlp-analysis/,developer.oracle.com/tutorials/oracle-translation-nlp-analysis/,"Broken link:
+ LICENSE (fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+League of Legends Optimizer using Oracle Cloud Infrastructure—Data Extraction and Processing,Ignacio Martínez,https://cool.devo.build/tutorials/lol-article-2,https://www-sites.oracle.com/developer.oracle.com/tutorials/lol-article-2/,developer.oracle.com/tutorials/lol-article-2/,"Broken links:
+LICENSE (fixed)
+ I have developed a Python script (fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+League of Legends Optimizer using Oracle Cloud Infrastructure—Building an Adversarial League of Legends AI Model,Ignacio Martínez,https://cool.devo.build/tutorials/lol-article-3,https://www-sites.oracle.com/developer.oracle.com/tutorials/lol-article-3/,developer.oracle.com/tutorials/lol-article-3/,,Completed. Ready to review,Manish,Ready,
+,,,,,,,,,
+Using OCI Cloud Shell & Bastion with MySQL Database Service,Developer Relations,https://cool.devo.build/tutorials/oci-shell-bastion-MySQL,https://www-sites.oracle.com/developer.oracle.com/tutorials/oci-shell-bastion-mysql/,developer.oracle.com/tutorials/oci-shell-bastion-mysql/,,Completed. Ready to review,Manish,Ready,
+Deploy a modern data lake on OCI,Developer Relations,https://cool.devo.build/tutorials/create-modern-data-lake-oci-readme,https://www-sites.oracle.com/developer.oracle.com/tutorials/create-modern-data-lake-oci-readme/,developer.oracle.com/tutorials/create-modern-data-lake-oci-readme/,,Completed. Ready to review,Manish,Ready,
+Creating flexible OCI Load Balancers with OKE,Developer Relations,https://cool.devo.build/tutorials/flexible-load-balancers-oke,https://www-sites.oracle.com/developer.oracle.com/tutorials/flexible-load-balancers-oke/,developer.oracle.com/tutorials/flexible-load-balancers-oke/,,Completed. Ready to review,Manish,Ready,
+Call a Function using API Gateway,Developer Relations,https://cool.devo.build/tutorials/call-a-function-api-oci-clouddev,https://www-sites.oracle.com/developer.oracle.com/tutorials/call-a-function-api-oci-clouddey/,developer.oracle.com/tutorials/call-a-function-api-oci-clouddey/,,Completed. Ready to review,Manish,Ready,
+Deploying Cassandra in Oracle Linux,Developer Relations,https://cool.devo.build/tutorials/cassandra-cloud,https://www-sites.oracle.com/developer.oracle.com/tutorials/cassandra-cloud/,developer.oracle.com/tutorials/cassandra-cloud/,This is not Cassandra blog. It is about installing Jupyterlab.,Completed. Ready to review,Manish,,
+Hosting a private Helm Repository on OCI (Oracle Cloud Infrastructure) with ChartMuseum and OCI Object Storage,Developer Relations,https://cool.devo.build/tutorials/helm-repository-chartmuseum-object,https://www-sites.oracle.com/developer.oracle.com/tutorials/helm-repository-chartmuseum-object/,developer.oracle.com/tutorials/helm-repository-chartmuseum-object/,"Broken Link:
+ By default, the stable repo is hosted at here. Edit to ""The stable repo can be found here."" URL should point to https://charts.helm.sh/stable(fixed)
+reach chartmuseum publicly should be pointing to https://chartmuseum.com/(fixed)
+ the quick-start guide  should point to https://cert-manager.io/docs/tutorials/(fixed)
+ Cert-Manager installation guide should point to https://cert-manager.io/docs/(fixed)
+Cert-Manager with Nginx Ingress should point to https://cert-manager.io/docs/tutorials/(fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Kubernetes - Deploy a Node Express Application,Developer Relations,https://cool.devo.build/tutorials/deploy-a-node-express-application,https://www-sites.oracle.com/developer.oracle.com/tutorials/deploy-a-node-express-application/,developer.oracle.com/tutorials/deploy-a-node-express-application/,,Completed. Ready to review,Manish,Ready,
+,,,,,,,,,
+Deploy Moodle on OCI with MDS,Frédéric Descamps (Lefred),https://cool.devo.build/tutorials/deploy-moodle-on-OCI-with-mds,https://www-sites.oracle.com/developer.oracle.com/tutorials/deploy-moodle-on-oci-with-mds/,developer.oracle.com/tutorials/deploy-moodle-on-oci-with-mds/,"Broken link: stack Remove the link. (fixed)
+Left panel links must be refreshed
+ 
+H1 changed.",Completed. Ready to review,Manish,,
+Deploying Joomla! on OCI and MDS,Frédéric Descamps (Lefred),https://cool.devo.build/tutorials/deploying-joomla-on-oci-and-mds,https://www-sites.oracle.com/developer.oracle.com/tutorials/deploying-joomla-on-oci-and-mds/,developer.oracle.com/tutorials/deploying-joomla-on-oci-and-mds/,,Completed. Ready to review,Mansh,Ready,
+Use Matomo Website Analytics on OCI with MDS,Frédéric Descamps (Lefred),https://cool.devo.build/tutorials/matamo-with-oci-mds,https://www-sites.oracle.com/developer.oracle.com/tutorials/matamo-with-oci-mds/,developer.oracle.com/tutorials/matamo-with-oci-mds/,,Completed. Ready to review,Manish,Ready,
+How to import data from Microsoft SQL Server to MySQL Database Service,Frédéric Descamps (Lefred),https://cool.devo.build/tutorials/microsoft-sql-to-mds,https://www-sites.oracle.com/developer.oracle.com/tutorials/microsoft-sql-to-mds/,developer.oracle.com/tutorials/microsoft-sql-to-mds/,,Completed. Ready to review,Manish,Ready,
+,,,,,,,,,
+Extending Terraform OKE with a helm chart,,https://cool.devo.build/tutorials/extending-terraform-oke-helm-chart,https://www-sites.oracle.com/developer.oracle.com/tutorials/extending-terraform-oke-helm-chart/,developer.oracle.com/tutorials/extending-terraform-oke-helm-chart/,"Broken links:
+  instructions should be pointing to https://github.com/oracle-terraform-modules/terraform-oci-oke/tree/main/docs (fixed)
+ sample repo should point to https://github.com/oracle-terraform-modules/terraform-oci-oke/blob/main/modules/extensions/activeworker.tf(fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Polyglot Application Observability,Amitpal Singh Dhillon,https://cool.devo.build/tutorials/polyglot-application-observability,https://www-sites.oracle.com/developer.oracle.com/tutorials/polyglot-application-observability/,developer.oracle.com/tutorials/polyglot-application-observability/,,Completed. Ready to review,Manish,Ready,
+Installation Guide for OCI Monitoring,Martin Berger,https://cool.devo.build/tutorials/ocimonitoring-w-steampipe-prometheus-grafana,https://www-sites.oracle.com/developer.oracle.com/tutorials/ocimonitoring-w-steampipe-prometheus-grafana/,developer.oracle.com/tutorials/ocimonitoring-w-steampipe-prometheus-grafana/,,Completed. Ready to review,Manish,Ready,
+,,,,,,,,,
+Oracle Cloud Infrastructure IaC Framework Series,Malte Menkhoff,https://cool.devo.build/tutorials/oci-iac-framework/,https://www-sites.oracle.com/developer.oracle.com/tutorials/oci-iac-framework/,developer.oracle.com/tutorials/oci-iac-framework/,"Broken links:
+Step 1: Overview of the OCI terraform provider(fixed)
+Step 2: How to build the basic infrastructure(fixed)
+Step 4: How to build the application infrastructure(fixed)
+Step 5: How to deploy your workload on top of the infrastructure(fixed)
+Step 6: How to introduct governance in your tenancy(fixed)
+No link for Step 7
+H1 changed.",Completed. Ready to review,,,
+Getting Started with Oracle Cloud Infrastructure (OCI),Malte Menkhoff,https://cool.devo.build/tutorials/oci-iac-framework/getting-started-with-oci-intro,https://www-sites.oracle.com/developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-intro/,developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-intro/,"Broken Links:
+Getting Started with Oracle Cloud Infrastructure (OCI)(fixed)
+Automating OCI with Terraform(fixed)
+Service Delivery Framework(fixed)
+Database Infrastructure(fixed)
+Workload Deployment(fixed)
+Governance(fixed)
+Oracle Cloud Infrastructure IaC Framework(fixed)
+Read Gartners perspective on Oracles public cloud Search
+ read Gartners perspective on Oracle’s public cloud Search
+Automating with Terraform(fixed)
+Base Configuration Search
+Database Infrastructure(fixed)
+Application Infrastructure(fixed)
+Workload Deployment(fixed)
+Governance(fixed)
+Vizualizer Search
+automating OCI with Terraform.(fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Automating OCI with Terraform,Malte Menkhoff,https://cool.devo.build/tutorials/oci-iac-framework/getting-started-with-oci-step-1-provider,https://www-sites.oracle.com/developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-step-1-provider/,developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-step-1-provider/,,Completed. Ready to review,,,
+Service Delivery Framework,Malte Menkhoff,https://cool.devo.build/tutorials/oci-iac-framework/getting-started-with-oci-step-2-base,https://www-sites.oracle.com/developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-step-2-base/,developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-step-2-base/,,Completed. Ready to review,,,
+Database Infrastructure,Malte Menkhoff,https://cool.devo.build/tutorials/oci-iac-framework/getting-started-with-oci-step-3-database-infrastructure,https://www-sites.oracle.com/developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-step-3-database-infrastructure/,developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-step-3-database-infrastructure/,"Broken Links:
+Automating OCI with Terraform(fixed)
+Service Delivery Framework(fixed)
+Application Infrastructure(fixed)
+Workload Deployment(fixed)
+Governance(fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+Application Infrastructure,Malte Menkhoff,https://cool.devo.build/tutorials/oci-iac-framework/getting-started-with-oci-step-4-app-infrastructure,https://www-sites.oracle.com/developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-step-4-app-infrastructuree/,developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-step-4-app-infrastructuree/,Needs to be refreshed in OCM,Completed. Ready to review,Manish,Ready,
+Workload Deployment,Malte Menkhoff,https://cool.devo.build/tutorials/oci-iac-framework/getting-started-with-oci-step-5-workload-deployment,https://www-sites.oracle.com/developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-step-5-workload-deployment/,developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-step-5-workload-deployment/,,Completed. Ready to review,,,
+Governance,Malte Menkhoff,https://cool.devo.build/tutorials/oci-iac-framework/getting-started-with-oci-step-6-governance,https://www-sites.oracle.com/developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-step-6-governance/,developer.oracle.com/tutorials/oci-iac-framework/getting-started-with-oci-step-6-governance/,,Completed. Ready to review,,,
+,,,,,,,,,
+Creating an E-commerce Site with Oracle Coherence CE and Micronaut,Aleks Seovic,https://cool.devo.build/tutorials/coherence-micronaut-sock-shop,https://www-sites.oracle.com/developer.oracle.com/tutorials/coherence-micronaut-sock-shopp/,developer.oracle.com/tutorials/coherence-micronaut-sock-shopp/,"Deploy Apache Superset with MySQL Database Service on Oracle Cloud Infrastructure(fixed)
+points to 
+Creating an E-commerce Site with Oracle Coherence CE and Micronaut
+ Sock Shop repository should point to  https://github.com/oracle/coherence-micronaut-sockshop-sample/(fixed)
+H1 changed.",Completed. Ready to review,Manish,,
+,,,,,,,,,
+Sending Emails from OCI with Email Delivery Service in Node.js,Javier Mugueta,https://cool.devo.build/tutorials/nodejs-sendmail-oci,https://www-sites.oracle.com/developer.oracle.com/tutorials/nodejs-sendmail-ocii/,developer.oracle.com/tutorials/nodejs-sendmail-ocii/,,Completed. Ready to review,Manish,Ready,
+Tracing A Node.js with OCI Application Performance Monitoring and Zipkin,Javier Mugueta,https://cool.devo.build/tutorials/tracing-node-js-micro-service-oci,https://www-sites.oracle.com/developer.oracle.com/tutorials/tracing-node-js-micro-service-oci/,developer.oracle.com/tutorials/tracing-node-js-micro-service-oci/,,Completed. Ready to review,Manish,Ready,
+,,,,,,,,,
+Introduction to Steampipe on Oracle Cloud Infrastructure,Jon DeCamp,https://cool.devo.build/tutorials/steampipe/steampipe-intro,https://www-sites.oracle.com/developer.oracle.com/tutorials/steampipe/steampipe-intro/,developer.oracle.com/tutorials/steampipe/steampipe-intro/,,Completed. Ready to review,,,
+Steampipe on Oracle Cloud Infrastructure Series,Jon DeCamp,https://cool.devo.build/tutorials/steampipe/,https://www-sites.oracle.com/developer.oracle.com/tutorials/steampipe/,developer.oracle.com/tutorials/steampipe/,"Pages doesn't have an <h1> heading(fixed)
+H1 changed.",Completed. Ready to review,Manjunath R,,
+,,,,,,,,,
+Mr. Stark’s Briefcase and ProximaSafe,Gabriele Provinciali,https://cool.devo.build/proxima-safe/proxima-overview,https://www-sites.oracle.com/developer.oracle.com/proxima-safe/proxima-overvieww/,developer.oracle.com/proxima-safe/proxima-overvieww/,"Link Missing under Header "" From Briefcase to Cloud, and Back"". (Removed)
+Pages doesn't have an <h1> heading (fixed)
+H1 changed.",Completed. Ready to review,Manjunath R,,LIVE!
