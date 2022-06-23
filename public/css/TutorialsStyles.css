@@ -373,3 +373,7 @@ blockquote.notice {
 #icon-imageLam{
   max-width: 18px;
 }
+
+.header-link{
+  display: none;
+}

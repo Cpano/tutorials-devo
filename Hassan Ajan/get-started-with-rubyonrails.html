@@ -9,8 +9,8 @@
     <div class="cc01w1 cwidth">
 
         <h1>Get started with Ruby on Rails on Oracle Cloud</h1>
-        <p>Ruby on Rails is a rapid development framework. It’s used by over a million websites, including AirBNB,
-            Bloomberg, Github, Gitlab, Couchsurfing, and many more.</p>
+        <p>Ruby on Rails is a rapid development framework. It’s used by over a million websites, including Airbnb,
+            Bloomberg, GitHub, GitLab, CouchSurfing, and many more.</p>
 
         <div style="display: flex; color: white;">
             <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
@@ -79,24 +79,26 @@
 
                         <picture class="">
                             <source srcset="https://cool.devo.build/tutorials/assets/rails-logo.png 1x" />
-                            <img loading="lazy" src="https://cool.devo.build/tutorials/assets/rails-logo.png" data-original="https://cool.devo.build/tutorials/assets/rails-logo.png"
-                                data-at2x="https://cool.devo.build/tutorials/assets/rails-logo@2x.png" alt="Ruby on Rails Logo"
-                                title="Ruby on Rails Logo" />
+                            <img loading="lazy" src="https://cool.devo.build/tutorials/assets/rails-logo.png"
+                                data-original="https://cool.devo.build/tutorials/assets/rails-logo.png"
+                                data-at2x="https://cool.devo.build/tutorials/assets/rails-logo@2x.png"
+                                alt="Ruby on Rails Logo" title="Ruby on Rails Logo" />
                         </picture>
 
                         <h2 id="introduction">Introduction</h2>
 
                         <p>Ruby on Rails is a rapid development framework. It’s used by over a million websites,
-                            including AirBNB, Bloomberg, Github, Gitlab, Couchsurfing, and many more.</p>
+                            including Airbnb, Bloomberg, GitHub, GitLab, CouchSurfing, and many more.</p>
 
                         <p>The Ruby language is easy to understand as it’s close to English, making it great for
-                            beginners. In this tutorial we’ll show you how to get started with a new Ruby on Rails
-                            project and how to bring your existing Ruby on Rails application to OCI.</p>
+                            beginners. In this tutorial, we’ll show you how to get started with a new Ruby on Rails
+                            project and how to bring your existing Ruby on Rails application to Oracle Cloud
+                            Infrastructure (OCI).</p>
 
                         <h2 id="set-up-environment-automatically">Set up environment automatically</h2>
 
                         <p>Don’t have time to read the whole article? Use the “Deploy Button” to provision the Ruby on
-                            Rails environment with a few clicks. In this environment you can build a new application or
+                            Rails environment with a few clicks. In this environment, you can build a new application or
                             bring your existing Ruby on Rails application to OCI.</p>
 
                         <p><a
@@ -107,7 +109,7 @@
                         <p>The button takes you to Oracle Resource Manager which runs Terraform code that will provision
                             the full Ruby on Rails environment.</p>
 
-                        <p>The following ressources will be created:</p>
+                        <p>The following resources will be created:</p>
 
                         <table>
                             <thead>
@@ -176,15 +178,15 @@
                         <ul>
                             <li>RBENV Package manager for ruby to make it easy to manage different ruby versions and gem
                                 packs</li>
-                            <li>Nodejs</li>
+                            <li>Node.js</li>
                         </ul>
 
-                        <p>The bootstrap script in the gihub repo shows how the VMs are configured and all the packages
+                        <p>The bootstrap script in the GitHub repo shows how the VMs are configured and all the packages
                             that are installed:</p>
 
                         <p>You can check out <a
                                 href="https://github.com/haj/oci-arch-rubyonrails-mds/blob/main/scripts/ror_bootstrap.sh">the
-                                script on Github</a>.</p>
+                                script on GitHub</a>.</p>
 
                         <p>If you have deployed the environment using the deploy button, you can skip the next section.
                             The bootstrap script has been run automatically when the VMs were provisioned.</p>
@@ -192,28 +194,30 @@
                         <h3 id="how-to-setup-environment-automatically">How to setup environment automatically</h3>
 
                         <ol>
-                            <li>Click the deploy button <a
+                            <li>Click the “Deploy to Oracle Cloud"<a
                                     href="https://cloud.oracle.com/resourcemanager/stacks/create?region=home&amp;zipUrl=https://github.com/haj/oci-arch-rubyonrails-mds/archive/refs/tags/latest.zip&source=:ex:tb::::::WW_FY22_DevRel_DotBuild&SC=:ex:tb::::::WW_FY22_DevRel_DotBuild&pcode="><img
                                         src="https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg?source=:ex:tb::::::WW_FY22_DevRel_DotBuild&SC=:ex:tb::::::WW_FY22_DevRel_DotBuild&pcode="
-                                        alt="Deploy to Oracle Cloud" /></a>.</li>
+                                        alt="Deploy to Oracle Cloud" /></a></li>
                             <li>If you aren’t already signed in, when prompted, enter the tenancy and user credentials.
                             </li>
                             <li>Review and accept the terms and conditions.</li>
                             <li>Select the region where you want to deploy the stack.</li>
                             <li>Follow the on-screen prompts and instructions to create the stack.</li>
                             <li>After creating the stack, click <strong>Terraform Actions</strong>, and select
-                                <strong>Plan</strong>.</li>
+                                <strong>Plan</strong>.
+                            </li>
                             <li>Wait for the job to be completed, and review the plan. To make any changes, return to
                                 the Stack Details page, click <strong>Edit Stack</strong>, and make the required
                                 changes. Then, run the <strong>Plan</strong> action again.</li>
                             <li>If no further changes are necessary, return to the Stack Details page, click
-                                <strong>Terraform Actions</strong>, and select <strong>Apply</strong>.</li>
+                                <strong>Terraform Actions</strong>, and select <strong>Apply</strong>.
+                            </li>
                         </ol>
 
                         <h2 id="how-to-setup-environment-manually">How to setup environment manually</h2>
 
                         <p>If you prefer to setup the environment manually you need to provision the resources and then
-                            install the ruby on rails environment.</p>
+                            install the Ruby on Rails environment</p>
 
                         <p>Provisioning the VM and MySQL database is not covered in this guide.</p>
 
@@ -230,9 +234,9 @@
                         <h3 id="how-to-install-ruby-on-rails-on-ubuntu-2004-with-rbenv">How to install Ruby on Rails on
                             Ubuntu 20.04 with rbenv</h3>
 
-                        <p>SSH to your VM and run the following commands. Make sure to run the commaned with a user that
+                        <p>SSH to your VM and run the following commands. Make sure to run the command with a user that
                             has sudo rights. On Ubuntu the <code
-                                class="language-plaintext highlighter-rouge">ubuntu</code> user is usually fine:</p>
+                                class="language-plaintext highlighter-rouge">Ubuntu</code> user is usually fine:</p>
 
                         <p>Update apt:</p>
 
@@ -330,15 +334,15 @@
                             </div>
                         </div>
 
-                        <p>Congratulations you have now installed Ruby on Rails on your VM!</p>
+                        <p>Congratulations, you have now installed Ruby on Rails on your VM!</p>
 
                         <h2 id="create-your-ruby-on-rails-application">Create your Ruby on Rails application</h2>
 
-                        <p>In this section we will create a rails applcation using the built-in scaffolding methods of
+                        <p>In this section we will create a rails application using the built-in scaffolding methods of
                             rails. We will connect the rails app to the database provisioned.</p>
 
                         <p>Let’s create a directory where our app will reside and make the <code
-                                class="language-plaintext highlighter-rouge">ubuntu</code> user the owner of the
+                                class="language-plaintext highlighter-rouge">Ubuntu</code> user the owner of the
                             directory:</p>
 
                         <div class="language-console highlighter-rouge">
@@ -389,7 +393,7 @@
                             </div>
                         </div>
 
-                        <p>Run all migration scripts to create the tables in the DB. This step needs to run everytime
+                        <p>Run all migration scripts to create the tables in the DB. Every time
                             you makes change to table definitions:</p>
 
                         <div class="language-console highlighter-rouge">

@@ -1,163 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--======================================== EXTERNAL STYLES & CALENDAR ICON========================================-->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cool Devo Migration</title>
-</head>
-
-<body>
-    <!--==========================COPY FROM HERE==========================-->
+<link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
 
 
+<!--========================================HEADER========================================-->
+<!-- CC01v0 -->
+<section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);" class="cc01 cc01v0  txtlight cpad">
+    <div class="cc01w1 cwidth">
 
+        <h1>Getting Started with Oracle Cloud Infrastructure (OCI)</h1>
+        <p>Over the last two decades, Cloud Computing has revolutionized the technological landscape, allowing
+            companies
+            to rent infrastructure instead of building rapidly-obsolescing hardware on-site. </p>
 
+        <div style="display: flex; color: white;">
+            <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
+                        aria-hidden="true"></i>
+                    Author: </strong>
+                Malte Menkhoff
+            </p>
 
-    <!--======================================== EXTERNAL STYLES & CALENDAR ICON========================================-->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-
-    <link rel="stylesheet" href="https://cpano.github.io/tutorials-devo/public/css/TutorialsStyles.css">
-
-
-    <!--========================================HEADER========================================-->
-    <!-- CC01v0 -->
-    <section style="background-image:url(/a/devo/images/cc01-weblogic-hero-banner.jpg);"
-        class="cc01 cc01v0  txtlight cpad">
-        <div class="cc01w1 cwidth">
-
-            <h2>Getting Started with Oracle Cloud Infrastructure (OCI)</h2>
-            <p>Over the last two decades, Cloud Computing has revolutionized the technological landscape, allowing
-                companies
-                to rent infrastructure instead of building rapidly-obsolescing hardware on-site. </p>
-
-            <div style="display: flex; color: white;">
-                <p class="page__date" style="margin-right: 25px;"><strong><i class="fas fa-user fa-calendar-alt"
-                            aria-hidden="true"></i>
-                        Author: </strong>
-                    Malte Menkhoff
-                </p>
-
-                <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-                        Updated:</strong>
-                    <time>October 29, 2021</time>
-                </p>
-
-            </div>
+            <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                    Updated:</strong>
+                <time>October 29, 2021</time>
+            </p>
 
         </div>
-    </section>
-    <!-- /CC01v0 -->
 
-    <!-- F19v0 -->
-    <section class="f19 f19v0 cpad">
-        <div class="f19w1 cwidth">
-            <div class="f19w2 f19-2col">
-                <div class="f19col f19side">
-                    <!-- S20v0 -->
-                    <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
-                        <div class="s20w1 cwidth">
-                            <div class="col-w1">
+    </div>
+</section>
+<!-- /CC01v0 -->
 
-                                <h3>About Malte Menkhoff</h3>
+<!-- F19v0 -->
+<section class="f19 f19v0 cpad">
+    <div class="f19w1 cwidth">
+        <div class="f19w2 f19-2col">
+            <div class="f19col f19side">
+                <!-- S20v0 -->
+                <section class="s20 s20v0 cpad" data-ocomid="s20" data-trackas="s20">
+                    <div class="s20w1 cwidth">
+                        <div class="col-w1">
 
-                                <!--Social Icons-->
-                                <div class="author__urls-wrapper" style="margin-bottom: 15px;">
-                                    <ul class="author__urls social-icons">
-                                        <li>
-                                            <a href="https://twitter.com/lefred" itemprop="sameAs"
-                                                rel="nofollow noopener noreferrer" target="_blank">
-                                                <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span
-                                                    class="label">Twitter</span>
-                                            </a>
-                                        </li>
+                            <h3>About Malte Menkhoff</h3>
 
-                                        <li>
-                                            <a href="https://www.linkedin.com/in/freddescamps" itemprop="sameAs"
-                                                rel="nofollow noopener noreferrer" target="_blank">
-                                                <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span
-                                                    class="label">LinkedIn</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://github.com/lefred" itemprop="sameAs"
-                                                rel="nofollow noopener noreferrer" target="_blank">
-                                                <i class="fab fa-fw fa-github" aria-hidden="true"></i><span
-                                                    class="label">GitHub</span>
-                                            </a>
-                                        </li>
+                            <!--Social Icons-->
+                            <div class="author__urls-wrapper" style="margin-bottom: 15px;">
+                                <ul class="author__urls social-icons">
+                                    <li>
+                                        <a href="https://twitter.com/lefred" itemprop="sameAs"
+                                            rel="nofollow noopener noreferrer" target="_blank">
+                                            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span
+                                                class="label">Twitter</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/freddescamps" itemprop="sameAs"
+                                            rel="nofollow noopener noreferrer" target="_blank">
+                                            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span
+                                                class="label">LinkedIn</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/lefred" itemprop="sameAs"
+                                            rel="nofollow noopener noreferrer" target="_blank">
+                                            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span
+                                                class="label">GitHub</span>
+                                        </a>
+                                    </li>
 
 
-                                    </ul>
-                                </div>
-                                <br><br>
-                                <!-- End Social Icons-->
-                                <p>Malte is a passioned solution architect and is supporting customers in the DACH
-                                    region in
-                                    migrating to OCI.</p>
-
-                                <p><strong>More tutorials from this author: <br> </strong>
-                                    <span class="tags">
-
-                                        <a class="animated-link tag2" href="#">Deploy Apache Superset with
-                                            MySQL Database Service on Oracle Cloud Infrastructure</a><br>
-                                        <a class="animated-link tag2" href="getting-started-with-oci-intro="
-                                            oci-iac-framework="" tutorials="">Getting Started with Oracle Cloud
-                                            Infrastructure (OCI)</a><br>
-
-                                    </span>
-                                </p>
-
-                                <!--Tags-->
-                                <h3>Tags</h3>
-                                <p> <span class=" tags">
-                                        <a class="animated-link tag" href="#">open-source</a>
-                                        <a class="animated-link tag" href="#">terraform</a>
-                                        <a class="animated-link tag" href="#">iac</a>
-                                        <a class="animated-link tag" href="#">devops</a>
-                                        <a class="animated-link tag" href="#">get-started</a>
-                                    </span>
-                                </p>
-
-                                <h3></h3>
-                                <a href="https://developer.oracle.com/tutorials">
-                                    <p class="page__date" style="margin-right: 25px;"><strong>
-                                            Back to tutorials
-                                        </strong>
-                                    </p>
-                                </a>
-
+                                </ul>
                             </div>
+                            <br><br>
+                            <!-- End Social Icons-->
+                            <p>Malte is a passioned solution architect and is supporting customers in the DACH
+                                region in
+                                migrating to OCI.</p>
+
+                            <p><strong>More tutorials from this author: <br> </strong>
+                                <span class="tags">
+
+                                    <a class="animated-link tag2" href="#">Deploy Apache Superset with
+                                        MySQL Database Service on Oracle Cloud Infrastructure</a><br>
+                                    <a class="animated-link tag2" href="getting-started-with-oci-intro="
+                                        oci-iac-framework="" tutorials="">Getting Started with Oracle Cloud
+                                        Infrastructure (OCI)</a><br>
+
+                                </span>
+                            </p>
+
+                            <!--Tags-->
+                            <h3>Tags</h3>
+                            <p> <span class=" tags">
+                                    <a class="animated-link tag" href="#">open-source</a>
+                                    <a class="animated-link tag" href="#">terraform</a>
+                                    <a class="animated-link tag" href="#">iac</a>
+                                    <a class="animated-link tag" href="#">devops</a>
+                                    <a class="animated-link tag" href="#">get-started</a>
+                                </span>
+                            </p>
+
+                            <h3></h3>
+                            <a href="https://developer.oracle.com/tutorials">
+                                <p class="page__date" style="margin-right: 25px;"><strong>
+                                        Back to tutorials
+                                    </strong>
+                                </p>
+                            </a>
+
                         </div>
-                    </section>
-                    <!-- /S20v0 -->
-                </div>
-                <!-- SET UP -->
-                <main class="f19col f19main">
-                    <!-- cc01v0 -->
-
-                    <section class="cc01 cc01v0 cpad" id="link1">
-                        <div class="cc01w1 cwidth">
-
-
-
-
-                        </div>
-                    </section>
-                    <!-- /CC01v0 -->
-
-                </main>
+                    </div>
+                </section>
+                <!-- /S20v0 -->
             </div>
+            <!-- SET UP -->
+            <main class="f19col f19main">
+                <!-- cc01v0 -->
+
+                <section class="cc01 cc01v0 cpad" id="link1">
+                    <div class="cc01w1 cwidth">
+
+
+
+
+                    </div>
+                </section>
+                <!-- /CC01v0 -->
+
+            </main>
         </div>
-    </section>
-    <!-- /F19v0 -->
-
-
-
-
-    <!--==========================STOP COPING==========================-->
-</body>
-
-</html>
+    </div>
+</section>
+<!-- /F19v0 -->
